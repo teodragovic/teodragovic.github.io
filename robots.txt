@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://petakolona.com/sitemap.xml 
+Sitemap: http://petakolona.com//sitemap.xml 

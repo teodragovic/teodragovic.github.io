@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Peta Kolona]]></title>
-  <link href="http://petakolona.com/atom.xml" rel="self"/>
-  <link href="http://petakolona.com/"/>
-  <updated>2013-11-30T14:16:39+01:00</updated>
-  <id>http://petakolona.com/</id>
+  <link href="http://petakolona.com//atom.xml" rel="self"/>
+  <link href="http://petakolona.com//"/>
+  <updated>2013-11-30T14:35:15+01:00</updated>
+  <id>http://petakolona.com//</id>
   <author>
     <name><![CDATA[Teo Dragović]]></name>
     
