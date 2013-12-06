@@ -1,4 +1,46 @@
-body > nav {
+.icon{
+  width: 32px;
+  height: 32px;
+  fill: gray;
+  &:hover {
+  	fill: black;
+  }
+}
+
+#F {
+	fill: #fff;
+}
+
+.social-fallback {
+	display: none;
+}
+
+.nav-main {
+	position: relative;
+	ul {
+		padding-left: 0;
+		text-align: center;
+	}
+	li {
+		display: inline-block;
+	}
+	.main-menu {
+		a {
+      @include link-colors($nav-color, $nav-color-hover, $visited: $nav-color);
+      font-family: $sans;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: .1em .5em;
+      line-height: 1.5em;
+  	}
+	}
+	.social-links {
+		border-top: 1px solid $page-border-bottom;
+		border-bottom: 1px solid $page-border-bottom;
+	}
+}
+
+.nav-main1 {
   position: relative;
   background-color: $nav-bg;
   @include background($nav-bg-front, $nav-bg-back);
@@ -35,7 +77,9 @@ body > nav {
   fieldset.mobile-nav{ float: left; width: 48%;
     select{ width: 100%; font-size: .8em; border: 1px solid #888;}
   }
+
   ul { display: none; }
+
   @media only screen and (min-width: 550px) {
     font-size: .9em;
     ul {
@@ -97,6 +141,8 @@ body > nav {
     }
   }
 }
+
+
 .no-placeholder {
   body > nav .search {
     background: lighten($nav-bg, 15) image-url('search.png') .3em .25em no-repeat;

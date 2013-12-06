@@ -1,0 +1,26 @@
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head.html %}
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %}>
+
+	<noscript>
+		<p>For full web awesomeness, please eneable <a href="http://www.enable-javascript.com/" target="_blank">
+		JavaScript</a>.</p>
+	</noscript>
+
+	<!--[if lte IE 8]>
+			<p class="ie8">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+  <header role="banner">{% include header.html %}</header>
+  <nav role="navigation">{% include navigation.html %}</nav>
+
+  <div role="main" id="main">
+    <div id="content">
+      {{ content | expand_urls: root_url }}
+    </div>
+  </div>
+
+  <footer role="contentinfo">{% include footer.html %}</footer>
+  {% include after_footer.html %}
+</body>
+</html>

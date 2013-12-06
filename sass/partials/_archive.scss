@@ -1,5 +1,5 @@
 #archive {
-  #content > div { &, > article { padding-top: 0; } }
+  .content > div { &, > article { padding-top: 0; } }
 }
 #blog-archives {
   article {
@@ -63,7 +63,7 @@
     }
   }
 }
-#content > .category {
+.content > .category {
   article {
     margin-left: 0;
     padding-left: 6.8em;
