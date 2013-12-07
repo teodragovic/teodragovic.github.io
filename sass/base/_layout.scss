@@ -1,124 +1,51 @@
-$max-width: 1200px !default;
+// Globals
 
-// Padding used for layout margins
-$pad-min: 18px !default;
-$pad-narrow: 25px !default;
-$pad-medium: 35px !default;
-$pad-wide: 55px !default;
-
-// Sidebar widths used in media queries
-$sidebar-width-medium: 240px !default;
-$sidebar-pad-medium: 15px !default;
-$sidebar-pad-wide: 20px !default;
-$sidebar-width-wide: 300px !default;
-
-$indented-lists: false !default;
-
-$header-font-size: 1em !default;
-$header-padding-top: 1.5em !default;
-$header-padding-bottom: 1.5em !default;
-
-.group { @include pie-clearfix; }
+$max-width: 60em !default;
 
 body {
-  -webkit-text-size-adjust: none;
   max-width: $max-width;
   position: relative;
   margin: 0 auto;
-  > header, > nav, > footer, .content > article, .content > div > article, .content > div > section {
-    @extend .group;
-    padding-left: $pad-min;
-    padding-right: $pad-min;
-    @media only screen and (min-width: 480px) {
-      padding-left: $pad-narrow;
-      padding-right: $pad-narrow;
-    }
-    @media only screen and (min-width: 768px) {
-      padding-left: $pad-medium;
-      padding-right: $pad-medium;
-    }
-    @media only screen and (min-width: 992px) {
-      padding-left: $pad-wide;
-      padding-right: $pad-wide;
-    }
-  }
-  .pagination {
-    @extend .group;
-    margin-left: $pad-min;
-    margin-right: $pad-min;
-    @media only screen and (min-width: 480px) {
-      margin-left: $pad-narrow;
-      margin-right: $pad-narrow;
-    }
-    @media only screen and (min-width: 768px) {
-      margin-left: $pad-medium;
-      margin-right: $pad-medium;
-    }
-    @media only screen and (min-width: 992px) {
-      margin-left: $pad-wide;
-      margin-right: $pad-wide;
-    }
-  }
-  > header {
-    font-size: $header-font-size;
-    padding-top: $header-padding-top;
-    padding-bottom: $header-padding-bottom;
-  }
 }
 
+// Padding used for layout margins
+$pad-min: 5% !default;
+$pad-narrow: 10% !default;
+$pad-medium: 15% !default;
+$pad-wide: 20% !default;
+
+.header-main, 
+.navigation, 
+.footer-main,
 .content {
-  overflow: hidden;
-  > div, > article { width: 100%; }
-}
-
-.flex-content { max-width: 100%; height: auto; }
-
-.basic-alignment {
-  &.left { float: left; margin-right: 1.5em; }
-  &.right { float: right; margin-left: 1.5em; }
-  &.center { display:block; margin: 0 auto 1.5em; }
-  &.left, &.right { margin-bottom: .8em; }
-}
-
-
-@media only screen and (min-width: 550px) {
-  body > header { font-size: $header-font-size; }
-}
-
-#main, .content, .sidebar {
-  @extend .group;
-}
-@media only screen and (min-width: 768px) {
-  body { -webkit-text-size-adjust: auto; }
-  body > header { font-size: $header-font-size * 1.2; }
-  #main {
-    padding: 0;
-    margin: 0 auto;
+	position: relative;
+  @extend %group;
+  padding: 0 $pad-min;
+  @include breakpoint(480) {
+    padding: 0 $pad-narrow;
   }
-  .content {
-    overflow: visible;
-    position: relative;
-    > div, > article {
-      padding-top: $pad-medium/2;
-      padding-bottom: $pad-medium/2;
-      float: left;
-    }
+  @include breakpoint(768) {
+    padding: 0 $pad-medium;
+  }
+  @include breakpoint(960) {
+    padding: 0 $pad-wide;
   }
 }
 
-@media only screen and (min-width: 992px) {
-  body > header { font-size: $header-font-size * 1.3; }
-  .content {
-    > div, > article {
-      padding-top: $pad-wide/2;
-      padding-bottom: $pad-wide/2;
-    }
-  }
-}
+// Content
 
-@if $indented-lists == false {
-  @media only screen and (min-width: 768px) {
-    ul, ol { margin-left: 0; }
-  }
-}
+/* $margin: 1em;
+
+.hentry,
+.comments {
+	@include breakpoint(768) {
+		
+	}
+	@include breakpoint(768) {
+		
+	}
+	@include breakpoint(960) {
+		
+	}
+} */
 

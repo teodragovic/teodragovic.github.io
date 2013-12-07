@@ -1,8 +1,17 @@
+// Header
+
+$title-color: #444 !default;
+$subtitle-color: #555 !default;
+
+$header-font-size: 1em !default;
+$header-padding: 1.5em !default;
+
 .header-main {
-  //background: $header-bg;
+	font-size: $header-font-size;
+  padding: $header-padding 0;
   text-align: center;
   h1 {
-    margin: 0 auto;
+    margin: 0 auto .2em;
     a, a:visited, a:hover {
       color: $title_color;
       text-decoration: none;
@@ -10,11 +19,20 @@
     }
   }
   p {
-    margin: .2em 0 0;
+    margin: 0;
     @extend .sans;
     font-size: 1em;
     color: $subtitle-color;
     font-weight: normal;
     text-transform: lowercase;
+  }
+  @include breakpoint(480) {
+  	font-size: $header-font-size * 1.1;
+  }
+  @include breakpoint(768) {
+  	font-size: $header-font-size * 1.25;
+  }
+  @include breakpoint(960) {
+  	font-size: $header-font-size * 1.3;
   }
 }

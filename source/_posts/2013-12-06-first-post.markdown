@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "First post"
-date: 2013-12-06 11:38:53 +0100
+date: 2013-12-06
 comments: true
-categories: 
+categories: test
 ---
 
 ## Prvi post

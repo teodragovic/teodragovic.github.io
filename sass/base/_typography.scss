@@ -1,3 +1,7 @@
+$text-color: #222 !default;
+$text-color-light: #aaa !default;
+$type-border: #ddd !default;
+
 $blockquote: $type-border !default;
 $sans: "PT Sans", "Helvetica Neue", Arial, sans-serif !default;
 $serif: "PT Serif", Georgia, Times, "Times New Roman", serif !default;
@@ -5,6 +9,8 @@ $mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace 
 $heading-font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif !default;
 $header-title-font-family: $heading-font-family !default;
 $header-subtitle-font-family: $heading-font-family !default;
+
+
 
 // Fonts
 .heading {
@@ -14,7 +20,7 @@ $header-subtitle-font-family: $heading-font-family !default;
 .serif { font-family: $serif; }
 .mono { font-family: $mono; }
 
-body > header h1 {
+.header-main h1 {
   font-size: 2.2em;
   @extend .heading;
   font-family: $header-title-font-family;
@@ -22,7 +28,7 @@ body > header h1 {
   line-height: 1.2em;
   margin-bottom: 0.6667em;
 }
-body > header p {
+.header-main p {
   font-family: $header-subtitle-font-family;
 }
 
@@ -31,12 +37,14 @@ body {
   color: $text-color;
   @extend .serif;
 }
+
+
 h1 {
   font-size: 2.2em;
   line-height: 1.2em;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 960px) {
   body { font-size: 1.15em; }
   h1 { font-size: 2.6em; line-height: 1.2em; }
 }
@@ -76,6 +84,14 @@ ol { list-style-type: decimal;
 ul, ol { &, ul, ol { margin-left: 1.3em; }}
 ul, ol { ul, ol { margin-bottom: 0em; }}
 
+/* list reset */
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+
 strong { font-weight: bold; }
 
 em { font-style: italic; }
@@ -107,7 +123,7 @@ small { font-size: .8em; }
 
 big { font-size: 1.2em; }
 
-article blockquote {
+blockquote {
   $bq-margin: 1.2em;
   font-style: italic;
   position: relative;
@@ -154,7 +170,7 @@ article blockquote {
 }
 
 /* @extend this to force long lines of continuous text to wrap */
-.force-wrap {
+%force-wrap {
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
