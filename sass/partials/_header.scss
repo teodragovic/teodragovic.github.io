@@ -11,6 +11,11 @@ $header-padding: 1.5em !default;
   padding: $header-padding 0;
   text-align: center;
   h1 {
+	  font-size: 2.2em;
+	  @extend %sans;
+	  font-weight: 800;
+	  line-height: 1.2em;
+	  margin-bottom: 0.6667em;
     margin: 0 auto .2em;
     a, a:visited, a:hover {
       color: $title_color;
@@ -20,10 +25,10 @@ $header-padding: 1.5em !default;
   }
   p {
     margin: 0;
-    @extend .sans;
+    @extend %sans;
     font-size: 1em;
     color: $subtitle-color;
-    font-weight: normal;
+    font-weight: 300;
     text-transform: lowercase;
   }
   @include breakpoint(480) {
@@ -36,3 +41,4 @@ $header-padding: 1.5em !default;
   	font-size: $header-font-size * 1.3;
   }
 }
+

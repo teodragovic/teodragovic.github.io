@@ -23,7 +23,7 @@
     }
   }
   a.category, time {
-    @extend .sans;
+    @extend %sans;
     color: $text-color-light;
   }
   color: $text-color-light;

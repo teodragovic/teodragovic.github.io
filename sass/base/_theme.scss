@@ -3,20 +3,10 @@
 $noise-bg: image-url('noise.png') top left !default;
 $main-bg: #f8f8f8 !default;
 
-// Main Link Colors
-$link-color: lighten(#165b94, 3) !default;
-$link-color-hover: adjust-color($link-color, $lightness: 10, $saturation: 25) !default;
-$link-color-visited: $link-color !default;
-$link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
-
 /* Core theme application */
 
 html {
-  font-size: 100%;
   background: $main-bg $noise-bg;
 }
 
-a {
-	@include transition(color .3s);
-  @include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
-}
+

@@ -7,7 +7,7 @@ $footer-link-color-hover: darken($footer-color, 25) !default;
 
 .footer-main {
 	text-align: center;
-  @extend .sans;
+  @extend %sans;
   color: $footer-color;
   border-top: 1px solid $footer-border-top;
   position: relative;

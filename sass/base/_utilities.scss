@@ -11,12 +11,12 @@
   @return $text-color;
 } */
 
-@mixin shadow-box($border: #fff .5em solid, $shadow: rgba(#000, .15) 0 1px 4px, $border-radius: .3em) {
+/* @mixin shadow-box($border: #fff .5em solid, $shadow: rgba(#000, .15) 0 1px 4px, $border-radius: .3em) {
   @include border-radius($border-radius);
   @include box-shadow($shadow);
   @include box-sizing(border-box);
   border: $border;
-}
+} */
 
 @mixin selection($bg, $color: inherit, $text-shadow: none){
   * {
@@ -94,7 +94,6 @@
 	}
 }
 
-
 /* apply a natural box layout model to all elements */
 
 *,
@@ -150,14 +149,5 @@
  */
 
 %group { @include pie-clearfix; }
-
-%flex-content { max-width: 100%; height: auto; }
-
-.basic-alignment {
-  &.left { float: left; margin-right: 1.5em; }
-  &.right { float: right; margin-left: 1.5em; }
-  &.center { display:block; margin: 0 auto 1.5em; }
-  &.left, &.right { margin-bottom: .8em; }
-}
 
 %center { text-align: center; }

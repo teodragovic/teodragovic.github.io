@@ -1,127 +1,228 @@
-$text-color: #222 !default;
+/* mixins n vars */
+
+$font-base: 16; // in px
+$line-height: 1.5; // 16*1.5 = 24px
+
+$baseline: $font-base * $line-height; // 12, 24, 36, 48
+
+$text-color: #353535 !default;
 $text-color-light: #aaa !default;
-$type-border: #ddd !default;
+$type-border: #d5d5d5 !default;
 
 $blockquote: $type-border !default;
-$sans: "PT Sans", "Helvetica Neue", Arial, sans-serif !default;
-$serif: "PT Serif", Georgia, Times, "Times New Roman", serif !default;
+$sans: "adelle-sans", Arial, Verdana, sans-serif !default;
+$serif: "adelle", Georgia, serif !default;
 $mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
-$heading-font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif !default;
-$header-title-font-family: $heading-font-family !default;
-$header-subtitle-font-family: $heading-font-family !default;
 
+// Mixins and placeholders
 
-
-// Fonts
-.heading {
-  font-family: $heading-font-family;
+@function em($font-px, $base: $font-base) {
+	@return #{$font-px/$base}em;
 }
-.sans { font-family: $sans; }
-.serif { font-family: $serif; }
-.mono { font-family: $mono; }
 
-.header-main h1 {
-  font-size: 2.2em;
-  @extend .heading;
-  font-family: $header-title-font-family;
-  font-weight: normal;
-  line-height: 1.2em;
-  margin-bottom: 0.6667em;
+@mixin font-size($font-px: $font-base) {
+	font-size: em($font-px);
 }
-.header-main p {
-  font-family: $header-subtitle-font-family;
+
+@mixin text-margin ($baseline: $baseline) {
+	margin: 0 0 em($baseline/2) 0;
+	//breakpoint
+}
+
+@mixin header-margin ($header-font, $i) {
+	$x : (($baseline/2)*$i) - $header-font;
+	margin: 0 0 em($x, $header-font) 0;
+}
+
+@mixin font-smoothing($val: on) {
+	@if $val == "on" {
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		} @else if $val == "off" {
+			-webkit-font-smoothing: subpixel-antialiased;
+			-moz-osx-font-smoothing: auto;
+		}
+}
+
+@mixin hyphens($val) {
+	// Accepted values: [ none | manual | auto ]
+	hyphens: $val;
+}
+
+%line-numbers { font-feature-settings: "lnum"; }
+
+%tab-numbers { font-feature-settings: "tnum"; }
+
+%sans { 
+	font-family: $sans;
+	font-weight: 300;
+}
+%serif { 
+	font-family: $serif;
+	font-weight: 400; 
+}
+%mono { font-family: $mono; }
+
+/* @extend this to force long lines of continuous text to wrap */
+%force-wrap {
+  word-wrap: break-word;
+}
+
+/* global */
+
+html {
+	font-size: 100%; 
+	//breakpoint
+	@include breakpoint (480) {
+		font-size: 110%;
+	}
+	@include breakpoint(768) {
+		font-size: 120;
+	}
+	@include breakpoint (960) {
+		font-size: 130%;
+	}
 }
 
 body {
-  line-height: 1.5em;
-  color: $text-color;
-  @extend .serif;
+	@extend %serif;
+	@include font-size($font-base);
+	@include hyphens(off);
+	//@extend %line-numbers;
+	text-rendering: optimizeLegibility;
+	line-height: $line-height;
+	color: $text-color;
+	word-wrap: break-word;
 }
 
-
-h1 {
-  font-size: 2.2em;
-  line-height: 1.2em;
+p {
+	@include text-margin;
+	@include hyphens(auto);
+	@include font-smoothing(off);
 }
 
-@media only screen and (min-width: 960px) {
-  body { font-size: 1.15em; }
-  h1 { font-size: 2.6em; line-height: 1.2em; }
+article p:empty {
+	display: none;
 }
 
-#{headings()}{
-  @extend .heading;
-  text-rendering: optimizelegibility;
-  margin-bottom: 1em;
-  font-weight: bold;
-}
-h2, section h1 {
-  font-size: 1.5em;
-}
-h3, section h2, section section h1 {
-  font-size: 1.3em;
-}
-h4, section h3, section section h2, section section section h1 {
-  font-size: 1em;
-}
-h5, section h4, section section h3 {
-  font-size: .9em;
-}
-h6, section h5, section section h4, section section section h3 {
-  font-size: .8em;
+/* links */
+
+$link-color: lighten(#165b94, 2) !default;
+$link-color-hover: adjust-color($link-color, $lightness: 10, $saturation: 25) !default;
+$link-color-visited: $link-color !default;
+$link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
+
+a {
+	@include transition(color .3s);
+  @include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
+	background: transparent;
+	text-decoration: none;
+	&:focus {
+		outline: thin dotted;
+	}
+	&:active,
+	&:hover {
+		outline: 0;
+		text-decoration: underline;
+	}
 }
 
-p, article blockquote, ul, ol { margin-bottom: 1.5em; }
+/* headers */
 
-ul { list-style-type: disc;
-  ul { list-style-type: circle; margin-bottom: 0px;
-    ul { list-style-type: square; margin-bottom: 0px; }}}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	@extend %sans;
+	font-weight: 700;
+	@include font-smoothing(on);
+	color: $text-color;
+	line-height: 1;
+}
 
-ol { list-style-type: decimal;
-  ol { list-style-type: lower-alpha; margin-bottom: 0px;
-    ol { list-style-type: lower-roman; margin-bottom: 0px; }}}
+h1, .h1 {
+	@include font-size(40);
+	@include header-margin(40, 5);
+}
 
-ul, ol { &, ul, ol { margin-left: 1.3em; }}
-ul, ol { ul, ol { margin-bottom: 0em; }}
+h2, .h2 {
+	@include font-size(26.667);
+	@include header-margin(26.667, 3);
+}
 
-/* list reset */
+h3, .h3 {
+	@include font-size(24);
+	@include header-margin(24, 3);
+}
 
-ul {
-	padding: 0;
+h4, .h4 {
+	@include font-size(17.778);
+	@include header-margin(17.778, 2);
+}
+
+h5, h6, 
+.h5, .h6 {
+	@include font-size(16);
+	@include header-margin(16, 2);
+	text-transform: uppercase;
+}
+
+/* lists */
+
+ol, ul {
+	margin: 0 2% em($baseline/2);
+	//breakpoint
+	padding: 0 0 0 em(24);
+}
+
+ol li ol {
+	list-style-type: lower-latin;
+}
+
+ol li ol,
+ol li ul,
+ul li ul,
+ul li ol {
 	margin: 0;
 }
 
-
-strong { font-weight: bold; }
-
-em { font-style: italic; }
-
-sup, sub { font-size: 0.75em; position: relative;  display: inline-block; padding: 0 .2em; line-height: .8em;}
-sup { top: -.5em; }
-sub { bottom: -.5em; }
-
-a[rev='footnote']{ font-size: .75em; padding: 0 .3em; line-height: 1; }
-
-q { font-style: italic;
-  &:before { content: "\201C"; }
-  &:after { content: "\201D"; }
+ul,
+ul ul {
+	list-style-type: disc;
 }
 
-em, dfn { font-style: italic; }
+li {
+	@include text-margin($baseline/2);
+	//breakpoint
+}
 
-strong, dfn { font-weight: bold; }
+li ol li:first-of-type,
+li ul li:first-of-type {
+	margin-top: em(6);
+	//breakpoint
+}
 
-del, s { text-decoration: line-through; }
+dl {
+	@include text-margin;
+}
+dt {
+	font-weight: 700;
+}
+dt,
+dd {
+	& + dt {
+		&:before {
+			content: "\A";
+			white-space: pre;
+		}
+	}
+}
+dd {
+	margin-left: 2%; 
+	&:before {
+			content: "– ";
+	}
+}
 
-abbr, acronym { border-bottom: 1px dotted; cursor: help; }
-
-pre, code, tt { @extend .mono; }
-
-hr { margin-bottom: 0.2em; }
-
-small { font-size: .8em; }
-
-big { font-size: 1.2em; }
+/* quotes */
 
 blockquote {
   $bq-margin: 1.2em;
@@ -142,39 +243,22 @@ blockquote {
   }
 }
 
-.pullquote-right:before,
-.pullquote-left:before {
-  /* Reset metrics. */
-  padding: 0;
-  border: none;
+a[rev='footnote']{ font-size: .75em; padding: 0 .3em; line-height: 1; }
 
-  /* Content */
-  content: attr(data-pullquote);
-
-  /* Pull out to the right, modular scale based margins. */
-  float: right;
-  width: 45%;
-  margin: .5em 0 1em 1.5em;
-
-  /* Baseline correction */
-  position: relative;
-  top: 7px;
-  font-size: 1.4em;
-  line-height: 1.45em;
+q { font-style: italic;
+  &:before { content: "\201C"; }
+  &:after { content: "\201D"; }
 }
 
-.pullquote-left:before {
-  /* Make left pullquotes align properly. */
-  float: left;
-  margin: .5em 1.5em 1em 0;
+/* separator */
+
+hr {
+	height: 0;
+	@include text-margin($baseline - 2);
+	border: none;
+	border-bottom: 1px solid $text-color;
 }
 
-/* @extend this to force long lines of continuous text to wrap */
-%force-wrap {
-  white-space: -moz-pre-wrap;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
+/* code */
 
+pre, code, tt { @extend %mono; }

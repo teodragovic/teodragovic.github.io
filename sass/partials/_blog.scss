@@ -13,6 +13,7 @@
 
 .meta {
 	@extend %center;
+	@extend %sans;
 }
 
 time {color: $text-color-light;}
