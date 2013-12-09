@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1 {
 	@include font-size(40);
-	@include header-margin(40, 5);
+	@include header-margin(40, 4);
 }
 
 h2, .h2 {
