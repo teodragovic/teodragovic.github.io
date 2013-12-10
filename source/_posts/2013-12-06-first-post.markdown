@@ -68,14 +68,28 @@ Every interaction is both precious and an opportunity to delight.
 
 ### Working with Code
 
-Got a streak of geek? We've got you covered there, too. You can write inline `<code>` blocks really easily `with back ticks`. Want to show off something more comprehensive? 4 spaces of indentation gets you there. <code>test</code>
+Got a streak of geek? We've got you covered there, too. You can write inline `<code>` blocks really easily `with back ticks`. Want to show off something more ~~comprehensive?~~ 4 spaces of indentation gets you there. <code>test</code>
 
-~~~
-body {color: black;}
-~~~
-{:lang="css"}
+#### Backtick (los markup, ekstra styling)
 
-<pre data-src="../../code/test.css"></pre>
+``` html title http://google.com/
+<body>
+	test
+</body>
+```
+
+#### Fenced (redcarpet GFM)
+
+~~~ css
+body {
+	font-size: 1em;
+	background-color: black;
+}
+~~~
+
+#### Include
+
+{% include_code naziv lang:css test.css %}
 
 ### Ready for a Break?
 

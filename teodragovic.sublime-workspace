@@ -127,7 +127,23 @@
 			"file": "source/_posts/2013-12-06-first-post.markdown",
 			"settings":
 			{
-				"buffer_size": 3816,
+				"buffer_size": 3988,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_config.yml",
+			"settings":
+			{
+				"buffer_size": 2933,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 600,
 				"line_ending": "Windows"
 			}
 		}
@@ -188,24 +204,39 @@
 	},
 	"file_history":
 	[
-		"/E/Dropbox/dev/sites/teodragovic/TO-DO.markdown",
-		"/E/Dropbox/dev/sites/teodragovic/Gemfile",
+		"/E/Dropbox/dev/sites/teodragovic/plugins/redcarpet2_markdown.rb",
+		"/E/Dropbox/dev/sites/teodragovic/plugins/backtick_code_block.rb",
+		"/E/Dropbox/dev/sites/teodragovic/plugins/octopress_filters.rb",
+		"/E/Dropbox/dev/sites/teodragovic/plugins/pygments_code.rb",
 		"/E/Dropbox/dev/sites/teodragovic/_config.yml",
+		"/C/Users/STICK/AppData/Roaming/Sublime Text 2/Packages/User/LiveReload.sublime-settings",
+		"/C/Users/STICK/AppData/Roaming/Sublime Text 2/Packages/LiveReload/LiveReload.sublime-settings",
+		"/E/Dropbox/dev/sites/teodragovic/Gemfile",
+		"/E/Dropbox/dev/sites/teodragovic/Guardfile",
+		"/E/Dropbox/dev/sites/teodragovic/source/_includes/after_footer.html",
+		"/E/Dropbox/dev/sites/teodragovic/plugins/category_generator.rb",
+		"/E/Dropbox/dev/sites/teodragovic/config.rb",
+		"/E/Dropbox/dev/sites/teodragovic/plugins/redcarpet.rb",
+		"/E/Dropbox/dev/sites/teodragovic/sass/_partials.scss",
+		"/E/Dropbox/dev/sites/teodragovic/plugins/rubypants.rb",
+		"/E/Dropbox/dev/sites/teodragovic/sass/base/_solarized.scss",
+		"/E/Dropbox/dev/sites/teodragovic/sass/base/_theme.scss",
+		"/E/Dropbox/dev/sites/teodragovic/source/stylesheets/screen.css",
+		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_twilight.scss",
+		"/C/Users/STICK/Desktop/CodeRay-GitHub-Theme-master/coderay.css",
+		"/C/Users/STICK/Desktop/CodeRay-GitHub-Theme-master/coderay-pre-1.0.css",
+		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_coderay.scss",
+		"/E/Dropbox/dev/sites/teodragovic/TO-DO.markdown",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/code_ray_block.rb",
 		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/rubypython-0.6.3/lib/rubypython.rb",
 		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/rubypython-0.6.3/lib/rubypython/python.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/octopress_filters.rb",
 		"/E/Dropbox/dev/sites/teodragovic/Gemfile.lock",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/backtick_code_block.rb",
 		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_header.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/_partials.scss",
 		"/E/Dropbox/dev/sites/teodragovic/sass/_base.scss",
 		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_prism.scss",
-		"/E/Dropbox/dev/sites/teodragovic/source/_includes/after_footer.html",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/prism.rb",
 		"/E/Dropbox/dev/sites/teodragovic/sass/base/_prism.scss",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/code_block.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/pygments_code.rb",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/prism",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/codepen.rb",
 		"/E/Dropbox/dev/sites/teodragovic/sass/base/_utilities.scss",
@@ -221,7 +252,6 @@
 		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_archive.scss",
 		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_footer.scss",
 		"/E/Dropbox/dev/sites/teodragovic/sass/_normalize.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/base/_theme.scss",
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/article.html",
 		"/E/Dropbox/dev/sites/teodragovic/source/_layouts/post.html",
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/post/author.html",
@@ -242,7 +272,6 @@
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/navigation.html",
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/social.html",
 		"/E/Dropbox/dev/sites/teodragovic/source/social.html",
-		"/E/Dropbox/dev/sites/teodragovic/config.rb",
 		"/E/Dropbox/dev/sites/teodragovic/sass/screen.scss",
 		"/E/Dropbox/dev/sites/teodragovic/Rakefile",
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/svg.html",
@@ -302,20 +331,7 @@
 		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-07-training-log-87.markdown",
 		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-14-training-log-88.markdown",
 		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-07-training-log-84.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-07-training-log-85.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-07-training-log-86.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-09-30-training-log-81.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-09-30-training-log-80.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-03-training-log-83.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-09-30-training-log-79.markdown",
-		"/D/00 NOVAC/TUTS/00 CSS-TRICKS/CSS-Tricks - The Big v10 Redesign Project/01-Inventory.markdown",
-		"/D/00 NOVAC/TUTS/00 CSS-TRICKS/CSS-Tricks - The Big v10 Redesign Project/02-Goals.markdown",
-		"/E/Dropbox/dev/codepen/js/index.js",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-09-25-training-log-78.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-09-25-training-log-77.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-09-25-training-log-76.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-09-25-training-log-75.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-09-17-training-log-74.markdown"
+		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-07-training-log-85.markdown"
 	],
 	"find":
 	{
@@ -326,6 +342,8 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"E:\\Dropbox\\dev\\sites\\teodragovic",
+			"E:\\Dropbox\\dev\\sites\\teodragovic\\plugins",
 			"E:\\Dropbox\\dev\\sites\\teodragovic\\sass",
 			"E:\\Dropbox\\dev\\sites\\teodragovic\\sass\\base",
 			"E:\\Dropbox\\dev\\sites\\teodragovic\\sass",
@@ -340,6 +358,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"atom.xml",
+			"backtick",
+			"codeblock",
 			".serif",
 			".sans",
 			".heading",
@@ -419,7 +440,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -434,8 +455,8 @@
 						"selection":
 						[
 							[
-								2947,
-								2947
+								951,
+								951
 							]
 						],
 						"settings":
@@ -490,7 +511,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1931.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -500,15 +521,15 @@
 					"file": "source/_posts/2013-12-06-first-post.markdown",
 					"settings":
 					{
-						"buffer_size": 3816,
+						"buffer_size": 3988,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2511,
-								2511
+								2569,
+								2569
 							]
 						],
 						"settings":
@@ -563,7 +584,153 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 969.0,
+						"translation.y": 1026.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_config.yml",
+					"settings":
+					{
+						"buffer_size": 2933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1149,
+								1149
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 600,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								516,
+								516
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -626,7 +793,7 @@
 		[
 			[
 				"",
-				"/E/Dropbox/dev/sites/kova/kova.sublime-project"
+				"/E/Dropbox/dev/sites/snagata/snagata.sublime-project"
 			]
 		],
 		"width": 380.0
