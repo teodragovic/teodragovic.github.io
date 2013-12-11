@@ -6,7 +6,7 @@ TO DO:
 + typekit font
 - napisati prvi post
 - kontakt form
-- code embedding
++ code embedding
 
 ## Sekundarno
 
@@ -29,6 +29,13 @@ TO DO:
 - google profile u head
 - social share
 - google analytics
+
+- grunt
+	- compass izbacuje error
+	- html inspector ne radi
+	- grunt-contrib-requirejs
+	- imagemin ne radi
+	- grunt jekyll ne radi jer koristim staru verziju jekylla, zato rabim exec
 
 
 
