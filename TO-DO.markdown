@@ -31,13 +31,11 @@ TO DO:
 - google analytics
 
 - grunt
-	- compass izbacuje error
 	- html inspector ne radi
 	- grunt-contrib-requirejs
 	- imagemin ne radi
-	- grunt jekyll ne radi jer koristim staru verziju jekylla, zato rabim exec
 
-
-
-
-
+	"grunt-contrib-sass": "~0.6.0" -> prespor
+	"grunt-contrib-compass": "~0.7.0" -> prespor
+	
+	- grunt jekyll ne radi zbog stare verzije jekylla --> exec kao zamjena

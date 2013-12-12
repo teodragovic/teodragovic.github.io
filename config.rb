@@ -1,3 +1,5 @@
+# Encoding.default_external = "utf-8"
+
 require 'sass-globbing'
 require 'autoprefixer-rails'
 require 'csso'
@@ -23,6 +25,6 @@ output_style = :expanded
 on_stylesheet_saved do |file|
   css = File.read(file)
   File.open(file, 'w') do |io|
-    io << Csso.optimize( AutoprefixerRails.compile(css) )
+    io << Csso.optimize( AutoprefixerRails.compile(css, ['last 2 version']) )
   end
 end

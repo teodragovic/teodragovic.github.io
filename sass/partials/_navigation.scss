@@ -27,7 +27,7 @@ $nav-border: darken($nav-bg, 20) !default;
 	position: relative;
 	li { width: 32%; }
 	a {
-    @include link-colors($nav-color, $nav-color-hover, $visited: $nav-color);
+    //@include link-colors($nav-color, $nav-color-hover, $visited: $nav-color);
     font-family: $sans;
     text-decoration: none;
     font-size: 1.1em;

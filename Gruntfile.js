@@ -7,11 +7,12 @@ module.exports = function(grunt) {
 		sass: {
 			dev: {
 				options: {
-					style: 'expanded',
-					compass: true
+					outputStyle: 'expanded',
+					sourceComments: 'none',
+					//compass: true
 				},
 				src: 'sass/screen.scss',
-				dest: 'source/stylesheets/screen.css',
+				dest: 'source/stylesheets/screen.build.css',
 			}
 		},
 
@@ -20,8 +21,29 @@ module.exports = function(grunt) {
 				browsers: ['last 2 version']
 			},
 			single_file: {
-				src: 'source/stylesheets/screen.css',
-				dest: 'source/stylesheets/screen-prefixed.css',
+				src: 'source/stylesheets/screen.build.css',
+				dest: 'source/stylesheets/screen.css',
+			}
+		},
+
+		csso: {
+			dev: {
+				options: {
+					restructure: false,
+					report: 'gzip'
+				},
+				files: {
+					'public/stylesheets/screen.css': ['source/stylesheets/screen.css']
+				}
+			},
+			dist: {
+				options: {
+					restructure: false,
+					report: 'gzip'
+				},
+				files: {
+					'source/stylesheets/screen.css': ['source/stylesheets/screen.css']
+				}
 			}
 		},
 
@@ -33,17 +55,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		csso: {
-			compress: {
-				options: {
-					restructure: false,
-					report: 'gzip'
-				},
-				src: 'source/stylesheets/screen-prefixed.css',
-				dest: 'source/stylesheets/screen.min.css',
-			}
-		},
-
 		csslint: {
 			options: {
 				errors: false,
@@ -51,7 +62,7 @@ module.exports = function(grunt) {
 					{id: 'text', dest: 'csslint.txt'}
 				]
 			},
-			src: ['source/stylesheets/screen.min.css']
+			src: ['source/stylesheets/screen.build.css']
 		},
 
 		jshint: {
@@ -82,8 +93,10 @@ module.exports = function(grunt) {
 
 		cachebreaker : {
 			css: {
-				asset_url : 'stylesheets/screen.min.css',
-				file: 'source/_includes/head.html',
+				asset_url: 'stylesheets/screen.css',
+				files: {
+					src: ['public/**/*.html']
+				}
 			},
 			// js cache
 		},
@@ -91,25 +104,30 @@ module.exports = function(grunt) {
 		connect: {
 			server: {
 				options: {
+					base: 'public',
+					livereload: true,
 					port: 4000,
-					//hostname: localhost,
-					base: 'public/',
-					//livereload: true
 				}
 			}
 		},
 
 		watch: {
-			options: {
-				livereload: false,
-			},
 			css: {
-				files: ['sass/*.scss'],
-				tasks: ['sass', 'autoprefixer', 'csso', 'cachebreaker:css'],
+				files: ['sass/**/*.scss'],
+				tasks: ['sass', 'autoprefixer', 'csso:dev'],
 				options: {
-					spawn: false,
+					spawn: true,
+					livereload: false,
 				}
 			},
+			livereload: {
+    		files: ['public/stylesheets/*.css'],
+    		options: {
+    			spawn: false,
+    			livereload: true,
+    		}
+  		},
+			/*
 			scripts: {
 				files: ['source/javascripts/*.js'],
 				tasks: ['concat', 'uglify'],
@@ -117,39 +135,51 @@ module.exports = function(grunt) {
 					spawn: false,
 				}
 			},
+			*/
 			jekyll: {
-				files: ['source/**'],
-				tasks: ['exec:build']
+				files: ['source/**/*.html', 'source/_posts/*.markdown'],
+				tasks: ['exec:build'],
+				options: {
+					spawn: false,
+					livereload: true,
+				}
 			}
 		},
 
 		exec: {
-	    build: {
-	      cmd: 'jekyll build public --watch'
-	    },
-	    serve: {
-	      cmd: 'jekyll serve --watch'
-	    }
-	  }
+			build: {
+				cmd: 'jekyll public'
+			}
+		},
+/*
+		clean: ['source/stylesheets', 'public'],
 
-		//clean: ["path/to/dir/one", "path/to/dir/two"]
-
-		// devtools, copy, exec, clean
-
+		copy: {
+			main: {
+				files: [{
+					expand: true, 
+					src: ['source/stylesheets/*'], 
+					dest: 'public/stylesheets/',
+					flatten: true,
+					filter: 'isFile',
+				}]
+			}
+		}
+*/
 	});
 
 	require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('default', ['sass', 'autoprefixer', 'csso', 'cachebreaker:css']);
+	grunt.registerTask('default', ['compass', 'exec:build', 'cachebreaker']); // add js
 
-	grunt.registerTask('css-alt', ['compass']); // errors?
+	grunt.registerTask('css', ['compass', 'exec:build', 'cachebreaker:css']);
 
-	grunt.registerTask('js', ['concat', 'uglify']); // add cachebreaker
+	grunt.registerTask('js', ['concat', 'uglify']); // add cachebreaker:js
 
 	grunt.registerTask('test-css', ['csslint']);
 
 	grunt.registerTask('test-js', ['jshint']);
 
-	grunt.registerTask('dev', ['connect', 'watch']);
+	grunt.registerTask('dev', ['exec:build', 'connect', 'watch']);
 
 };
