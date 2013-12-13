@@ -19,10 +19,10 @@
     "grunt-exec": "~0.4.2",
     "grunt-devtools": "~0.2.1",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-sass": "~0.9.0"
+    "grunt-sass": "~0.9.0",
+    "grunt-html-inspector": "~0.1.4"
   },
   "dependencies": {
-    "load-grunt-tasks": "~0.2.0",
-    "jshint-stylish": "~0.1.4"
+    "load-grunt-tasks": "~0.2.0"
   }
 }

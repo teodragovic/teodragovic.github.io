@@ -27,15 +27,6 @@ module.exports = function(grunt) {
 		},
 
 		csso: {
-			dev: {
-				options: {
-					restructure: false,
-					report: 'gzip'
-				},
-				files: {
-					'public/stylesheets/screen.css': ['source/stylesheets/screen.css']
-				}
-			},
 			dist: {
 				options: {
 					restructure: false,
@@ -44,7 +35,7 @@ module.exports = function(grunt) {
 				files: {
 					'source/stylesheets/screen.css': ['source/stylesheets/screen.css']
 				}
-			}
+			},
 		},
 
 		compass: {
@@ -62,11 +53,11 @@ module.exports = function(grunt) {
 					{id: 'text', dest: 'csslint.txt'}
 				]
 			},
-			src: ['source/stylesheets/screen.build.css']
+			src: ['source/stylesheets/screen.css']
 		},
 
 		jshint: {
-			files: ['source/javascripts/*.js'], // beforeconcat?
+			files: ['source/javascripts/main.js'], // beforeconcat?
 			options: {
 				ignores: ['source/javascripts/libs/*.js'],
 				reporter: 'checkstyle',
@@ -75,19 +66,23 @@ module.exports = function(grunt) {
 		},
 
 		concat: {
+			options: {
+				stripBanner: true,
+			},
 			dist: {
-				src: ['source/javascripts/libs/*.js','source/javascripts/*.js'],
-				dest: 'source/javascripts/build.js',
+				src: ['scripts/octopress.js','scripts/twitter.js'],
+				dest: 'source/javascripts/main.js',
 			}
 		},
 
 		uglify: {
 			options: {
-				report: 'gzip'
+				report: 'gzip',
+				preserveComments: false,
 			},
 			build: {
-				src: 'source/javascripts/build.js',
-				dest: 'source/javascripts/build.min.js'
+				src: 'source/javascripts/main.js',
+				dest: 'source/javascripts/main.js'
 			}
 		},
 
@@ -98,7 +93,10 @@ module.exports = function(grunt) {
 					src: ['public/**/*.html']
 				}
 			},
-			// js cache
+			js: {
+				asset_url: 'javascripts/main.js',
+				file: 'source/javascripts/config.js',
+				},
 		},
 
 		connect: {
@@ -114,28 +112,27 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: ['sass/**/*.scss'],
-				tasks: ['sass', 'autoprefixer', 'csso:dev'],
+				tasks: ['sass', 'autoprefixer', 'csso', 'copy:css'],
+				options: {
+					spawn: true,
+					livereload: false,
+				}
+			},
+			scripts: {
+				files: ['scripts/*.js'],
+				tasks: ['concat', 'uglify', 'cachebreaker:js', 'copy:js'],
 				options: {
 					spawn: true,
 					livereload: false,
 				}
 			},
 			livereload: {
-    		files: ['public/stylesheets/*.css'],
+    		files: ['public/stylesheets/*.css', 'public/javascripts/**/*.js'],
     		options: {
     			spawn: false,
     			livereload: true,
     		}
   		},
-			/*
-			scripts: {
-				files: ['source/javascripts/*.js'],
-				tasks: ['concat', 'uglify'],
-				options: {
-					spawn: false,
-				}
-			},
-			*/
 			jekyll: {
 				files: ['source/**/*.html', 'source/_posts/*.markdown'],
 				tasks: ['exec:build'],
@@ -153,9 +150,9 @@ module.exports = function(grunt) {
 		},
 /*
 		clean: ['source/stylesheets', 'public'],
-
+*/
 		copy: {
-			main: {
+			css: {
 				files: [{
 					expand: true, 
 					src: ['source/stylesheets/*'], 
@@ -163,23 +160,43 @@ module.exports = function(grunt) {
 					flatten: true,
 					filter: 'isFile',
 				}]
+			},
+			js: {
+				files: [{
+					expand: true, 
+					src: ['source/javascripts/*', 'scripts/config.js'], 
+					dest: 'public/javascripts/',
+					flatten: true,
+					filter: 'isFile',
+				}]
 			}
-		}
-*/
+		},
+
+		'html-inspector': {
+			options: {
+				//parameters: 'noglobals=true'
+			},
+			all: {
+				src: ['public/**/*.html']
+			}
+		},
+
 	});
 
 	require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('default', ['compass', 'exec:build', 'cachebreaker']); // add js
+	grunt.registerTask('default', ['compass', 'concat', 'uglify', 'exec:build', 'cachebreaker']);
 
-	grunt.registerTask('css', ['compass', 'exec:build', 'cachebreaker:css']);
+	grunt.registerTask('css', ['compass', 'copy:css', 'cachebreaker:css']);
 
-	grunt.registerTask('js', ['concat', 'uglify']); // add cachebreaker:js
+	grunt.registerTask('js', ['concat', 'uglify', 'cachebreaker:js', 'copy:js']);
 
 	grunt.registerTask('test-css', ['csslint']);
 
 	grunt.registerTask('test-js', ['jshint']);
 
 	grunt.registerTask('dev', ['exec:build', 'connect', 'watch']);
+
+	grunt.registerTask('test-html', ['html-inspector']);
 
 };

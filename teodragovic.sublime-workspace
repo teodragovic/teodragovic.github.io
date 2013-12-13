@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"len",
+				"length"
+			],
+			[
+				"load",
+				"loadTypekit"
+			],
+			[
+				"vi",
+				"visible"
+			],
+			[
 				"cache",
 				"cachebreaker"
 			],
@@ -127,7 +139,7 @@
 			"file": "TO-DO.markdown",
 			"settings":
 			{
-				"buffer_size": 580,
+				"buffer_size": 687,
 				"line_ending": "Windows"
 			}
 		},
@@ -135,7 +147,7 @@
 			"file": "sass/base/_typography.scss",
 			"settings":
 			{
-				"buffer_size": 4711,
+				"buffer_size": 4792,
 				"line_ending": "Windows"
 			}
 		},
@@ -148,26 +160,18 @@
 			}
 		},
 		{
-			"file": "_config.yml",
+			"file": "Gruntfile.js",
 			"settings":
 			{
-				"buffer_size": 2933,
+				"buffer_size": 3662,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "package.json",
+			"file": "scripts/config.js",
 			"settings":
 			{
-				"buffer_size": 808,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Gruntfile.js",
-			"settings":
-			{
-				"buffer_size": 3247,
+				"buffer_size": 1047,
 				"line_ending": "Windows"
 			}
 		}
@@ -228,7 +232,20 @@
 	},
 	"file_history":
 	[
+		"/E/Dropbox/dev/sites/teodragovic/_config.yml",
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/head.html",
+		"/E/Dropbox/dev/sites/teodragovic/package.json",
+		"/E/Dropbox/dev/sites/teodragovic/scripts/octopress.js",
+		"/E/Dropbox/dev/sites/teodragovic/public/javascripts/config.js",
+		"/E/Dropbox/dev/sites/teodragovic/source/javascripts/config.js",
+		"/E/Dropbox/dev/sites/teodragovic/public/stylesheets/screen.css",
+		"/E/Dropbox/dev/sites/teodragovic/source/_layouts/default.html",
+		"/E/Dropbox/dev/sites/teodragovic/scripts/config.js",
+		"/E/Dropbox/dev/sites/teodragovic/source/_includes/after_footer.html",
+		"/E/Dropbox/dev/sites/teodragovic/public/javascripts/libs/jquery.min.js",
+		"/E/Dropbox/dev/sites/teodragovic/scripts/ga.js",
+		"/E/Dropbox/dev/sites/teodragovic/public/javascripts/ga.js",
+		"/E/Dropbox/dev/sites/teodragovic/sass/base/_theme.scss",
 		"/E/Dropbox/dev/sites/teodragovic/config.rb",
 		"/E/Dropbox/dev/sites/teodragovic/sass/screen.scss",
 		"/E/Dropbox/dev/sites/teodragovic/Gemfile",
@@ -257,14 +274,11 @@
 		"/E/Dropbox/dev/sites/teodragovic/plugins/backtick_code_block.rb",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/octopress_filters.rb",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/pygments_code.rb",
-		"/E/Dropbox/dev/sites/teodragovic/_config.yml",
 		"/E/Dropbox/dev/sites/teodragovic/Guardfile",
-		"/E/Dropbox/dev/sites/teodragovic/source/_includes/after_footer.html",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/category_generator.rb",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/redcarpet.rb",
 		"/E/Dropbox/dev/sites/teodragovic/plugins/rubypants.rb",
 		"/E/Dropbox/dev/sites/teodragovic/sass/base/_solarized.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/base/_theme.scss",
 		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_twilight.scss",
 		"/C/Users/STICK/Desktop/CodeRay-GitHub-Theme-master/coderay.css",
 		"/C/Users/STICK/Desktop/CodeRay-GitHub-Theme-master/coderay-pre-1.0.css",
@@ -300,7 +314,6 @@
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/related.html",
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/disqus.html",
 		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/rb-gsl-1.15.3.1/ext/gem_make.out",
-		"/E/Dropbox/dev/sites/teodragovic/source/_layouts/default.html",
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/navigation.html",
 		"/E/Dropbox/dev/sites/teodragovic/source/_includes/social.html",
 		"/E/Dropbox/dev/sites/teodragovic/source/social.html",
@@ -346,16 +359,7 @@
 		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-31-training-log-100.markdown",
 		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-29-training-log-99.markdown",
 		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-29-training-log-98.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-29-training-log-97.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-25-training-log-96.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-25-training-log-95.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-25-training-log-94.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-19-training-log-93.markdown",
-		"/E/Dropbox/dev/sites/snagata/.gitignore",
-		"/E/Dropbox/dev/sites/snagata/.git/refs/heads/master",
-		"/E/Dropbox/dev/sites/snagata/.git/refs/heads/source",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-19-training-log-92.markdown",
-		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-19-training-log-91.markdown"
+		"/E/Dropbox/dev/sites/snagata/source/_posts/2013-10-29-training-log-97.markdown"
 	],
 	"find":
 	{
@@ -383,6 +387,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"noise",
 			"charset",
 			"social",
 			"social-fallback",
@@ -470,7 +475,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -478,15 +483,15 @@
 					"file": "TO-DO.markdown",
 					"settings":
 					{
-						"buffer_size": 580,
+						"buffer_size": 687,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								494,
-								461
+								686,
+								686
 							]
 						],
 						"settings":
@@ -541,7 +546,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -551,15 +556,15 @@
 					"file": "sass/base/_typography.scss",
 					"settings":
 					{
-						"buffer_size": 4711,
+						"buffer_size": 4792,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1972,
-								1972
+								79,
+								79
 							]
 						],
 						"settings":
@@ -614,7 +619,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1782.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -687,171 +692,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 144.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "_config.yml",
-					"settings":
-					{
-						"buffer_size": 2933,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								956,
-								956
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/YAML/YAML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 108.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "package.json",
-					"settings":
-					{
-						"buffer_size": 808,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								221,
-								221
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "Gruntfile.js",
 					"settings":
 					{
-						"buffer_size": 3247,
+						"buffer_size": 3662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								603,
-								603
+								1103,
+								1103
 							]
 						],
 						"settings":
@@ -906,7 +765,80 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2484.0,
+						"translation.y": 2754.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "scripts/config.js",
+					"settings":
+					{
+						"buffer_size": 1047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

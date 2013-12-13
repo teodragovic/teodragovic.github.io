@@ -1,20 +1,4 @@
 
-function testFeatures() {
-  var features = ['maskImage'];
-  $(features).map(function(i, feature) {
-    if (Modernizr.testAllProps(feature)) {
-      $('html').addClass(feature);
-    } else {
-      $('html').addClass('no-'+feature);
-    }
-  });
-  if ("placeholder" in document.createElement("input")) {
-    $('html').addClass('placeholder');
-  } else {
-    $('html').addClass('no-placeholder');
-  }
-}
-
 function addCodeLineNumbers() {
   if (navigator.appName === 'Microsoft Internet Explorer') { return; }
   $('div.gist-highlight').each(function(code) {
@@ -62,22 +46,17 @@ function wrapFlashVideos() {
   $('iframe[src*=vimeo],iframe[src*=youtube]').wrap('<div class="flash-video">')
 }
 
-function renderDeliciousLinks(items) {
-  var output = "<ul>";
-  for (var i=0,l=items.length; i<l; i++) {
-    output += '<li><a href="' + items[i].u + '" title="Tags: ' + (items[i].t == "" ? "" : items[i].t.join(', ')) + '">' + items[i].d + '</a></li>';
-  }
-  output += "</ul>";
-  $('#delicious').html(output);
+function testFn() {
+	$('article').addClass('test');
 }
 
 $('document').ready(function() {
-  testFeatures();
+  //testFeatures();
   wrapFlashVideos();
   flashVideoFallback();
   addCodeLineNumbers();
-  getNav();
-  addSidebarToggler();
+  testFn();
+  //addSidebarToggler();
 });
 
 // iOS scaling bug fix

@@ -1,0 +1,56 @@
+
+[4msource/javascripts/main.js[24m
+  [90mline 1[39m  [90mcol 410[39m   [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 411[39m   [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 412[39m   [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 1017[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 1018[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 1031[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 1032[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 1034[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 1169[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 1170[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 1250[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 1251[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 1299[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 1552[39m  [34mMissing '()' invoking a constructor.[39m
+  [90mline 1[39m  [90mcol 1920[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 2204[39m  [34mUse '!==' to compare with 'null'.[39m
+  [90mline 1[39m  [90mcol 2294[39m  [34m'd' is already defined.[39m
+  [90mline 1[39m  [90mcol 2385[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 2394[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 2682[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 2995[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 3048[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 3050[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 3051[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 3150[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 3151[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 3281[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 3282[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 3432[39m  [34mA leading decimal point can be confused with a dot: '.25'.[39m
+  [90mline 1[39m  [90mcol 3450[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 3451[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 3461[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 3500[39m  [34m'a' is already defined.[39m
+  [90mline 1[39m  [90mcol 3784[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 3878[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 3983[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 3984[39m  [34mMissing semicolon.[39m
+  [90mline 1[39m  [90mcol 3990[39m  [34m'n' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4011[39m  [34m'n' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4034[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 4109[39m  [34m'n' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4166[39m  [34m'n' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4188[39m  [34mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m  [90mcol 4203[39m  [34m'm' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4224[39m  [34m'm' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4237[39m  [34m'm' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4257[39m  [34m'n' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4259[39m  [34m'l' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4261[39m  [34m'm' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4267[39m  [34m'm' used out of scope.[39m
+  [90mline 1[39m  [90mcol 4267[39m  [34mToo many errors. (100% scanned).[39m
+
+[1m[31m51 problems[39m[22m
+

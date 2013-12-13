@@ -1,3 +1,12 @@
+.wf-loading {
+	opacity: 0;
+}
+.wf-active,
+.wf-inactive {
+	transition: opacity .3s ease-in;
+	opacity: 1;
+}
+
 /* mixins n vars */
 
 $font-base: 16; // in px
@@ -65,7 +74,7 @@ $mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace 
 
 /* @extend this to force long lines of continuous text to wrap */
 %force-wrap {
-  word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 /* global */
@@ -114,7 +123,7 @@ $link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
 
 a {
 	transition: color .3s;
-  //@include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
+	//@include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
 	background: transparent;
 	text-decoration: none;
 	&:focus {
@@ -225,29 +234,29 @@ dd {
 /* quotes */
 
 blockquote {
-  $bq-margin: 1.2em;
-  font-style: italic;
-  position: relative;
-  font-size: 1.2em;
-  line-height: 1.5em;
-  padding-left: 1em;
-  border-left: 4px solid rgba($text-color-light, .5);
-  cite {
-    font-style: italic;
-    a { color: $text-color-light !important; word-wrap: break-word; }
-    &:before { content: '\2014'; padding:{right: .3em; left: .3em;} color: $text-color-light; }
-  }
-  @media only screen and (min-width: 992px) {
-    padding-left: 1.5em;
-    border-left-width: 4px;
-  }
+	$bq-margin: 1.2em;
+	font-style: italic;
+	position: relative;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	padding-left: 1em;
+	border-left: 4px solid rgba($text-color-light, .5);
+	cite {
+		font-style: italic;
+		a { color: $text-color-light !important; word-wrap: break-word; }
+		&:before { content: '\2014'; padding:{right: .3em; left: .3em;} color: $text-color-light; }
+	}
+	@media only screen and (min-width: 992px) {
+		padding-left: 1.5em;
+		border-left-width: 4px;
+	}
 }
 
 a[rev='footnote']{ font-size: .75em; padding: 0 .3em; line-height: 1; }
 
 q { font-style: italic;
-  &:before { content: "\201C"; }
-  &:after { content: "\201D"; }
+	&:before { content: "\201C"; }
+	&:after { content: "\201D"; }
 }
 
 /* separator */

@@ -4,7 +4,7 @@ TO DO:
 ## Primarno
 
 + typekit font
-- napisati prvi post
+- napisati prvi post -> blog setup (octopress, grunt)
 - kontakt form
 + code embedding
 
@@ -28,14 +28,19 @@ TO DO:
 - twitter card u head
 - google profile u head
 - social share
-- google analytics
++ google analytics
 
 - grunt
-	- html inspector ne radi
-	- grunt-contrib-requirejs
+	
 	- imagemin ne radi
+
+	- grunt-contrib-requirejs - ne koristim, radi isto što i concat+uglify
 
 	"grunt-contrib-sass": "~0.6.0" -> prespor
 	"grunt-contrib-compass": "~0.7.0" -> prespor
 	
 	- grunt jekyll ne radi zbog stare verzije jekylla --> exec kao zamjena
+
++ fout za fontove
+
+- napraviti style tile template
