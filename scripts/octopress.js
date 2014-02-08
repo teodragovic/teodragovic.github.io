@@ -46,17 +46,10 @@ function wrapFlashVideos() {
   $('iframe[src*=vimeo],iframe[src*=youtube]').wrap('<div class="flash-video">')
 }
 
-function testFn() {
-	$('article').addClass('test');
-}
-
 $('document').ready(function() {
-  //testFeatures();
   wrapFlashVideos();
   flashVideoFallback();
   addCodeLineNumbers();
-  testFn();
-  //addSidebarToggler();
 });
 
 // iOS scaling bug fix

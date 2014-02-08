@@ -1,0 +1,69 @@
+
+// Navigation
+
+$nav-bg: #ccc !default;
+$nav-color: darken($nav-bg, 38) !default;
+$nav-color-hover: darken($nav-color, 25) !default;
+$nav-border: darken($nav-bg, 10) !default;
+$nav-padding: 1.5em !default;
+$nav-border: darken($nav-bg, 20) !default;
+
+// Globals
+
+.navigation {
+	position: relative;
+	padding-bottom: $nav-padding;
+	ul { 
+		text-align: center; 
+		margin: 0;
+		padding: 0;
+	}
+	li { display: inline-block; }
+}
+
+// Main menu
+
+.nav-main {
+	position: relative;
+	li { width: 32%; }
+	a {
+    //@include link-colors($nav-color, $nav-color-hover, $visited: $nav-color);
+    font-family: $sans;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: .5em 0;
+    line-height: 1.5em;
+	}
+	@include breakpoint(640) {
+			padding: 0 5%;
+	}
+	@include breakpoint(768) {
+			padding: 0 10%;
+	}
+}
+
+// Social links
+
+.nav-social {
+	border-top: 1px solid $nav-border;
+	border-bottom: 1px solid $nav-border;
+}
+
+.social-fallback {
+  @extend %hidden;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  fill: gray;
+  &:hover {
+  	fill: black;
+  }
+}
+
+#F {
+	fill: #fff;
+}
+
+

@@ -1,0 +1,9 @@
+---
+layout: post
+title: "test"
+date: 2013-12-09
+comments: true
+categories: test, govno
+---
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta officiis nulla modi nam. Veritatis, totam, adipisci, perspiciatis ut aspernatur dolor deserunt modi a non odit voluptates ex itaque esse nisi!

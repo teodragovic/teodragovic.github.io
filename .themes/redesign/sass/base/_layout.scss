@@ -1,0 +1,51 @@
+// Globals
+
+$max-width: 60em !default;
+
+body {
+  max-width: $max-width;
+  position: relative;
+  margin: 0 auto;
+}
+
+// Padding used for layout margins
+$pad-min: 5% !default;
+$pad-narrow: 10% !default;
+$pad-medium: 15% !default;
+$pad-wide: 20% !default;
+
+.header-main, 
+.navigation, 
+.footer-main,
+.content {
+	position: relative;
+  @extend %group;
+  padding: 0 $pad-min;
+  @include breakpoint(480) {
+    padding: 0 $pad-narrow;
+  }
+  @include breakpoint(768) {
+    padding: 0 $pad-medium;
+  }
+  @include breakpoint(960) {
+    padding: 0 $pad-wide;
+  }
+}
+
+// Content
+
+/* $margin: 1em;
+
+.hentry,
+.comments {
+	@include breakpoint(768) {
+		
+	}
+	@include breakpoint(768) {
+		
+	}
+	@include breakpoint(960) {
+		
+	}
+} */
+

@@ -3,26 +3,41 @@
 
 root = true
 
-[*]
+[*.scss]
+indent_style = space
+indent_size = 2
+
+[*.js]
+indent_style = space
+indent_size = 2
+
+[*.html]
+indent_style = space
+indent_size = 2
+
+[*.xml]
+indent_style = space
+indent_size = 2
+
+
+; Use 4 spaces for indentation in Markdown files
+
+[*.md]
+indent_style = space
+indent_size = 4
+
+[*.markdown]
+indent_style = space
+indent_size = 4
+
+
+; Override default indentation for some library files
+
+[jwplayer/glow/glow.xml]
 indent_style = tab
-indent_size = 2
-charset = utf-8
-insert_final_newline = true
 
-; Use 2 spaces for indentation in all Ruby files
+[libs/jXHR.js]
+indent_style = tab
 
-[*.rb]
-indent_style = space
-indent_size = 2
-
-[Rakefile]
-indent_style = space
-indent_size = 2
-
-[Gemfile*]
-indent_style = space
-indent_size = 2
-
-[config.ru]
-indent_style = space
-indent_size = 2
+[libs/swfobject-dynamic.js]
+indent_style = tab

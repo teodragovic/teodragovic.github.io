@@ -1,10 +1,11 @@
 {
   "name": "teo-dragovic",
   "version": "0.1.0",
-  "description": "personal blog",
+  "description": "Personal blog",
   "author": "Teo Dragovic <teo.dragovic@gmail.com>",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.2.0",
     "grunt-contrib-compass": "~0.7.0",
     "grunt-contrib-csslint": "~0.2.0",
     "grunt-autoprefixer": "~0.4.1",
@@ -18,11 +19,9 @@
     "grunt-contrib-copy": "~0.4.1",
     "grunt-exec": "~0.4.2",
     "grunt-devtools": "~0.2.1",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-sass": "~0.9.0",
-    "grunt-html-inspector": "~0.1.4"
+    "grunt-sass": "~0.9.0"
   },
   "dependencies": {
-    "load-grunt-tasks": "~0.2.0"
+    
   }
 }

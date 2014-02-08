@@ -1,0 +1,41 @@
+
+
+
+.entry-title {
+	@extend %center;
+	a {
+		color: inherit; 
+		text-decoration: none;
+		&:hover { color: $link-color-hover; }
+	}
+}
+
+
+.meta {
+	@extend %center;
+	@extend %sans;
+}
+
+time {color: $text-color-light;}
+
+.separator {
+  content: "\2022";
+  padding: 0 .2em;
+  display: inline-block;
+}
+
+.categories:before {
+  @extend .separator;
+}
+
+.comments {
+  @extend %center;
+  font-size: .95em;
+  position: relative;
+  padding: 1.5em 0 1.5em;
+  a {
+    text-decoration: none;
+    color: $text-color-light;
+    &:hover { color: $link-color-hover; }
+  }
+}

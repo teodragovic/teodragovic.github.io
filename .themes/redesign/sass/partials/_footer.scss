@@ -1,0 +1,27 @@
+$footer-color: #888 !default;
+$footer-bg: #ccc !default;
+$footer-color: darken($footer-bg, 38) !default;
+$footer-border-top: lighten($footer-bg, 10) !default;
+$footer-link-color: darken($footer-bg, 38) !default;
+$footer-link-color-hover: darken($footer-color, 25) !default;
+
+.footer-main {
+	text-align: center;
+  @extend %sans;
+  color: $footer-color;
+  border-top: 1px solid $footer-border-top;
+  position: relative;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  z-index: 1;
+  a {
+    //@include link-colors($footer-link-color, $footer-link-color-hover, $visited: $footer-link-color);
+  }
+  .credit {
+  	margin: .5em 0;
+  }
+  .octopress {
+		margin: 0;
+		font-size: .8em;
+  }
+}

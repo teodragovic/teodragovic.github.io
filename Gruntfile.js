@@ -2,17 +2,15 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
-		pkg: grunt.file.readJSON('package.json'),
-
 		sass: {
 			dev: {
 				options: {
-					outputStyle: 'expanded',
+					outputStyle: 'expanded', // buggy?
 					sourceComments: 'none',
 					//compass: true
 				},
 				src: 'sass/screen.scss',
-				dest: 'source/stylesheets/screen.build.css',
+				dest: 'source/stylesheets/screen.css',
 			}
 		},
 
@@ -21,7 +19,7 @@ module.exports = function(grunt) {
 				browsers: ['last 2 version']
 			},
 			single_file: {
-				src: 'source/stylesheets/screen.build.css',
+				src: 'source/stylesheets/screen.css',
 				dest: 'source/stylesheets/screen.css',
 			}
 		},
@@ -70,7 +68,7 @@ module.exports = function(grunt) {
 				stripBanner: true,
 			},
 			dist: {
-				src: ['scripts/octopress.js','scripts/twitter.js'],
+				src: ['scripts/*.js','!scripts/libs/*.js'],
 				dest: 'source/javascripts/main.js',
 			}
 		},
@@ -90,13 +88,15 @@ module.exports = function(grunt) {
 			css: {
 				asset_url: 'stylesheets/screen.css',
 				files: {
-					src: ['public/**/*.html']
+					src: ['public/**/*.html'],
 				}
 			},
 			js: {
 				asset_url: 'javascripts/main.js',
-				file: 'source/javascripts/config.js',
-				},
+				files: {
+					src: ['public/**/*.html'],
+				}
+			},
 		},
 
 		connect: {
@@ -148,9 +148,7 @@ module.exports = function(grunt) {
 				cmd: 'jekyll public'
 			}
 		},
-/*
-		clean: ['source/stylesheets', 'public'],
-*/
+
 		copy: {
 			css: {
 				files: [{
@@ -172,15 +170,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		'html-inspector': {
-			options: {
-				//parameters: 'noglobals=true'
-			},
-			all: {
-				src: ['public/**/*.html']
-			}
-		},
-
 	});
 
 	require('load-grunt-tasks')(grunt);
@@ -196,7 +185,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('test-js', ['jshint']);
 
 	grunt.registerTask('dev', ['exec:build', 'connect', 'watch']);
-
-	grunt.registerTask('test-html', ['html-inspector']);
 
 };
