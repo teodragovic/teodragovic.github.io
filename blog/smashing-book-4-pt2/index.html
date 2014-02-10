@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Peta Kolona</title>
+  <title>[NOTES] Smashing Book #4 - pt. 2 - Peta Kolona</title>
   <meta name="author" content="Teo Dragović">
 
   
-  <meta name="description" content=" Blog Archive 2014 [NOTES] Smashing Book #4 - pt. 2
-Feb 10 2014 [NOTES] Smashing Book #4 - pt. 1
-Feb 09 2014 ">
+  <meta name="description" content="More notes from Smashing Book #4. Going forward with chapters 3 and 4. Some really great insights and ideas for keeping sites lean and fast. [Chapter &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Feb 09 2014 ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://petakolona.com//blog/archives">
+  <link rel="canonical" href="http://petakolona.com//blog/smashing-book-4-pt2">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="" rel="alternate" title="Peta Kolona" type="application/atom+xml">
@@ -226,41 +224,261 @@ Feb 09 2014 ">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">[NOTES] Smashing Book #4 - Pt. 2</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-10T00:00:00+01:00" pubdate data-updated="true">10.02.2014.</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>More notes from <a href="http://www.smashingmagazine.com/smashing-book-4-new-perspectives/">Smashing Book #4</a>. Going forward with chapters 3 and 4. Some really great insights and ideas for keeping sites lean and fast.</p>
 
-  
-  <h2>2014</h2>
+<!-- more -->
 
-<article>
-  
-<h1><a href="/blog/smashing-book-4-pt2/">[NOTES] Smashing Book #4 - pt. 2</a></h1>
-<time datetime="2014-02-10T00:00:00+01:00" pubdate><span class='month'>Feb</span> <span class='day'>10</span> <span class='year'>2014</span></time>
+<h2>[Chapter 3] The Vanilla Web Diet by Christian Heilmann</h2>
 
+<h3>Build on what works</h3>
 
-</article>
+<p>Avoid unnecessary boilerplates and frameworks and start with a clean slate. HTML5 is a boilerplate itself. Use HTML build-in features and expand upon them only when needed.</p>
 
+<p>Base layer should be plain HTML with links and semantic markup that works without and CSS or JS.</p>
 
+<h3>Lack of support is an opportunity</h3>
 
-<article>
-  
-<h1><a href="/blog/smashing-book-4-pt-1/">[NOTES] Smashing Book #4 - pt. 1</a></h1>
-<time datetime="2014-02-09T00:00:00+01:00" pubdate><span class='month'>Feb</span> <span class='day'>09</span> <span class='year'>2014</span></time>
+<blockquote>
+<p>If an old browser cannot do something, we have the chance to test for it and not
+provide that functionality. In most cases, the functionality is merely nice to have
+and isn’t needed.</p>
 
+<p>Start with basic code that works in all browsers, then add to it and make sure that browsers that should not be in use at all do not get code they might choke on — you’ll leave everybody happy.</p>
+</blockquote>
 
-</article>
+<h3>Browser-specific code cannot be trusted</h3>
 
+<p>Any code that needs vendor prefixes should have universal fallback.</p>
+
+<p><em>Personal note:</em> Use autoprefixer and write only official syntax.</p>
+
+<h3>Use a mix of technologies, each for what it does best</h3>
+
+<p>Don&#39;t force everything in JavaScript if it can be done in CSS and vice-versa. Use HTML for content, JS for triggering interactions and CSS for styling and animations.</p>
+
+<h3>Ask questions</h3>
+
+<p>Before adding new functionality, ask environment <em>if</em> it can be processed and provide appropriate fallbacks.</p>
+
+<blockquote>
+<p>The less code we force our browsers to parse, the better their performance will be.</p>
+</blockquote>
+
+<h3>Write as much as needed, not the least possible</h3>
+
+<p>Don&#39;t let quick fixes add up. Think about maintainability of code before and while writing it.</p>
+
+<h3>Basic functionality should always be there.</h3>
+
+<blockquote>
+<p>What does basic functionality entail? Put simply, it allows the user to do what they came for regardless of any technology failure.</p>
+</blockquote>
+
+<p>Links should always work, forms should be sent to server-side control and embedded media should have fallback links to raw files.</p>
+
+<h3>Usefulness beats consistency across browsers</h3>
+
+<p>Don&#39;t force one design that works everywhere. Make sure different expiriences result in the same outcome (making website or app usable). </p>
+
+<h3>Load only what is needed</h3>
+
+<p>Don&#39;t give browsers assets they can&#39;t use. Use JavaScript for support testing and loading resources on demand.</p>
+
+<p>Delay loading unnecessary content and force storing it on user devices as much as possible.</p>
+
+<p><em>TIP:</em> Trigger load when user activates focus on forms input meaning there is no other interaction with app. Also, load images only when they enter viewport.</p>
+
+<h3>Analyzing effects beats adding FX</h3>
+
+<blockquote>
+<p>If you want to add shiny things, make sure they can perform in a shiny fashion.</p>
+</blockquote>
+
+<p>Effects added in native apps will not necessary be appropriate or perform as well in web apps.</p>
+
+<h3>Strong foundations beat a possible future addition</h3>
+
+<p>Don&#39;t add excessive code or frameworks for future that may never come. Use only what you need to achieve current goals. </p>
+
+<blockquote>
+<p>Many of the apps and websites we produce are there, first and foremost, to get people to put content into them and make that content available to others. The code of the app itself should play a secondary role to that.</p>
+</blockquote>
+
+<hr>
+
+<h2>[Chapter 4] Culture of Performance by Tim Kadlec</h2>
+
+<p>Plan for performance and keep it in mind early on and during development process, not just after launch.</p>
+
+<p>Decrease of page load time directly impacts revenue, conversions and page traffic.</p>
+
+<p>57% of users will abandon a site after waiting three seconds for the page to load.</p>
+
+<p>To make performance clients/menagement priority tie it to the metrics they care about and make visual representations (show site loading in comparison to competitor site).</p>
+
+<p>Keep performance in discussion. By leaving it as an afterthought you are underplaying its importance.</p>
+
+<p>Set up <strong>performance budget</strong> - page load time, total weight and number of requests.</p>
+
+<p>Response targets by Jakob Neilsen:</p>
+
+<blockquote>
+<ul>
+<li>0.1s - The limit for users to feel that the system reacts instantaneously.</li>
+<li>1.0s - The limit for uninterrupted flow of thought. The users notice the delay, but they still feel direct interaction.</li>
+<li>10s - The limit for keeping user attention. Anything longer than this and the users will either give up or go off to do something else while they wait.</li>
+</ul>
+</blockquote>
+
+<p>At all times measure current performance of your site and your competitors site as well.</p>
+
+<p><strong>20% rule</strong> - to create a noticeable improvement in performance as perceived by your visitors, you need to improve performance by at least 20%.</p>
+
+<p>How to add new feature while having performance budget:</p>
+
+<ul>
+<li>optimize existing features to stay inside budget</li>
+<li>remove existing features to make room in the budget for new feature</li>
+<li>don&#39;t add new feature if it&#39;s not important enough to push other fetures out</li>
+</ul>
+
+<blockquote>
+<p>Keep enforcing the budget after launch as a way of avoiding the slow creep of
+bloat that tends to manifest itself.</p>
+</blockquote>
+
+<p>When setting performance budget be strict and explicit but realistic. Don&#39;t set metrics to hight or too low. </p>
+
+<p>Categorize the assets on the page (ie. content, enhancements and leftovers).</p>
+
+<blockquote>
+<p>A performance budget is meant to help you decide how to display your content, not what content to display. Removing important content from a page is not a performance strategy.</p>
+</blockquote>
+
+<p>Use apps to simulate slow connections</p>
+
+<ul>
+<li><a href="http://www.charlesproxy.com/">http://www.charlesproxy.com/</a></li>
+<li><a href="http://slowyapp.com/">http://slowyapp.com/</a></li>
+</ul>
+
+<p>It&#39;s hard to see potential performance pitfalls from Photoshop - get to the browser early.</p>
+
+<p><em>TIP:</em> Following snippet outputs perceived load time to the console (can be also used on elements)</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">getLoadTime</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+    <span class="c1">// Get the performance object</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">performance</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">performance</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">mozPerformance</span> 
+    <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">msPerformance</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">webkitPerformance</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">timing</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">timing</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">timing</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">load_time</span> <span class="o">=</span> <span class="nx">now</span> <span class="o">-</span> <span class="nx">timing</span><span class="p">.</span><span class="nx">navigationStart</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Load time: &#39;</span> <span class="o">+</span> <span class="nx">load_time</span> <span class="o">+</span> <span class="s1">&#39;ms&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">getLoadTime</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Everything that gets added to the page must be justifed. Keep base template as lean as possible. Use tested and proved solutions but only when needed - don&#39;t include them by default.</p>
+
+<blockquote>
+<p>For any item included on your page, do whatever you can to minimize its impact on page weight and load time.</p>
+</blockquote>
+
+<p>Image optimization tools:</p>
+
+<ul>
+<li><a href="http://pngmini.com/">http://pngmini.com/</a></li>
+<li><a href="http://imageoptim.com/">http://imageoptim.com/</a></li>
+<li><a href="http://jamiemason.github.io/ImageOptim-CLI/">http://jamiemason.github.io/ImageOptim-CLI/</a></li>
+</ul>
+
+<p><a href="https://speakerdeck.com/mikeyk/secrets-to-lightning-fast-mobile-design">Secrets to Lightning Fast Mobile Design</a></p>
+
+<p>Design site so it <em>feels</em> fast to the users. Users can perceive site as fast if it takes them less time to complete tasks.</p>
+
+<h3>Links</h3>
+
+<ul>
+<li><a href="http://bradfrostweb.com/blog/post/performance-as-design/">http://bradfrostweb.com/blog/post/performance-as-design/</a></li>
+<li><a href="http://www.keynote.com/keynote_competitive_research/index.html">http://www.keynote.com/keynote_competitive_research/index.html</a></li>
+<li><a href="http://www.codinghorror.com/blog/2011/06/performance-is-a-feature.html">http://www.codinghorror.com/blog/2011/06/performance-is-a-feature.html</a></li>
+<li><a href="http://www.uie.com/articles/download_time/">http://www.uie.com/articles/download_time/</a></li>
+<li><a href="https://alexsexton.com/blog/2013/03/deploying-javascript-applications/">https://alexsexton.com/blog/2013/03/deploying-javascript-applications/</a></li>
+<li><a href="http://filamentgroup.com/lab/socialcount/">http://filamentgroup.com/lab/socialcount/</a></li>
+<li><a href="http://bradfrostweb.com/blog/post/atomic-web-design/">http://bradfrostweb.com/blog/post/atomic-web-design/</a></li>
+</ul>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Teo Dragović</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-10T00:00:00+01:00" pubdate data-updated="true">10.02.2014.</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/smashing-book-4-pt-1/" title="Previous Post: [NOTES] Smashing Book #4 - pt. 1">&laquo; [NOTES] Smashing Book #4 - pt. 1</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 
