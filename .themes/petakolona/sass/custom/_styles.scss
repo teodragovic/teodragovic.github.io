@@ -1,2 +1,16 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+html { background-color: #263347; }
+
+body > header h1 { text-transform: uppercase; }
+
+body > header { text-align: center; }
+
+body > footer  {
+  border-radius: 0;
+}
+
+nav, footer {
+  background-color: transparent !important;
+}

@@ -1,275 +1,165 @@
-.wf-loading {
-	opacity: 0;
-}
-.wf-active,
-.wf-inactive {
-	transition: opacity .3s ease-in;
-	opacity: 1;
-}
-
-/* mixins n vars */
-
-$font-base: 16; // in px
-$line-height: 1.5; // 16*1.5 = 24px
-
-$baseline: $font-base * $line-height; // 12, 24, 36, 48
-
-$text-color: #353535 !default;
-$text-color-light: #aaa !default;
-$type-border: #d5d5d5 !default;
-
 $blockquote: $type-border !default;
-$sans: "Gill Sans", "Gill Sans MT", sans-serif !default;
-$serif: "ff-more-web-pro", Georgia, serif !default;
-$mono: "lucida console", "Courier New", monospace !default;
 
-// Mixins and placeholders
+// Fonts
+$sans: 'Raleway',"Helvetica Neue", Arial, sans-serif !default;
+$serif: 'Bitter', Georgia, Times, "Times New Roman", serif !default;
+$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
+$heading-font-family: $serif;
+$header-title-font-family: $heading-font-family !default;
+$header-subtitle-font-family: $serif !default;
 
-@function em($font-px, $base: $font-base) {
-	@return #{$font-px/$base}em;
+.heading {
+  font-family: $heading-font-family;
 }
+.sans { font-family: $sans; }
+.serif { font-family: $serif; }
+.mono { font-family: $mono; }
 
-@mixin font-size($font-px: $font-base) {
-	font-size: em($font-px);
+body > header h1 {
+  font-size: 2.2em;
+  @extend .heading;
+  font-family: $header-title-font-family;
+  font-weight: normal;
+  line-height: 1.1;
+  margin-bottom: 0.6667em;
 }
-
-@mixin text-margin ($baseline: $baseline) {
-	margin: 0 0 em($baseline/2) 0;
-	//breakpoint
-}
-
-@mixin header-margin ($header-font, $i) {
-	$x : (($baseline/2)*$i) - $header-font;
-	margin: 0 0 em($x, $header-font) 0;
-}
-
-@mixin font-smoothing($val: on) {
-	@if $val == "on" {
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-		} @else if $val == "off" {
-			-webkit-font-smoothing: subpixel-antialiased;
-			-moz-osx-font-smoothing: auto;
-		}
-}
-
-@mixin hyphens($val) {
-	// Accepted values: [ none | manual | auto ]
-	hyphens: $val;
-}
-
-%line-numbers { font-feature-settings: "lnum"; }
-
-%tab-numbers { font-feature-settings: "tnum"; }
-
-%sans { 
-	font-family: $sans;
-	font-weight: 300;
-}
-%serif { 
-	font-family: $serif;
-	font-weight: 400; 
-}
-%mono { font-family: $mono; }
-
-/* @extend this to force long lines of continuous text to wrap */
-%force-wrap {
-	word-wrap: break-word;
-}
-
-/* global */
-
-html {
-	font-size: 100%; 
-	//breakpoint
-	@include breakpoint (480) {
-		font-size: 110%;
-	}
-	@include breakpoint(768) {
-		font-size: 120;
-	}
-	@include breakpoint (960) {
-		font-size: 130%;
-	}
+body > header h2 {
+  font-family: $header-subtitle-font-family;
 }
 
 body {
-	@extend %serif;
-	@include font-size($font-base);
-	@include hyphens(off);
-	//@extend %line-numbers;
-	text-rendering: optimizeLegibility;
-	line-height: $line-height;
-	color: $text-color;
-	word-wrap: break-word;
+  line-height: 1.5;
+  color: $text-color;
+  @extend .serif;
+}
+h1 {
+  font-size: 2.2em;
+  line-height: 1.1;
 }
 
-p {
-	@include text-margin;
-	@include hyphens(auto);
-	@include font-smoothing(off);
+@media only screen and (min-width: 992px) {
+  body { font-size: 1.15em; }
+  h1 { font-size: 2.6em; line-height: 1.1; }
 }
 
-article p:empty {
-	display: none;
+#{headings()}{
+  @extend .heading;
+  text-rendering: optimizelegibility;
+  margin-bottom: 1em;
+  font-weight: bold;
+  line-height: 1.1;
+}
+h2, section h1 {
+  font-size: 1.5em;
+}
+h3, section h2, section section h1 {
+  font-size: 1.3em;
+}
+h4, section h3, section section h2, section section section h1 {
+  font-size: 1em;
+}
+h5, section h4, section section h3 {
+  font-size: .9em;
+}
+h6, section h5, section section h4, section section section h3 {
+  font-size: .8em;
 }
 
-/* links */
+p, article blockquote, ul, ol { margin-bottom: 0.8em; }
 
-$link-color: lighten(#165b94, 2) !default;
-$link-color-hover: adjust-color($link-color, $lightness: 10, $saturation: 25) !default;
-$link-color-visited: $link-color !default;
-$link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
+ul { list-style-type: disc;
+  ul { list-style-type: circle; margin-bottom: 0px;
+    ul { list-style-type: square; margin-bottom: 0px; }}}
 
-a {
-	transition: color .3s;
-	//@include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
-	background: transparent;
-	text-decoration: none;
-	color: $link-color;
-	&:focus {
-		outline: thin dotted;
-	}
-	&:active,
-	&:hover {
-		color: $link-color-hover;
-		outline: 0;
-		text-decoration: underline;
-	}
-}
+ol { list-style-type: decimal;
+  ol { list-style-type: lower-alpha; margin-bottom: 0px;
+    ol { list-style-type: lower-roman; margin-bottom: 0px; }}}
 
-/* headers */
+ul, ol { &, ul, ol { margin-left: 1.3em; }}
+ul, ol { ul, ol { margin-bottom: 0em; }}
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-	@extend %sans;
-	font-weight: 700;
-	@include font-smoothing(on);
-	color: $text-color;
-	line-height: 1;
-}
+strong { font-weight: bold; }
 
-h1, .h1 {
-	@include font-size(40);
-	@include header-margin(40, 4);
-}
+em { font-style: italic; }
 
-h2, .h2 {
-	@include font-size(26.667);
-	@include header-margin(26.667, 3);
-}
-
-h3, .h3 {
-	@include font-size(24);
-	@include header-margin(24, 3);
-}
-
-h4, .h4 {
-	@include font-size(17.778);
-	@include header-margin(17.778, 2);
-}
-
-h5, h6, 
-.h5, .h6 {
-	@include font-size(16);
-	@include header-margin(16, 2);
-	text-transform: uppercase;
-}
-
-/* lists */
-
-ol, ul {
-	margin: 0 2% em($baseline/2);
-	//breakpoint
-	padding: 0 0 0 em(24);
-}
-
-ol li ol {
-	list-style-type: lower-latin;
-}
-
-ol li ol,
-ol li ul,
-ul li ul,
-ul li ol {
-	margin: 0;
-}
-
-ul,
-ul ul {
-	list-style-type: disc;
-}
-
-li {
-	@include text-margin($baseline/2);
-	//breakpoint
-}
-
-li ol li:first-of-type,
-li ul li:first-of-type {
-	margin-top: em(6);
-	//breakpoint
-}
-
-dl {
-	@include text-margin;
-}
-dt {
-	font-weight: 700;
-}
-dt,
-dd {
-	& + dt {
-		&:before {
-			content: "\A";
-			white-space: pre;
-		}
-	}
-}
-dd {
-	margin-left: 2%; 
-	&:before {
-			content: "– ";
-	}
-}
-
-/* quotes */
-
-blockquote {
-	$bq-margin: 1.2em;
-	font-style: italic;
-	position: relative;
-	font-size: 1.2em;
-	line-height: 1.5em;
-	padding-left: 1em;
-	border-left: 4px solid rgba($text-color-light, .5);
-	cite {
-		font-style: italic;
-		a { color: $text-color-light !important; word-wrap: break-word; }
-		&:before { content: '\2014'; padding:{right: .3em; left: .3em;} color: $text-color-light; }
-	}
-	@media only screen and (min-width: 992px) {
-		padding-left: 1.5em;
-		border-left-width: 4px;
-	}
-}
-
-a[rev='footnote']{ font-size: .75em; padding: 0 .3em; line-height: 1; }
+sup, sub { font-size: 0.8em; position: relative;  display: inline-block; }
+sup { top: -.5em; }
+sub { bottom: -.5em; }
 
 q { font-style: italic;
-	&:before { content: "\201C"; }
-	&:after { content: "\201D"; }
+  &:before { content: "\201C"; }
+  &:after { content: "\201D"; }
 }
 
-/* separator */
+em, dfn { font-style: italic; }
 
-hr {
-	height: 0;
-	@include text-margin($baseline - 2);
-	border: none;
-	border-bottom: 1px solid $text-color;
+strong, dfn { font-weight: bold; }
+
+del, s { text-decoration: line-through; }
+
+abbr, acronym { border-bottom: 1px dotted; cursor: help; }
+
+pre, code, tt { @extend .mono; }
+
+sub, sup { line-height: 0; }
+
+hr { margin-bottom: 1em; }
+
+small { font-size: .8em; }
+
+big { font-size: 1.2em; }
+
+article blockquote {
+  $bq-margin: 1.2em;
+  font-style: italic;
+  position: relative;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding-left: 1em;
+  border-left: 4px solid rgba($text-color-light, .5);
+  cite {
+    font-style: italic;
+    a { color: $text-color-light !important; word-wrap: break-word; }
+    &:before { content: '\2014'; padding:{right: .3em; left: .3em;} color: $text-color-light; }
+  }
+  @media only screen and (min-width: 992px) {
+    padding-left: 1.5em;
+    border-left-width: 4px;
+  }
 }
 
-/* code */
+.pullquote-right:before,
+.pullquote-left:before {
+  /* Reset metrics. */
+  padding: 0;
+  border: none;
 
-pre, code, tt { @extend %mono; }
+  /* Content */
+  content: attr(data-pullquote);
+
+  /* Pull out to the right, modular scale based margins. */
+  float: right;
+  width: 45%;
+  margin: .5em 0 1em 1.5em;
+
+  /* Baseline correction */
+  position: relative;
+  top: 7px;
+  font-size: 1.4em;
+  line-height: 1.45em;
+}
+
+.pullquote-left:before {
+  /* Make left pullquotes align properly. */
+  float: left;
+  margin: .5em 1.5em 1em 0;
+}
+
+/* @extend this to force long lines of continuous text to wrap */
+.force-wrap {
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

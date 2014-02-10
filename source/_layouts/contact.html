@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div>
+<article role="article">
+  {% if page.title %}
+  <header>
+    <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+  </header>
+  {% endif %}
+  {{ content }}
+
+</article>
+</div>
+
+
+<script type="text/javascript">var zshbpmv1s53p82;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'teodragovic', 
+'formHash':'zshbpmv1s53p82', 
+'autoResize':true,
+'height':'517',
+'async':true,
+'host':'wufoo.com',
+'header':'show', 
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { zshbpmv1s53p82 = new WufooForm();zshbpmv1s53p82.initialize(options);zshbpmv1s53p82.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>

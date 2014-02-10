@@ -1,22 +1,16 @@
-/* @mixin mask-image($img, $repeat: no-repeat){
+@mixin mask-image($img, $repeat: no-repeat){
   @include experimental(mask-image, image-url($img), -webkit, -moz, -o, -ms);
   @include experimental(mask-repeat, $repeat, -webkit, -moz, -o, -ms);
   width: image-width($img);
   height: image-height($img);
-} */
+}
 
-/* @function text-color($color, $dark: dark, $light: light){
-  $text-color: ( (red($color)*299) + (green($color)*587) + (blue($color)*114) ) / 1000;
-  $text-color: if($text-color >= 150, $dark, $light);
-  @return $text-color;
-} */
-
-/* @mixin shadow-box($border: #fff .5em solid, $shadow: rgba(#000, .15) 0 1px 4px, $border-radius: .3em) {
+@mixin shadow-box($border: #fff .5em solid, $shadow: rgba(#000, .15) 0 1px 4px, $border-radius: .3em) {
   @include border-radius($border-radius);
   @include box-shadow($shadow);
   @include box-sizing(border-box);
   border: $border;
-} */
+}
 
 @mixin selection($bg, $color: inherit, $text-shadow: none){
   * {
@@ -26,146 +20,9 @@
   }
 }
 
-@mixin breakpoint($point) {
-	@if $point == 480 {
-		@media (min-width: 30em) { // 480px
-			@content;
-		}
-	}
-	@else if $point == 640 {
-		@media (min-width: 40em) { // 640px
-			@content;
-		}
-	}
-	@else if $point == 720 {
-		@media (min-width: 45em) { // 720px
-			@content;
-		}
-	}
-	@else if $point == 768 {
-		@media (min-width: 48em) { // 768px
-			@content;
-		}
-	}
-	@else if $point == 800 {
-		@media (min-width: 50em) { // 800px
-			@content;
-		}
-	}
-	@else if $point == 960 {
-		@media (min-width: 60em) { // 960px
-			@content; 
-		}
-	}
-	@else if $point == 1024 {
-		@media (min-width: 64em)  { // 1024px
-			@content; 
-		}
-	}
-	@else if $point == 1080 {
-		@media (min-width: 67.5em)  { // 1080px
-			@content; 
-		}
-	}
-	@else if $point == 1200 {
-		@media (min-width: 75em)  { // 1200px
-			@content; 
-		}
-	}
-	@else if $point == 1280 {
-		@media (min-width: 80em)  { // 1280px
-			@content; 
-		}
-	}
-	@else if $point == 1360 {
-		@media (min-width: 85em)  { // 1360px
-			@content; 
-		}
-	}
-	@else if $point == 1680 {
-		@media (min-width: 105em)  { // 1680px
-			@content; 
-		}
-	}
-	@else if $point == 1824 {
-		@media (min-width: 114em)  { // 1824px
-			@content; 
-		}
-	}
+@function text-color($color, $dark: dark, $light: light){
+  $text-color: ( (red($color)*299) + (green($color)*587) + (blue($color)*114) ) / 1000;
+  $text-color: if($text-color >= 150, $dark, $light);
+  @return $text-color;
 }
 
-/* apply a natural box layout model to all elements */
-
-*,
-*:before,
-*:after {
-	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box; 
-	box-sizing: border-box;
- }
-
- *:focus {
- 	outline: thin dotted;
- }
-
-@viewport {
-    zoom: 1.0;
-    width: device-width;
-}
-
-/* responsive images and video */
-
- img, video {
- 	max-width: 100%;
- 	height: auto;
- }
-
-.embed-video-container {
-	position: relative;
-	padding-bottom: 56.25%; /* 16/9 ratio */
-	padding-top: 30px; /* IE6 workaround*/
-	height: 0;
-	overflow: hidden;
-	margin-bottom: 1.5em;
-
-	iframe, object, embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
-%hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
-
-%hidden:active,
-%hidden:focus {
-	clip: auto;
-	height: auto;
-	margin: 0;
-	overflow: visible;
-	position: static;
-	width: auto;
-}
-
-/*
- * Clearfix: contain floats
- */
-
-%group { clear: both; }
-
-%center { text-align: center; }

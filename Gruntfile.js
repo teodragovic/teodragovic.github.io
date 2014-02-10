@@ -174,7 +174,7 @@ module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('default', ['compass', 'concat', 'uglify', 'exec:build', 'cachebreaker']);
+	grunt.registerTask('default', ['compass', 'concat', 'uglify', 'exec:build']);
 
 	grunt.registerTask('css', ['compass', 'copy:css', 'cachebreaker:css']);
 
