@@ -723,7 +723,7 @@ body > nav ul {
 }
 @media only screen {
   body > nav {
-    font-size: .9em;
+    font-size: 1em;
   }
   body > nav ul {
     margin: 0;
@@ -769,7 +769,7 @@ body > nav ul {
     font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
     text-shadow: #f0f0f0 0 1px;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: .95em;
     padding: .1em 0;
     line-height: 1.5em;
   }
@@ -777,7 +777,7 @@ body > nav ul {
     color: #6c6c6c;
   }
   body > nav a:hover {
-    color: #121212;
+    color: #0181eb;
   }
   body > nav li + li {
     border-left: 1px solid gainsboro;
@@ -1068,7 +1068,7 @@ article > footer p.meta {
 }
 #content div.pagination a {
   text-decoration: none;
-  color: #aaaaaa;
+  color: #6b6b6b;
 }
 #content div.pagination a.prev {
   position: absolute;
@@ -1971,14 +1971,13 @@ article time {
 
 #content div.pagination {
   background: none repeat scroll 0 0 transparent;
-  margin: 0 10px;
   font-size: 0.95em;
   padding-bottom: 1.5em;
   margin-top: 4em;
   position: relative;
   text-align: center;
-  border-top: dotted 1px #D1D1D1;
-  border-bottom: dotted 1px #D1D1D1;
+  border-top: solid 1px #DFDFDF;
+  border-bottom: solid 1px #DFDFDF;
 }
 #content .blog-index article {
   padding-top: 2em;
@@ -2034,15 +2033,10 @@ footer > p {
 .icon {
   width: 32px;
   height: 32px;
-  fill: gray;
-  transition: fill .3s ease;
+  fill: #6C6C6C;
 }
 .icon:hover {
   fill: #0181eb;
-}
-
-#F {
-  fill: #fff;
 }
 
 .nav-social {
@@ -2050,6 +2044,7 @@ footer > p {
   width: 80%;
   padding-bottom: 20px;
   position: relative;
+  display: block;
   font-size: 0;
 }
 @media only screen and (min-width: 768px) {
@@ -2065,6 +2060,7 @@ footer > p {
   display: inline-block;
   width: 25%;
   text-align: center;
+  font-size: 16px;
 }
 
 .nav-social a:not(.social-fallback) {
