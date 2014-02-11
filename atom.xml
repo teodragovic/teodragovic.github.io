@@ -4,7 +4,7 @@
   <title><![CDATA[Peta Kolona]]></title>
   <link href="http://petakolona.com//atom.xml" rel="self"/>
   <link href="http://petakolona.com//"/>
-  <updated>2014-02-11T12:00:09+01:00</updated>
+  <updated>2014-02-11T12:04:11+01:00</updated>
   <id>http://petakolona.com//</id>
   <author>
     <name><![CDATA[Teo Dragović]]></name>
@@ -19,76 +19,6 @@
     <updated>2014-02-11T00:00:00+01:00</updated>
     <id>http://petakolona.com//blog/dropping-ie-conditional-classes-and-thinking-fallback-first</id>
     <content type="html"><![CDATA[<p>IE conditional classes are no longer part of my personal <a href="https://github.com/teodragovic/bolt">starting setup</a>. After <a href="https://github.com/h5bp/html5-boilerplate/issues/1290">lengthy discussion</a> they where also dropped from HTML5 Boilerplate. At first, I was inclined to keep them around but after some reading and research I came around.</p>
-
-<!-- more -->
-
-<p>Most common use example for conditional classes usually look like this:</p>
-<div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="c">&lt;!--[if IEMobile 7 ]&gt; &lt;html class=&quot;iem7&quot;&gt; &lt;![endif]--&gt;</span>
-<span class="c">&lt;!--[if lt IE 7 ]&gt; &lt;html  class=&quot;ie6&quot;&gt; &lt;![endif]--&gt;</span>
-<span class="c">&lt;!--[if IE 7 ]&gt;    &lt;html  class=&quot;ie7&quot;&gt; &lt;![endif]--&gt;</span>
-<span class="c">&lt;!--[if IE 8 ]&gt;    &lt;html  class=&quot;ie8&quot;&gt; &lt;![endif]--&gt;</span>
-<span class="c">&lt;!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]&gt;&lt;!--&gt;</span><span class="nt">&lt;html&gt;</span><span class="c">&lt;!--&lt;![endif]--&gt;</span>
-</code></pre></div>
-<p><a href="http://msdn.microsoft.com/en-us/library/ms537512.aspx">Conditional comments</a> are used to target specific subsets of Internet Explorer and insert appropriate class on the root element (HTML tag) which then serves as a hook for CSS hacks and overrides. Another option is to write separate CSS just for IE and wrap link to the file inside conditional comment so its not loaded otherwise. </p>
-
-<p>I still use them for displaying banner that alerts users with IE 8 or older that they should update browser to get the best experience possible.</p>
-<div class="highlight"><pre><code class="html"><span class="c">&lt;!--[if lte IE 8]&gt;</span>
-<span class="c">&lt;p class=&quot;old-ie&quot;&gt;You are using an &lt;strong&gt;outdated browser&lt;/strong&gt;. </span>
-<span class="c">Please &lt;a href=&quot;http://browsehappy.com/&quot;&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;</span>
-<span class="c">&lt;![endif]--&gt;</span>
-</code></pre></div>
-<p>Conditional classes are considered bad practice because they target only one small subset of particular browser. Granted it&#39;s the browser with most quirks, but with advancement of technology, new CSS additions and browsers rapid development cycle, feature support between various versions continues to become more disperse. Isolating old versions of single browser just doesn&#39;t make much sense anymore. Especially since Microsoft <a href="http://www.sitepoint.com/microsoft-drop-ie10-conditional-comments/">dropped conditional comments</a> in IE 10.</p>
-
-<p>Also, any kind of browser detection is considered <a href="http://css-tricks.com/browser-detection-is-bad/">bad</a> and should be <a href="http://jibbering.com/faq/notes/detect-browser/">avoided</a>.</p>
-
-<h2>Feature detection</h2>
-
-<p>Much better approach would be using feature detection. <a href="https://twitter.com/codepo8">Christian Heilmann</a> made great point in new <a href="http://petakolona.com/blog/smashing-book-4-pt2/">Smashing Book</a> to start projects using only bare essentials that are universally supported to ensure, if everything else fails, content still gets delivered. After laying this bulletproof foundation, for every additional feature we should add support testing and serve extra code goodness only to the browsers that can handle it. Similar to mobile-first approach to responsive design, think of this as fallback-first approach to coding.</p>
-
-<p>Easiest way of doing feature detection is by using <a href="http://modernizr.com/">Modernizr</a>. It&#39;s an awesome tool, easy to use and simple to implement. It also comes with <a href="http://yepnopejs.com/">yepnope</a>, asynchronous conditional loader and <a href="https://code.google.com/p/html5shiv/">html5shiv</a> that enables old browsers to get CSS rules applied on HTML5 selectors (but I would advise against writing rules so general and opt for classes instead).</p>
-
-<p>I use Modernizer in combination with <a href="http://bower.io/">Bower</a> and <a href="http://gruntjs.com/">Grunt</a>. I add Modernizr as Bower dependency pointing to the latest version and use <a href="https://github.com/Modernizr/grunt-modernizr">grunt-modernizr</a> plug-in for compiling production version of script based on features I&#39;m detecting so that library doesn&#39;t add any extra weight to the site than it needs to. Simple, lightweight and super-useful.</p>
-
-<h2>Doing it CSS-only</h2>
-
-<p>For projects that don&#39;t need any JavaScript there is also simple CSS-only way of isolating new features from baseline by wrapping them in media query.</p>
-<div class="highlight"><pre><code class="scss"><span class="k">@media</span> <span class="nt">all</span> <span class="p">{</span>
-    <span class="c1">// put all new stuff here</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>This is little snippet always validates true but makes code inside it invisible to old-timey browsers. To keep thingy even more DRY, we could leverage power of Sass mixins to include media queries inside selectors. </p>
-<div class="highlight"><pre><code class="scss"><span class="k">@mixin</span><span class="nf"> new-stuff</span> <span class="p">{</span>
-    <span class="k">@media</span> <span class="nt">all</span> <span class="p">{</span>
-        <span class="k">@content</span><span class="o">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nc">.some-class</span> <span class="p">{</span>
-    <span class="c1">// universal baseline</span>
-    <span class="k">@include</span><span class="nd"> new-stuff</span> <span class="p">{</span>
-            <span class="c1">// new features</span>
-        <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>There are other ways like using pseudo classes <code>:not(:required)</code> but I like media queries for wrapping capabilities. To keep CSS file from bloating with all those conditionals, use <a href="https://github.com/css/csso">CSS Optimizer</a> for optimization before production.</p>
-
-<p>Some CSS properties can&#39;t be excluded using media queries since they are implemented in IE 10 but not in IE 9. That includes transitions, animations, gradients, 3D transforms, flexbox, text-shadow and some others. For full list see  <a href="http://caniuse.com/#compare=ie+9,ie+10">here</a>. In all cases, you should always ensure appropriate fallback. </p>
-
-<p>As a good rule of thumb, if any property needs vendor prefixes it should have universal fallback. As prefixes go, make use of <a href="https://github.com/ai/autoprefixer">autoprefixer</a> for heavy lifting and just stick to the latest standard syntax.</p>
-
-<hr>
-
-<h2>Dropping conditional classes is great move because if forces us to change our thinking for the better. Instead of thinking in legacy support we should approach coding in fallback-first state of mind and use progressive enhancement to ensure our projects longevity and usability across all devices and browsers.</h2>
-
-<p>layout: post
-title: &quot;Dropping IE conditional classes and thinking fallback-first&quot;
-date: 2014-02-11
-comments: true</p>
-
-<h2>categories: </h2>
-
-<p>IE conditional classes are no longer part of my personal <a href="https://github.com/teodragovic/bolt">starting setup</a>. After <a href="https://github.com/h5bp/html5-boilerplate/issues/1290">lengthy discussion</a> they where also dropped from HTML5 Boilerplate. At first, I was inclined to keep them around but after some reading and research I came around.</p>
 
 <!-- more -->
 
