@@ -2006,16 +2006,19 @@ aside {
 .main-navigation {
   text-align: center;
   padding: 1em 0;
+  box-sizing: border-box;
 }
 @media only screen and (min-width: 768px) {
   .main-navigation {
-    padding: 1.6em 0;
+    padding: 1em 0;
   }
 }
 .main-navigation a {
   text-decoration: none;
-  padding: 1em;
+  display: inline-block;
   font-size: 1em;
+  width: 32%;
+  max-width: 120px;
 }
 
 footer > p {
@@ -2024,6 +2027,11 @@ footer > p {
 
 .wufoo header {
   display: none;
+}
+
+.social {
+  position: relative;
+  display: block;
 }
 
 .social-fallback {
@@ -2042,7 +2050,7 @@ footer > p {
 .nav-social {
   margin: 0 auto;
   width: 80%;
-  padding-bottom: 20px;
+  margin-bottom: 15px;
   position: relative;
   display: block;
   font-size: 0;
