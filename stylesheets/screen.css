@@ -279,7 +279,9 @@ sub, sup {
 }
 
 hr {
-  margin-bottom: 1em;
+  margin: 1.5em 0;
+  border-top: 1px dashed gray;
+  border-bottom: none;
 }
 
 small {
