@@ -4,7 +4,7 @@
   <title><![CDATA[Peta Kolona]]></title>
   <link href="http://petakolona.com//atom.xml" rel="self"/>
   <link href="http://petakolona.com//"/>
-  <updated>2014-02-11T12:04:11+01:00</updated>
+  <updated>2014-02-12T16:19:09+01:00</updated>
   <id>http://petakolona.com//</id>
   <author>
     <name><![CDATA[Teo Dragović]]></name>
@@ -22,7 +22,7 @@
 
 <!-- more -->
 
-<p>Most common use example for conditional classes usually look like this:</p>
+<p>Most common use example for conditional classes usually looks like this:</p>
 <div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="c">&lt;!--[if IEMobile 7 ]&gt; &lt;html class=&quot;iem7&quot;&gt; &lt;![endif]--&gt;</span>
 <span class="c">&lt;!--[if lt IE 7 ]&gt; &lt;html  class=&quot;ie6&quot;&gt; &lt;![endif]--&gt;</span>
@@ -46,18 +46,18 @@
 
 <p>Much better approach would be using feature detection. <a href="https://twitter.com/codepo8">Christian Heilmann</a> made great point in new <a href="http://petakolona.com/blog/smashing-book-4-pt2/">Smashing Book</a> to start projects using only bare essentials that are universally supported to ensure, if everything else fails, content still gets delivered. After laying this bulletproof foundation, for every additional feature we should add support testing and serve extra code goodness only to the browsers that can handle it. Similar to mobile-first approach to responsive design, think of this as fallback-first approach to coding.</p>
 
-<p>Easiest way of doing feature detection is by using <a href="http://modernizr.com/">Modernizr</a>. It&#39;s an awesome tool, easy to use and simple to implement. It also comes with <a href="http://yepnopejs.com/">yepnope</a>, asynchronous conditional loader and <a href="https://code.google.com/p/html5shiv/">html5shiv</a> that enables old browsers to get CSS rules applied on HTML5 selectors (but I would advise against writing rules so general and opt for classes instead).</p>
+<p>Easiest way of doing feature detection is by using <a href="http://modernizr.com/">Modernizr</a>. It&#39;s an awesome tool that includes <a href="http://yepnopejs.com/">yepnope</a> (asynchronous conditional loader) and <a href="https://code.google.com/p/html5shiv/">html5shiv</a> (enables old browsers to recognize HTML5 selectors).</p>
 
-<p>I use Modernizer in combination with <a href="http://bower.io/">Bower</a> and <a href="http://gruntjs.com/">Grunt</a>. I add Modernizr as Bower dependency pointing to the latest version and use <a href="https://github.com/Modernizr/grunt-modernizr">grunt-modernizr</a> plug-in for compiling production version of script based on features I&#39;m detecting so that library doesn&#39;t add any extra weight to the site than it needs to. Simple, lightweight and super-useful.</p>
+<p>I use Modernizer in combination with <a href="http://bower.io/">Bower</a> and <a href="http://gruntjs.com/">Grunt</a> first by adding it as Bower dependency and pointing to the latest version and then by using <a href="https://github.com/Modernizr/grunt-modernizr">grunt-modernizr</a> plug-in for compiling production version of script that only includes features I&#39;m detecting so that library doesn&#39;t add any extra weight to the site than it needs to.</p>
 
 <h2>Doing it CSS-only</h2>
 
-<p>For projects that don&#39;t need any JavaScript there is also simple CSS-only way of isolating new features from baseline by wrapping them in media query.</p>
+<p>For projects that don&#39;t need any JavaScript there is a CSS-only way of isolating new features from baseline by wrapping them in media query.</p>
 <div class="highlight"><pre><code class="scss"><span class="k">@media</span> <span class="nt">all</span> <span class="p">{</span>
     <span class="c1">// put all new stuff here</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>This is little snippet always validates true but makes code inside it invisible to old-timey browsers. To keep thingy even more DRY, we could leverage power of Sass mixins to include media queries inside selectors. </p>
+<p>This little snippet always validates true but makes code inside it invisible to old-timey browsers. To keep things even more DRY, you could leverage power of Sass mixins to include media queries inside selectors. </p>
 <div class="highlight"><pre><code class="scss"><span class="k">@mixin</span><span class="nf"> new-stuff</span> <span class="p">{</span>
     <span class="k">@media</span> <span class="nt">all</span> <span class="p">{</span>
         <span class="k">@content</span><span class="o">;</span>
@@ -75,7 +75,7 @@
 
 <p>Some CSS properties can&#39;t be excluded using media queries since they are implemented in IE 10 but not in IE 9. That includes transitions, animations, gradients, 3D transforms, flexbox, text-shadow and some others. For full list see  <a href="http://caniuse.com/#compare=ie+9,ie+10">here</a>. In all cases, you should always ensure appropriate fallback. </p>
 
-<p>As a good rule of thumb, if any property needs vendor prefixes it should have universal fallback. As prefixes go, make use of <a href="https://github.com/ai/autoprefixer">autoprefixer</a> for heavy lifting and just stick to the latest standard syntax.</p>
+<p>As a good rule of thumb, if any property needs vendor prefix then it should have universal fallback. As prefixes go, make use of <a href="https://github.com/ai/autoprefixer">autoprefixer</a> for heavy lifting and just stick to the latest standard syntax.</p>
 
 <hr>
 
