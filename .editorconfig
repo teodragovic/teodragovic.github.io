@@ -4,15 +4,15 @@
 root = true
 
 [*.scss]
-indent_style = space
+indent_style = tab
 indent_size = 2
 
 [*.js]
-indent_style = space
+indent_style = tab
 indent_size = 2
 
 [*.html]
-indent_style = space
+indent_style = tab
 indent_size = 2
 
 [*.xml]
@@ -20,15 +20,15 @@ indent_style = space
 indent_size = 2
 
 
-; Use 4 spaces for indentation in Markdown files
+; Use 2 tabs for indentation in Markdown files
 
 [*.md]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.markdown]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 
 ; Override default indentation for some library files

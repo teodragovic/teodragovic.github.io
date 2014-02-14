@@ -14,9 +14,9 @@ More notes from [Smashing Book #4](http://www.smashingmagazine.com/smashing-book
 
 ### Build on what works
 
-Avoid unnecessary boilerplates and frameworks and start with a clean slate. HTML5 is a boilerplate itself. Use HTML build-in features and expand upon them only when needed.
+Avoid unnecessary boilerplates and frameworks and start with a clean slate. HTML5 is a boilerplate in itself. Use HTML build-in features and expand upon them only when needed.
 
-Base layer should be plain HTML with links and semantic markup that works without and CSS or JS.
+Base layer should be plain HTML with links and semantic markup that works without any CSS or JS.
 
 ### Lack of support is an opportunity
 
@@ -30,7 +30,7 @@ and isn’t needed.
 
 Any code that needs vendor prefixes should have universal fallback.
 
-*Personal note:* Use autoprefixer and write only official syntax.
+**Personal note:** Use autoprefixer and write only latest unprefixed syntax.
 
 ### Use a mix of technologies, each for what it does best
 
@@ -38,7 +38,7 @@ Don't force everything in JavaScript if it can be done in CSS and vice-versa. Us
 
 ### Ask questions
 
-Before adding new functionality, ask environment *if* it can be processed and provide appropriate fallbacks.
+Before adding new functionality, ask environment **if** it can be processed and provide appropriate fallbacks.
 
 > The less code we force our browsers to parse, the better their performance will be.
 
@@ -54,7 +54,7 @@ Links should always work, forms should be sent to server-side control and embedd
 
 ### Usefulness beats consistency across browsers
 
-Don't force one design that works everywhere. Make sure different expiriences result in the same outcome (making website or app usable). 
+Don't force one design that works everywhere. Instead, make sure different expiriences result in the same outcome - making website or app usable. 
 
 ### Load only what is needed
 
@@ -62,7 +62,7 @@ Don't give browsers assets they can't use. Use JavaScript for support testing an
 
 Delay loading unnecessary content and force storing it on user devices as much as possible.
 
-*TIP:* Trigger load when user activates focus on forms input meaning there is no other interaction with app. Also, load images only when they enter viewport.
+**TIP:** Trigger load when user activates focus on forms input meaning there is no other interaction with site/app. Also, load images only when they enter viewport.
 
 ### Analyzing effects beats adding FX
 
@@ -86,7 +86,7 @@ Decrease of page load time directly impacts revenue, conversions and page traffi
 
 57% of users will abandon a site after waiting three seconds for the page to load.
 
-To make performance clients/menagement priority tie it to the metrics they care about and make visual representations (show site loading in comparison to competitor site).
+To make performance decision makers priority tie it to the metrics they care about and make visual representations (show site loading in comparison to competitor site).
 
 Keep performance in discussion. By leaving it as an afterthought you are underplaying its importance.
 
@@ -111,9 +111,9 @@ How to add new feature while having performance budget:
 > Keep enforcing the budget after launch as a way of avoiding the slow creep of
 bloat that tends to manifest itself.
 
-When setting performance budget be strict and explicit but realistic. Don't set metrics to hight or too low. 
+When setting performance budget be strict and explicit but keep it realistic. Don't set metrics to hight or too low. 
 
-Categorize the assets on the page (ie. content, enhancements and leftovers).
+Categorize assets on the page (ie. content, enhancements and leftovers).
 
 > A performance budget is meant to help you decide how to display your content, not what content to display. Removing important content from a page is not a performance strategy.
 
@@ -124,7 +124,7 @@ Use apps to simulate slow connections
 
 It's hard to see potential performance pitfalls from Photoshop - get to the browser early.
 
-*TIP:* Following snippet outputs perceived load time to the console (can be also used on elements)
+**TIP:** Following snippet outputs perceived load time to the console (it can be also used on elements)
 
 ~~~ javascript
 function getLoadTime() {
@@ -148,15 +148,11 @@ Everything that gets added to the page must be justifed. Keep base template as l
 
 > For any item included on your page, do whatever you can to minimize its impact on page weight and load time.
 
-Image optimization tools:
+Use [image](http://pngmini.com/) [optimization](http://imageoptim.com/) [tools](http://jamiemason.github.io/ImageOptim-CLI/)
 
-- <http://pngmini.com/>
-- <http://imageoptim.com/>
-- <http://jamiemason.github.io/ImageOptim-CLI/>
+[**Secrets to Lightning Fast Mobile Design**](https://speakerdeck.com/mikeyk/secrets-to-lightning-fast-mobile-design)
 
-[Secrets to Lightning Fast Mobile Design](https://speakerdeck.com/mikeyk/secrets-to-lightning-fast-mobile-design)
-
-Design site so it *feels* fast to the users. Users can perceive site as fast if it takes them less time to complete tasks.
+Design site so it **feels** fast to the user. Users can perceive site as fast if it takes them less time to complete tasks.
 
 ### Links
 

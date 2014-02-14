@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 				options: {
 					outputStyle: 'expanded', // buggy?
 					sourceComments: 'none',
-					//compass: true
+					compass: true
 				},
 				src: 'sass/screen.scss',
 				dest: 'source/stylesheets/screen.css',
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: ['sass/**/*.scss'],
-				tasks: ['sass', 'autoprefixer', 'csso', 'copy:css'],
+				tasks: ['compass', 'autoprefixer', 'csso', 'copy:css'],
 				options: {
 					spawn: true,
 					livereload: false,
@@ -120,7 +120,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: ['scripts/*.js'],
-				tasks: ['concat', 'uglify', 'cachebreaker:js', 'copy:js'],
+				tasks: ['concat', 'uglify', 'copy:js'],
 				options: {
 					spawn: true,
 					livereload: false,
@@ -134,7 +134,7 @@ module.exports = function(grunt) {
     		}
   		},
 			jekyll: {
-				files: ['source/**/*.html', 'source/_posts/*.markdown'],
+				files: ['source/**/*.html', 'source/**/*.markdown'],
 				tasks: ['exec:build'],
 				options: {
 					spawn: false,
@@ -162,7 +162,7 @@ module.exports = function(grunt) {
 			js: {
 				files: [{
 					expand: true, 
-					src: ['source/javascripts/*', 'scripts/config.js'], 
+					src: ['source/javascripts/*'], 
 					dest: 'public/javascripts/',
 					flatten: true,
 					filter: 'isFile',

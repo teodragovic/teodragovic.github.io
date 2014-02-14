@@ -1,8 +1,6 @@
 # Encoding.default_external = "utf-8"
 
 require 'sass-globbing'
-# require 'autoprefixer-rails'
-# require 'csso'
 
 # Require any additional compass plugins here.
 project_type = :stand_alone
@@ -22,11 +20,4 @@ fonts_dir = "source/fonts"
 line_comments = false
 output_style = :expanded
 
-# sass_options = {:sourcemap => true} --> sourcemaps option, for dev only
-
-#on_stylesheet_saved do |file|
-#  css = File.read(file)
-#  File.open(file, 'w') do |io|
-#    io << Csso.optimize( AutoprefixerRails.compile(css, ['last 2 version']) )
-#  end
-#end
+# sass_options = {:sourcemap => true} # --> sourcemaps option, for dev only

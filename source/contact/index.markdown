@@ -1,6 +1,6 @@
 ---
 layout: contact
-title: "contact"
+title: "Contact"
 date: 2013-12-06 11:40
 comments: false
 sharing: false

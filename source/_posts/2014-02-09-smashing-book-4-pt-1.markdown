@@ -6,13 +6,13 @@ comments: false
 categories: 
 ---
 
-I have this memento superpower to easily and quickly forget almost everything I read or watch after short period of time. That is why I decided to take notes on information I gather from various articles, tutorials, conference talks and books. Most recently, I started reading wonderful [Smashing Book #4](https://shop.smashingmagazine.com/smashing-book-4-ebooks.html). These are my take-away points from first two chapters of the book.
+I have this memento superpower to easily and quickly forget almost everything I read or watch after short period of time. That's why I decided to take notes on information I gather from various articles, tutorials, conference talks and books. Most recently, I started reading wonderful [Smashing Book #4](https://shop.smashingmagazine.com/smashing-book-4-ebooks.html). These are my take-away points from first two chapters of the book.
 
 <!-- more -->
 
 ## [Chapter 1] Modern CSS Architecture and Front-End Development by Harry Roberts
 
-There are three stakeholders in every project: the client, the user and the developer. Client and users don't care about code, they just want fast and reliable site. 
+There are three stakeholders in every project: the client, the user and the developer. Clients and users don't care about code, they just want site to be fast and reliable. 
 
 > In reality, developers are the only people who really care about code. Write it for yourself, but write it to be fast (for the users) and robust (for
 the client).
@@ -29,7 +29,7 @@ Plan and organize CSS architecture before starting to code. Arrange code in part
 
 > The bite-sized guideline for decent CSS selectors is basically: keep them well-named, as short as possible, and keep specificity low at all costs.
 
-Don't use ID's - they are too specific and can't be reused. Also, avoid compound selectors or at least, keep them short as possible.
+Don't use IDs - they are too specific and can't be reused. Also, avoid compound selectors or at least, keep them short as possible.
 
 Tying selectors to location reduces their scope for reuse. Keep selectors portable and robust. 
 
@@ -37,13 +37,13 @@ Tying selectors to location reduces their scope for reuse. Keep selectors portab
 
 > Class names should communicate useful information to developers - Nicolas Gallagher
 
-Use abstract names for high-level abstractions and design patterns and specific names for specific components. DON'T combine them.
+Use abstract names for high-level abstractions that should make design patterns and specific names for specific components. DON'T combine them.
 
 Insisting on clean markup often results in messy CSS. Use as much classes as needed. HTML is easier to update than CSS is to refactor.
 
 > If something has to do N things, it should have N hooks applied to it.
 
-Separate CSS classes from JS handlers (ie. .btn for style, .js-btn for event binding)
+Separate CSS classes from JS handlers (ie. `.button` for style, `.js-button` for event binding).
 
 ### Links
 
@@ -70,7 +70,7 @@ Leave comments in code to explain what it does, why is doing it in that way and 
 
 Architecture keeps code organized, scalable and encourages good design.
 
-Before starting to code, research and choose **appropriate** CSS and JS architecture. Also, document reasoning for choosing particular architecture.
+Before starting to code, research and choose **appropriate** CSS and JS architecture. Also, document your reasoning for choosing particular architecture.
 
 Any kind of architecture is better than having no architecture.
 

@@ -44,7 +44,7 @@ body > nav {
   }
   ul { display: none; }
   @media only screen {
-    font-size: .9em;
+    font-size: 1em;
     ul {
       @include horizontal-list(0);
       float: left;
@@ -60,11 +60,11 @@ body > nav {
       margin: 0;
     }
     a {
-      @include link-colors($nav-color, $nav-color-hover, $visited: $nav-color);
+      @include link-colors($nav-color, $link-color-hover, $visited: $nav-color);
       font-family: $sans;
       text-shadow: darken($nav-bg, 3) 0 1px;
       text-decoration: none;
-      font-size: 1.1em;
+      font-size: .95em;
       padding: .1em 0;
       line-height: 1.5em;
     }

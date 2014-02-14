@@ -103,7 +103,11 @@ pre, code, tt { @extend .mono; }
 
 sub, sup { line-height: 0; }
 
-hr { margin-bottom: 1em; }
+hr { 
+  margin: 1.5em 0; 
+  border-top: 1px dashed gray; 
+  border-bottom: none; 
+}
 
 small { font-size: .8em; }
 
