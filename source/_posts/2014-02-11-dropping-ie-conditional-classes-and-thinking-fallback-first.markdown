@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-IE conditional classes are no longer part of my personal [starting setup](https://github.com/teodragovic/bolt). After [lengthy discussion](https://github.com/h5bp/html5-boilerplate/issues/1290) they where also dropped from HTML5 Boilerplate. At first, I was inclined to keep them around but after some reading and research I came around.
+IE conditional classes are no longer part of my personal [starting setup](https://github.com/teodragovic/bolt). After [lengthy discussion](https://github.com/h5bp/html5-boilerplate/issues/1290) they where also dropped from HTML5 Boilerplate. At first, I wanted to keep them around but after some reading and research I came around.
 
 <!-- more -->
 
@@ -23,7 +23,7 @@ Most common use example for conditional classes usually looks like this:
 
 [Conditional comments](http://msdn.microsoft.com/en-us/library/ms537512.aspx) are used to target specific subsets of Internet Explorer and insert appropriate class on the root element (HTML tag) which then serves as a hook for CSS hacks and overrides. Another option is to write separate CSS just for IE and wrap link to the file inside conditional comment so its not loaded otherwise. 
 
-I still use them for displaying banner that alerts users with IE 8 or older that they should update browser to get the best experience possible.
+I still use them for displaying banner for users with IE 8 or older that they should update browser to get the best experience possible.
 
 ~~~ html
 <!--[if lte IE 8]>
@@ -32,7 +32,7 @@ Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve you
 <![endif]-->
 ~~~
 
-Conditional classes are considered bad practice because they target only one small subset of particular browser. Granted it's the browser with most quirks, but with advancement of technology, new CSS additions and browsers rapid development cycle, feature support between various versions continues to become more disperse. Isolating old versions of single browser just doesn't make much sense anymore. Especially since Microsoft [dropped conditional comments](http://www.sitepoint.com/microsoft-drop-ie10-conditional-comments/) in IE 10.
+Since they target only one small subset of particular browser conditional classes aren't very useful otherwise. Granted, that particular browser has the most quirks, but with  new CSS additions and rapid development cycles, feature support between various browser versions has become much more disperse. Isolating old versions of single browser just doesn't make much sense anymore. Especially since Microsoft [dropped conditional comments](http://www.sitepoint.com/microsoft-drop-ie10-conditional-comments/) in IE 10.
 
 Also, any kind of browser detection is considered [bad](http://css-tricks.com/browser-detection-is-bad/) and should be [avoided](http://jibbering.com/faq/notes/detect-browser/).
 
@@ -42,7 +42,7 @@ Much better approach would be using feature detection. [Christian Heilmann](http
 
 Easiest way of doing feature detection is by using [Modernizr](http://modernizr.com/). It's an awesome tool that includes [yepnope](http://yepnopejs.com/) (asynchronous conditional loader) and [html5shiv](https://code.google.com/p/html5shiv/) (enables old browsers to recognize HTML5 selectors).
 
-I use Modernizer in combination with [Bower](http://bower.io/) and [Grunt](http://gruntjs.com/) first by adding it as Bower dependency and pointing to the latest version and then by using [grunt-modernizr](https://github.com/Modernizr/grunt-modernizr) plug-in for compiling production version of script that only includes features I'm detecting so that library doesn't add any extra weight to the site than it needs to.
+I use Modernizer in combination with [Bower](http://bower.io/) and [Grunt](http://gruntjs.com/) first by adding it as Bower dependency and pointing to the latest version and then by using [grunt-modernizr](https://github.com/Modernizr/grunt-modernizr) plug-in for compiling production version of script. This way, Modernizr script only includes features I'm detecting and doesn't add any extra weight to the site than it needs to.
 
 ## Doing it CSS-only
 
