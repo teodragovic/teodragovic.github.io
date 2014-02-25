@@ -1,0 +1,163 @@
+
+/* FUNCTIONS */
+
+@function em($font-px, $base: $font-base) {
+ @return #{$font-px/$base}em;
+}
+
+/* VARIABLES */
+
+// Colors
+$black: hsl(0, 0%, 30%);
+$white: hsl(0, 0%, 95%);
+
+$blue: hsl(200, 90%, 30%);
+
+$gray-light:  hsl(200, 10%, 80%);
+$gray-medium: hsl(200, 10%, 60%);
+$gray-dark:   hsl(200, 10%, 40%);
+
+$selection:   #b3d4fc;
+
+$link-color: $blue;
+$link-color-hover: lighten($link-color, 10%);
+$link-color-active: $link-color;
+
+$ui-color: $gray-medium;
+
+// Type
+$font-base: 16;
+$line-height: 1.5;
+$baseline: $font-base * $line-height;
+
+// Typographic scale
+$font-h1: 36;
+$font-h2: 24;
+$font-h3: 21;
+$font-h4: 18;
+$font-h5: 16;
+$font-h6: 14;
+
+// Setting type stacks
+$type--body: "lft-etica", sans-serif;
+$type--head: "lft-etica", sans-serif;
+$type--copy: "lft-etica", sans-serif;
+
+// Branding
+$brand-type: $type--head;
+$brand-color: $gray-dark;
+
+// Layout
+$spacing: $baseline;
+$spacing-small: $spacing / 2;
+
+// Common layout breakpoints
+$bp-s: 		480; 		// 30em
+$bp-m: 		640; 		// 40em
+$bp-l: 		768; 		// 48em (laptop height)
+$bp-xl: 	800; 		// 50em
+$bp-xxl: 	960; 		// 60em
+
+$max-width: 60; // 960px
+
+// Solarized
+
+$noise-bg: image-url('noise.png') top left !default;
+
+$base03:          #002b36 !default; //darkest blue
+$base02:          #073642 !default; //dark blue
+$base01:          #586e75 !default; //darkest gray
+$base00:          #657b83 !default; //dark gray
+$base0:           #839496 !default; //medium gray
+$base1:           #93a1a1 !default; //medium light gray
+$base2:           #eee8d5 !default; //cream
+$base3:           #fdf6e3 !default; //white
+$solar-yellow:    #b58900 !default;
+$solar-orange:    #cb4b16 !default;
+$solar-red:       #dc322f !default;
+$solar-magenta:   #d33682 !default;
+$solar-violet:    #6c71c4 !default;
+$solar-blue:      #268bd2 !default;
+$solar-cyan:      #2aa198 !default;
+$solar-green:     #859900 !default;
+
+$solarized: dark !default;
+
+/* non highlighted code colors */
+$pre-bg: $base03 !default;
+$pre-border: darken($base02, 5) !default;
+$pre-color: $base1 !default;
+
+/* MIXINS */
+
+@mixin css3 {
+ @media all {
+	@content;
+ }
+}
+
+@mixin type($stack: $font-family, $weight: 400, $style: normal) {
+	font-family: $stack;
+	font-weight: $weight;
+	font-style: $style;
+}
+
+@mixin font-smoothing($val: on) {
+	@if $val == "on" {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	} @else if $val == "off" {
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: auto;
+	}
+}
+
+@mixin headings($from: 1, $to: 6) {
+	%base-heading {
+		@content;
+	}
+
+	@if $from >= 1 and $to <= 6 {
+		@for $i from $from through $to {
+			h#{$i},
+			.h#{$i} {
+				@extend %base-heading;
+			}
+		}
+	}
+}
+
+@mixin headings-margin($header-font, $factor:1) {
+	
+	$diff: nil; // init empty variable
+
+	@if $header-font >= $baseline {
+		$diff: $header-font % $baseline;
+	} @else {
+		$diff: $baseline - $header-font;
+	}
+
+	$margin: $diff + ($baseline * $factor);
+	margin-bottom: em($margin, $header-font);
+	
+}
+
+@mixin link($color, $underline: none) {
+	color: $color;
+	text-decoration: $underline;
+}
+
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+// Breakpoints mixin
+@mixin bp($point) {
+	@media (min-width: em($point, 16)) { 
+		@content;
+	}
+}

@@ -1,0 +1,145 @@
+/*================================*\
+	Defaults
+\*================================*/
+
+* { 
+	box-sizing: border-box; 
+	position: relative; 
+}
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+hr {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: $white;
+	color: $black;
+	font-size: 1em;
+	overflow-y: scroll;
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	overflow: visible;
+}
+
+a {
+	@include css3 { transition: all .3s ease-in; }
+	@include link($link-color);
+	&:focus { outline: thin dotted; }
+	&:hover { @include link($link-color-hover, underline); }
+	&:active { @include link($link-color-active, underline); }
+}
+
+::-moz-selection {
+	background: $selection;
+	text-shadow: none;
+}
+
+::selection {
+	background: $selection;
+	text-shadow: none;
+}
+
+audio,
+canvas,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+img { 
+	font-style: italic;
+	max-width: 100%;
+	height: auto;
+}
+
+img[width],
+img[height] {
+	max-width:none;
+}
+
+figure > img { display:block; }
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+textarea {
+	resize: vertical;
+	&:active,
+	&:focus {
+		cursor: text;
+		outline: none;
+	}
+}
+
+label,
+input,
+textarea,
+button,
+select,
+option {
+	cursor: pointer;
+}
+
+// Setting vertical rhythm
+// h1, h2, h3, h4, h5, h6, // isloating headings
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre,
+article, aside, nav, section, header, footer,
+// extending components
+.brand,
+.pagination,
+.pagination--archive,
+.blog-archives {
+	margin-bottom: ($spacing-small) * 1px;
+	margin-bottom: ($line-height/2) * 1rem;
+	@media (min-width: 30em) and (min-height: 48em) {
+		margin-bottom: $spacing * 1px;
+		margin-bottom: $line-height * 1rem; // $line-height = $spacing / $font-base
+	}
+}
+
+hr {
+	border: 1px dotted $ui-color; 
+	margin-bottom: em($spacing-small - 2);
+	@media (min-width: 30em) and (min-height: 48em) { 
+		margin-bottom: em($spacing - 2); 
+	}
+}
+
+ul, ol, dd {
+	margin-left: em($spacing);
+}
+
+// Remove vertical spacing from nested lists
+li {
+	> ul,
+	> ol { margin-bottom: 0; }
+}
+
+// Table globals
+table { width: 100%; }
+
+th,
+td {
+	text-align:left;
+	padding: em($spacing-small / 2);
+	@media (min-width: 30em) and (min-height: 48em) {
+		padding: em($spacing-small);
+	}
+}

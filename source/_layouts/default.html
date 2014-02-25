@@ -1,16 +1,21 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
-{% include head.html %}
-<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if page.sidebar == false %} class="no-sidebar" {% endif %} class="collapse-sidebar sidebar-footer" >
-  <header role="banner">{% include header.html %}</header>
-  {% include social.html %}
-  <nav role="navigation">{% include navigation.html %}</nav>
 
-  <div id="main">
-    <div id="content">
-      {{ content | expand_urls: root_url }}
-    </div>
-  </div>
-  <footer role="contentinfo">{% include footer.html %}</footer>
-  {% include after_footer.html %}
+{% include head.html %}
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} >
+
+	<div class="main-wrap">
+	
+		{% include header.html %}
+
+		<div role="main" class="main-content">
+			{{ content | expand_urls: root_url }}
+		</div>
+
+		{% include footer.html %}
+
+	</div>
+
+	{% include after_footer.html %}
+		
 </body>
 </html>

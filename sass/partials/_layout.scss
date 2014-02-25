@@ -1,0 +1,19 @@
+
+%wrapper {
+	padding: 0 2.5%;
+	@include bp($bp-s) 	 { padding: 0 5%; }
+	@include bp($bp-m) 	 { padding: 0 7.5%; }
+	@include bp($bp-xxl) { padding: 0 10%; }
+}
+
+.main-wrap { 
+	margin: 0 auto;
+	max-width: $max-width * 16px;
+	max-width: $max-width * 1rem;
+	@extend %wrapper;
+}
+
+.main-nav,
+.social-links {
+	@extend %wrapper;
+}

@@ -1,18 +1,96 @@
-body > header {
-  background: $header-bg;
-  h1 {
-    display: inline-block;
-    margin: 0;
-    a, a:visited, a:hover {
-      color: $title_color;
-      text-decoration: none;
-    }
-  }
-  h2 {
-    margin: .2em 0 0;
-    @extend .sans;
-    font-size: 0.8em;
-    color: $subtitle-color;
-    font-weight: normal;
-  }
+
+.main-header {
+	margin-bottom: em($spacing);
+	@media (min-width: 30em) and (min-height: 48em) { 
+		margin-bottom: em($spacing*2); 
+	}
+}
+
+/* logo & branding */
+
+.brand {
+	@include type($brand-type, 800, normal);
+	color: $brand-color;
+	@include bp($bp-s) 		{ font-size: 115%; }
+	@include bp($bp-m) 		{ font-size: 130%; }
+	@include bp($bp-l) 		{ font-size: 135%; }
+	@include bp($bp-xl) 	{ font-size: 140%; }
+	@include bp($bp-xxl) 	{ font-size: 150%; }
+}
+
+.logo {
+	font-weight: 800;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: em(30);
+	margin-bottom: 0;
+	a,
+	a:hover,
+	a:active { 
+		@include link($brand-color); 
+	}
+}
+
+.tagline {
+	font-weight: 300;
+	font-size: em(14);
+	color: lighten($brand-color, 20%);
+	margin-bottom: 0;
+}
+
+/* navigation */
+
+.nav {
+	list-style: none;
+	margin-left: 0;
+	@extend .clearfix;
+	> li {
+		&,
+		> a {
+			display: inline-block;
+			*display: inline;
+			zoom: 1;
+			@include link($black);
+			&:hover { @include link($link-color-hover); }
+			&:active { @include link($link-color-active); }
+		}
+	}
+}
+
+.nav--block {
+	line-height: 1;
+	// Remove whitespace caused by `inline-block`
+	letter-spacing: -0.31em;
+	word-spacing: -0.43em;
+	white-space: nowrap;
+	> li {
+		letter-spacing: normal;
+		word-spacing: normal;
+		> a {
+			padding: em($spacing-small);
+		}
+	}
+}
+
+.nav--fit {
+	display: table;
+	width: 100%;
+	> li {
+		display: table-cell;
+		> a {
+			display: block;
+		}
+	}
+}
+
+/* social links (svg) */
+
+.svg__fallback { @extend .visuallyhidden; }
+
+.svg__icon {
+	width: em(32);
+	height: em(32);
+	fill: $brand-color;
+	&:hover { fill: $link-color-hover; }
+	&:active { fill: $link-color-active; }
 }

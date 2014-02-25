@@ -9,8 +9,8 @@ module.exports = function(grunt) {
 					sourceComments: 'none',
 					compass: true
 				},
-				src: 'sass/screen.scss',
-				dest: 'source/stylesheets/screen.css',
+				src: 'sass/style.scss',
+				dest: 'source/stylesheets/style.css',
 			}
 		},
 
@@ -19,8 +19,8 @@ module.exports = function(grunt) {
 				browsers: ['last 2 version']
 			},
 			single_file: {
-				src: 'source/stylesheets/screen.css',
-				dest: 'source/stylesheets/screen.css',
+				src: 'source/stylesheets/style.css',
+				dest: 'source/stylesheets/style.css',
 			}
 		},
 
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 					report: 'gzip'
 				},
 				files: {
-					'source/stylesheets/screen.css': ['source/stylesheets/screen.css']
+					'source/stylesheets/style.css': ['source/stylesheets/style.css']
 				}
 			},
 		},
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 					{id: 'text', dest: 'csslint.txt'}
 				]
 			},
-			src: ['source/stylesheets/screen.css']
+			src: ['source/stylesheets/style.css']
 		},
 
 		jshint: {
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
 
 		cachebreaker : {
 			css: {
-				asset_url: 'stylesheets/screen.css',
+				asset_url: 'stylesheets/style.css',
 				files: {
 					src: ['public/**/*.html'],
 				}

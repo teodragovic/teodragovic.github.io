@@ -1,1 +1,22 @@
-{% include custom/header.html %}
+<header role="banner" class="main-header text--center">
+
+	<div class="brand">
+		<h1 class="logo"><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+		{% if site.subtitle %}
+			<h2 class="tagline">{{ site.subtitle }}</h2>
+		{% endif %}
+	</div>
+
+	{% include social.html %}
+	
+	<hr class="rule">
+	<nav role="navigation" class="main-nav">
+		<ul class="nav nav--block nav--fit">
+			<li><a href="{{ root_url }}/">Blog</a></li>
+			<li><a href="{{ root_url }}/blog/archives">Archives</a></li>
+			<li><a href="{{ root_url }}/contact/">Contact</a></li>
+		</ul>
+	</nav>
+	<hr class="rule">
+
+</header>

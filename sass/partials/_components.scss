@@ -1,0 +1,31 @@
+
+/* big ass button */
+
+.button-link {
+	display: inline-block;
+	padding: em($spacing/2);
+	background-color: $link-color;
+	@include link($white);
+	vertical-align:middle;
+	white-space:nowrap;
+	font-family:inherit;
+	font-size:100%;
+	cursor:pointer;
+	border:none;
+	margin:0;
+	&:hover,
+	&:active {
+		@include link($white);
+		outline: none;
+	}
+	&:hover { background-color: $link-color-hover; }
+	&:active { background-color: $link-color-active; }
+}
+
+/* footer */
+
+.main-footer {
+	text-align: center;
+	color: $ui-color;
+	p { font-size: 80%; }
+}

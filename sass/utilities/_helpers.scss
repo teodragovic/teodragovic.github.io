@@ -1,0 +1,80 @@
+/* ==========================================================================
+	Helper classes
+ ========================================================================== */
+
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.visuallyhidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+	position: static;
+	overflow: visible;
+	clip: auto;
+	margin: 0;
+	width: auto;
+	height: auto;
+}
+
+// Hide visually and from screenreaders, but maintain layout
+.invisible {
+	visibility: hidden;
+}
+
+.list--reset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 1;
+}
+
+.float--right 	{ float: right !important; }
+.float--left 		{ float: left !important; }
+.float--none 		{ float: none !important; }
+
+.text--left 		{ text-align: left  !important; }
+.text--center 	{ text-align: center!important; }
+.text--right 		{ text-align: right !important; }
+
+.text--caps 		{ text-transform: uppercase !important; }
+
+.font--light 		{ font-weight: 300 !important; }
+.font--normal 	{ font-weight: 400 !important; }
+.font--semibold { font-weight: 600 !important; }
+.font--bold 		{ font-weight: 700 !important; }
+
+
+// Mute an object by reducing its opacity
+.mute {
+	opacity: 0.5 !important;
+	filter: alpha(opacity = 50) !important;
+}
+
+// Align items to the right where they imply progression/movement forward
+.proceed { text-align: right !important; }
+
+// Add a right-angled quote to links that imply movement
+.go:after{ content: "\00A0" "\00BB" !important; }
