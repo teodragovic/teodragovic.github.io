@@ -129,16 +129,16 @@ $pre-color: $base1 !default;
 
 @mixin headings-margin($header-font, $factor:1) {
 	
-	$diff: nil; // init empty variable
+	$diff: nil;
+
+	$margin: $diff + ($baseline * $factor);
+	margin-bottom: em($margin, $header-font); // init empty variable
 
 	@if $header-font >= $baseline {
 		$diff: $header-font % $baseline;
 	} @else {
 		$diff: $baseline - $header-font;
 	}
-
-	$margin: $diff + ($baseline * $factor);
-	margin-bottom: em($margin, $header-font);
 	
 }
 

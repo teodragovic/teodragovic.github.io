@@ -19,11 +19,11 @@
 }
 
 .logo {
-	font-weight: 800;
-	letter-spacing: 1px;
+	margin-bottom: 0;
 	text-transform: uppercase;
 	font-size: em(30);
-	margin-bottom: 0;
+	font-weight: 800;
+	letter-spacing: 1px;
 	a,
 	a:hover,
 	a:active { 
@@ -32,25 +32,25 @@
 }
 
 .tagline {
-	font-weight: 300;
-	font-size: em(14);
-	color: lighten($brand-color, 20%);
 	margin-bottom: 0;
+	color: lighten($brand-color, 20%);
+	font-size: em(14);
+	font-weight: 300;
 }
 
 /* navigation */
 
 .nav {
-	list-style: none;
-	margin-left: 0;
 	@extend .clearfix;
+	margin-left: 0;
+	list-style: none;
 	> li {
 		&,
 		> a {
-			display: inline-block;
-			*display: inline;
-			zoom: 1;
 			@include link($black);
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
 			&:hover { @include link($link-color-hover); }
 			&:active { @include link($link-color-active); }
 		}
@@ -58,14 +58,14 @@
 }
 
 .nav--block {
+	white-space: nowrap;
+	word-spacing: -0.43em;
 	line-height: 1;
 	// Remove whitespace caused by `inline-block`
 	letter-spacing: -0.31em;
-	word-spacing: -0.43em;
-	white-space: nowrap;
 	> li {
-		letter-spacing: normal;
 		word-spacing: normal;
+		letter-spacing: normal;
 		> a {
 			padding: em($spacing-small);
 		}

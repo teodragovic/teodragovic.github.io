@@ -13,15 +13,15 @@
 .hentry:last-of-type { border: none; }
 
 .entry-footer {
-	font-size: 80%;
 	margin-bottom: em($spacing-small);
+	font-size: 80%;
 }
 
 .entry-footer--meta {
-	color: $ui-color;
-	padding-bottom: em($spacing-small);
 	margin-bottom: em($spacing-small - 1);
+	padding-bottom: em($spacing-small);
 	border-bottom: 1px solid $ui-color;
+	color: $ui-color;
 	time {
 		&:before {
 			content: " • ";
@@ -36,11 +36,11 @@
 .pagination { text-align: center; }
 
 .pagination--archive {
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
-	padding: em($spacing-small);
 	@include link($black);
+	display: inline-block;
+	padding: em($spacing-small);
+	zoom: 1;
+	*display: inline;
 	&:hover { @include link($link-color-hover); }
 	&:active { @include link($link-color-active); }
 	&:before,

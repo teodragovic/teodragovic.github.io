@@ -3,8 +3,8 @@
 \*================================*/
 
 * { 
-	box-sizing: border-box; 
 	position: relative; 
+	box-sizing: border-box; 
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -18,21 +18,22 @@ hr {
 }
 
 html {
+	overflow-y: scroll;
+	height: 100%;
 	background-color: $white;
 	color: $black;
 	font-size: 1em;
-	overflow-y: scroll;
-	height: 100%;
 }
 
 body {
-	min-height: 100%;
 	overflow: visible;
+	margin: 0 auto;
+	min-height: 100%;
 }
 
 a {
-	@include css3 { transition: all .3s ease-in; }
 	@include link($link-color);
+	@include css3 { transition: all .3s ease-in; }
 	&:focus { outline: thin dotted; }
 	&:hover { @include link($link-color-hover, underline); }
 	&:active { @include link($link-color-active, underline); }
@@ -56,10 +57,10 @@ video {
 	vertical-align: middle;
 }
 
-img { 
-	font-style: italic;
+img {
 	max-width: 100%;
-	height: auto;
+	height: auto; 
+	font-style: italic;
 }
 
 img[width],
@@ -79,8 +80,8 @@ textarea {
 	resize: vertical;
 	&:active,
 	&:focus {
-		cursor: text;
 		outline: none;
+		cursor: text;
 	}
 }
 
@@ -114,9 +115,9 @@ article, aside, nav, section, header, footer,
 	}
 }
 
-hr {
-	border: 1px dotted $ui-color; 
+hr { 
 	margin-bottom: em($spacing-small - 2);
+	border: 1px dotted $ui-color;
 	@media (min-width: 30em) and (min-height: 48em) { 
 		margin-bottom: em($spacing - 2); 
 	}
@@ -137,8 +138,8 @@ table { width: 100%; }
 
 th,
 td {
-	text-align:left;
 	padding: em($spacing-small / 2);
+	text-align:left;
 	@media (min-width: 30em) and (min-height: 48em) {
 		padding: em($spacing-small);
 	}
