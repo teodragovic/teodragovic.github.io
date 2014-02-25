@@ -4,16 +4,80 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-transform"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"borde",
+				"border-bottom"
+			],
+			[
+				"spacing",
+				"spacing-small"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"link-",
+				"link-color-hover"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"padi",
+				"padding-top"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
 				"border-s",
 				"border-style"
 			],
 			[
 				"he",
 				"height"
-			],
-			[
-				"bor",
-				"border-box"
 			],
 			[
 				"border",
@@ -24,28 +88,8 @@
 				"background-color"
 			],
 			[
-				"pa",
-				"padding-right"
-			],
-			[
 				"dis",
 				"display"
-			],
-			[
-				"font-",
-				"font-size"
-			],
-			[
-				"pad",
-				"padding-bottom"
-			],
-			[
-				"text",
-				"text-decoration"
-			],
-			[
-				"in",
-				"inherit"
 			],
 			[
 				"tra",
@@ -54,10 +98,6 @@
 			[
 				"back",
 				"background-color"
-			],
-			[
-				"mar",
-				"margin-bottom"
 			],
 			[
 				"ma",
@@ -94,10 +134,6 @@
 			[
 				"wi",
 				"width"
-			],
-			[
-				"margin",
-				"margin"
 			],
 			[
 				"inline",
@@ -172,35 +208,27 @@
 	"buffers":
 	[
 		{
-			"file": "source/_layouts/cv.html",
+			"file": "sass/utilities/_bits.scss",
 			"settings":
 			{
-				"buffer_size": 201,
+				"buffer_size": 3289,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sass/custom/_styles.scss",
+			"file": "sass/partials/_typography.scss",
 			"settings":
 			{
-				"buffer_size": 3487,
+				"buffer_size": 1693,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/cv/index.markdown",
+			"file": "sass/partials/_layout.scss",
 			"settings":
 			{
-				"buffer_size": 1049,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "source/_posts/2014-02-14-cv.md",
-			"settings":
-			{
-				"buffer_size": 4948,
-				"line_ending": "Windows"
+				"buffer_size": 321,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -264,56 +292,99 @@
 	},
 	"file_history":
 	[
-		"/D/00 NOVAC/DESIGN/teodragovic/source/contact/index.markdown",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/cv/index.markdown",
-		"/D/00 NOVAC/DESIGN/teodragovic/sass/screen.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_header.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_globals.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_layout.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_blog.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/style.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/_blog.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/_custom.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/docs/TO-DO.markdown",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/archive_post.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/blog/archives/index.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_typography.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/page.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_components.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_solarized.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_footer.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/post.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/_config.yml",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_syntax.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/footer.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/index.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/article.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-11-dropping-ie-conditional-classes-and-thinking-fallback-first.markdown",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/header.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/social.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/head.html",
+		"/C/Users/STICK/AppData/Roaming/Sublime Text 2/Packages/CSScomb/README.md",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_helpers.scss",
+		"/E/Dropbox/dev/sites/kova/www/site/wp-content/themes/kova/css/_base.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/default.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/inuit.css/objects/_nav.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/inuit.css/generic/_shared.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/Gruntfile.js",
+		"/D/00 NOVAC/DESIGN/_backup/interactive1-testovi/test1/source/styles/utilities/_helpers.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/_footer.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_bits.scss",
+		"/D/00 NOVAC/DESIGN/_backup/interactive1-testovi/test1/source/styles/utilities/_globals.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/modules/_functions.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/modules/_variables.scss",
+		"/D/00 NOVAC/DESIGN/bolt/source/styles/style.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/_normalize.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/inuit.css/_inuit.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/_vars.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/navigation.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/after_footer.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/post/related.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/.themes/petakolona/source/_layouts/post.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/.themes/redesign/source/_layouts/post.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/contact.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/post/sharing.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/related.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/robots.txt",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/google_analytics.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/after_footer.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/disqus.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/footer.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/navigation.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/header.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/head.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/custom/_styles.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/_screen.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/inuit.css/base/_quotes.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/screen.scss",
+		"/C/Users/STICK/Desktop/inuit.css-web-template/css/watch",
+		"/C/Users/STICK/Desktop/inuit.css-web-template/index.html",
+		"/C/Users/STICK/Desktop/inuit.css-web-template/.gitmodules",
+		"/D/00 NOVAC/DESIGN/teodragovic/.gitignore",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/about/index.markdown",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/cv/index.markdown",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/cv.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-14-cv.md",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/contact/index.markdown",
 		"/D/00 NOVAC/DESIGN/teodragovic/config.rb",
 		"/D/00 NOVAC/DESIGN/teodragovic/.editorconfig",
 		"/D/00 NOVAC/DESIGN/teodragovic/docs/updates",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-11-dropping-ie-conditional-classes-and-thinking-fallback-first.markdown",
-		"/D/00 NOVAC/DESIGN/teodragovic/sass/custom/_styles.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/base/_typography.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/.themes/whitespace/.editorconfig",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-10-smashing-book-4-pt2.markdown",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_navigation.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/index.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_blog.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-09-smashing-book-4-pt-1.markdown",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/header.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/navigation.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/social.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/base/_layout.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/default.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/base/_theme.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/head.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_header.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/custom/_layout.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/contact.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/_config.yml",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/custom/_fonts.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/footer.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/navigation.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/head.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/custom/after_footer.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/custom/_colors.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/footer.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/header.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/category_index.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/post.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/page.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/javascripts/octopress.js",
-		"/D/00 NOVAC/DESIGN/teodragovic/docs/TO-DO.markdown",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/_partials.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/article.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/base/_utilities.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/_base.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/archive_post.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/after_footer.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/package.json",
 		"/D/00 NOVAC/DESIGN/teodragovic/scripts/octopress.js",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/svg.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/.gitignore",
 		"/C/Users/STICK/Desktop/bookmarks_1_1_14.html",
 		"/C/Users/STICK/Desktop/visuals-master/demos/extra_1_a_unpack_prism.html",
 		"/C/Users/STICK/AppData/Roaming/Sublime Text 2/Packages/User/bh_core.sublime-settings",
@@ -348,50 +419,7 @@
 		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_navigation.scss",
 		"/E/Dropbox/dev/sites/teodragovic/sass/base/_utilities.scss",
 		"/E/Dropbox/dev/sites/teodragovic/source/stylesheets/screen.css",
-		"/E/Dropbox/dev/sites/teodragovic/source/_posts/2013-12-09-test.markdown",
-		"/E/Dropbox/dev/sites/teodragovic/source/_includes/header.html",
-		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_header.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/_base.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_archive.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_footer.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_syntax.scss",
-		"/E/Dropbox/dev/sites/teodragovic/source/index.html",
-		"/E/Dropbox/dev/sites/teodragovic/public/index.html",
-		"/C/Users/STICK/Desktop/html5-boilerplate-4.3.0/css/main.css",
-		"/C/Users/STICK/AppData/Roaming/Sublime Text 2/Packages/User/LiveReload.sublime-settings",
-		"/C/Users/STICK/AppData/Roaming/Sublime Text 2/Packages/LiveReload/LiveReload.sublime-settings",
-		"/E/Dropbox/dev/sites/teodragovic/src",
-		"/C/Users/STICK/Desktop/codepen.lnk",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/redcarpet2_markdown.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/backtick_code_block.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/octopress_filters.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/pygments_code.rb",
-		"/E/Dropbox/dev/sites/teodragovic/Guardfile",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/category_generator.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/redcarpet.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/rubypants.rb",
-		"/E/Dropbox/dev/sites/teodragovic/sass/base/_solarized.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_twilight.scss",
-		"/C/Users/STICK/Desktop/CodeRay-GitHub-Theme-master/coderay.css",
-		"/C/Users/STICK/Desktop/CodeRay-GitHub-Theme-master/coderay-pre-1.0.css",
-		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_coderay.scss",
-		"/E/Dropbox/dev/sites/teodragovic/TO-DO.markdown",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/code_ray_block.rb",
-		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/rubypython-0.6.3/lib/rubypython.rb",
-		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/rubypython-0.6.3/lib/rubypython/python.rb",
-		"/E/Dropbox/dev/sites/teodragovic/Gemfile.lock",
-		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_prism.scss",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/prism.rb",
-		"/E/Dropbox/dev/sites/teodragovic/sass/base/_prism.scss",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/code_block.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/prism",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/codepen.rb",
-		"/E/Dropbox/dev/sites/teodragovic/plugins/youtube.rb",
-		"/E/Dropbox/dev/sites/teodragovic/source/_posts/2013-12-06-first-post.markdown",
-		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_blog.scss",
-		"/E/Dropbox/dev/sites/teodragovic/source/blog/code/test.css",
-		"/E/Dropbox/Apps/ghost-0.3.3/content/data/README.md",
-		"/E/Dropbox/dev/sites/teodragovic/source/_includes/article.html"
+		"/E/Dropbox/dev/sites/teodragovic/source/_posts/2013-12-09-test.markdown"
 	],
 	"find":
 	{
@@ -402,6 +430,9 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"D:\\00 NOVAC\\DESIGN\\teodragovic\\.themes\\redesign\\source\\_layouts",
+			"D:\\00 NOVAC\\DESIGN\\teodragovic\\.themes\\redesign\\source\\_includes",
+			"D:\\00 NOVAC\\DESIGN\\teodragovic\\.themes\\whitespace\\source",
 			"D:\\00 NOVAC\\DESIGN\\teodragovic\\sass",
 			"D:\\00 NOVAC\\DESIGN\\teodragovic\\sass,D:\\00 NOVAC\\DESIGN\\teodragovic\\source\\_posts\\2014-02-10-smashing-book-4-pt2.markdown",
 			"D:\\00 NOVAC\\DESIGN\\teodragovic\\sass",
@@ -422,6 +453,33 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" .",
+			"$blue",
+			"0 0%;",
+			"0%;",
+			"0%",
+			"0%;",
+			"6%",
+			"\"svg ",
+			"svg ",
+			"svg--icon",
+			"svg--fallback",
+			"<a ",
+			"heading-margin",
+			"$x",
+			"h1",
+			"base-spacing-unit",
+			"screen.css",
+			"li class",
+			"svg-icon",
+			"link--fallback",
+			"icon",
+			"social-fallback",
+			"related",
+			"sass/screen.scss",
+			"ovaj rep",
+			"Job title and duration:",
+			"druation",
 			"}}\n",
 			"content",
 			"tab",
@@ -522,17 +580,7 @@
 			"strip_tags",
 			"do_all_together",
 			"tabs",
-			"phpmyadmin",
-			"main ",
-			"p, pre",
-			"custom/asides",
-			"twitter.js",
-			"blog archives",
-			"\"Blog Archives\"",
-			"toggle-sidebar",
-			"side bar",
-			"tab_completion",
-			"label_con"
+			"phpmyadmin"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -552,23 +600,23 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "source/_layouts/cv.html",
+					"file": "sass/utilities/_bits.scss",
 					"settings":
 					{
-						"buffer_size": 201,
+						"buffer_size": 3289,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								199,
-								199
+								143,
+								143
 							]
 						],
 						"settings":
@@ -617,30 +665,31 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"editorconfig": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1782.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "sass/custom/_styles.scss",
+					"file": "sass/partials/_typography.scss",
 					"settings":
 					{
-						"buffer_size": 3487,
+						"buffer_size": 1693,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3347,
-								3347
+								708,
+								708
 							]
 						],
 						"settings":
@@ -689,30 +738,31 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
+							"editorconfig": true,
 							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3617.0,
+						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "source/cv/index.markdown",
+					"file": "sass/partials/_layout.scss",
 					"settings":
 					{
-						"buffer_size": 1049,
+						"buffer_size": 321,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1024,
-								690
+								0,
+								0
 							]
 						],
 						"settings":
@@ -761,81 +811,10 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"editorconfig": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 486.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "source/_posts/2014-02-14-cv.md",
-					"settings":
-					{
-						"buffer_size": 4948,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								271,
-								271
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -910,6 +889,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 272.0,
+	"side_bar_width": 320.0,
 	"status_bar_visible": true
 }
