@@ -534,7 +534,7 @@ blockquote, p, address,
 table,
 fieldset, figure,
 pre,
-article, aside, nav, section, header, footer,
+article, aside, nav section, header, footer,
 .brand,
 .pagination,
 .pagination--archive,
@@ -548,7 +548,7 @@ article, aside, nav, section, header, footer,
   table,
   fieldset, figure,
   pre,
-  article, aside, nav, section, header, footer,
+  article, aside, nav section, header, footer,
   .brand,
   .pagination,
   .pagination--archive,
@@ -823,17 +823,17 @@ h1 a:active,
 }
 
 h1, .h1 {
-  margin-bottom: nil0/36em;
+  margin-bottom: 0.33333em;
   font-size: 2.25em;
 }
 
 h2, .h2 {
-  margin-bottom: nil12/24em;
+  margin-bottom: 0.5em;
   font-size: 1.5em;
 }
 
 h3, .h3 {
-  margin-bottom: nil0/21em;
+  margin-bottom: 0.14286em;
   font-size: 1.3125em;
 }
 
@@ -1412,6 +1412,11 @@ figure.code .highlight {
 .nav--block > li > a {
   padding: 0.75em;
 }
+@media (min-width: 30em) and (min-height: 48em) {
+  .nav--block > li > a {
+    padding: 0 0.75em;
+  }
+}
 
 .nav--fit {
   display: table;
@@ -1486,6 +1491,11 @@ figure.code .highlight {
   padding: 0.75em;
   zoom: 1;
   *display: inline;
+}
+@media (min-width: 30em) and (min-height: 48em) {
+  .pagination--archive {
+    padding: 0 0.75em;
+  }
 }
 .pagination--archive:hover {
   color: #0a85c2;

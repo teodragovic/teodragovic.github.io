@@ -26,7 +26,7 @@
 	letter-spacing: 1px;
 	a,
 	a:hover,
-	a:active { 
+	a:active {
 		@include link($brand-color); 
 	}
 }
@@ -68,6 +68,9 @@
 		letter-spacing: normal;
 		> a {
 			padding: em($spacing-small);
+			@media (min-width: 30em) and (min-height: 48em) { 
+				padding: 0 em($spacing-small); 
+			}
 		}
 	}
 }

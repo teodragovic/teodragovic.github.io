@@ -39,6 +39,9 @@
 	@include link($black);
 	display: inline-block;
 	padding: em($spacing-small);
+	@media (min-width: 30em) and (min-height: 48em) { 
+		padding: 0 em($spacing-small); 
+	}
 	zoom: 1;
 	*display: inline;
 	&:hover { @include link($link-color-hover); }
