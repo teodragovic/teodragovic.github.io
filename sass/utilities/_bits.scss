@@ -8,14 +8,14 @@
 /* VARIABLES */
 
 // Colors
-$black: hsl(0, 0%, 30%);
+$black: hsl(0, 0%, 20%);
 $white: hsl(0, 0%, 95%);
 
-$blue: hsl(200, 90%, 30%);
+$blue: hsl(200, 90%, 25%);
 
-$gray-light:  hsl(200, 10%, 80%);
-$gray-medium: hsl(200, 10%, 60%);
-$gray-dark:   hsl(200, 10%, 40%);
+$gray-light:  hsl(200, 10%, 70%);
+$gray-medium: hsl(200, 10%, 50%);
+$gray-dark:   hsl(200, 10%, 30%);
 
 $selection:   #b3d4fc;
 
@@ -27,7 +27,7 @@ $ui-color: $gray-medium;
 
 // Type
 $font-base: 16;
-$line-height: 1.5;
+$line-height: 1.4;
 $baseline: $font-base * $line-height;
 
 // Typographic scale
@@ -41,10 +41,10 @@ $font-h6: 14;
 // Setting type stacks
 $type--body: "lft-etica", sans-serif;
 $type--head: "lft-etica", sans-serif;
-$type--copy: "lft-etica", sans-serif;
+$type--code: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 
 // Branding
-$brand-type: $type--head;
+$brand-type: "etica-display", sans-serif;
 $brand-color: $gray-dark;
 
 // Layout
@@ -64,22 +64,22 @@ $max-width: 60; // 960px
 
 $noise-bg: image-url('noise.png') top left !default;
 
-$base03:          #002b36 !default; //darkest blue
-$base02:          #073642 !default; //dark blue
-$base01:          #586e75 !default; //darkest gray
-$base00:          #657b83 !default; //dark gray
-$base0:           #839496 !default; //medium gray
-$base1:           #93a1a1 !default; //medium light gray
-$base2:           #eee8d5 !default; //cream
-$base3:           #fdf6e3 !default; //white
-$solar-yellow:    #b58900 !default;
-$solar-orange:    #cb4b16 !default;
-$solar-red:       #dc322f !default;
-$solar-magenta:   #d33682 !default;
-$solar-violet:    #6c71c4 !default;
-$solar-blue:      #268bd2 !default;
-$solar-cyan:      #2aa198 !default;
-$solar-green:     #859900 !default;
+$base03:          hsl(200, 10%, 10%) !default; //darkest blue
+$base02:          lighten(#073642, 10%) !default; //dark blue
+$base01:          lighten(#586e75, 10%) !default; //darkest gray
+$base00:          lighten(#657b83, 10%) !default; //dark gray
+$base0:           lighten(#839496, 10%) !default; //medium gray
+$base1:           lighten(#93a1a1, 10%) !default; //medium light gray
+$base2:           lighten(#eee8d5, 10%) !default; //cream
+$base3:           lighten(#fdf6e3, 10%) !default; //white
+$solar-yellow:    lighten(#b58900, 10%) !default;
+$solar-orange:    lighten(#cb4b16, 10%) !default;
+$solar-red:       lighten(#dc322f, 10%) !default;
+$solar-magenta:   lighten(#d33682, 10%) !default;
+$solar-violet:    lighten(#6c71c4, 10%) !default;
+$solar-blue:      lighten(#268bd2, 10%) !default;
+$solar-cyan:      lighten(#2aa198, 10%) !default;
+$solar-green:     lighten(#859900, 10%) !default;
 
 $solarized: dark !default;
 

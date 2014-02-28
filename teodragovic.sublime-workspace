@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pad",
+				"padding"
+			],
+			[
 				"text",
 				"text-transform"
 			],
@@ -34,10 +38,6 @@
 			[
 				"in",
 				"inline-block"
-			],
-			[
-				"pad",
-				"padding-top"
 			],
 			[
 				"marg",
@@ -207,6 +207,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 713,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "Packages/Compass/Compass.sublime-build",
 	"command_palette":
@@ -268,27 +276,36 @@
 	},
 	"file_history":
 	[
+		"/D/00 NOVAC/DESIGN/teodragovic/.gitignore",
+		"/D/00 NOVAC/DESIGN/teodragovic/config.rb",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/after_footer.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_typography.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_bits.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/Gruntfile.js",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-27-smashing-book-4-pt-3.markdown",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/post.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_globals.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-09-smashing-book-4-pt-1.markdown",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-10-smashing-book-4-pt2.markdown",
+		"/D/00 NOVAC/DESIGN/teodragovic/_config.yml",
+		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/archive_post.html",
+		"/D/00 NOVAC/DESIGN/teodragovic/docs/TO-DO.markdown",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_header.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_syntax.scss",
+		"/D/00 NOVAC/DESIGN/teodragovic/sass/inuit.css/generic/_normalize.scss",
+		"/C/Users/STICK/AppData/Roaming/Sublime Text 2/Packages/CSScomb/README.md",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_blog.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_components.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_bits.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_typography.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_layout.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_globals.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_helpers.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_syntax.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_header.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_blog.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/style.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/_blog.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/_custom.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/docs/TO-DO.markdown",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/archive_post.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/blog/archives/index.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/page.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/utilities/_solarized.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_footer.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/post.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/_config.yml",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/footer.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/index.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/article.html",
@@ -296,12 +313,10 @@
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/header.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/social.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/head.html",
-		"/C/Users/STICK/AppData/Roaming/Sublime Text 2/Packages/CSScomb/README.md",
 		"/E/Dropbox/dev/sites/kova/www/site/wp-content/themes/kova/css/_base.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/default.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/inuit.css/objects/_nav.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/inuit.css/generic/_shared.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/Gruntfile.js",
 		"/D/00 NOVAC/DESIGN/_backup/interactive1-testovi/test1/source/styles/utilities/_helpers.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/_footer.scss",
 		"/D/00 NOVAC/DESIGN/_backup/interactive1-testovi/test1/source/styles/utilities/_globals.scss",
@@ -312,7 +327,6 @@
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/inuit.css/_inuit.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/_vars.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/navigation.html",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/after_footer.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_includes/post/related.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/.themes/petakolona/source/_layouts/post.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/.themes/redesign/source/_layouts/post.html",
@@ -334,20 +348,16 @@
 		"/C/Users/STICK/Desktop/inuit.css-web-template/css/watch",
 		"/C/Users/STICK/Desktop/inuit.css-web-template/index.html",
 		"/C/Users/STICK/Desktop/inuit.css-web-template/.gitmodules",
-		"/D/00 NOVAC/DESIGN/teodragovic/.gitignore",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/about/index.markdown",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/cv/index.markdown",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_layouts/cv.html",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-14-cv.md",
 		"/D/00 NOVAC/DESIGN/teodragovic/source/contact/index.markdown",
-		"/D/00 NOVAC/DESIGN/teodragovic/config.rb",
 		"/D/00 NOVAC/DESIGN/teodragovic/.editorconfig",
 		"/D/00 NOVAC/DESIGN/teodragovic/docs/updates",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/base/_typography.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/.themes/whitespace/.editorconfig",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-10-smashing-book-4-pt2.markdown",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/partials/_navigation.scss",
-		"/D/00 NOVAC/DESIGN/teodragovic/source/_posts/2014-02-09-smashing-book-4-pt-1.markdown",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/base/_layout.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/base/_theme.scss",
 		"/D/00 NOVAC/DESIGN/teodragovic/sass/custom/_layout.scss",
@@ -393,9 +403,7 @@
 		"/E/Dropbox/dev/sites/teodragovic/sass/_normalize.scss",
 		"/E/Dropbox/dev/sites/teodragovic/sass/_partials.scss",
 		"/E/Dropbox/dev/sites/teodragovic/sass/partials/_navigation.scss",
-		"/E/Dropbox/dev/sites/teodragovic/sass/base/_utilities.scss",
-		"/E/Dropbox/dev/sites/teodragovic/source/stylesheets/screen.css",
-		"/E/Dropbox/dev/sites/teodragovic/source/_posts/2013-12-09-test.markdown"
+		"/E/Dropbox/dev/sites/teodragovic/sass/base/_utilities.scss"
 	],
 	"find":
 	{
@@ -403,9 +411,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 92.0,
 		"where_history":
 		[
+			"D:\\00 NOVAC\\DESIGN\\teodragovic\\sass",
 			"D:\\00 NOVAC\\DESIGN\\teodragovic\\.themes\\redesign\\source\\_layouts",
 			"D:\\00 NOVAC\\DESIGN\\teodragovic\\.themes\\redesign\\source\\_includes",
 			"D:\\00 NOVAC\\DESIGN\\teodragovic\\.themes\\whitespace\\source",
@@ -429,6 +438,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"code",
+			"13px",
+			"13",
+			"font-fa",
+			"font-",
+			"20%",
+			"type--copy",
+			"!default",
+			"```",
 			" .",
 			"$blue",
 			"0 0%;",
@@ -547,16 +565,7 @@
 			"class=\"",
 			"/a",
 			"a href=\"javascript:void(0)\"",
-			"\">",
-			"figure",
-			"post",
-			"new_pos",
-			"get_footer",
-			"excerpt_length",
-			"strip_tags",
-			"do_all_together",
-			"tabs",
-			"phpmyadmin"
+			"\">"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -576,8 +585,81 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								434,
+								434
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

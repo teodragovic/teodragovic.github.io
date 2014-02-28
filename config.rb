@@ -1,4 +1,3 @@
-# Encoding.default_external = "utf-8"
 
 require 'sass-globbing'
 
@@ -19,5 +18,3 @@ fonts_dir = "source/fonts"
 
 line_comments = false
 output_style = :expanded
-
-# sass_options = {:sourcemap => true} # --> sourcemaps option, for dev only

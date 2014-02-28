@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[NOTES] Smashing Book #4 - pt. 2"
+title: "Notes from reading Smashing Book #4 - pt. 2"
 date: 2014-02-10
-comments: false
+comments: true
 categories: 
 ---
 

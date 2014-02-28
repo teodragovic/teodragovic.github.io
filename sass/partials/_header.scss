@@ -9,7 +9,6 @@
 /* logo & branding */
 
 .brand {
-	@include type($brand-type, 800, normal);
 	color: $brand-color;
 	@include bp($bp-s) 		{ font-size: 115%; }
 	@include bp($bp-m) 		{ font-size: 130%; }
@@ -19,6 +18,7 @@
 }
 
 .logo {
+	@include type($brand-type, 900, normal);
 	margin-bottom: 0;
 	text-transform: uppercase;
 	font-size: em(30);
@@ -32,16 +32,16 @@
 }
 
 .tagline {
+	@include type($type--body, 300, normal);
 	margin-bottom: 0;
 	color: lighten($brand-color, 20%);
 	font-size: em(14);
-	font-weight: 300;
 }
 
 /* navigation */
 
 .nav {
-	@extend .clearfix;
+	//@extend .clearfix;
 	margin-left: 0;
 	list-style: none;
 	> li {
@@ -78,6 +78,7 @@
 .nav--fit {
 	display: table;
 	width: 100%;
+	table-layout: fixed;
 	> li {
 		display: table-cell;
 		> a {
