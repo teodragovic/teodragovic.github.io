@@ -28,7 +28,15 @@ E-mail: [teo.dragovic@gmail.com](mailto:teo.dragovic@gmail.com)
 
 - [Codepen experiments](http://codepen.io/teodragovic)
 
-- [Wu-Type](http://petakolona.com/wu-type)
+<br/>
+
+**[Web Burza](http://web.burza.hr)** - web agency based in Zagreb, Croatia.
+
+Frontend developer (4/2014 - current)
+
+- Frontend development, optimization and maintenance of HTML, CSS and JavaScript
+- Working on large scale projects like [vipnet.hr], [coolinarika.com], [emmezeta.hr], [podravka.hr] and [agrokor.hr].
+- Actively working on SPA project implementing Angular.js
 
 <br/>
 
