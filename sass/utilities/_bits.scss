@@ -8,8 +8,8 @@
 /* VARIABLES */
 
 // Colors
-$black: hsl(0, 0%, 20%);
-$white: hsl(0, 0%, 95%);
+$black: #222;
+$white: #F5F5F5;
 
 $blue: hsl(200, 90%, 25%);
 
@@ -27,7 +27,7 @@ $ui-color: $gray-medium;
 
 // Type
 $font-base: 16;
-$line-height: 1.4;
+$line-height: 1.5;
 $baseline: $font-base * $line-height;
 
 // Typographic scale
@@ -58,7 +58,7 @@ $bp-l: 		768; 		// 48em (laptop height)
 $bp-xl: 	800; 		// 50em
 $bp-xxl: 	960; 		// 60em
 
-$max-width: 60; // 960px
+$max-width: 64; // 1024px
 
 // Solarized
 

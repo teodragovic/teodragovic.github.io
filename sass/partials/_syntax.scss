@@ -247,3 +247,10 @@ figure.code {
   color: #666 !important;
   text-shadow: #cbcccc 0 1px 0;
 }
+
+.gutter { display: none; }
+
+figure.code {
+  margin-left: 0;
+  margin-right: 0;
+}

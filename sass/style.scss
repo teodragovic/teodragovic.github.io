@@ -1,4 +1,4 @@
-@charset "UTF-8";
+//@charset "UTF-8";
 
 /*========================================*\
     $TABLE OF CONTENTS
@@ -19,6 +19,8 @@
  * -- Components (global elements like buttons etc.)
  * -- Header (logo and nav)
  * -- Blog (some article styling)
+ *
+ * -- Print
  *
  **/
 
@@ -41,3 +43,5 @@
 @import "partials/components";
 @import "partials/header";
 @import "partials/blog";
+
+@import "utilities/print";

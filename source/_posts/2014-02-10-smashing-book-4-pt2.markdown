@@ -126,7 +126,7 @@ It's hard to see potential performance pitfalls from Photoshop - get to the brow
 
 **TIP:** Following snippet outputs perceived load time to the console (it can be also used on elements)
 
-~~~ javascript
+```
 function getLoadTime() {
     var now = new Date().getTime();
     // Get the performance object
@@ -142,7 +142,7 @@ function getLoadTime() {
 window.onload = function() {
     getLoadTime();
 }
-~~~
+```
 
 Everything that gets added to the page must be justifed. Keep base template as lean as possible. Use tested and proved solutions but only when needed - don't include them by default.
 

@@ -93,6 +93,7 @@ h6, .h6 {
 // Horizontal rules, extend `hr`.
 .rule {
 	margin-bottom: em($spacing-small - 1);
+	margin-top: em($spacing-small - 1);
 	border: none;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
@@ -102,6 +103,6 @@ h6, .h6 {
 	}
 }
 
-.rule--dotted { border-bottom-style: dotted; }
+.rule--dotted { border-bottom-style: dotted; margin-bottom: em($spacing - 1); }
 
 .rule--dashed { border-bottom-style: dashed; }

@@ -1,4 +1,4 @@
-## Peta Kolona
+## Teo Dragović
 
-Personal development blog by Teo Dragović
+Personal development blog
 

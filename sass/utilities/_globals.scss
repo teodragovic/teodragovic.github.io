@@ -117,8 +117,9 @@ article, aside, nav section, header, footer,
 }
 
 hr { 
-	margin-bottom: em($spacing-small - 2);
-	border: 1px dotted $ui-color;
+	margin: em($spacing) 0;
+	border: none;
+	border-bottom: 1px solid $ui-color;
 	@media (min-width: 30em) and (min-height: 48em) { 
 		margin-bottom: em($spacing - 2); 
 	}

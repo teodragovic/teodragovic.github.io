@@ -41,14 +41,14 @@ Even if design degrades gracefully, parsing advanced styles could cause problems
 
 `media="only all"` is native way of conditionally including stylesheets that contain advanced styles.
 
-~~~ html
+```
 <link rel="stylesheet" href="/css/basic.css">
 <link rel="stylesheet" href="/css/enhanced.css" media="only all">
-~~~
+```
 
 For serving old IE we can make good use of conditional comments:
 
-~~~ html
+```
 <link rel="stylesheet" href="basic.css" id="basic">
 <!--[ if ( gte IE 6 ) & ( lte IE8 ) ]>
 <link rel="stylesheet" href="enhanced.css">
@@ -56,7 +56,7 @@ For serving old IE we can make good use of conditional comments:
 <!--[ if ( !IE ) | ( gte IE 9 ) ]><!-->
 <link rel="stylesheet" href="enhanced.css" media="only all">
 <!--<![endif]-->
-~~~
+```
 
 [Respond.js](https://github.com/scottjehl/Respond) - script that parses and translates min-width and max-width media query support for IE 6–8.
 
@@ -68,18 +68,18 @@ Again, test for media query support to determine if browsers qualify for enhance
 
 Make use of modernizr and [Enhance.js](https://github.com/filamentgroup/enhance)
 
-~~~ javascript
+```
 (function(win, undefined) {
   var mqSupport = "matchMedia" in win && win.matchMedia( "only all" ).matches;
   if( !mqSupport && !respond.mediaQueriesSupported ) {
     return;
   }
 })( this );
-~~~
+```
 
 > This script checks whether the user’s browser supports the matchMedia method (JavaScript’s native method of parsing media queries) and then, just for good measure, it ensures that the same only all test that we’re using in our CSS passes. If the native method doesn’t exist, it checks against Respond.js’s shimmed media query support. If you’re targeting a specific minimum version of IE for the enhanced experience, this Respond.js test could be swapped out in favor of checking for the existence of an IE conditional class.
 
-~~~ javascript
+```
 (function(win, undefined){
   /* This script assumes a conditional comment scheme along the lines of the following:
   <!--[if (lt IE 8) ]> <html class="old-ie"> <![endif]-->
@@ -93,7 +93,8 @@ Make use of modernizr and [Enhance.js](https://github.com/filamentgroup/enhance)
     return;
   }
 })( this );
-~~~
+```
+
 Use [Grunt](http://gruntjs.com/) to minify and concat all scripts into one to reduce number of requests.
 
 ### Server
@@ -102,7 +103,7 @@ Use [Grunt](http://gruntjs.com/) to minify and concat all scripts into one to re
 
 > We can use Enhance.js to prepare a list of scripts and style sheets that apply to the user’s context and request them all at once:
 
-~~~ javascript
+```
 (function(win, undefined){
   var mqSupport = "matchMedia" in win && win.matchMedia( "only all" ).matches;
   if( !mqSupport && !respond.mediaQueriesSupported ){
@@ -120,7 +121,7 @@ Use [Grunt](http://gruntjs.com/) to minify and concat all scripts into one to re
   }
   ejs.enhance();
 })( this );
-~~~
+```
 
 > When Enhance.js is invoked, all the files queued up with `ejs.addFile.cssToLoad` and `ejs.addFile.jsToLoad` are sent off as a single request, through QuickConcat.
 
@@ -128,7 +129,7 @@ Use [Grunt](http://gruntjs.com/) to minify and concat all scripts into one to re
 
 We can use HTML5 **video element** to deliver assets best suited to the user context
 
-~~~ html
+```
 <video>
   <source src="vid-large.webm" media="(min-width: 600px)" type="video/webm">
   <source src="vid-large.ogg" media="(min-width: 600px)" type="video/ogg">
@@ -139,38 +140,38 @@ We can use HTML5 **video element** to deliver assets best suited to the user con
   <!-- Fallback for browsers that don’t support 'video': -->
   <a href="vid.mpg">Watch Video</a>
 </video>
-~~~
+```
 
 **Picture element** [proposed by Bruce Lawson](http://coding.smashingmagazine.com/2011/11/18/html5-semantics/) in same vein as video element
 
-~~~ html
+```
 <picture>
   <source src="fullsize.jpg" media="(min-width: 60em)" />
   <source src="small.jpg" />
   <!-- Fallback for browsers that don’t support 'video': -->
   <img src="fallback.jpg" alt="..." />
 </picture>
-~~~
+```
 
 **Srcset** attribute [proposed by WHATWG](http://lists.whatwg.org/pipermail/whatwg-whatwg.org/2012-May/035746.html)
 
-~~~ html
+```
 <img src="fallback.jpg" srcset="small.jpg 320w 1x, small-hd.jpg 320w 2x,
 medium.jpg 640w 1x, medium-hd.jpg 640w 2x, large.jpg 1x, large-hd.jpg
 2x">
-~~~
+```
 
 While media queries are absolute values, scrset offers set of *suggestions* that would perform based on browsers user settings.
 
 [Responsive Images Community Group](http://responsiveimages.org/) hybrid version:
 
-~~~ html
+```
 <picture>
   <source media="(min-width: 40em)" srcset="big-sd.jpg 1x, big-hd.jpg 2x">
   <source srcset="small-sd.jpg 1x, small-hd.jpg 2x">
   <img src="small-sd.jpg" alt="">
 </picture>
-~~~
+```
 
 Both original versions would still be available to use in cases where you want to target layout but not resolution (picture element without srcset) or you just need resolution-switching aspect (src set without picture element).
 
@@ -253,9 +254,9 @@ Example: Lazy loading images on mobile (but first scrutinize each image’s cont
 
 We use empty paragraph and assign it a data-* attribute pointing to the image we want to load.
 
-~~~ html
+```
 <p data-image-src="/path/to/my.jpg"></p>
-~~~
+```
 
 Paragraph is by default hidden using CSS `display: none` property (we can target `[data-image-src]` attribute without adding classes).
 
@@ -265,21 +266,21 @@ Use JavaScript to test conditions and decide what to do.
 
 Output we get on page if image is loaded:
 
-~~~ html
+```
 <p data-image-src="/path/to/my.jpg" data-image-loaded>
   <img src="/path/to/my.jpg" alt=""/>
 </p>
-~~~
+```
 
 CSS rule we use to display lazy-loaded image can make use of media query to ensure images loaded when device was in landscape orientation aren't displaying if screen is too narrow
 
-~~~ css
+```
 @media only screen and (min-width:400px) {
   [data-img-src][data-image-loaded] {
     display: block;
   }
 }
-~~~
+```
 
 Things we can test with JavaScript:
 

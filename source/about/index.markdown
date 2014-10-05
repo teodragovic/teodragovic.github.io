@@ -8,7 +8,7 @@ date: 2014-02-14
 
 Name: Teo Dragovic  
 Age: 27  
-Location: Rijeka, Croatia  
+Location: Zagreb/Rijeka, Croatia  
 Phone: +385 91 153 6258  
 E-mail: [teo.dragovic@gmail.com](mailto:teo.dragovic@gmail.com)  
 
@@ -22,15 +22,15 @@ E-mail: [teo.dragovic@gmail.com](mailto:teo.dragovic@gmail.com)
 
 ## Work
 
-**Personal projects**
+**[Web Burza](http://web.burza.hr)** - web agency based in Zagreb, Croatia.
 
-- [Peta Kolona](http://petakolona.com)
+Frontend developer (4/2014 - current)
 
-- [Codepen experiments](http://codepen.io/teodragovic)
+- Frontend development, optimization and maintenance of HTML, CSS and JavaScript
+- Working on large scale projects like [vipnet.hr](http://vipnet.hr/), [coolinarika.com](http://coolinarika.com/), [emmezeta.hr](http://emmezeta.hr/), [podravka.hr](http://podravka.hr/) and [agrokor.hr](http://agrokor.hr/).
+- Actively working on SPA project implementing Angular.js
 
-- [Wu-Type](http://petakolona.com/wu-type)
-
-<br/>
+<br>
 
 **[Adriatic.hr](http://adriatic.hr)** - online booking agency based in Split, Croatia.
 
@@ -40,19 +40,20 @@ Web designer (3/2012 - 9/2013)
 - Refactoring and optimization of CSS and HTML
 - Redesign of sites main layout for season 2012/2013
 - Implementation of Sass preprocessor in development workflow
-- Made small framework for agency backend
-- Responsive newsletter design
+- Made small CSS framework for agency backend
+- Responsive newsletter design and development
 - Design of various print materials (calendars, brochures, posters...)
 
 <br/>  
 
-**[MyPeople magazine](http://issuu.com/mypeople)** - online hip-hop magazine based in Belgrade, Serbia
+**[MyPeople magazine](http://mypeople.in.rs)** - online hip-hop magazine based in Belgrade, Serbia
 
 Graphic editor and designer (1/2011 - 11/2012)
 
 - Magazine branding
 - All of graphic editing, design and illustration for issues 19 through 23
-- Starting magazine blog and serving as blog editor from January to July 2012.
+- Implementing Wordpress and starting magazine online blog
+- Serving as magazine online editor from January to July 2012.
 
 <br/>
 
@@ -75,16 +76,18 @@ Following is a list of skills sorted based on my knowledge, practical experience
 
 **Very good**
 
-- HTML
-- CSS
+- HTML5
+- CSS3
+- Sass
 
 **Fairly good**
 
+- Performance optimization
 - Web and UI design
 - Graphic design
-- Typography
-- Wordpress
 - JQuery
+- Wordpress
+- Typography
 
 **Decent**
 
@@ -92,27 +95,38 @@ Following is a list of skills sorted based on my knowledge, practical experience
 - Branding 
 - Illustration
 - Vanilla JavaScript
-- Performance optimization
+- GSAP
+- Git
 
 **Learning**
 
+- Angular
 - PHP
-- Ruby
+- Twig
 - Linux
-- Angularjs
 
 **Tools**
 
-- Microsoft Windows
-- Adobe Photoshop
-- Adobe InDesign
-- Git/SVN
+- Chrome DevTools
+- Sublime Text Editor
 - Grunt/Yaoman/Bower
-- Sass
+- Adobe Photoshop/Illustrator/InDesign
 
 **Some other stuff**
 
 - Fluent in Croatian and English
-- Own and drive a car
+- Own and (sometimes) drive a car
+
+***
+
+## Links
+
+- [Personal blog](http://teodragovic.com)
+- [Codepen experiments](http://codepen.io/teodragovic)
+- [Github repo](https://github.com/teodragovic)
+- [Stack Overflow](http://stackoverflow.com/users/2382115/teo-dragovic)
+- [Stack Exchange - careers](http://careers.stackoverflow.com/teodragovic)
+- [LinkedIn profile](http://hr.linkedin.com/in/teodragovic)
+- [Twitter profile](https://twitter.com/teodragovic)
 
 ***

@@ -12,25 +12,25 @@ IE conditional classes are no longer part of my personal [starting setup](https:
 
 Most common use example for conditional classes usually looks like this:
 
-~~~ html
+```
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]> <html class="iem7"> <![endif]-->
 <!--[if lt IE 7 ]> <html  class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html  class="ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html  class="ie8"> <![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html><!--<![endif]-->
-~~~
+```
 
 [Conditional comments](http://msdn.microsoft.com/en-us/library/ms537512.aspx) are used to target specific subsets of Internet Explorer and insert appropriate class on the root element (HTML tag) which then serves as a hook for CSS hacks and overrides. Another option is to write separate CSS just for IE and wrap link to the file inside conditional comment so its not loaded otherwise. 
 
 I still use them for displaying banner for users with IE 8 or older that they should update browser to get the best experience possible.
 
-~~~ html
+```
 <!--[if lte IE 8]>
 <p class="old-ie">You are using an <strong>outdated browser</strong>. 
 Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-~~~
+```
 
 Since they target only one small subset of particular browser conditional classes aren't very useful otherwise. Granted, that particular browser has the most quirks, but with  new CSS additions and rapid development cycles, feature support between various browser versions has become much more disperse. Isolating old versions of single browser just doesn't make much sense anymore. Especially since Microsoft [dropped conditional comments](http://www.sitepoint.com/microsoft-drop-ie10-conditional-comments/) in IE 10.
 
@@ -48,15 +48,15 @@ I use Modernizer in combination with [Bower](http://bower.io/) and [Grunt](http:
 
 For projects that don't need any JavaScript there is a CSS-only way of isolating new features from baseline by wrapping them in media query.
 
-~~~ scss
+```
 @media all {
 	// put all new stuff here
 }
-~~~
+```
 
 This little snippet always validates true but makes code inside it invisible to old-timey browsers. To keep things even more DRY, you could leverage power of Sass mixins to include media queries inside selectors. 
 
-~~~ scss
+```
 @mixin new-stuff {
 	@media all {
 		@content;
@@ -69,7 +69,7 @@ This little snippet always validates true but makes code inside it invisible to 
 			// new features
 		}
 }
-~~~
+```
 
 There are other ways like using pseudo classes `:not(:required)` but I like media queries for wrapping capabilities. To keep CSS file from bloating with all those conditionals, use [CSS Optimizer](https://github.com/css/csso) for optimization before production.
 
