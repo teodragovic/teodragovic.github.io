@@ -4,11 +4,11 @@
 <html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Teo Dragovic</title>
+	<title>Notes from reading Smashing Book #4 - pt. 2 - Teo Dragovic</title>
 	<meta name="author" content="Teo Dragovic">
 
 	
-	<meta name="description" content="I went over chapters 5 and 7 of Smashing Book #4. Chapter 6 written by Addy Osmani about finding and fixing mobile rendering issues reads more like &hellip;">
+	<meta name="description" content="Notes From Reading Smashing Book #4 - Pt. 2 10.02.2014. | Comments More notes from Smashing Book #4. Going forward with chapters 3 and 4. Some &hellip;">
 	
 
 	<meta name="HandheldFriendly" content="True">
@@ -16,7 +16,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	
-	<link rel="canonical" href="http://teodragovic.github.io">
+	<link rel="canonical" href="http://teodragovic.github.io/blog/smashing-book-4-pt2">
 	<link href="/stylesheets/style.css" rel="stylesheet">
 	<script src="/javascripts/modernizr-2.0.js"></script>
 	<script type="text/javascript">
@@ -206,101 +206,11 @@
 </header>
 
 		<div role="main" class="main-content">
-			<section class="blog-index">
+			<article class="hentry " role="article">
   
-  
-  
-    <article role="article" class="hentry rule rule--dotted">
-      
   <header class="entry-header">
     
-      <h1 class="entry-title"><a href="/blog/smashing-book-4-pt-3/">Notes From Reading Smashing Book #4 - Pt. 3</a></h1>
-    
-    
-      <p class="meta entry-header--meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-27T00:00:00+01:00" pubdate data-updated="true">27.02.2014.</time>
-        
-         | <a href="/blog/smashing-book-4-pt-3/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I went over chapters 5 and 7 of <a href="http://www.smashingmagazine.com/smashing-book-4-new-perspectives/">Smashing Book #4</a>. Chapter 6 written by Addy Osmani about finding and fixing mobile rendering issues reads more like in-depth tutorial on Chrome DevTools and mentions lots of stuff I&rsquo;m not quite familiar yet so it&rsquo;s not really suitable for short notes. Maybe I will give it individual treatment later on after some research. For more info on the subject, you should visit <a href="http://jankfree.org/">Jank Free</a> website.</p>
-
-</div>
-  
-  
-    <footer>
-      <a class="button-link read-more-link" rel="full-article" href="/blog/smashing-book-4-pt-3/">Read more »</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article role="article" class="hentry rule rule--dotted">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/">Dropping IE Conditional Classes and Thinking Fallback-first</a></h1>
-    
-    
-      <p class="meta entry-header--meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-11T00:00:00+01:00" pubdate data-updated="true">11.02.2014.</time>
-        
-         | <a href="/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>IE conditional classes are no longer part of my personal <a href="https://github.com/teodragovic/bolt">starting setup</a>. After <a href="https://github.com/h5bp/html5-boilerplate/issues/1290">lengthy discussion</a> they where also dropped from HTML5 Boilerplate. At first, I wanted to keep them around but after some reading and research I came around.</p>
-
-</div>
-  
-  
-    <footer>
-      <a class="button-link read-more-link" rel="full-article" href="/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/">Read more »</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article role="article" class="hentry rule rule--dotted">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/smashing-book-4-pt2/">Notes From Reading Smashing Book #4 - Pt. 2</a></h1>
+      <h1 class="entry-title">Notes From Reading Smashing Book #4 - Pt. 2</h1>
     
     
       <p class="meta entry-header--meta">
@@ -318,36 +228,209 @@
 
 <time datetime="2014-02-10T00:00:00+01:00" pubdate data-updated="true">10.02.2014.</time>
         
-         | <a href="/blog/smashing-book-4-pt2/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>More notes from <a href="http://www.smashingmagazine.com/smashing-book-4-new-perspectives/">Smashing Book #4</a>. Going forward with chapters 3 and 4. Some really great insights and ideas for keeping sites lean and fast.</p>
+<div class="entry-content"><p>More notes from <a href="http://www.smashingmagazine.com/smashing-book-4-new-perspectives/">Smashing Book #4</a>. Going forward with chapters 3 and 4. Some really great insights and ideas for keeping sites lean and fast.</p>
+
+<!-- more -->
+
+
+<h2>[Chapter 3] The Vanilla Web Diet by Christian Heilmann</h2>
+
+<h3>Build on what works</h3>
+
+<p>Avoid unnecessary boilerplates and frameworks and start with a clean slate. HTML5 is a boilerplate in itself. Use HTML build-in features and expand upon them only when needed.</p>
+
+<p>Base layer should be plain HTML with links and semantic markup that works without any CSS or JS.</p>
+
+<h3>Lack of support is an opportunity</h3>
+
+<blockquote><p>If an old browser cannot do something, we have the chance to test for it and not
+provide that functionality. In most cases, the functionality is merely nice to have
+and isn’t needed.</p>
+
+<p>Start with basic code that works in all browsers, then add to it and make sure that browsers that should not be in use at all do not get code they might choke on — you’ll leave everybody happy.</p></blockquote>
+
+<h3>Browser-specific code cannot be trusted</h3>
+
+<p>Any code that needs vendor prefixes should have universal fallback.</p>
+
+<p><strong>Personal note:</strong> Use autoprefixer and write only latest unprefixed syntax.</p>
+
+<h3>Use a mix of technologies, each for what it does best</h3>
+
+<p>Don&rsquo;t force everything in JavaScript if it can be done in CSS and vice-versa. Use HTML for content, JS for triggering interactions and CSS for styling and animations.</p>
+
+<h3>Ask questions</h3>
+
+<p>Before adding new functionality, ask environment <strong>if</strong> it can be processed and provide appropriate fallbacks.</p>
+
+<blockquote><p>The less code we force our browsers to parse, the better their performance will be.</p></blockquote>
+
+<h3>Write as much as needed, not the least possible</h3>
+
+<p>Don&rsquo;t let quick fixes add up. Think about maintainability of code before and while writing it.</p>
+
+<h3>Basic functionality should always be there.</h3>
+
+<blockquote><p>What does basic functionality entail? Put simply, it allows the user to do what they came for regardless of any technology failure.</p></blockquote>
+
+<p>Links should always work, forms should be sent to server-side control and embedded media should have fallback links to raw files.</p>
+
+<h3>Usefulness beats consistency across browsers</h3>
+
+<p>Don&rsquo;t force one design that works everywhere. Instead, make sure different expiriences result in the same outcome &ndash; making website or app usable.</p>
+
+<h3>Load only what is needed</h3>
+
+<p>Don&rsquo;t give browsers assets they can&rsquo;t use. Use JavaScript for support testing and loading resources on demand.</p>
+
+<p>Delay loading unnecessary content and force storing it on user devices as much as possible.</p>
+
+<p><strong>TIP:</strong> Trigger load when user activates focus on forms input meaning there is no other interaction with site/app. Also, load images only when they enter viewport.</p>
+
+<h3>Analyzing effects beats adding FX</h3>
+
+<blockquote><p>If you want to add shiny things, make sure they can perform in a shiny fashion.</p></blockquote>
+
+<p>Effects added in native apps will not necessary be appropriate or perform as well in web apps.</p>
+
+<h3>Strong foundations beat a possible future addition</h3>
+
+<p>Don&rsquo;t add excessive code or frameworks for future that may never come. Use only what you need to achieve current goals.</p>
+
+<blockquote><p>Many of the apps and websites we produce are there, first and foremost, to get people to put content into them and make that content available to others. The code of the app itself should play a secondary role to that.</p></blockquote>
+
+<hr />
+
+<h2>[Chapter 4] Culture of Performance by Tim Kadlec</h2>
+
+<p>Plan for performance and keep it in mind early on and during development process, not just after launch.</p>
+
+<p>Decrease of page load time directly impacts revenue, conversions and page traffic.</p>
+
+<p>57% of users will abandon a site after waiting three seconds for the page to load.</p>
+
+<p>To make performance decision makers priority tie it to the metrics they care about and make visual representations (show site loading in comparison to competitor site).</p>
+
+<p>Keep performance in discussion. By leaving it as an afterthought you are underplaying its importance.</p>
+
+<p>Set up <strong>performance budget</strong> &ndash; page load time, total weight and number of requests.</p>
+
+<p>Response targets by Jakob Neilsen:</p>
+
+<blockquote><ul>
+<li>0.1s &ndash; The limit for users to feel that the system reacts instantaneously.</li>
+<li>1.0s &ndash; The limit for uninterrupted flow of thought. The users notice the delay, but they still feel direct interaction.</li>
+<li>10s &ndash; The limit for keeping user attention. Anything longer than this and the users will either give up or go off to do something else while they wait.</li>
+</ul>
+</blockquote>
+
+<p>At all times measure current performance of your site and your competitors site as well.</p>
+
+<p><strong>20% rule</strong> &ndash; to create a noticeable improvement in performance as perceived by your visitors, you need to improve performance by at least 20%.</p>
+
+<p>How to add new feature while having performance budget:</p>
+
+<ul>
+<li>optimize existing features to stay inside budget</li>
+<li>remove existing features to make room in the budget for new feature</li>
+<li>don&rsquo;t add new feature if it&rsquo;s not important enough to push other fetures out</li>
+</ul>
+
+
+<blockquote><p>Keep enforcing the budget after launch as a way of avoiding the slow creep of
+bloat that tends to manifest itself.</p></blockquote>
+
+<p>When setting performance budget be strict and explicit but keep it realistic. Don&rsquo;t set metrics to hight or too low.</p>
+
+<p>Categorize assets on the page (ie. content, enhancements and leftovers).</p>
+
+<blockquote><p>A performance budget is meant to help you decide how to display your content, not what content to display. Removing important content from a page is not a performance strategy.</p></blockquote>
+
+<p>Use apps to simulate slow connections</p>
+
+<ul>
+<li><a href="http://www.charlesproxy.com/">http://www.charlesproxy.com/</a></li>
+<li><a href="http://slowyapp.com/">http://slowyapp.com/</a></li>
+</ul>
+
+
+<p>It&rsquo;s hard to see potential performance pitfalls from Photoshop &ndash; get to the browser early.</p>
+
+<p><strong>TIP:</strong> Following snippet outputs perceived load time to the console (it can be also used on elements)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function getLoadTime() {
+</span><span class='line'>    var now = new Date().getTime();
+</span><span class='line'>    // Get the performance object
+</span><span class='line'>    window.performance = window.performance || window.mozPerformance 
+</span><span class='line'>    || window.msPerformance || window.webkitPerformance || {};
+</span><span class='line'>    var timing = performance.timing || {};
+</span><span class='line'>    if (timing) {
+</span><span class='line'>        var load_time = now - timing.navigationStart;
+</span><span class='line'>        console.log('Load time: ' + load_time + 'ms');
+</span><span class='line'>    }
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>window.onload = function() {
+</span><span class='line'>    getLoadTime();
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Everything that gets added to the page must be justifed. Keep base template as lean as possible. Use tested and proved solutions but only when needed &ndash; don&rsquo;t include them by default.</p>
+
+<blockquote><p>For any item included on your page, do whatever you can to minimize its impact on page weight and load time.</p></blockquote>
+
+<p>Use <a href="http://pngmini.com/">image</a> <a href="http://imageoptim.com/">optimization</a> <a href="http://jamiemason.github.io/ImageOptim-CLI/">tools</a></p>
+
+<p><a href="https://speakerdeck.com/mikeyk/secrets-to-lightning-fast-mobile-design"><strong>Secrets to Lightning Fast Mobile Design</strong></a></p>
+
+<p>Design site so it <strong>feels</strong> fast to the user. Users can perceive site as fast if it takes them less time to complete tasks.</p>
+
+<h3>Links</h3>
+
+<ul>
+<li><a href="http://bradfrostweb.com/blog/post/performance-as-design/">http://bradfrostweb.com/blog/post/performance-as-design/</a></li>
+<li><a href="http://www.keynote.com/keynote_competitive_research/index.html">http://www.keynote.com/keynote_competitive_research/index.html</a></li>
+<li><a href="http://www.codinghorror.com/blog/2011/06/performance-is-a-feature.html">http://www.codinghorror.com/blog/2011/06/performance-is-a-feature.html</a></li>
+<li><a href="http://www.uie.com/articles/download_time/">http://www.uie.com/articles/download_time/</a></li>
+<li><a href="https://alexsexton.com/blog/2013/03/deploying-javascript-applications/">https://alexsexton.com/blog/2013/03/deploying-javascript-applications/</a></li>
+<li><a href="http://filamentgroup.com/lab/socialcount/">http://filamentgroup.com/lab/socialcount/</a></li>
+<li><a href="http://bradfrostweb.com/blog/post/atomic-web-design/">http://bradfrostweb.com/blog/post/atomic-web-design/</a></li>
+</ul>
 
 </div>
-  
-  
-    <footer>
-      <a class="button-link read-more-link" rel="full-article" href="/blog/smashing-book-4-pt2/">Read more »</a>
-    </footer>
-  
 
 
-    </article>
+  <footer class="entry-footer">
   
-  
-    <article role="article" class="hentry rule rule--dotted">
+    <div class="entry-footer--meta">
       
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/smashing-book-4-pt-1/">Notes From Reading Smashing Book #4 - Pt. 1</a></h1>
-    
-    
-      <p class="meta entry-header--meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Teo Dragovic</span></span>
+
+      
 
 
 
@@ -359,36 +442,57 @@
   
 
 
-<time datetime="2014-02-09T00:00:00+01:00" pubdate data-updated="true">09.02.2014.</time>
-        
-         | <a href="/blog/smashing-book-4-pt-1/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2014-02-10T00:00:00+01:00" pubdate data-updated="true">10.02.2014.</time>
+      
 
 
-  <div class="entry-content"><p>I have this memento superpower to easily and quickly forget almost everything I read or watch after short period of time. That&rsquo;s why I decided to take notes on information I gather from various articles, tutorials, conference talks and books. Most recently, I started reading wonderful <a href="https://shop.smashingmagazine.com/smashing-book-4-ebooks.html">Smashing Book #4</a>. These are my take-away points from first two chapters of the book.</p>
+	    
+	      <div class="sharing">
 
 </div>
-  
-  
-    <footer>
-      <a class="button-link read-more-link" rel="full-article" href="/blog/smashing-book-4-pt-1/">Read more »</a>
-    </footer>
-  
 
+	    
+    </div>
 
-    </article>
-  
-  <div class="pagination">
-  	<hr class="rule">
+		<!--div class="entry-footer--related">
     
-    <a class="pagination--archive" href="/blog/archives">Archives</a>
+			<section>
+    <h1>Related Posts</h1>
+    <ul class="posts">
     
-    <hr class="rule">
-  </div>
+        <li class="related">
+        <a href="/blog/smashing-book-4-pt-3/">Notes from reading Smashing Book #4 - pt. 3</a>
+        </li>
+    
+        <li class="related">
+        <a href="/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/">Dropping IE conditional classes and thinking fallback-first</a>
+        </li>
+    
+    </ul>
 </section>
+
+		
+    </div-->
+
+    <div class="entry-footer--navigation clearfix">
+      
+        <a class="float--left text--left" href="/blog/smashing-book-4-pt-1/" title="Previous Post: Notes from reading Smashing Book #4 - pt. 1">&laquo; Notes from reading Smashing Book #4 - pt. 1</a>
+      
+      
+        <a class="float--right text--right" href="/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/" title="Next Post: Dropping IE conditional classes and thinking fallback-first">Dropping IE conditional classes and thinking fallback-first &raquo;</a>
+      
+    </div>
+
+  </footer>
+</article>
+
+
+  <section class="comments">
+    <h1 class="h2">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
 
 		</div>
 
@@ -404,7 +508,10 @@
       var disqus_shortname = 'teodragovic';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://teodragovic.github.io/blog/smashing-book-4-pt2/';
+        var disqus_url = 'http://teodragovic.github.io/blog/smashing-book-4-pt2/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

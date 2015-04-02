@@ -4,11 +4,11 @@
 <html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Teo Dragovic</title>
+	<title>Dropping IE conditional classes and thinking fallback-first - Teo Dragovic</title>
 	<meta name="author" content="Teo Dragovic">
 
 	
-	<meta name="description" content="I went over chapters 5 and 7 of Smashing Book #4. Chapter 6 written by Addy Osmani about finding and fixing mobile rendering issues reads more like &hellip;">
+	<meta name="description" content="Dropping IE Conditional Classes and Thinking Fallback-first 11.02.2014. | Comments IE conditional classes are no longer part of my personal starting &hellip;">
 	
 
 	<meta name="HandheldFriendly" content="True">
@@ -16,7 +16,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	
-	<link rel="canonical" href="http://teodragovic.github.io">
+	<link rel="canonical" href="http://teodragovic.github.io/blog/dropping-ie-conditional-classes-and-thinking-fallback-first">
 	<link href="/stylesheets/style.css" rel="stylesheet">
 	<script src="/javascripts/modernizr-2.0.js"></script>
 	<script type="text/javascript">
@@ -206,58 +206,11 @@
 </header>
 
 		<div role="main" class="main-content">
-			<section class="blog-index">
+			<article class="hentry " role="article">
   
-  
-  
-    <article role="article" class="hentry rule rule--dotted">
-      
   <header class="entry-header">
     
-      <h1 class="entry-title"><a href="/blog/smashing-book-4-pt-3/">Notes From Reading Smashing Book #4 - Pt. 3</a></h1>
-    
-    
-      <p class="meta entry-header--meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-27T00:00:00+01:00" pubdate data-updated="true">27.02.2014.</time>
-        
-         | <a href="/blog/smashing-book-4-pt-3/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I went over chapters 5 and 7 of <a href="http://www.smashingmagazine.com/smashing-book-4-new-perspectives/">Smashing Book #4</a>. Chapter 6 written by Addy Osmani about finding and fixing mobile rendering issues reads more like in-depth tutorial on Chrome DevTools and mentions lots of stuff I&rsquo;m not quite familiar yet so it&rsquo;s not really suitable for short notes. Maybe I will give it individual treatment later on after some research. For more info on the subject, you should visit <a href="http://jankfree.org/">Jank Free</a> website.</p>
-
-</div>
-  
-  
-    <footer>
-      <a class="button-link read-more-link" rel="full-article" href="/blog/smashing-book-4-pt-3/">Read more »</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article role="article" class="hentry rule rule--dotted">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/">Dropping IE Conditional Classes and Thinking Fallback-first</a></h1>
+      <h1 class="entry-title">Dropping IE Conditional Classes and Thinking Fallback-first</h1>
     
     
       <p class="meta entry-header--meta">
@@ -275,79 +228,121 @@
 
 <time datetime="2014-02-11T00:00:00+01:00" pubdate data-updated="true">11.02.2014.</time>
         
-         | <a href="/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>IE conditional classes are no longer part of my personal <a href="https://github.com/teodragovic/bolt">starting setup</a>. After <a href="https://github.com/h5bp/html5-boilerplate/issues/1290">lengthy discussion</a> they where also dropped from HTML5 Boilerplate. At first, I wanted to keep them around but after some reading and research I came around.</p>
+<div class="entry-content"><p>IE conditional classes are no longer part of my personal <a href="https://github.com/teodragovic/bolt">starting setup</a>. After <a href="https://github.com/h5bp/html5-boilerplate/issues/1290">lengthy discussion</a> they where also dropped from HTML5 Boilerplate. At first, I wanted to keep them around but after some reading and research I came around.</p>
 
+<!-- more -->
+
+
+<p>Most common use example for conditional classes usually looks like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!DOCTYPE html&gt;
+</span><span class='line'>&lt;!--[if IEMobile 7 ]&gt; &lt;html class="iem7"&gt; &lt;![endif]--&gt;
+</span><span class='line'>&lt;!--[if lt IE 7 ]&gt; &lt;html  class="ie6"&gt; &lt;![endif]--&gt;
+</span><span class='line'>&lt;!--[if IE 7 ]&gt;    &lt;html  class="ie7"&gt; &lt;![endif]--&gt;
+</span><span class='line'>&lt;!--[if IE 8 ]&gt;    &lt;html  class="ie8"&gt; &lt;![endif]--&gt;
+</span><span class='line'>&lt;!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]&gt;&lt;!--&gt;&lt;html&gt;&lt;!--&lt;![endif]--&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://msdn.microsoft.com/en-us/library/ms537512.aspx">Conditional comments</a> are used to target specific subsets of Internet Explorer and insert appropriate class on the root element (HTML tag) which then serves as a hook for CSS hacks and overrides. Another option is to write separate CSS just for IE and wrap link to the file inside conditional comment so its not loaded otherwise.</p>
+
+<p>I still use them for displaying banner for users with IE 8 or older that they should update browser to get the best experience possible.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!--[if lte IE 8]&gt;
+</span><span class='line'>&lt;p class="old-ie"&gt;You are using an &lt;strong&gt;outdated browser&lt;/strong&gt;. 
+</span><span class='line'>Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;
+</span><span class='line'>&lt;![endif]--&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Since they target only one small subset of particular browser conditional classes aren&rsquo;t very useful otherwise. Granted, that particular browser has the most quirks, but with  new CSS additions and rapid development cycles, feature support between various browser versions has become much more disperse. Isolating old versions of single browser just doesn&rsquo;t make much sense anymore. Especially since Microsoft <a href="http://www.sitepoint.com/microsoft-drop-ie10-conditional-comments/">dropped conditional comments</a> in IE 10.</p>
+
+<p>Also, any kind of browser detection is considered <a href="http://css-tricks.com/browser-detection-is-bad/">bad</a> and should be <a href="http://jibbering.com/faq/notes/detect-browser/">avoided</a>.</p>
+
+<h2>Feature detection</h2>
+
+<p>Much better approach would be using feature detection. <a href="https://twitter.com/codepo8">Christian Heilmann</a> made great point in new <a href="http://petakolona.com/blog/smashing-book-4-pt2/">Smashing Book</a> to start projects using only bare essentials that are universally supported to ensure, if everything else fails, content still gets delivered. After laying this bulletproof foundation, for every additional feature we should add support testing and serve extra code goodness only to the browsers that can handle it. Similar to mobile-first approach to responsive design, think of this as fallback-first approach to coding.</p>
+
+<p>Easiest way of doing feature detection is by using <a href="http://modernizr.com/">Modernizr</a>. It&rsquo;s an awesome tool that includes <a href="http://yepnopejs.com/">yepnope</a> (asynchronous conditional loader) and <a href="https://code.google.com/p/html5shiv/">html5shiv</a> (enables old browsers to recognize HTML5 selectors).</p>
+
+<p>I use Modernizer in combination with <a href="http://bower.io/">Bower</a> and <a href="http://gruntjs.com/">Grunt</a> first by adding it as Bower dependency and pointing to the latest version and then by using <a href="https://github.com/Modernizr/grunt-modernizr">grunt-modernizr</a> plug-in for compiling production version of script. This way, Modernizr script only includes features I&rsquo;m detecting and doesn&rsquo;t add any extra weight to the site than it needs to.</p>
+
+<h2>Doing it CSS-only</h2>
+
+<p>For projects that don&rsquo;t need any JavaScript there is a CSS-only way of isolating new features from baseline by wrapping them in media query.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@media all {
+</span><span class='line'>  // put all new stuff here
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This little snippet always validates true but makes code inside it invisible to old-timey browsers. To keep things even more DRY, you could leverage power of Sass mixins to include media queries inside selectors.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@mixin new-stuff {
+</span><span class='line'>  @media all {
+</span><span class='line'>      @content;
+</span><span class='line'>  }
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>.some-class {
+</span><span class='line'>  // universal baseline
+</span><span class='line'>  @include new-stuff {
+</span><span class='line'>          // new features
+</span><span class='line'>      }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are other ways like using pseudo classes <code>:not(:required)</code> but I like media queries for wrapping capabilities. To keep CSS file from bloating with all those conditionals, use <a href="https://github.com/css/csso">CSS Optimizer</a> for optimization before production.</p>
+
+<p>Some CSS properties can&rsquo;t be excluded using media queries since they are implemented in IE 10 but not in IE 9. That includes transitions, animations, gradients, 3D transforms, flexbox, text-shadow and some others. For full list see  <a href="http://caniuse.com/#compare=ie+9,ie+10">here</a>. In all cases, you should always ensure appropriate fallback.</p>
+
+<p>As a good rule of thumb, if any property needs vendor prefix then it should have universal fallback. As prefixes go, make use of <a href="https://github.com/ai/autoprefixer">autoprefixer</a> for heavy lifting and just stick to the latest standard syntax.</p>
+
+<hr />
+
+<p>Dropping conditional classes is great move because if forces us to change our thinking for the better. Instead of thinking in legacy support we should approach coding in fallback-first state of mind and use progressive enhancement to ensure our projects longevity and usability across all devices and browsers.</p>
 </div>
-  
-  
-    <footer>
-      <a class="button-link read-more-link" rel="full-article" href="/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/">Read more »</a>
-    </footer>
-  
 
 
-    </article>
+  <footer class="entry-footer">
   
-  
-    <article role="article" class="hentry rule rule--dotted">
+    <div class="entry-footer--meta">
       
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/smashing-book-4-pt2/">Notes From Reading Smashing Book #4 - Pt. 2</a></h1>
-    
-    
-      <p class="meta entry-header--meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Teo Dragovic</span></span>
 
-<time datetime="2014-02-10T00:00:00+01:00" pubdate data-updated="true">10.02.2014.</time>
-        
-         | <a href="/blog/smashing-book-4-pt2/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>More notes from <a href="http://www.smashingmagazine.com/smashing-book-4-new-perspectives/">Smashing Book #4</a>. Going forward with chapters 3 and 4. Some really great insights and ideas for keeping sites lean and fast.</p>
-
-</div>
-  
-  
-    <footer>
-      <a class="button-link read-more-link" rel="full-article" href="/blog/smashing-book-4-pt2/">Read more »</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article role="article" class="hentry rule rule--dotted">
       
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/smashing-book-4-pt-1/">Notes From Reading Smashing Book #4 - Pt. 1</a></h1>
-    
-    
-      <p class="meta entry-header--meta">
-        
 
 
 
@@ -359,36 +354,57 @@
   
 
 
-<time datetime="2014-02-09T00:00:00+01:00" pubdate data-updated="true">09.02.2014.</time>
-        
-         | <a href="/blog/smashing-book-4-pt-1/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2014-02-11T00:00:00+01:00" pubdate data-updated="true">11.02.2014.</time>
+      
 
 
-  <div class="entry-content"><p>I have this memento superpower to easily and quickly forget almost everything I read or watch after short period of time. That&rsquo;s why I decided to take notes on information I gather from various articles, tutorials, conference talks and books. Most recently, I started reading wonderful <a href="https://shop.smashingmagazine.com/smashing-book-4-ebooks.html">Smashing Book #4</a>. These are my take-away points from first two chapters of the book.</p>
+	    
+	      <div class="sharing">
 
 </div>
-  
-  
-    <footer>
-      <a class="button-link read-more-link" rel="full-article" href="/blog/smashing-book-4-pt-1/">Read more »</a>
-    </footer>
-  
 
+	    
+    </div>
 
-    </article>
-  
-  <div class="pagination">
-  	<hr class="rule">
+		<!--div class="entry-footer--related">
     
-    <a class="pagination--archive" href="/blog/archives">Archives</a>
+			<section>
+    <h1>Related Posts</h1>
+    <ul class="posts">
     
-    <hr class="rule">
-  </div>
+        <li class="related">
+        <a href="/blog/smashing-book-4-pt-3/">Notes from reading Smashing Book #4 - pt. 3</a>
+        </li>
+    
+        <li class="related">
+        <a href="/blog/smashing-book-4-pt2/">Notes from reading Smashing Book #4 - pt. 2</a>
+        </li>
+    
+    </ul>
 </section>
+
+		
+    </div-->
+
+    <div class="entry-footer--navigation clearfix">
+      
+        <a class="float--left text--left" href="/blog/smashing-book-4-pt2/" title="Previous Post: Notes from reading Smashing Book #4 - pt. 2">&laquo; Notes from reading Smashing Book #4 - pt. 2</a>
+      
+      
+        <a class="float--right text--right" href="/blog/smashing-book-4-pt-3/" title="Next Post: Notes from reading Smashing Book #4 - pt. 3">Notes from reading Smashing Book #4 - pt. 3 &raquo;</a>
+      
+    </div>
+
+  </footer>
+</article>
+
+
+  <section class="comments">
+    <h1 class="h2">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
 
 		</div>
 
@@ -404,7 +420,10 @@
       var disqus_shortname = 'teodragovic';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://teodragovic.github.io/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/';
+        var disqus_url = 'http://teodragovic.github.io/blog/dropping-ie-conditional-classes-and-thinking-fallback-first/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
