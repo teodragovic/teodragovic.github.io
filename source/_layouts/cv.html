@@ -1,19 +1,40 @@
----
-layout: default
----
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 
-<div>
+{% include head.html %}
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} class="cv">
 
-<article role="article" class="portfolio">
-	<header>
-		<h1 class="entry-title">Hi, I'm Teo and this is my CV thingy</h1>
-	</header>
+    <div class="main-wrap">
 
-	{{ content }}
+        <header role="banner" class="text--center">
 
-	<footer></footer>
+            <div class="brand">
+                <h1 class="logo"><a href="{{ root_url }}/">Teo Dragović - CV</a></h1>
+            </div>
 
-</article>
+        </header>
 
-</div>
+        <hr class="rule">
+
+        <div role="main" class="main-content">
+
+            <article role="article" class="portfolio">
+
+                {{ content | expand_urls: root_url }}
+
+            </article>
+        </div>
+
+        <hr class="rule">
+
+        <footer role="contentinfo" class="text--center">
+            <button onclick="window.open('/teo.dragovic-cv.2015.pdf');">PDF</button>
+        </footer>
+
+    </div>
+
+
+
+
+</body>
+</html>
 

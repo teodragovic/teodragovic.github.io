@@ -1,7 +1,7 @@
 ---
 layout: cv
 title: "About"
-date: 2014-02-14
+date: 2017-02-14
 ---
 
 ## Some general information

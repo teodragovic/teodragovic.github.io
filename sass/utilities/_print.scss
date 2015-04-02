@@ -5,7 +5,11 @@
 
 @media print {
 
-    body { font-size: 100% !important; }
+    @page { margin-top: 2cm; }
+
+    body { font-size: 80% !important; }
+
+    [role="contentinfo"] { display: none; }
 
     .main-nav,
     .main-footer,
@@ -14,6 +18,11 @@
     header .rule {
         display: none;
     }
+
+    .logo { font-size: 1.5em; padding-bottom: 0.4cm; }
+    .cv { padding: 0; }
+
+    hr { display: none; }
 
     *,
     *:before,
@@ -54,6 +63,10 @@
         border: 1px solid #999;
         page-break-inside: avoid;
     }
+
+    .print-break { page-break-after: always; }
+
+    ul { page-break-inside: avoid; }
 
     thead {
         display: table-header-group; /* h5bp.com/t */

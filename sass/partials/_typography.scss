@@ -8,7 +8,7 @@
 }
 
 body {
-	@include type($type--body, 300, normal);
+	@include type($type--body, 400, normal);
 	line-height: $line-height;
 	text-rendering: optimizeLegibility;
 	// Responsive font sizing
@@ -24,18 +24,18 @@ p { text-rendering: auto; }
 
 b, strong { font-weight: 600; }
 
-i, em { font-weight: 300; }
+i, em { font-weight: 400; }
 
-code, pre { 
-	font-family: $type--code; 
-	font-size: 90%; 
+code, pre {
+	font-family: $type--code;
+	font-size: 90%;
 }
 
 blockquote {
 	border-left: em(4) solid $ui-color;
 	font-style: italic;
 	padding: 0 em($spacing-small);
-	@media (min-width: 30em) and (min-height: 48em) { 
+	@media (min-width: 30em) and (min-height: 48em) {
 		padding: 0  em($spacing);
 	}
 	p {
@@ -63,29 +63,29 @@ blockquote {
 	}
 }
 
-h1, .h1 { 
-	@include headings-margin($font-h1, 0); 
+h1, .h1 {
+	@include headings-margin($font-h1, 0);
 	font-size: em($font-h1);
 }
-h2, .h2 { 
-	@include headings-margin($font-h2, 0.5); 
+h2, .h2 {
+	@include headings-margin($font-h2, 0.5);
 	font-size: em($font-h2);
 }
 h3, .h3 {
-	@include headings-margin($font-h3, 0.5); 
+	@include headings-margin($font-h3, 0.5);
 	font-size: em($font-h3);
 }
 /*
 h4, .h4 {
-	@include headings-margin($font-h4); 
+	@include headings-margin($font-h4);
 	font-size: em($font-h4);
 }
 h5, .h5 {
-	@include headings-margin($font-h5); 
+	@include headings-margin($font-h5);
 	font-size: em($font-h5);
 }
 h6, .h6 {
-	@include headings-margin($font-h6); 
+	@include headings-margin($font-h6);
 	font-size: em($font-h6);
 }
 */
@@ -98,7 +98,7 @@ h6, .h6 {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: $ui-color;
-	@media (min-width: 30em) and (min-height: 48em) { 
+	@media (min-width: 30em) and (min-height: 48em) {
 		margin-bottom: em($spacing - 1);
 	}
 }

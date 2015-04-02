@@ -39,8 +39,8 @@ $font-h5: 16;
 $font-h6: 14;
 
 // Setting type stacks
-$type--body: "lft-etica", sans-serif;
-$type--head: "lft-etica", sans-serif;
+$type--body: "Open Sans", sans-serif;
+$type--head: "Open Sans", sans-serif;
 $type--code: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 
 // Branding
@@ -128,7 +128,7 @@ $pre-color: $base1 !default;
 }
 
 @mixin headings-margin($header-font, $factor:1) {
-	
+
 	$diff: nil;
 
 	@if $header-font >= $baseline {
@@ -139,7 +139,7 @@ $pre-color: $base1 !default;
 
 	$margin: $diff + ($baseline * $factor);
 	margin-bottom: em($margin, $header-font); // init empty variable
-	
+
 }
 
 @mixin link($color, $underline: none) {
@@ -157,7 +157,7 @@ $pre-color: $base1 !default;
 
 // Breakpoints mixin
 @mixin bp($point) {
-	@media (min-width: em($point, 16)) { 
+	@media (min-width: em($point, 16)) {
 		@content;
 	}
 }

@@ -749,8 +749,8 @@ body {
 }
 
 body {
-  font-family: "lft-etica", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
   font-style: normal;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
@@ -791,7 +791,7 @@ b, strong {
 }
 
 i, em {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 code, pre {
@@ -824,7 +824,7 @@ h1,
 .h1, h2,
 .h2, h3,
 .h3 {
-  font-family: "lft-etica", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -870,15 +870,15 @@ h3, .h3 {
 
 /*
 h4, .h4 {
-	@include headings-margin($font-h4); 
+	@include headings-margin($font-h4);
 	font-size: em($font-h4);
 }
 h5, .h5 {
-	@include headings-margin($font-h5); 
+	@include headings-margin($font-h5);
 	font-size: em($font-h5);
 }
 h6, .h6 {
-	@include headings-margin($font-h6); 
+	@include headings-margin($font-h6);
 	font-size: em($font-h6);
 }
 */
@@ -918,7 +918,7 @@ h6, .h6 {
   font-size: 1em;
   line-height: 1.45em;
   border-right: 1px solid #121516 !important;
-  background: #0c5c70 url('/images/noise.png?1412503574') top left !important;
+  background: #0c5c70 url('/images/noise.png?1427977123') top left !important;
   text-shadow: #073642 0 -1px;
 }
 .highlight .line-numbers span, html .gist .gist-file .gist-syntax .highlight .line_numbers span {
@@ -950,7 +950,7 @@ html .gist .gist-file .gist-meta {
   color: #6e8992;
   font-size: .7em !important;
   line-height: 1.5em;
-  background: #0c5c70 url('/images/noise.png?1412503574') top left;
+  background: #0c5c70 url('/images/noise.png?1427977123') top left;
 }
 html .gist .gist-file .gist-meta a {
   color: #8ea1a5 !important;
@@ -977,7 +977,7 @@ pre {
   margin-bottom: 2.1em;
   padding: .8em 1em;
   border: 1px solid #094959;
-  background: #171a1c url('/images/noise.png?1412503574') top left;
+  background: #171a1c url('/images/noise.png?1427977123') top left;
   color: #aeb9b9;
   line-height: 1.45em;
 }
@@ -1005,7 +1005,7 @@ p pre code, li pre code {
   overflow-x: auto;
   overflow-y: hidden;
   padding: .8em;
-  background: #171a1c url('/images/noise.png?1412503574') top left !important;
+  background: #171a1c url('/images/noise.png?1427977123') top left !important;
   color: #aeb9b9 !important;
   line-height: 1.45em;
   /* Comment */
@@ -1285,7 +1285,7 @@ figure.code .highlight {
   border-right-color: #a5a5a5;
   border-bottom: 0;
   border-left-color: #a5a5a5;
-  background: #aaaaaa url('/images/code_bg.png?1412503574') top repeat-x;
+  background: #aaaaaa url('/images/code_bg.png?1427977123') top repeat-x;
   color: #474747;
   text-align: center;
   text-shadow: #cbcccc 0 1px 0;
@@ -1404,7 +1404,7 @@ figure.code {
 }
 
 .tagline {
-  font-family: "lft-etica", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-style: normal;
   margin-bottom: 0;
@@ -1551,13 +1551,55 @@ figure.code {
   margin-bottom: 1.4375em;
 }
 
+.cv {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+.cv i {
+  font-style: normal;
+  color: #888;
+  font-size: 85%;
+}
+.cv .logo {
+  line-height: 1;
+  margin-bottom: 0.7em;
+}
+.cv .logo a {
+  color: black;
+}
+.cv .rule {
+  margin: 1em 0 1.5em;
+}
+.cv button {
+  border: none;
+  width: 300px;
+  max-width: 40%;
+  padding: 10px;
+  background: #065379;
+  color: white;
+  font-weight: bold;
+  margin: 0 10px;
+  text-transform: uppercase;
+}
+.cv footer {
+  padding-top: 0.5em;
+}
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request: h5bp.com/r
    ========================================================================== */
 @media print {
+  @page {
+    margin-top: 2cm;
+}
+
   body {
-    font-size: 100% !important;
+    font-size: 80% !important;
+  }
+
+  [role="contentinfo"] {
+    display: none;
   }
 
   .main-nav,
@@ -1565,6 +1607,19 @@ figure.code {
   .tagline,
   .nav,
   header .rule {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    padding-bottom: 0.4cm;
+  }
+
+  .cv {
+    padding: 0;
+  }
+
+  hr {
     display: none;
   }
 
@@ -1607,6 +1662,14 @@ figure.code {
   pre,
   blockquote {
     border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  .print-break {
+    page-break-after: always;
+  }
+
+  ul {
     page-break-inside: avoid;
   }
 

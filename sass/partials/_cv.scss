@@ -1,0 +1,33 @@
+
+
+.cv {
+
+    padding-top: 2em;
+    padding-bottom: 1em;
+
+    i {
+        font-style: normal;
+        color: #888;
+        font-size: 85%;
+    }
+
+    .logo { line-height: 1; margin-bottom: 0.7em; }
+    .logo a { color: black; }
+
+    .rule { margin: 1em 0 1.5em; }
+
+    button {
+        border: none;
+        width: 300px;
+        max-width: 40%;
+        padding: 10px;
+        background: $blue;
+        color: white;
+        font-weight: bold;
+        margin: 0 10px;
+        text-transform: uppercase;
+    }
+
+    footer { padding-top: 0.5em; }
+
+}

@@ -4,7 +4,7 @@ title: "Creating edge-case personas"
 date: 2014-03-24
 comments: true
 categories: 
-published: true
+published: false
 ---
 
 [User personas](http://www.ux-lady.com/introduction-to-user-personas/) are by now well established UX technique. By creating prototypes of sort you get a better idea about what will actual users be expecting of your site. [Trent Walton](https://twitter.com/trentwalton) recently wrote about designing [device-agnostic](http://trentwalton.com/2014/03/10/device-agnostic/). That meant setting your baseline to the worst possible conditions and have them met with sufficient design. These conditions included hostile browsers, small screens, slow connections and touch inputs.
