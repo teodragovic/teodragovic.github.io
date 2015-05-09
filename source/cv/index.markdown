@@ -25,6 +25,12 @@ Skype: teo.dragovic
 
 ## Zaposlenja i radno iskustvo
 
+**[Infobip](http://infobip.com/)** - Software engineer 
+<i>04/2015</i>
+
+- Razvoj, implementacija i održavanje web aplikacija
+- Definiranje frontend standarda i workflowa
+
 **[Web Burza](http://web.burza.hr/)** - Frontend developer  
 <i>04/2014 - 02/2015</i>
 
@@ -33,7 +39,7 @@ Skype: teo.dragovic
 - Rad na projektima:
     - Aktivni razvoj kao dio frontend tima: [podravka.hr](http://podravka.hr/), [vipnet.hr](http://vipnet.hr/) i SPA aplikacija za online booking (NDA)
     - Frontend lead na razvoju Vipnetovog sučelja za korisnike (isporučeno vendoru na implementaciju)
-    - Samostalni frontend razvoj: [vinarijakriz.com](http://vinarijakriz.com/) i burza.dox ([interni projekt](http://petakolona.com))
+    - Samostalni frontend razvoj: [vinarijakriz.com](http://vinarijakriz.com/) i burza.dox (interni projekt)
     - Održavanje i optimizacija: [coolinarika.com](http://coolinarika.com/), [emmezeta.hr](http://emmezeta.hr/), [conforama.it](http://conforama.it/) i [agrokor.hr](http://agrokor.hr/)
 
 **[Adriatic.hr](http://adriatic.hr/)** - Web dizajner  
@@ -42,7 +48,7 @@ Skype: teo.dragovic
 - Redovito održavanje, optimizacija i razvoj UI-a
 - Redizajn stranice i newslettera za sezonu 2012./2013.
 - Redizajn i izrada CSS frameworka za backend (sučelje za zaposlenike)
-- Optimizacija i refaktoring frontenda (HTMl i CSS)
+- Optimizacija i refaktoring frontenda (HTML i CSS)
 - Dizajn i priprema tiskanih materijala (promotivni letci, kalendari, vizitke...)
 
 <div class="print-break"></div>
@@ -51,7 +57,7 @@ Skype: teo.dragovic
 <i>01/2011 - 11/2012</i>
 
 - Oblikovanje vizualnog indetiteta magazina
-- Prelom, obrada fotografije i grafičko oblikovanje magazina od [broja 19 do 23]()
+- Prelom, obrada fotografije i grafičko oblikovanje magazina od [broja 19 do 23](http://issuu.com/mypeople)
 - WordPress implementacija i grafičko oblikovanje popratnog web sadržaja
 - Uređivanje i vođenje bloga u periodu od siječnja do srpnja 2012.
 
@@ -84,7 +90,7 @@ Strani jezik: Engleski (aktivno u govoru i pismu)
 ## Znanja/vještine/tehnologija
 
 Dizajn - Photoshop, Illustrator, InDesign  
-Development - HTML, CSS (Sass), JavaScript (jQuery), SVG  
-RWD - mobile-first, progressive enhancement, a11y, performance optimization  
-Build - Grunt, Bower, Yaoman  
+Development - HTML, CSS (Sass), JavaScript (jQuery, GSAP, underscore, Angular, React), SVG  
+Mobile-first RWD, progressive enhancement, a11y, performance optimization  
+Build tools - Grunt, Bower, Yaoman, webpack  
 Ostalo - Git, Scrum  
