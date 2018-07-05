@@ -21,18 +21,20 @@
 @import "sass-groundwork/src/elements.base";
 @import "sass-groundwork/src/elements.type";
 @import "sass-groundwork/src/utility";
-@import "sass-groundwork/src/utility.type";
-
-// BASE
-
-@import "base/type";
-@import "base/utility";
-@import "base/layout";
 
 // COMPONENTS
 
 @import "components/_icons.scss";
 @import "components/_popup.scss";
+
+body
+{
+    @include absolute( 0 0 0 0 );
+    background-image: linear-gradient( $color-brand-beta, $color-brand-alpha, $color-brand-gamma, $color-brand-delta, $color-brand-epsilon, $color-brand-epsilon, $color-brand-delta, $color-brand-gamma, $color-brand-alpha, $color-brand-beta );
+    background-size: 100%;
+    color: rgba( $color-white, 0.9 );
+    font-family: "Open Sans";
+}
 
 .center
 {
@@ -40,4 +42,99 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
+}
+
+.list-reset
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+h1
+{
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25em;
+    line-height: 1;
+}
+
+p
+{
+    font-size: 1.6rem;
+    font-family: Georgia;
+    text-transform: lowercase;
+    margin-top: 0;
+}
+
+a
+{
+    color: inherit;
+    font-size: 2.5rem;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+ul
+{
+    display: flex;
+    justify-content: space-around;
+
+    a
+    {
+        line-height: 0;
+        outline-color: hotpink;
+    }
+}
+
+.mail
+{
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    cursor: pointer;
+}
+
+// Style regular, non-button links
+a:not(.btn)
+{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active
+    {
+        text-decoration: underline;
+    }
+
+    // Replace ugly, thick underline with thin one
+    // Use bg-image and text-shadow to clear descendants
+    // Reference: https://css-tricks.com/styling-underlines-web/
+    &.fancy-underline
+    {
+        &:hover,
+        &:focus,
+        &:active
+        {
+            text-decoration: none;
+            background-image: linear-gradient( currentColor, currentColor );
+            background-repeat: no-repeat;
+            background-size: 100% 3px;
+            background-position: center 80%;
+            text-shadow:
+                -1px 0 $color-white,
+                2px 0 $color-white,
+                1px 0 $color-white,
+                -1px 0 $color-white,
+                -2px 0 $color-white,
+                -3px 0 $color-white;
+        }
+    }
 }

@@ -7,14 +7,14 @@ import { getScrollbarWidth, queryAll, query } from './helpers';
 const TAB_KEY = 9;
 const ESCAPE_KEY = 27;
 
-const ROOT_ELEMENT = document.body;
+let ROOT_ELEMENT;
 
 const CLICK = 'click';
 const KEY_DOWN = 'keydown';
 
 const POPUP_SELECTOR = '.js-popup';
 const POPUP_CLOSE_SELECTOR = '.js-popupClose';
-const POPUP_FOCUSABLE = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]):not(.hpw-hidden), iframe, object, embed, [contenteditable], [tabindex]:not([tabindex^="-"])';
+const POPUP_FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex^="-"])';
 
 const VISIBLE_CLASS = 'is-visible';
 const ROOT_CLASS = 'popup-open';
@@ -41,7 +41,7 @@ Popup.open = function( event, element )
     element.classList.add( VISIBLE_CLASS );
     element.setAttribute( 'aria-hidden', false );
     // Put focus on close button.
-    query( POPUP_CLOSE_SELECTOR, element ).focus();
+    query( `button${POPUP_CLOSE_SELECTOR}`, element ).focus();
 };
 
 function closePopup( event, element )
@@ -93,7 +93,8 @@ function handleKeyEvents( event, links, element )
 
 Popup.init = function( selector )
 {
-    const popupSelector = selector ? selector : POPUP_SELECTOR;
+    ROOT_ELEMENT = document.body;
+    const popupSelector = POPUP_SELECTOR;
     const allPopups = queryAll( popupSelector );
 
     allPopups.forEach( element =>

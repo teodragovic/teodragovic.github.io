@@ -81,11 +81,18 @@ gulp.task( 'watch', [ 'styles', 'scripts', 'html' ], () =>
 // Clean output directory
 gulp.task( 'clean', () => del( [ `${config.outputDir}/*` ], { dot : true } ) );
 
+// Copy all files from root/ directory to output
+gulp.task( 'copy:root', () =>
+{
+    return gulp.src( [ `${config.baseDir}/root/*` ] )
+    .pipe( gulp.dest( config.outputDir ) );
+} );
+
 // Production build
 gulp.task( 'default', [ 'clean' ], cb =>
 {
     return runSequence(
-    [ 'lint:css', 'lint:js', 'html' ],
+    [ 'lint:css', 'lint:js', 'html', 'copy:root' ],
     [ 'styles', 'scripts' ],
     cb );
 } );

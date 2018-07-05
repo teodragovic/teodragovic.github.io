@@ -12,33 +12,42 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
 </head>
 
-<body class="center">
+<body>
 
-    <div class="text-center">
-        <h1>Teo Dragovic</h1>
-        <p>Front end web developer</p>
-        <aside class="links">
-            <ul class="list-reset">
-                <li>
-                    <a href="https://codepen.io/teodragovic">
-                        {{ icon.use( 'codepen', 'Codepen'  ) }}
-                    </a>
-                </li>
-                <li>
-                    <a href="https://stackoverflow.com/users/2382115/teo-dragovic">
-                        {{ icon.use( 'stack-overflow', 'Stack Overflow'  ) }}
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/teodragovic">
-                        {{ icon.use( 'github', 'Github' ) }}
-                    </a>
-                </li>
-                <li>
-                    <a href="#email">{{ icon.use( 'email', 'Contact me' ) }}</a>
-                </li>
-            </ul>
-        </aside>
+    <div class="center">
+
+        <div class="text-center">
+            <h1>Teo Dragovic</h1>
+            <p>Front end web developer</p>
+            <aside>
+                <ul class="list-reset">
+                    <li>
+                        <a href="https://www.upwork.com/freelancers/~01273ec489b8ed0ca7">
+                            {{ icon.use( 'upwork', 'UpWork'  ) }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://stackoverflow.com/users/2382115/teo-dragovic">
+                            {{ icon.use( 'stack-overflow', 'Stack Overflow'  ) }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/teodragovic">
+                            {{ icon.use( 'github', 'Github' ) }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://codepen.io/teodragovic">
+                            {{ icon.use( 'codepen', 'Codepen'  ) }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#email">{{ icon.use( 'email', 'Contact me' ) }}</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+
     </div>
 
     <div id="email" class="popup js-popup" role="dialog" aria-hidden="true">
@@ -51,9 +60,9 @@
                     {{ icon.use( 'close', 'Close' ) }}
                 </button>
 
-                <div class="popup__content">
-                    <span class="hide">{{ 'teo.dragovic@gmail.com' | replace( '@', ' at ' ) }}</span>
-                    <a class="js-mail" tabindex="0" aria-hidden>
+                <div class="popup__content text-center">
+                    <span class="u-visuallyhidden">{{ 'teo.dragovic@gmail.com' | replace( '@', ' at ' ) }}</span>
+                    <a class="js-mail mail fancy-underline" tabindex="0" aria-hidden>
                         {{ 'teo.dragovic@gmail.com' | reverse }}
                     </a>
                 </div>
