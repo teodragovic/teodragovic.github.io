@@ -85,7 +85,7 @@ gulp.task( 'clean', () => del( [ `${config.outputDir}/*` ], { dot : true } ) );
 gulp.task( 'default', [ 'clean' ], cb =>
 {
     return runSequence(
-    [ 'lint:css', 'lint:js', 'test:singleRun', 'html' ],
+    [ 'lint:css', 'lint:js', 'html' ],
     [ 'styles', 'scripts' ],
     cb );
 } );
