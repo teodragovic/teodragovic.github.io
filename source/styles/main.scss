@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+// main.scss
+// Main import file for Sass partials.
+
+// SETTINGS
+
+@import "settings/variables";
+
+// SASS GROUNDWORK
+
+// These are strictly helpers and should not output any code in CSS.
+@import "sass-groundwork/src/abstract.variables";
+@import "sass-groundwork/src/abstract.functions";
+@import "sass-groundwork/src/abstract.mixins";
+
+// These modules are first to output code in CSS.
+@import "sass-groundwork/src/normalize";
+@import "sass-groundwork/src/sanitize";
+
+@import "sass-groundwork/src/elements.base";
+@import "sass-groundwork/src/elements.type";
+
+// BASE
+
+@import "base/type";
+@import "base/utility";
+@import "base/layout";
+
+// COMPONENTS
+
+@import "components/_icons.scss";
+@import "components/_popup.scss";
+
+.center
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

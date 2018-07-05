@@ -1,0 +1,114 @@
+
+// _popup.scss
+// Styles for popup component.
+
+.popup
+{
+    z-index: z( "popup" );
+    @include fixed( 0 0 0 0 );
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+}
+
+.popup__overlay
+{
+    @include absolute( 0 );
+    pointer-events: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: default;
+
+    @include when-inside( ".is-visible" )
+    {
+        pointer-events: auto;
+        background-color: rgba( $color-black, 0.75 );
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.popup__close
+{
+    background-color: transparent;
+    color: $color-black;
+    @include size( $spacing-base * 10 );
+    font-size: 1rem;
+    float: right;
+    cursor: pointer;
+    display: flex;
+
+    &:active
+    {
+        .svg-icon--close
+        {
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    // center icon inside button
+    .svg-icon--close { margin: auto; }
+
+}
+
+.popup__body
+{
+    padding: $spacing-base * 2;
+    padding-bottom: $spacing-base * 10;
+
+    margin: auto; // center
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    max-height: 98%;
+    min-height: 20%;
+    // border-radius: 6px;
+
+    box-shadow:
+        -2px 0 3px rgba( 0, 0, 0, 0.06 ),
+        -2px 0 2px rgba( 0, 0, 0, 0.12 );
+
+    overflow: auto;
+    position: relative;
+    transition:
+        opacity .1s,
+        transform .6s;
+    opacity: 0;
+    transform: translateY( -100% );
+
+    @include when-inside( ".is-visible" )
+    {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateX( 0 );
+        transition:
+            transform .4s ease,
+            opacity .2s ease;
+    }
+}
+
+.popup__content
+{
+    clear: right;
+    padding: $spacing-base * 2;
+
+    p
+    {
+        margin-bottom: $spacing-base * 4;
+        &:last-of-type { margin-bottom: 0 }
+    }
+}
+
+// class added to body dinamically
+// only if scrollbar is visible
+.popup-open
+{
+    overflow: hidden;
+    .popup
+    {
+        overflow-y: scroll;
+    }
+}
