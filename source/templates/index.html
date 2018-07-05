@@ -1,0 +1,61 @@
+{% import 'partials/icons.html' as icon %}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teo Dragovic</title>
+
+    <link href="/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="center">
+        <h1>Teo Dragovic</h1>
+        <p>Front end web developer</p>
+        <aside class="links">
+            <ul>
+                <li>
+                    <a href="https://codepen.io/teodragovic">{{ icon.use( 'codepen', 'Codepen'  ) }}</a>
+                </li>
+                <li>
+                    <a href="https://stackoverflow.com/users/2382115/teo-dragovic">{{ icon.use( 'stack-overflow', 'Stack Overflow'  ) }}</a>
+                </li>
+                <li>
+                    <a href="https://github.com/teodragovic">{{ icon.use( 'github', 'Github' ) }}</a>
+                </li>
+                <li>
+                    <a href="#email">{{ icon.use( 'email', 'Contact me' ) }}</a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <div id="email" class="popup js-popup" role="dialog" aria-hidden="true">
+
+        <div class="popup__overlay js-popupClose"></div>
+
+        <div class="popup__body" role="document">
+
+                <button type="button" class="popup__close js-popupClose">
+                    {{ icon.use( 'close', 'Close' ) }}
+                </button>
+
+                <div class="popup__content">
+                    <span class="hide">{{ 'teo.dragovic@gmail.com' | replace( '@', ' at ' ) }}</span>
+                    <a class="js-mail" tabindex="0" aria-hidden>{{ 'teo.dragovic@gmail.com' | reverse }}</a>
+                </div>
+        </div>
+
+    </div>
+
+    {% include 'partials/icons.svg' %}
+
+    <script src="/main.js"></script>
+
+</body>
+</html>
