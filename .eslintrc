@@ -1,0 +1,67 @@
+{
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules": {
+        "key-spacing": [2, { "beforeColon": true }],
+        "object-curly-spacing": [2, "always"],
+        "array-bracket-spacing": [2, "always"],
+        "computed-property-spacing": [2, "always"],
+        "space-in-parens": [2, "always"],
+        "brace-style": [2, "allman", { "allowSingleLine": true }],
+        "indent": [2, 4, { "SwitchCase": 1, "MemberExpression": 0, "CallExpression": { "arguments": 0 } }],
+        "quotes": [2, "single"],
+        "linebreak-style": [2, "unix"],
+        "semi": [2, "always"],
+        "no-console": 0,
+        "no-unused-vars": 0,
+        "no-underscore-dangle": 0,
+        "no-var": 2,
+        "space-before-function-paren": [1, "never"],
+        "block-scoped-var": 1,
+        "consistent-return": 0,
+        "curly": 1,
+        "dot-location": [1, "property"],
+        "eqeqeq": 2,
+        "no-eval": 2,
+        "no-implicit-coercion": 1,
+        "no-implicit-globals": 2,
+        "no-else-return": 0,
+        "no-multi-spaces": [1, "exceptions": { "Property": true }],
+        "no-new-func": 1,
+        "no-proto": 2,
+        "no-undef": 2,
+        "wrap-iife": [1, "any"],
+        "yoda": 2,
+        "global-require": 2,
+        "no-mixed-requires": 1,
+        "comma-dangle": [1, "only-multiline"],
+        "eol-last": 2,
+        "no-trailing-spaces": 1,
+        "prefer-const": 1
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "amd": true,
+        "jquery": false,
+        "node": true,
+        "mocha": true,
+        "commonjs": true,
+        "shared-node-browser": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "impliedStrict": true
+        }
+    },
+    "globals": {
+        "$": true,
+        "jQuery": true,
+        "google": true,
+        "Stripe": true
+    }
+}

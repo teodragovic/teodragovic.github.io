@@ -1,0 +1,8 @@
+node_modules
+dist/
+build/
+.tmp
+.idea
+*.log
+*.DS_Store
+stats.html
