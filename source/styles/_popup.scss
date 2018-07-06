@@ -75,14 +75,3 @@
             opacity .2s ease;
     }
 }
-
-// Class added to body dinamically
-// only if scrollbar is visible.
-.popup-open
-{
-    overflow: hidden;
-    .popup
-    {
-        overflow-y: scroll;
-    }
-}

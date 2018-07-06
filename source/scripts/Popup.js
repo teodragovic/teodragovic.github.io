@@ -17,7 +17,6 @@ const POPUP_CLOSE_SELECTOR = '.js-popupClose';
 const POPUP_FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex^="-"])';
 
 const VISIBLE_CLASS = 'is-visible';
-const ROOT_CLASS = 'popup-open';
 
 const Popup = {};
 
@@ -29,14 +28,6 @@ Popup.open = function( event, element )
     // Save element that opened popup
     // so we can return focus when popup closes.
     Popup.popupOpenedWith = event.currentTarget;
-    // Add margin offset to body to prevent content in the
-    // background shifting when scrollbar disappears.
-    if ( ROOT_ELEMENT.scrollHeight > window.innerHeight )
-    {
-        ROOT_ELEMENT.classList.add( ROOT_CLASS );
-        const offset = getScrollbarWidth();
-        ROOT_ELEMENT.style.marginRight = offset + 'px';
-    }
     element.classList.add( VISIBLE_CLASS );
     element.setAttribute( 'aria-hidden', false );
     // Put focus on close button.
@@ -46,30 +37,12 @@ Popup.open = function( event, element )
 function closePopup( event, element )
 {
     event.preventDefault();
-    ROOT_ELEMENT.classList.remove( ROOT_CLASS );
-    ROOT_ELEMENT.style.marginRight = 0;
     element.classList.remove( VISIBLE_CLASS );
     element.setAttribute( 'aria-hidden', true );
     if ( Popup.popupOpenedWith )
     {
         Popup.popupOpenedWith.focus();
     }
-}
-
-function getScrollbarWidth()
-{
-    const scrollDiv = document.createElement( 'div' );
-    scrollDiv.style.overflowY = 'scroll';
-
-    // Needed by IE to trigger hasLayout
-    // otherwise clientWidth returns 0
-    scrollDiv.style.zoom = '1';
-    scrollDiv.textContent = 'foo';
-
-    document.body.appendChild( scrollDiv );
-    const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-    document.body.removeChild( scrollDiv );
-    return scrollbarWidth;
 }
 
 function handleKeyEvents( event, links, element )
