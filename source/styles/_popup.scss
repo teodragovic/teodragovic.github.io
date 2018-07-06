@@ -1,0 +1,88 @@
+
+// _popup.scss
+// Styles for popup component.
+
+.popup
+{
+    z-index: 1;
+    @include fixed( 0 );
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+}
+
+.popup__overlay
+{
+    @include absolute( 0 );
+    pointer-events: none;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: default;
+
+    .is-visible &,
+    .popup:target &
+    {
+        pointer-events: auto;
+        background-color: rgba( 0, 0, 0, 0.2 );
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.popup__close
+{
+    font-size: 1rem;
+    float: right;
+}
+
+.popup__body
+{
+
+    @include at-min( $bp-medium )
+    {
+        padding: $spacing-base * 4;
+    }
+
+    padding: $spacing-base;
+
+    margin: auto; // center
+    background: #fff;
+    width: 90%;
+    height: auto;
+
+    box-shadow:
+        -2px 0 3px rgba( 0, 0, 0, 0.06 ),
+        -2px 0 2px rgba( 0, 0, 0, 0.12 );
+
+    overflow: auto;
+    position: relative;
+    transition:
+        opacity .1s,
+        transform .6s;
+    opacity: 0;
+    transform: translateY( -100% );
+
+    .is-visible &,
+    .popup:target &
+    {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateX( 0 );
+        transition:
+            transform .4s ease,
+            opacity .2s ease;
+    }
+}
+
+// Class added to body dinamically
+// only if scrollbar is visible.
+.popup-open
+{
+    overflow: hidden;
+    .popup
+    {
+        overflow-y: scroll;
+    }
+}
