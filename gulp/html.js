@@ -17,7 +17,6 @@ const $ = gulpLoadPlugins();
 const arg = yargs.argv;
 
 const prod = ( arg.prod ) ? true : false;
-const env = prod ? 'production' : 'development';
 
 function onError( err )
 {
@@ -28,7 +27,7 @@ function onError( err )
 gulp.task( 'nunjucks', () =>
 {
     return gulp.src( `${config.baseDir}/${config.htmlDir}/*.html` )
-    .pipe( $.nunjucks.compile( { env : env } ) )
+    .pipe( $.nunjucks.compile() )
     .on( 'error', onError )
     .pipe( gulp.dest( config.outputDir ) );
 } );

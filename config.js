@@ -28,6 +28,4 @@ module.exports = {
     // Use same settings in .babelrc for transpiler
     autoprefixer : 'last 2 versions',
 
-    localhostPort : 4000
-
 };

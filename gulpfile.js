@@ -48,7 +48,7 @@ gulp.task( 'watch', [ 'styles', 'scripts', 'html' ], () =>
                 next();
             },
         },
-        port : config.localhostPort || 4000,
+        port : 4000,
         https : true,
     } );
 
