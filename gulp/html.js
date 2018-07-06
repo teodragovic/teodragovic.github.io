@@ -9,6 +9,7 @@ const path = require( 'path' );
 const yargs = require( 'yargs' );
 const gulp = require( 'gulp' );
 const gulpLoadPlugins = require( 'gulp-load-plugins' );
+const inlinesource = require( 'gulp-inline-source' );
 const pkg = require( '../package.json' );
 const config = require( '../config' );
 
@@ -35,6 +36,11 @@ gulp.task( 'nunjucks', () =>
 gulp.task( 'html', [ 'nunjucks' ], () =>
 {
     return gulp.src( `${config.outputDir}/**/*.html` )
+    .pipe( $.if( prod, inlinesource(
+    {
+        rootpath : './',
+        attribute : 'data-inline',
+    } ) ) )
     .pipe( $.if( prod, $.htmlmin(
     {
         collapseWhitespace : true,

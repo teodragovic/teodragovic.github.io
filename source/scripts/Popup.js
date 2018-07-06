@@ -2,7 +2,7 @@
 // popup.js
 // Make all popup elements and triggers in DOM interactive.
 
-import { getScrollbarWidth, queryAll, query } from './helpers';
+import { queryAll, query } from './helpers';
 
 const TAB_KEY = 9;
 const ESCAPE_KEY = 27;
@@ -18,7 +18,6 @@ const POPUP_FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabind
 
 const VISIBLE_CLASS = 'is-visible';
 const ROOT_CLASS = 'popup-open';
-
 
 const Popup = {};
 
@@ -41,7 +40,7 @@ Popup.open = function( event, element )
     element.classList.add( VISIBLE_CLASS );
     element.setAttribute( 'aria-hidden', false );
     // Put focus on close button.
-    query( `button${POPUP_CLOSE_SELECTOR}`, element ).focus();
+    query( `a${POPUP_CLOSE_SELECTOR}`, element ).focus();
 };
 
 function closePopup( event, element )
@@ -55,6 +54,22 @@ function closePopup( event, element )
     {
         Popup.popupOpenedWith.focus();
     }
+}
+
+function getScrollbarWidth()
+{
+    const scrollDiv = document.createElement( 'div' );
+    scrollDiv.style.overflowY = 'scroll';
+
+    // Needed by IE to trigger hasLayout
+    // otherwise clientWidth returns 0
+    scrollDiv.style.zoom = '1';
+    scrollDiv.textContent = 'foo';
+
+    document.body.appendChild( scrollDiv );
+    const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+    document.body.removeChild( scrollDiv );
+    return scrollbarWidth;
 }
 
 function handleKeyEvents( event, links, element )

@@ -17,7 +17,6 @@ const babel = require( 'rollup-plugin-babel' );
 const resolve = require( 'rollup-plugin-node-resolve' );
 const commonjs = require( 'rollup-plugin-commonjs' );
 const replace = require( 'rollup-plugin-replace' );
-const visualize = require( 'rollup-plugin-visualizer' );
 const source = require( 'vinyl-source-stream' );
 const buffer = require( 'vinyl-buffer' );
 
@@ -58,7 +57,6 @@ gulp.task( 'scripts', () =>
             } ),
             commonjs(),
             babel( { exclude : 'node_modules/**' } ),
-            visualize( { filename : 'stats.html', sourcemap : true } )
         ],
         sourcemap : true,
         format : 'iife'

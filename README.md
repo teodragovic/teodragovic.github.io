@@ -30,20 +30,6 @@ Start `localhost` and watch for file changes:
 
     npm start
 
-Serve production build on `localhost`:
-
-    npm run serve:build
-
 **Build for deployment**
 
     npm run build
-
-**Testing**
-
-Running unit tests and watching for file changes:
-
-    npm test    
-
-Run tests once and exit:
-
-    npm run test:once
