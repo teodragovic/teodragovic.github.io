@@ -55,7 +55,7 @@ body
         @include font-smoothing( off );
     }
 
-    font-family: "Open Sans";
+    font-family: Georgia;
     line-height: 1;
     text-align: center;
 
@@ -75,41 +75,26 @@ section
     display: block;
 }
 
-svg
+section
 {
-    overflow: hidden;
-    display: inline-block;
-    @include size( 1em );
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-
-    path { fill: inherit !important; }
+    width: 90%;
+    max-width: 40rem;
 }
 
 h1
 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin-bottom: 0.25em;
     margin-top: 0;
-
-    @include at-min( $bp-medium )
-    {
-        font-size: 5rem;
-    }
 }
 
 p
 {
     font-size: 120%;
-    font-family: Georgia;
     text-transform: lowercase;
     margin-top: 0;
 
-    @include at-min( $bp-medium )
+    @include at-min( $bp-small )
     {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
 }
 
@@ -178,8 +163,8 @@ a
             text-decoration: none;
             background-image: linear-gradient( currentColor, currentColor );
             background-repeat: no-repeat;
-            background-size: 100% 3px;
-            background-position: center 90%;
+            background-size: 100% 2px;
+            background-position: center 85%;
             text-shadow:
                 -1px 0 $color-white,
                 2px 0 $color-white,
@@ -189,6 +174,18 @@ a
                 -3px 0 $color-white;
         }
     }
+}
+
+.icon
+{
+    overflow: hidden;
+    display: inline-block;
+    @include size( 1em );
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+
+    path { fill: inherit !important; }
 }
 
 .mail
