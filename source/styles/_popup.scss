@@ -8,14 +8,18 @@
     @include fixed( 0 );
     overflow: hidden;
     display: flex;
-
     pointer-events: none;
+}
+
+.popup__overlay
+{
+    @include absolute( 0 );
     background-color: transparent;
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
 
-    &:target
+    .popup:target &
     {
         pointer-events: auto;
         background-color: rgba( 0, 0, 0, 0.2 );
@@ -54,6 +58,7 @@
 
     .popup:target &
     {
+        pointer-events: auto;
         opacity: 1;
         transform: translateX( 0 );
         transition:
