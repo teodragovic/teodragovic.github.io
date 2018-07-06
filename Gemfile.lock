@@ -1,0 +1,15 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    rake (12.3.1)
+    stringex (2.5.2)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  rake
+  stringex (= 2.5.2)
+
+BUNDLED WITH
+   1.11.2
