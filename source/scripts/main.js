@@ -2,11 +2,18 @@
 // main.js
 // Main entry file for JS modules.
 
-import { queryAll } from './helpers';
-import Popup from './Popup';
+// Returns array of elements that match passed selector, similar to jQuery $ function.
+// @param  {string} selector to match
+// @return {array} array of elements that match selector
+function queryAll( selector )
+{
+    const NodeList = document.querySelectorAll( selector );
+    // Convert NodeList into Array
+    return [].slice.call( NodeList );
+}
 
-// addMailtoHref - adds href attribute with mailto value to obusfcated mail links
-// @param  {string} - id, class or attribute on mail links
+// Adds href attribute with mailto value to obusfcated mail links.
+// @param  {String} - id, class or attribute on mail links
 function addMailToHref()
 {
     const links = queryAll( '.js-mail' );
@@ -29,5 +36,4 @@ function addMailToHref()
     } );
 }
 
-Popup.init();
 addMailToHref();

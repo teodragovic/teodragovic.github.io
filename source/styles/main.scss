@@ -127,15 +127,10 @@ nav a
     }
 }
 
-a,
-button
+a
 {
     cursor: pointer;
     touch-action: manipulation;
-}
-
-a
-{
     color: inherit;
     display: inline-block;
     padding: 0.5rem;
