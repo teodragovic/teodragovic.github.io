@@ -38,7 +38,7 @@ gulp.task( 'html', [ 'nunjucks' ], () =>
     return gulp.src( `${config.outputDir}/**/*.html` )
     .pipe( $.if( prod, inlinesource(
     {
-        rootpath : './',
+        rootpath : `${config.outputDir}/`,
         attribute : 'data-inline',
     } ) ) )
     .pipe( $.if( prod, $.htmlmin(

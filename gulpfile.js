@@ -79,7 +79,8 @@ gulp.task( 'copy:root', () =>
 gulp.task( 'default', [ 'clean' ], cb =>
 {
     return runSequence(
-    [ 'lint:css', 'lint:js', 'html', 'copy:root' ],
+    [ 'lint:css', 'lint:js', 'copy:root' ],
     [ 'styles', 'scripts' ],
+    'html',
     cb );
 } );
