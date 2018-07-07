@@ -36,7 +36,7 @@ Start `localhost` and watch for file changes:
 Install bundler and run to install dependencies
 
 ```
-gem install bundlergit st
+gem install bundler
 bundle install
 ```
 
