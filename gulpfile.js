@@ -20,7 +20,7 @@ const reload = browserSync.reload;
 
 require( 'require-dir' )( './gulp' );
 
-const htmlGlob = `${config.baseDir}/${config.htmlDir}/**/*.html`;
+const htmlGlob = `${config.baseDir}/${config.htmlDir}/**/*.{html,svg}`;
 const stylesGlob = `${config.baseDir}/${config.stylesDir}/**/*.scss`;
 const scriptsGlob = `${config.baseDir}/${config.scriptsDir}/**/*.js`;
 
@@ -42,19 +42,13 @@ gulp.task( 'watch', [ 'styles', 'scripts', 'html' ], () =>
         server :
         {
             baseDir : [ config.outputDir ],
-            middleware : ( req, res, next ) =>
-            {
-                res.setHeader( 'Access-Control-Allow-Origin', '*' );
-                next();
-            },
         },
         port : 4000,
-        https : true,
     } );
 
     gulp.watch( [ htmlGlob ], [ 'html', reload ] );
     gulp.watch( [ stylesGlob ], [ 'lint:css', 'styles' ] );
-    gulp.watch( [ `${scriptsGlob}` ], [ 'lint:js', 'scripts', reload ] );
+    gulp.watch( [ scriptsGlob ], [ 'lint:js', 'scripts', reload ] );
 } );
 
 // Build section
@@ -67,6 +61,9 @@ gulp.task( 'watch', [ 'styles', 'scripts', 'html' ], () =>
 
 // Clean output directory
 gulp.task( 'clean', () => del( [ `${config.outputDir}/*` ], { dot : true } ) );
+
+// Remove assets from output directory
+gulp.task( 'clean:build', () => del( [ `${config.outputDir}/**/*.{map,css,js}` ] ) );
 
 // Copy all files from root/ directory to output
 gulp.task( 'copy:root', () =>
@@ -82,5 +79,6 @@ gulp.task( 'default', [ 'clean' ], cb =>
     [ 'lint:css', 'lint:js', 'copy:root' ],
     [ 'styles', 'scripts' ],
     'html',
+    'clean:build',
     cb );
 } );

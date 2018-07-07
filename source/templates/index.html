@@ -53,14 +53,10 @@
 
         <div class="popup__body" role="document">
 
-            <a href="#" type="button" class="popup__close">
-                {{ icon.use( 'close', 'Close' ) }}
-            </a>
-
             <span class="hide">
                 {{ email | replace( '@', ' at ' ) }}
             </span>
-            <a class="js-mail mail fancy-underline" tabindex="0" aria-hidden>
+            <a class="js-mail mail fancy-underline" tabindex="0" aria-hidden="true">
                 {{ email | reverse }}
             </a>
         </div>

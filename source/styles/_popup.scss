@@ -28,24 +28,12 @@
     }
 }
 
-.popup__close
-{
-    font-size: 1rem;
-    float: right;
-}
-
 .popup__body
 {
     width: 90%;
-    margin: auto; // center
+    margin: auto; // center inside flexbox
     padding: $spacing-base;
     background: #fff;
-
-    @include at-min( $bp-medium )
-    {
-        padding: $spacing-base * 4;
-    }
-
     box-shadow:
         -2px 0 3px rgba( 0, 0, 0, 0.06 ),
         -2px 0 2px rgba( 0, 0, 0, 0.12 );
@@ -55,6 +43,11 @@
         transform .6s;
     opacity: 0;
     transform: translateY( -100% );
+
+    @include at-min( $bp-medium )
+    {
+        padding: $spacing-base * 4;
+    }
 
     .popup:target &
     {
