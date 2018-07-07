@@ -6,7 +6,7 @@ require "stringex"
 
 deploy_branch   = "master"
 deploy_dir      = "deploy"   # deploy directory (for Github pages deployment)
-public_dir      = "build"     # build directory
+public_dir      = "build"    # build directory
 
 
 desc "Generate website and deploy"

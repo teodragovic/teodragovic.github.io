@@ -34,9 +34,7 @@
     margin: auto; // center inside flexbox
     padding: $spacing-base;
     background: #fff;
-    box-shadow:
-        -2px 0 3px rgba( 0, 0, 0, 0.06 ),
-        -2px 0 2px rgba( 0, 0, 0, 0.12 );
+    box-shadow: 0 0 10px rgba( 0, 0, 0, 0.5 );
 
     transition:
         opacity .1s,

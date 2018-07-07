@@ -1,6 +1,5 @@
 
 {% import 'partials/icons.html' as icon %}
-{% set email = 'teo.dragovic@gmail.com' %}
 
 <!doctype html>
 <html>
@@ -18,54 +17,34 @@
     <section>
         <h1>{% include 'partials/name.html' %}</h1>
         <p>Front end web developer</p>
-        <nav>
-            <ul>
-                <li>
-                    <a href="https://www.upwork.com/freelancers/~01273ec489b8ed0ca7">
-                        {{ icon.use( 'upwork', 'UpWork'  ) }}
-                    </a>
-                </li>
-                <li>
-                    <a href="https://stackoverflow.com/users/2382115/teo-dragovic">
-                        {{ icon.use( 'stack-overflow', 'Stack Overflow'  ) }}
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/teodragovic">
-                        {{ icon.use( 'github', 'Github' ) }}
-                    </a>
-                </li>
-                <li>
-                    <a href="https://codepen.io/teodragovic">
-                        {{ icon.use( 'codepen', 'Codepen'  ) }}
-                    </a>
-                </li>
-                <li>
-                    <a href="#email">{{ icon.use( 'email', 'Contact me' ) }}</a>
-                </li>
-            </ul>
-        </nav>
+        <ul>
+            <li>
+                <a href="https://www.upwork.com/freelancers/~01273ec489b8ed0ca7">
+                    {{ icon.use( 'upwork', 'UpWork'  ) }}
+                </a>
+            </li>
+            <li>
+                <a href="https://stackoverflow.com/users/2382115/teo-dragovic">
+                    {{ icon.use( 'stack-overflow', 'Stack Overflow'  ) }}
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/teodragovic">
+                    {{ icon.use( 'github', 'Github' ) }}
+                </a>
+            </li>
+            <li>
+                <a href="https://codepen.io/teodragovic">
+                    {{ icon.use( 'codepen', 'Codepen'  ) }}
+                </a>
+            </li>
+            <li>
+                <a href="mailto:teo.dragovic@gmail.com">{{ icon.use( 'email', 'Contact me' ) }}</a>
+            </li>
+        </ul>
     </section>
 
-    <div id="email" class="popup" role="dialog">
-
-        <a href="#" class="popup__overlay"></a>
-
-        <div class="popup__body" role="document">
-
-            <span class="hide">
-                {{ email | replace( '@', ' at ' ) }}
-            </span>
-            <a class="js-mail mail fancy-underline" tabindex="0" aria-hidden="true">
-                {{ email | reverse }}
-            </a>
-        </div>
-
-    </div>
-
     {% include 'partials/icons.svg' %}
-
-    <script src="/main.js" data-inline></script>
 
 </body>
 </html>
