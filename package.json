@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "start": "gulp watch",
-    "build": "gulp --prod"
+    "build": "gulp --prod",
+    "commit:build": "git add . && git commit -m \"Build\" && git push origin source",
+    "deploy": "npm run build && gh-pages -b master -d build && npm run commit:build"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -13,6 +15,7 @@
     "babel-preset-env": "1.6.1",
     "browser-sync": "2.18.13",
     "eslint": "4.11.0",
+    "gh-pages": "2.0.1",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "4.0.0",
     "gulp-babel": "7.0.0",
