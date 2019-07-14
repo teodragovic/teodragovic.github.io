@@ -7,7 +7,8 @@
     "start": "gulp watch",
     "build": "gulp --prod",
     "commit:build": "git add . && git commit -m \"Build\" && git push origin source",
-    "deploy": "npm run build && gh-pages -b master -d build && npm run commit:build"
+    "deploy": "npm run build && npm run github && npm run commit:build",
+    "github": "gh-pages -b master -d build"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
