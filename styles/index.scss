@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+    cursor: default;
+    height: 100%;
+    font-size: 125%;
+    text-size-adjust: 100%;
+}
+
+body {
+    -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+    -ms-overflow-style: scrollbar;
+    min-height: 100%;
+    height: 100%;
+    margin: 0;
+
+    font-size: 100%;
+    font-kerning: normal;
+    text-size-adjust: 100%;
+    font-feature-settings: "liga", "kern";
+    text-rendering: optimizeLegibility;
+
+    font-family: Georgia;
+    line-height: 1.2;
+}
+
+.homepage {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-inner {
+    display: block;
+    width: 90%;
+    max-width: 40rem;
+}
+
+.homepage p {
+    font-size: 120%;
+    text-transform: lowercase;
+    margin-top: 0;
+}
+
+@media screen and (min-width: 37.5em) {
+  .homepage p { font-size: 2rem; }
+}
+
+.homepage ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.homepage ul li {
+    flex: 0 1 100px;
+    margin-bottom: 1rem;
+}
+
+.homepage a {
+    font-size: 1.8rem;
+    touch-action: manipulation;
+    color: inherit;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+@media screen and (min-width: 37.5em) {
+  .homepage a { font-size: 2.5rem; }
+}
+
+.icon {
+    overflow: hidden;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+
+.icon path { fill: inherit !important; }
+
+::-moz-selection {
+    background-color: #000;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: #000;
+    color: #fff;
+    text-shadow: none;
+}
+
+.blog-list,
+.post {
+  width: 100%;
+  max-width: 50ch;
+  margin: 0 auto;
+  padding-top: 10%;
+}
+
+a {
+  color:rgb(0, 0, 0);
+}
+
+a:visited {
+  color:rgb(0, 0, 0);
+}
+
+.postlist-item {
+  font-family: sans-serif;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.postlist-item time {
+  font-size: 16px;
+}
+
+.postlist-item a {
+  text-decoration: none;
+}
+
+.postlist-item h2 {
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.postlist-item p {
+  margin-top: 0;
+  text-decoration: none;
+}
+
+.post h1,
+.post h2,
+.post h3 {
+  font-family: sans-serif;
+  font-weight: 900;
+}
+
+
+/************************/
+
+code[class*="language-"], pre[class*="language-"] {
+	font-size: 14px;
+	line-height: 1.375;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	background: #272822;
+	color: #f8f8f2;
+}
+pre[class*="language-"] {
+	padding: 1.5em 0;
+	margin: .5em 0;
+	overflow: auto;
+}
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+.token.comment, .token.prolog, .token.doctype, .token.cdata {
+	color: #75715e;
+}
+.token.punctuation {
+	color: #f8f8f2;
+}
+.token.namespace {
+	opacity: .7;
+}
+.token.operator, .token.boolean, .token.number {
+	color: #fd971f;
+}
+.token.property {
+	color: #f4bf75;
+}
+.token.tag {
+	color: #66d9ef;
+}
+.token.string {
+	color: #a1efe4;
+}
+.token.selector {
+	color: #ae81ff;
+}
+.token.attr-name {
+	color: #fd971f;
+}
+.token.entity, .token.url, .language-css .token.string, .style .token.string {
+	color: #a1efe4;
+}
+.token.attr-value, .token.keyword, .token.control, .token.directive, .token.unit {
+	color: #a6e22e;
+}
+.token.statement, .token.regex, .token.atrule {
+	color: #a1efe4;
+}
+.token.placeholder, .token.variable {
+	color: #66d9ef;
+}
+.token.deleted {
+	text-decoration: line-through;
+}
+.token.inserted {
+	border-bottom: 1px dotted #f9f8f5;
+	text-decoration: none;
+}
+.token.italic {
+	font-style: italic;
+}
+.token.important, .token.bold {
+	font-weight: bold;
+}
+.token.important {
+	color: #f92672;
+}
+.token.entity {
+	cursor: help;
+}
+pre > code.highlight {
+	outline: 0.4em solid #f92672;
+	outline-offset: .4em;
+}

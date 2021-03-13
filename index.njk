@@ -1,0 +1,35 @@
+---
+layout: base
+---
+{% import 'icons/icons.html' as icon %}
+
+<section class="homepage">
+    <div class="homepage-inner">
+        <h1>{% include 'name.html' %}</h1>
+        <p>Web developer</p>
+        <ul>
+            <li>
+                <a href="https://stackoverflow.com/users/2382115/teo-dragovic" aria-label="Stack Overflow">
+                    {{ icon.use( 'stack-overflow', 'Stack Overflow'  ) }}
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/teodragovic" aria-label="Github">
+                    {{ icon.use( 'github', 'Github' ) }}
+                </a>
+            </li>
+            <li>
+                <a href="https://codepen.io/teodragovic" aria-label="Codepen">
+                    {{ icon.use( 'codepen', 'Codepen'  ) }}
+                </a>
+            </li>
+            <li>
+                <a href="mailto:teo.dragovic@gmail.com" aria-label="Contact me">
+                    {{ icon.use( 'email', 'Contact me' ) }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{% include 'icons/icons.svg' %}
