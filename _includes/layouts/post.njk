@@ -5,9 +5,9 @@ permalink: "blog/{{ title | slug }}/"
 ---
 
 <div class="post">
-      <time class="post-date" datetime="{{ date | htmlDateString }}">
+    <time class="post-date" datetime="{{ date | htmlDateString }}">
         {{ date | readableDate }}
-      </time>
+    </time>
     <h1>{{ title }}</h1>
     {{ content | safe }}
 </div>

@@ -6,13 +6,14 @@
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass --no-source-map --style=compressed styles:_includes/css",
     "build:eleventy": "eleventy",
-    "clean": "del-cli _site",
+    "clean": "del-cli _site _includes/css",
     "optimize:sass": "postcss _includes/css/*.css -u autoprefixer cssnano -r",
     "start": "npm-run-all clean build:sass --parallel watch:*",
     "build": "npm-run-all clean build:sass optimize:sass build:eleventy",
     "github": "gh-pages -b master -d build",
     "commit:build": "git add . && git commit -m \"Build\" && git push origin source",
-    "deploy": "npm run build && npm run github && npm run commit:build"
+    "deploy": "npm run build && npm run github && npm run commit:build",
+    "eslint": "eslint --cache --ext .js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",

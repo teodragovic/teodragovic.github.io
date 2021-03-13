@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title or metadata.title }}</title>
 
-    <style>{% include "css/index.css" %}</style>
-  </head>
-  <body>
+        <style>{% include "css/index.css" %}</style>
+    </head>
+    <body>
 
-    {{ content | safe }}
+        {{ content | safe }}
 
-  </body>
+    </body>
 </html>

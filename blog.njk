@@ -5,15 +5,15 @@ layout: base
 {% set postslist = collections.posts %}
 
 <div class="blog-list">
-  {% for post in postslist | reverse %}
+    {% for post in postslist | reverse %}
     <article class="postlist-item {% if post.url == url %}postlist-item-active{% endif %}">
-      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
-        {{ post.date | readableDate }}
-      </time>
-      <a href="{{ post.url | url }}" class="postlist-link">
-        <h2>{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h2>
-        {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
-      </a>
+        <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
+            {{ post.date | readableDate }}
+        </time>
+        <a href="{{ post.url | url }}" class="postlist-link">
+            <h2>{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h2>
+            {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+        </a>
     </article>
-  {% endfor %}
+    {% endfor %}
 </div>
