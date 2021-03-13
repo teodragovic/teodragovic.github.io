@@ -5,13 +5,13 @@ https://www.11ty.dev/docs/
 
 
 TODO:
+restructure dirs
+refactor styles
 style links
-eslint
-inline css https://www.11ty.dev/docs/quicktips/inline-css/
+eslint config
 syntax highlight
-deploy to github
-fusnote
-slike
+footnotes
+img
 pwa
 404
 

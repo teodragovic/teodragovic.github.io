@@ -2,14 +2,17 @@
   "name": "teodragovic",
   "version": "2.0.0",
   "scripts": {
-    "watch:sass": "sass --no-source-map --watch styles:_site/css",
+    "watch:sass": "sass --no-source-map --watch styles:_includes/css",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass --no-source-map styles:_site/css",
+    "build:sass": "sass --no-source-map --style=compressed styles:_includes/css",
     "build:eleventy": "eleventy",
     "clean": "del-cli _site",
-    "postbuild": "postcss _site/css/*.css -u autoprefixer cssnano -r",
+    "optimize:sass": "postcss _includes/css/*.css -u autoprefixer cssnano -r",
     "start": "npm-run-all clean build:sass --parallel watch:*",
-    "build": "npm-run-all clean build:sass build:eleventy"
+    "build": "npm-run-all clean build:sass optimize:sass build:eleventy",
+    "github": "gh-pages -b master -d build",
+    "commit:build": "git add . && git commit -m \"Build\" && git push origin source",
+    "deploy": "npm run build && npm run github && npm run commit:build"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -18,6 +21,7 @@
     "cssnano": "^4.1.10",
     "del-cli": "^3.0.1",
     "eslint": "^7.22.0",
+    "gh-pages": "^3.1.0",
     "luxon": "^1.25.0",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.3.0",
