@@ -13,7 +13,8 @@
     "github": "gh-pages -b master -d _site",
     "commit:build": "git add . && git commit -m \"Build\" && git push origin source",
     "deploy": "npm run build && npm run github && npm run commit:build",
-    "eslint": "eslint --cache --ext .js"
+    "eslint": "eslint --cache --ext .js",
+    "post": "node post.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
