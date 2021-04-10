@@ -6,7 +6,7 @@ layout: base
 
 <div class="blog-list">
     {% for post in postslist | reverse %}
-    <article class="postlist-item {% if post.url == url %}postlist-item-active{% endif %}">
+    <article class="postlist-item">
         <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
             {{ post.date | readableDate }}
         </time>
