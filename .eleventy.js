@@ -23,6 +23,7 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addPassthroughCopy('img');
+    eleventyConfig.addPassthroughCopy('CNAME');
 
     /* Markdown Overrides */
     const markdownLibrary = markdownIt({
