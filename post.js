@@ -18,7 +18,6 @@ tags:
 layout: post
 ---`;
 
-// write to a new file named 2pac.txt
 fs.writeFile(`posts/${ date }-${ slugify(title) }.md`, meta, (err) => {
     if (err) {
         throw err;
