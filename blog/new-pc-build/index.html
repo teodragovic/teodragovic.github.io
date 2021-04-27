@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New PC build</title>
+
+        <style>*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}html{cursor:default;font-size:125%}body,html{height:100%;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}body{-webkit-tap-highlight-color:rgba(0,0,0,0);-ms-overflow-style:scrollbar;min-height:100%;margin:0;font-size:100%;-webkit-font-kerning:normal;font-kerning:normal;-webkit-font-feature-settings:"liga","kern";font-feature-settings:"liga","kern";text-rendering:optimizeLegibility;font-family:Georgia;line-height:1.2}.homepage{width:100%;height:100%;padding:1rem;text-align:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.homepage-inner{display:block;width:90%;max-width:40rem}.homepage p{font-size:120%;text-transform:lowercase;margin-top:0}@media screen and (min-width:37.5em){.homepage p{font-size:2rem}}.homepage ul{list-style:none;padding:0;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-ms-flex-wrap:wrap;flex-wrap:wrap}.homepage ul li{-webkit-box-flex:0;-ms-flex:0 1 100px;flex:0 1 100px;margin-bottom:1rem}.homepage a{font-size:1.8rem;-ms-touch-action:manipulation;touch-action:manipulation;color:inherit;display:inline-block;padding:.5rem}@media screen and (min-width:37.5em){.homepage a{font-size:2.5rem}}.icon{overflow:hidden;display:inline-block;width:1em;height:1em;stroke-width:0;stroke:currentColor;fill:currentColor}.icon path{fill:inherit!important}::-moz-selection{background-color:#000;color:#fff;text-shadow:none}::selection{background-color:#000;color:#fff;text-shadow:none}.blog-list,.post{width:100%;max-width:50ch;margin:0 auto;padding-top:10%}a,a:visited{color:#000}.postlist-item{font-family:sans-serif;padding-bottom:20px;margin-bottom:20px}.postlist-item time{font-size:16px}.postlist-item a{text-decoration:none}.postlist-item h2{font-weight:900;margin-top:0;margin-bottom:10px;text-decoration:underline}.postlist-item p{margin-top:0;text-decoration:none}.post h1,.post h2,.post h3{font-family:sans-serif;font-weight:900}code[class*=language-],pre[class*=language-]{font-size:14px;line-height:1.375;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;background:#272822;color:#f8f8f2}pre[class*=language-]{padding:1.5em 0;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#75715e}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.boolean,.token.number,.token.operator{color:#fd971f}.token.property{color:#f4bf75}.token.tag{color:#66d9ef}.token.string{color:#a1efe4}.token.selector{color:#ae81ff}.token.attr-name{color:#fd971f}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a1efe4}.token.attr-value,.token.control,.token.directive,.token.keyword,.token.unit{color:#a6e22e}.token.atrule,.token.regex,.token.statement{color:#a1efe4}.token.placeholder,.token.variable{color:#66d9ef}.token.deleted{text-decoration:line-through}.token.inserted{border-bottom:1px dotted #f9f8f5;text-decoration:none}.token.italic{font-style:italic}.token.bold,.token.important{font-weight:700}.token.important{color:#f92672}.token.entity{cursor:help}pre>code.highlight{outline:.4em solid #f92672;outline-offset:.4em}
+/*# sourceMappingURL=data:application/json;base64,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QUMsNkJBQTZCLGVBQWdCLENBQUMsaUJBQWlCLGFBQWEsQ0FBQyxjQUFjLFdBQVcsQ0FBQyxtQkFBbUIsMEJBQTBCLENBQUMsbUJBQW1CIiwiZmlsZSI6ImluZGV4LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiosKjpiZWZvcmUsKjphZnRlcntib3gtc2l6aW5nOmJvcmRlci1ib3h9aHRtbHtjdXJzb3I6ZGVmYXVsdDtoZWlnaHQ6MTAwJTtmb250LXNpemU6MTI1JTt0ZXh0LXNpemUtYWRqdXN0OjEwMCV9Ym9keXstd2Via2l0LXRhcC1oaWdobGlnaHQtY29sb3I6cmdiYSgwLDAsMCwwKTstbXMtb3ZlcmZsb3ctc3R5bGU6c2Nyb2xsYmFyO21pbi1oZWlnaHQ6MTAwJTtoZWlnaHQ6MTAwJTttYXJnaW46MDtmb250LXNpemU6MTAwJTtmb250LWtlcm5pbmc6bm9ybWFsO3RleHQtc2l6ZS1hZGp1c3Q6MTAwJTtmb250LWZlYXR1cmUtc2V0dGluZ3M6XCJsaWdhXCIsXCJrZXJuXCI7dGV4dC1yZW5kZXJpbmc6b3B0aW1pemVMZWdpYmlsaXR5O2ZvbnQtZmFtaWx5Okdlb3JnaWE7bGluZS1oZWlnaHQ6MS4yfS5ob21lcGFnZXt3aWR0aDoxMDAlO2hlaWdodDoxMDAlO3BhZGRpbmc6MXJlbTt0ZXh0LWFsaWduOmNlbnRlcjtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2p1c3RpZnktY29udGVudDpjZW50ZXJ9LmhvbWVwYWdlLWlubmVye2Rpc3BsYXk6YmxvY2s7d2lkdGg6OTAlO21heC13aWR0aDo0MHJlbX0uaG9tZXBhZ2UgcHtmb250LXNpemU6MTIwJTt0ZXh0LXRyYW5zZm9ybTpsb3dlcmNhc2U7bWFyZ2luLXRvcDowfUBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDM3LjVlbSl7LmhvbWVwYWdlIHB7Zm9udC1zaXplOjJyZW19fS5ob21lcGFnZSB1bHtsaXN0LXN0eWxlOm5vbmU7cGFkZGluZzowO21hcmdpbjowO2Rpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYXJvdW5kO2ZsZXgtd3JhcDp3cmFwfS5ob21lcGFnZSB1bCBsaXtmbGV4OjAgMSAxMDBweDttYXJnaW4tYm90dG9tOjFyZW19LmhvbWVwYWdlIGF7Zm9udC1zaXplOjEuOHJlbTt0b3VjaC1hY3Rpb246bWFuaXB1bGF0aW9uO2NvbG9yOmluaGVyaXQ7ZGlzcGxheTppbmxpbmUtYmxvY2s7cGFkZGluZzouNXJlbX1AbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiAzNy41ZW0pey5ob21lcGFnZSBhe2ZvbnQtc2l6ZToyLjVyZW19fS5pY29ue292ZXJmbG93OmhpZGRlbjtkaXNwbGF5OmlubGluZS1ibG9jazt3aWR0aDoxZW07aGVpZ2h0OjFlbTtzdHJva2Utd2lkdGg6MDtzdHJva2U6Y3VycmVudENvbG9yO2ZpbGw6Y3VycmVudENvbG9yfS5pY29uIHBhdGh7ZmlsbDppbmhlcml0ICFpbXBvcnRhbnR9OjotbW96LXNlbGVjdGlvbntiYWNrZ3JvdW5kLWNvbG9yOiMwMDA7Y29sb3I6I2ZmZjt0ZXh0LXNoYWRvdzpub25lfTo6c2VsZWN0aW9ue2JhY2tncm91bmQtY29sb3I6IzAwMDtjb2xvcjojZmZmO3RleHQtc2hhZG93Om5vbmV9LmJsb2ctbGlzdCwucG9zdHt3aWR0aDoxMDAlO21heC13aWR0aDo1MGNoO21hcmdpbjowIGF1dG87cGFkZGluZy10b3A6MTAlfWF7Y29sb3I6IzAwMH1hOnZpc2l0ZWR7Y29sb3I6IzAwMH0ucG9zdGxpc3QtaXRlbXtmb250LWZhbWlseTpzYW5zLXNlcmlmO3BhZGRpbmctYm90dG9tOjIwcHg7bWFyZ2luLWJvdHRvbToyMHB4fS5wb3N0bGlzdC1pdGVtIHRpbWV7Zm9udC1zaXplOjE2cHh9LnBvc3RsaXN0LWl0ZW0gYXt0ZXh0LWRlY29yYXRpb246bm9uZX0ucG9zdGxpc3QtaXRlbSBoMntmb250LXdlaWdodDo5MDA7bWFyZ2luLXRvcDowO21hcmdpbi1ib3R0b206MTBweDt0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lfS5wb3N0bGlzdC1pdGVtIHB7bWFyZ2luLXRvcDowO3RleHQtZGVjb3JhdGlvbjpub25lfS5wb3N0IGgxLC5wb3N0IGgyLC5wb3N0IGgze2ZvbnQtZmFtaWx5OnNhbnMtc2VyaWY7Zm9udC13ZWlnaHQ6OTAwfWNvZGVbY2xhc3MqPWxhbmd1YWdlLV0scHJlW2NsYXNzKj1sYW5ndWFnZS1de2ZvbnQtc2l6ZToxNHB4O2xpbmUtaGVpZ2h0OjEuMzc1O2RpcmVjdGlvbjpsdHI7dGV4dC1hbGlnbjpsZWZ0O3doaXRlLXNwYWNlOnByZTt3b3JkLXNwYWNpbmc6bm9ybWFsO3dvcmQtYnJlYWs6bm9ybWFsOy1tb3otdGFiLXNpemU6Mjstby10YWItc2l6ZToyO3RhYi1zaXplOjI7LXdlYmtpdC1oeXBoZW5zOm5vbmU7LW1vei1oeXBoZW5zOm5vbmU7LW1zLWh5cGhlbnM6bm9uZTtoeXBoZW5zOm5vbmU7YmFja2dyb3VuZDojMjcyODIyO2NvbG9yOiNmOGY4ZjJ9cHJlW2NsYXNzKj1sYW5ndWFnZS1de3BhZGRpbmc6MS41ZW0gMDttYXJnaW46LjVlbSAwO292ZXJmbG93OmF1dG99Om5vdChwcmUpPmNvZGVbY2xhc3MqPWxhbmd1YWdlLV17cGFkZGluZzouMWVtO2JvcmRlci1yYWRpdXM6LjNlbX0udG9rZW4uY29tbWVudCwudG9rZW4ucHJvbG9nLC50b2tlbi5kb2N0eXBlLC50b2tlbi5jZGF0YXtjb2xvcjojNzU3MTVlfS50b2tlbi5wdW5jdHVhdGlvbntjb2xvcjojZjhmOGYyfS50b2tlbi5uYW1lc3BhY2V7b3BhY2l0eTouN30udG9rZW4ub3BlcmF0b3IsLnRva2VuLmJvb2xlYW4sLnRva2VuLm51bWJlcntjb2xvcjojZmQ5NzFmfS50b2tlbi5wcm9wZXJ0eXtjb2xvcjojZjRiZjc1fS50b2tlbi50YWd7Y29sb3I6IzY2ZDllZn0udG9rZW4uc3RyaW5ne2NvbG9yOiNhMWVmZTR9LnRva2VuLnNlbGVjdG9ye2NvbG9yOiNhZTgxZmZ9LnRva2VuLmF0dHItbmFtZXtjb2xvcjojZmQ5NzFmfS50b2tlbi5lbnRpdHksLnRva2VuLnVybCwubGFuZ3VhZ2UtY3NzIC50b2tlbi5zdHJpbmcsLnN0eWxlIC50b2tlbi5zdHJpbmd7Y29sb3I6I2ExZWZlNH0udG9rZW4uYXR0ci12YWx1ZSwudG9rZW4ua2V5d29yZCwudG9rZW4uY29udHJvbCwudG9rZW4uZGlyZWN0aXZlLC50b2tlbi51bml0e2NvbG9yOiNhNmUyMmV9LnRva2VuLnN0YXRlbWVudCwudG9rZW4ucmVnZXgsLnRva2VuLmF0cnVsZXtjb2xvcjojYTFlZmU0fS50b2tlbi5wbGFjZWhvbGRlciwudG9rZW4udmFyaWFibGV7Y29sb3I6IzY2ZDllZn0udG9rZW4uZGVsZXRlZHt0ZXh0LWRlY29yYXRpb246bGluZS10aHJvdWdofS50b2tlbi5pbnNlcnRlZHtib3JkZXItYm90dG9tOjFweCBkb3R0ZWQgI2Y5ZjhmNTt0ZXh0LWRlY29yYXRpb246bm9uZX0udG9rZW4uaXRhbGlje2ZvbnQtc3R5bGU6aXRhbGljfS50b2tlbi5pbXBvcnRhbnQsLnRva2VuLmJvbGR7Zm9udC13ZWlnaHQ6Ym9sZH0udG9rZW4uaW1wb3J0YW50e2NvbG9yOiNmOTI2NzJ9LnRva2VuLmVudGl0eXtjdXJzb3I6aGVscH1wcmU+Y29kZS5oaWdobGlnaHR7b3V0bGluZTouNGVtIHNvbGlkICNmOTI2NzI7b3V0bGluZS1vZmZzZXQ6LjRlbX1cbiJdfQ== */</style>
+    </head>
+    <body>
+
+        
+<div class="post">
+    <time class="post-date" datetime="2021-01-14">
+        2021 01 14
+    </time>
+    <h1>New PC build</h1>
+    <p>Yesterday I wanted to write that I finally completed my PC build but trouble never ends. As of today, this is my current config:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+</tr>
+<tr>
+<td>FAN</td>
+</tr>
+<tr>
+<td>MBO</td>
+</tr>
+<tr>
+<td>RAM</td>
+</tr>
+<tr>
+<td>SSD</td>
+</tr>
+<tr>
+<td>GPU</td>
+</tr>
+<tr>
+<td>PSU</td>
+</tr>
+<tr>
+<td>Case</td>
+</tr>
+<tr>
+<td>WIFI</td>
+</tr>
+<tr>
+<td>CAM</td>
+</tr>
+<tr>
+<td>Monitor</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://pcpartpicker.com/list/P2smW3">pcpartpicker link</a></p>
+<p>(linked config is misisng my cheap keyboard and external mic but has my Sennheiser headphones, Logitech M705 mouse and WD 5TB external HDD that I bought and used for a while.)</p>
+<p>Backstory: my laptop is 6 years old. Instead of upgrading RAM and replacing HDD and SSD with new ones I decided to switch to a desktop PC.</p>
+<h2 id="first-order">First order <a class="direct-link" href="#first-order">#</a></h2>
+<p>On my first go, I ordered just PC parts, no new monitor. I was really unhappy with the Antex NX100 case. It just didn’t work for me.</p>
+<p>When finally completed, the PC was so loud I could hear it from the other room. Since I didn’t exactly buy a cheap CPU I thought stock fan would be enough for my purposes (no gaming).</p>
+<h1 id="second-order">Second order <a class="direct-link" href="#second-order">#</a></h1>
+<p>My second order was for a new Ultrawide curved monitor. Few remarks about that:</p>
+<ul>
+<li>Curved/immersive thing only makes sense for video games. When watching TV at distance it’s simply too small to make a difference. For work, it’s even a bit distracting.</li>
+<li>Combination of my cheap Ikea desk and poor (and ugly) stand makes the monitor wobble a lot when I type. I think I’ll have to look into wall mounts.</li>
+<li>I still feel a dual (or triple) screen is more effective for work. I don’t work on music or video editing but have multiple apps open a once. Maybe I just need to get better at screen management and find a good helper app.</li>
+</ul>
+<h1 id="third-order">Third order <a class="direct-link" href="#third-order">#</a></h1>
+<p>On my third go, I ordered a new case and separate fan for my CPU. Arctic Freezer was a great pick. Easy setup. And I’m much much happier with my new Zalman T7 case, it’s smaller but has room for 8 fans and overall access and mounting was easier (or I just got the hang of it).  One negative thing is that I had trouble fitting screws on both the back lid and when mounting MBO (this might be due to a crooked MBO mask due to my fiddling). Like they put the holes just a little off.</p>
+<h1 id="noise-trouble">Noise trouble <a class="direct-link" href="#noise-trouble">#</a></h1>
+<p>PC was still noisy as hell. After examining CPU, GPU and case fan I started to think the issue is with PSU. It’s a <a href="https://www.lc-power.com/en/product/archive/pc-power-supply-units/lc5550-v22/">cheap PSU</a> not widely available (no videos, no reviews, no other company items on pcpartpicker).</p>
+<p>My next step is to go back home and pull Corsair VX450 PSU from my old PC and test it. If it’s an improvement I’ll buy a new PSU (given that the old one is probably 10 years old at this point). Also need to look into buying additional fans for the case (with 4-pin cable since I used my single Molex cable).</p>
+<p>Update: noise went down after I removed ASROCK utility tool that did some shitty overclocking job causing CPU fan to go up and down in spins.</p>
+<p>This whole experience was bad due to one shitty little program I installed without thinking twice.</p>
+<h1 id="final-rant">Final rant <a class="direct-link" href="#final-rant">#</a></h1>
+<p>And finally, since I’m no longer on the laptop I had to get a standalone USB webcam. I picked Logitech C310 based on price and reviews. The picture quality is good but the lack of a good stand solution bothers me. I can either mount it on my desk so it faces my chin or put it on the monitor so it faces my bald forehead.</p>
+<p>So new PC but also new problems. Sigh.</p>
+<p>TODO:</p>
+<ul>
+<li>sell Antec case</li>
+<li>sell old Dell monitor</li>
+</ul>
+<ul>
+<li>~replace PSU~</li>
+<li>get another case fan</li>
+</ul>
+<p>Side note: In the US, my whole new build (monitor included) is available for little under $1500 if ordering on Amazon. In Croatia, I paid everything a bit over $2000.</p>
+
+</div>
+
+
+    </body>
+</html>
