@@ -109,14 +109,14 @@ body {
 
 .blog-list,
 .post {
-  width: 100%;
-  max-width: 50ch;
-  margin: 0 auto;
-  padding-top: 10%;
+    width: 100%;
+    max-width: 50ch;
+    margin: 0 auto;
+    padding: 10% 15px;
 }
 
 a {
-  color:rgb(0, 0, 0);
+    color:rgb(0, 0, 0);
 }
 
 a:visited {
@@ -152,6 +152,11 @@ a:visited {
 .post h1,
 .post h2,
 .post h3 {
-  font-family: sans-serif;
-  font-weight: 900;
+    font-family: sans-serif;
+    font-weight: 900;
+    line-height: 1;
+}
+
+code {
+    background: #eee;
 }
