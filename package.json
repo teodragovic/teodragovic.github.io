@@ -11,8 +11,7 @@
     "start": "npm-run-all clean build:sass --parallel watch:*",
     "build": "npm-run-all clean build:sass optimize:sass build:eleventy",
     "github": "gh-pages -b master -d _site",
-    "commit:build": "git add . && git commit -m \"Build\" && git push origin source",
-    "deploy": "npm run build && npm run github && npm run commit:build",
+    "deploy": "npm run build && npm run github",
     "eslint": "eslint --cache --ext .js",
     "post": "node post.js"
   },
