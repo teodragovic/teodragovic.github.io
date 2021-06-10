@@ -13,8 +13,8 @@ layout: post
 | Laptop             | MacBook Air 2016.       |
 | USB soundcard      | Focusrite Scarlett Solo |
 | Dynamic microphone | Shure SM58              |
-| Cable              | XLR cable               |
-| Mic stand          | Some stand              |
+| Cable              | Adam Hall K4 MMF        |
+| Mic stand          | Hercules MS202B         |
 | Headphones         | Sennheiser HD 25-1      |
 
 Notes:
