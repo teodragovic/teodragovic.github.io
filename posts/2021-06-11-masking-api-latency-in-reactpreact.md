@@ -7,13 +7,13 @@ tags:
 layout: post
 ---
 
-In [Hugo](https://www.withhugo.com) app, we have one button that triggers particurlary long API call. For this click, we wanted to mask latency by giving users something more to look at aside our regular loading state spinner. 
+In [Hugo](https://www.withhugo.com) app, during signup flow, we have a button that triggers particularly long API call. For this step, we wanted to mask latency by giving users something more to look at aside from our regular loading state spinner. 
 
-We decided to run API call in parallel with our onboarding flow. We were already displaying onboarding at similar point in time so it came in handy, but showing any kind of useful-but-not-critical information or animations would do. 
+We decided to run API call in parallel with our onboarding flow. We were already displaying onboarding at a similar point in time so it came in handy, but showing any kind of useful-but-not-critical information or animations would do. 
 
-Now, only after both API call and onboarding flow are complete user could continue onto the next step. If user ends onboarding before API response, we would still throw a little spinner but for less time.
+Only after both API call and onboarding flow are complete, user can continue onto the next step. If the user ends onboarding before we get an API response, _then_ we throw a little spinner (but for much shorter time).
 
-Here is simplified version on the code:
+Here is a simplified version of the code:
 
 ```jsx
 const OnboardingModal = ({ onContinue }) => {

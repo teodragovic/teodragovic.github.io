@@ -7,9 +7,9 @@ tags:
 layout: post
 ---
 
-link: https://codepen.io/teodragovic/pen/poNOEBB?editors=1100
+Say you need to put content in a box that keeps persistant ratio but actual size is determined by the content.
 
-Say you need to put content in a box that keeps persistant ratio but actual size is determined by content.
+link: https://codepen.io/teodragovic/pen/poNOEBB?editors=1100
 
 Here is the markup:
 
@@ -43,4 +43,4 @@ And here are the styles:
 }
 ```
 
-And once Safari catches up, `.c-box__inner:before` block can be replaced with `aspect-ratio: 1 / 1`.
+Once [Safari catches up](https://caniuse.com/?search=aspect-ratio), the `.c-box__inner:before` block can be replaced with `aspect-ratio: 1 / 1`.
