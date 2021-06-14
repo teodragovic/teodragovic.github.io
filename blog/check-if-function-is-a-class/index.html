@@ -16,10 +16,7 @@
         2021 05 05
     </time>
     <h1>Check if function is a class</h1>
-    <pre><code>const isClass = (fn) =&gt; {
-  return typeof fn === 'function' &amp;&amp; /^\s*class\s+/.test(fn.toString());
-}
-</code></pre>
+    <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">isClass</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">return</span> <span class="token keyword">typeof</span> fn <span class="token operator">===</span> <span class="token string">'function'</span> <span class="token operator">&amp;&amp;</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\s*class\s+</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>fn<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <p>Adapted from here: <a href="https://stackoverflow.com/a/30760236/2382115">https://stackoverflow.com/a/30760236/2382115</a></p>
 
 </div>

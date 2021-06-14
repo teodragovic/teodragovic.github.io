@@ -17,20 +17,7 @@
     </time>
     <h1>My git aliases</h1>
     <p>In my <code>.gitconfig</code>:</p>
-<pre><code>[alias]
-    st = status
-    cm = !git add -A &amp;&amp; git commit -m
-    wip = !git add -A &amp;&amp; git commit -m 'WIP'
-    amend = !git add -A &amp;&amp; git commit --amend
-    co = checkout
-    cob = checkout -b
-    pr = remote prune origin
-    br = branch
-    up = pull --rebase --prune origin
-    undo = reset HEAD~1 --mixed
-    upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-    alias = &quot;config --get-regexp ^alias&quot;
-</code></pre>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>alias<span class="token punctuation">]</span><br>    st <span class="token operator">=</span> status<br>    cm <span class="token operator">=</span> <span class="token operator">!</span>git <span class="token function">add</span> -A <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> commit -m<br>    wip <span class="token operator">=</span> <span class="token operator">!</span>git <span class="token function">add</span> -A <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> commit -m <span class="token string">'WIP'</span><br>    amend <span class="token operator">=</span> <span class="token operator">!</span>git <span class="token function">add</span> -A <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> commit --amend<br>    co <span class="token operator">=</span> checkout<br>    cob <span class="token operator">=</span> checkout -b<br>    <span class="token function">pr</span> <span class="token operator">=</span> remote prune origin<br>    br <span class="token operator">=</span> branch<br>    up <span class="token operator">=</span> pull --rebase --prune origin<br>    undo <span class="token operator">=</span> reset HEAD~1 --mixed<br>    upstream <span class="token operator">=</span> <span class="token operator">!</span>git branch --set-upstream-to<span class="token operator">=</span>origin/<span class="token variable"><span class="token variable">`</span><span class="token function">git</span> symbolic-ref --short HEAD<span class="token variable">`</span></span><br>    <span class="token builtin class-name">alias</span> <span class="token operator">=</span> <span class="token string">"config --get-regexp ^alias"</span></code></pre>
 <p>Mostly taken from: <a href="https://haacked.com/archive/2014/07/28/github-flow-aliases/">https://haacked.com/archive/2014/07/28/github-flow-aliases/</a></p>
 <h2 id="explained">Explained <a class="direct-link" href="#explained">#</a></h2>
 <p><code>git st</code> - get status of the current branch. If I have unstaged changes etc.<br>

@@ -16,15 +16,15 @@
         2021 05 28
     </time>
     <h1>Two ways to temporary save work in git</h1>
-    <p>If you're working on a branch and need to switch to a different branch mid-work.</p>
+    <p>If you're working on a branch and need to switch to a different branch mid-work:</p>
 <h2 id="git-stash">Git stash <a class="direct-link" href="#git-stash">#</a></h2>
 <p>Use <code>git stash</code> to save all staged and unstaged changes to stash.</p>
 <p>To retrive work, checkout your original feature branch and do <code>git stash pop</code> to restore latest batch of changes from stash.</p>
-<h2 id="wip-and-undo">WIP and undo <a class="direct-link" href="#wip-and-undo">#</a></h2>
+<h2 id="wip-and-reset">WIP and reset <a class="direct-link" href="#wip-and-reset">#</a></h2>
 <p>Commit everything as WIP.</p>
 <pre><code>git add -A &amp;&amp; git commit -m 'WIP'
 </code></pre>
-<p>I aliased this command so it's executed by running <code>git wip</code>.</p>
+<p>I <a href="https://teodragovic.com/blog/my-git-aliases/">aliased</a> this command so it's executed by running <code>git wip</code>.</p>
 <p>To remove WIP commit but keep changes, I run <code>git undo</code> which is alias for:</p>
 <pre><code>git reset HEAD~1 --mixed
 </code></pre>
