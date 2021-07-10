@@ -3,6 +3,7 @@ const { DateTime } = require('luxon');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const footnote = require('markdown-it-footnote');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget('styles/');
@@ -33,8 +34,10 @@ module.exports = function(eleventyConfig) {
     }).use(markdownItAnchor, {
         permalink: true,
         permalinkClass: 'direct-link',
-        permalinkSymbol: '#'
-    });
+        // permalinkSymbol: '§',
+        permalinkBefore: true,
+    })
+    .use(footnote);
     eleventyConfig.setLibrary('md', markdownLibrary);
 
     // Browsersync Overrides
