@@ -1,14 +1,15 @@
 ---
 layout: base
+bodyClass: root
 ---
 
 {% import 'icons/icons.html' as icon %}
 
 <section class="homepage">
-    <div class="homepage-inner">
-        <h1>{% include 'name.html' %}</h1>
-        <p>Web developer</p>
-        <ul>
+    <div class="homepage__inner">
+        <h1 class="homepage__title">{% include 'name.html' %}</h1>
+        <p class="homepage__subtitle">Web developer</p>
+        <ul class="homepage__links">
             <li>
                 <a href="https://stackoverflow.com/users/2382115/teo-dragovic" aria-label="Stack Overflow">
                     {{ icon.use( 'stack-overflow', 'Stack Overflow'  ) }}

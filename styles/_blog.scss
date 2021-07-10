@@ -1,0 +1,35 @@
+
+
+.postlist {
+    width: 100%;
+    max-width: 50ch;
+    margin: 0 auto;
+    padding: 10% 15px;
+}
+
+.postlist__item {
+    font-family: sans-serif;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.postlist__date {
+    font-size: 16px;
+}
+
+.postlist__link {
+    display: block;
+    text-decoration: none;
+}
+
+.postlist__title {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.postlist__subtitle {
+    margin-top: 0;
+    text-decoration: none;
+}

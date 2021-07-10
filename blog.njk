@@ -4,15 +4,19 @@ layout: base
 
 {% set postslist = collections.posts %}
 
-<div class="blog-list">
+<div class="postlist">
     {% for post in postslist | reverse %}
-    <article class="postlist-item">
-        <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
+    <article class="postlist__item">
+        <time class="postlist__date" datetime="{{ post.date | htmlDateString }}">
             {{ post.date | readableDate }}
         </time>
-        <a href="{{ post.url | url }}" class="postlist-link">
-            <h2>{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h2>
-            {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+        <a href="{{ post.url | url }}" class="postlist__link">
+            <h2 class="postlist__title">
+                {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+            </h2>
+            {% if post.data.description %}
+                <p class="postlist__subtitle">{{ post.data.description }}</p>
+            {% endif %}
         </a>
     </article>
     {% endfor %}

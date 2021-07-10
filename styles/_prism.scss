@@ -1,90 +1,131 @@
+/*
+ * Hopscotch
+ * by Jan T. Sott
+ * https://github.com/idleberg/Hopscotch
+ *
+ * This work is licensed under the Creative Commons CC0 1.0 Universal License
+ */
 
-code[class*="language-"], pre[class*="language-"] {
+code[class*="language-"],
+pre[class*="language-"] {
+	font-family: "Fira Mono", Menlo, Monaco, "Lucida Console", "Courier New", Courier, monospace;
 	font-size: 16px;
 	line-height: 1.375;
 	direction: ltr;
 	text-align: left;
-	white-space: pre;
 	word-spacing: normal;
-	word-break: normal;
-	-moz-tab-size: 2;
-	-o-tab-size: 2;
-	tab-size: 2;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
-	background: #272822;
-	color: #f8f8f2;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+	background: #322931;
+	color: #b9b5b8;
 }
+
+pre > code[class*="language-"] {
+	font-size: 1em;
+}
+
+/* Code blocks */
 pre[class*="language-"] {
-	padding: 1.5em;
+	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
 }
+
+/* Inline code */
 :not(pre) > code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
 }
-.token.comment, .token.prolog, .token.doctype, .token.cdata {
-	color: #75715e;
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #797379;
 }
+
 .token.punctuation {
-	color: #f8f8f2;
+	color: #b9b5b8;
 }
-.token.namespace {
+
+.namespace {
 	opacity: .7;
 }
-.token.operator, .token.boolean, .token.number {
-	color: #fd971f;
+
+.token.null,
+.token.operator,
+.token.boolean,
+.token.number {
+	color: #fd8b19;
 }
+
 .token.property {
-	color: #f4bf75;
+	color: #fdcc59;
 }
+
 .token.tag {
-	color: #66d9ef;
+	color: #1290bf;
 }
+
 .token.string {
-	color: #a1efe4;
+	color: #149b93;
 }
+
 .token.selector {
-	color: #ae81ff;
+	color: #c85e7c;
 }
+
 .token.attr-name {
-	color: #fd971f;
+	color: #fd8b19;
 }
-.token.entity, .token.url, .language-css .token.string, .style .token.string {
-	color: #a1efe4;
+
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #149b93;
 }
-.token.attr-value, .token.keyword, .token.control, .token.directive, .token.unit {
-	color: #a6e22e;
+
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+	color: #8fc13e;
 }
-.token.statement, .token.regex, .token.atrule {
-	color: #a1efe4;
+
+.token.statement,
+.token.regex,
+.token.atrule {
+	color: #149b93;
 }
-.token.placeholder, .token.variable {
-	color: #66d9ef;
+
+.token.placeholder,
+.token.variable {
+	color: #1290bf;
 }
-.token.deleted {
-	text-decoration: line-through;
-}
-.token.inserted {
-	border-bottom: 1px dotted #f9f8f5;
-	text-decoration: none;
-}
-.token.italic {
-	font-style: italic;
-}
-.token.important, .token.bold {
+
+.token.important {
+	color: #dd464c;
 	font-weight: bold;
 }
-.token.important {
-	color: #f92672;
-}
+
 .token.entity {
 	cursor: help;
 }
+
 pre > code.highlight {
-	outline: 0.4em solid #f92672;
+	outline: .4em solid red;
 	outline-offset: .4em;
 }
