@@ -1,4 +1,7 @@
-# eleventy-base-blog
 
-https://github.com/11ty/eleventy-base-blog.git
-https://www.11ty.dev/docs/
+# Teo Dragovic
+
+Personal website  
+<http://teodragovic.com>
+
+Made with: https://github.com/11ty/eleventy-base-blog.git
