@@ -7,7 +7,7 @@ tags:
 layout: post
 ---
 
-Quoting myself from comment I left over at [Chris'](https://css-tricks.com/safari-15-new-ui-theme-colors-and-a-css-tricks-cameo/#comment-1773885):
+Quoting myself from the comment I left over at [Chris'](https://css-tricks.com/safari-15-new-ui-theme-colors-and-a-css-tricks-cameo/#comment-1773885):
 
 > Last Christmas, my wife got me a new Android phone with 6” display. On it, Android 11 featured Chrome serach bar at the bottom. Firefox for Android also has search bar at the bottom by default (although this can be changed).
 >
