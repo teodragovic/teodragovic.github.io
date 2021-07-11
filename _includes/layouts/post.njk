@@ -1,14 +1,39 @@
 ---
-layout: base
 permalink: "blog/{{ title | slug }}/"
 ---
 
-<div class="post">
-    <time class="post__date" datetime="{{ date | htmlDateString }}">
-        {{ date | readableDate }}
-    </time>
-    <h1 class="post__title">{{ title }}</h1>
-    <div class="post__content">
-        {{ content | safe }}
-    </div>
-</div>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title or metadata.title }}</title>
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap"
+            media="print"
+            onload="this.media='all'"
+        >
+        <style>{% include "css/index.css" %}</style>
+    </head>
+    <body {% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+        <header class="header">
+            {% if page.fileSlug %}
+                <a class="header__logo" href="/">{% include 'name.html' %}</a>
+            {% endif %}
+            <a class="header__link" href="/blog/">blog</a>
+        </header>
+
+        <div class="post">
+            <time class="post__date" datetime="{{ date | htmlDateString }}">
+                {{ date | readableDate }}
+            </time>
+            <h1 class="post__title">{{ title }}</h1>
+            <div class="post__content">
+                {{ content | safe }}
+            </div>
+        </div>
+
+    </body>
+</html>

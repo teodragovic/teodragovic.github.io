@@ -19,9 +19,6 @@ pre {
 
 	hyphens: none;
 	white-space: pre;
-	white-space: pre-wrap;
-	word-break: break-all;
-	word-wrap: break-word;
 	background: #322931;
 	color: #e0e0e0;
 }
@@ -31,7 +28,7 @@ pre > code[class*="language-"] {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
@@ -123,4 +120,17 @@ pre[class*="language-"] {
 pre > code.highlight {
 	outline: .4em solid red;
 	outline-offset: .4em;
+}
+
+
+pre.language-diff > code .token.deleted:not(.prefix),
+pre > code.language-diff .token.deleted:not(.prefix) {
+	color: red;
+	display: block;
+}
+
+pre.language-diff > code .token.inserted:not(.prefix),
+pre > code.language-diff .token.inserted:not(.prefix) {
+	color: #00e400;
+	display: block;
 }

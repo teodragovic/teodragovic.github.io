@@ -4,10 +4,12 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const footnote = require('markdown-it-footnote');
+const embedYouTube = require('eleventy-plugin-youtube-embed');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget('styles/');
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
+    eleventyConfig.addPlugin(embedYouTube, { lite: true });
 
     eleventyConfig.setDataDeepMerge(true);
 
