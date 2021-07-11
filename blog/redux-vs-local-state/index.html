@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Harley Quinn (animated series)</title>
+        <title>Redux vs local state</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,15 +38,28 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-01-18">
-                2021 01 18
+            <time class="post__date" datetime="2021-06-24">
+                2021 06 24
             </time>
-            <h1 class="post__title">Harley Quinn (animated series)</h1>
+            <h1 class="post__title">Redux vs local state</h1>
             <div class="post__content">
-                <p><a href="https://www.imdb.com/title/tt7658402/">https://www.imdb.com/title/tt7658402/</a></p>
-<p>Holy shit, that was unexpected. Harley Quinn cartoon is super fun. Very similar to the Harley Quinn comic book I enjoyed some years prior. The setting is still Gotham (not New York), Harley’s crew is &quot;classic&quot; villains (not henchmen-like team) and the drawing is still in line with the original Batman TAS which means smaller tits and less hot Harley and Ivy. But over the top cursing and violence is there. Dark humor and adult-swim type of gags as well.</p>
-<p>Watched 4 episodes of S01 but I like how it goes so far. I hope to see the storyline progress and not stuck into a weekly sitcom routine with repeating jokes.</p>
-<p>Update: finished S01 and S02. I found S02 ending very satisfying and news that there will be S03 even more. At one point the show becomes a bit monotone with all supervillain fighting (violence shtick got old quick). For next season I hope there will be some new additions to the crew since Psycho is gone. Team banter was probably the best part along with the amnesiac Joker storyline.</p>
+                <p>When I say local state I mean <code>useState</code> or <a href="https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/">reducer/context</a> pattern (even if it’s placed at app root).</p>
+<p>If there is a question of whether to use local state vs Redux, I always prefer using Redux. My reasons:</p>
+<ul>
+<li>during app lifetime, there is a higher probability your state will grow and need to connect with more components. Meaning if there is a chance state will need to be global - it will eventually happen. Setting it global upfront makes it easier to scale and avoids potentially expensive refactors.</li>
+<li>Redux has awesome <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en">DevTools</a></li>
+<li>Redux has a big ecosystem of supporting tools like <a href="https://github.com/reduxjs/reselect">selectors</a>, <a href="https://github.com/reduxjs/redux-thunk">thunks</a> and <a href="https://react-redux.js.org/">React connect</a> that abstract and optimize a lot of common patterns and are actively maintained by community</li>
+<li>Redux has <a href="https://redux.js.org/understanding/history-and-design/middleware">middleware</a></li>
+<li>In my experience, Redux allows scaling without increasing complexity as long as verbose code is accepted as the tradeoff</li>
+</ul>
+<p>Note that many things in Preact/React can be solved using <code>useState</code>. I’m not advocating to hold ALL of the state in Redux. But there are situations where you need <em>some kind</em> of state to solve a problem and are uncertain about keeping it simple or preemptively prepare for scale.</p>
+<p>When to use local state:</p>
+<ul>
+<li>when it’s contained to a single component</li>
+<li>when it’s contained to a few components with clearly separated domain (ie. modal and its sub-components)</li>
+<li>when you need to hold simple values like numbers, strings or booleans with limited usage</li>
+<li>when it solves a problem without creating a new one or increasing complexity</li>
+</ul>
 
             </div>
         </div>
