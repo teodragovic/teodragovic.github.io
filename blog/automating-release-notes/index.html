@@ -61,7 +61,7 @@
 </li>
 </ol>
 <p>My <code>.github/workflows/release.yml</code> file:</p>
-<pre class="language-shell"><code class="language-shell">name: Release<br><br>on:<br>  push:<br>    tags:<br>      - <span class="token string">"v*"</span><br><br>jobs:<br>  tagged-release:<br>    name: <span class="token string">"Tagged Release"</span><br>    runs-on: <span class="token string">"ubuntu-latest"</span><br><br>    steps:<br>      - uses: <span class="token string">"marvinpinto/action-automatic-releases@latest"</span><br>        with:<br>          repo_token: <span class="token string">"$"</span><br>          prerelease: <span class="token boolean">false</span></code></pre>
+<pre class="language-shell"><code class="language-shell">name: Release<br><br>on:<br>  push:<br>    tags:<br>      - <span class="token string">"v*"</span><br><br>jobs:<br>  tagged-release:<br>    name: <span class="token string">"Tagged Release"</span><br>    runs-on: <span class="token string">"ubuntu-latest"</span><br><br>    steps:<br>      - uses: <span class="token string">"marvinpinto/action-automatic-releases@latest"</span><br>        with:<br>          repo_token: <span class="token string">"<span class="token variable">${{ secrets.GITHUB_TOKEN }</span>}"</span><br>          prerelease: <span class="token boolean">false</span></code></pre>
 <ol start="3">
 <li><a href="https://slack.github.com/">GitHub's Slack app</a> to subscribe to releases in my repo and post them in <code>#releases</code> channel.</li>
 </ol>
