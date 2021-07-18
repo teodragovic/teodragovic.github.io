@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sonder</title>
+        <title>TIL String.repeat()</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,15 +38,17 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-06-21">
-                2021 06 21
+            <time class="post__date" datetime="2021-07-18">
+                2021 07 18
             </time>
-            <h1 class="post__title">Sonder</h1>
+            <h1 class="post__title">TIL String.repeat()</h1>
             <div class="post__content">
-                <p>Something I learned from <a href="https://kittygiraudel.com/2020/02/03/lessons-from-building-n26-for-web/">Kitty</a>:</p>
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat</a></p>
 <blockquote>
-<p>I have recently been taught the word “sonder”. That is the realisation that everyone, including passers-by, has a life as complex as our own, which they are living despite our personal lack of awareness of it. I find it interesting because it’s all too obvious but also quite a discovery in itself. People are not NPCs in our lives. Who knew, right?</p>
+<p>The <code>repeat()</code> method constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together.</p>
 </blockquote>
+<p>Found it cleverly used in this helper function:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">padDigits</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">digits</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token keyword">const</span> desiredLength <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span><br>    <span class="token keyword">const</span> actualLength <span class="token operator">=</span> digits<span class="token punctuation">.</span>length<span class="token punctuation">;</span><br><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>actualLength <span class="token operator">>=</span> desiredLength<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token keyword">return</span> digits<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token keyword">const</span> amountToAdd <span class="token operator">=</span> desiredLength <span class="token operator">-</span> actualLength<span class="token punctuation">;</span><br>    <span class="token keyword">const</span> padding <span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span>amountToAdd<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">return</span> padding <span class="token operator">+</span> digits<span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
             </div>
         </div>
