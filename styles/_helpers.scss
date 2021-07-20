@@ -1,0 +1,30 @@
+
+$bp-tiny:   400px;
+$bp-small:  600px;
+$bp-medium: 900px;
+$bp-large:  1200px;
+$bp-huge:   1800px;
+
+
+// Breakpoint mixin
+// @param {String} $breakpoint - Breakpoint value (usually via variables)
+// @param {String} $respond - Breakpoint type (defaults to min-width)
+// @requires $breakpoint
+@mixin bp($breakpoint, $respond: min-width) {
+    @media screen and ($respond: $breakpoint) {
+        @content;
+    }
+}
+
+// Breakpoint helper mixins
+@mixin at-min($breakpoint) {
+    @include bp($breakpoint, min-width) {
+        @content;
+    }
+}
+
+@mixin at-max($breakpoint) {
+    @include bp($breakpoint - 1, max-width) {
+        @content;
+    }
+}

@@ -42,6 +42,11 @@ body {
     line-height: 1.2;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 ::-moz-selection {
     background-color: #000;
     color: #fff;

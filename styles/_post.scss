@@ -36,7 +36,7 @@
         font-size: 70%;
         color: #ccc;
 
-        @media (min-width: 600px) {
+        @include at-min($bp-small) {
             margin-left: -20px;
         }
 
@@ -56,7 +56,7 @@
     table {
         width: 100%;
         border-collapse: collapse;
-        table-layout: fixed;
+        // table-layout: fixed;
 
         tr {
             border-bottom: 1px solid #ccc;
@@ -71,4 +71,6 @@
         word-break: break-all;
         word-break: break-word;
     }
+
+    img { width: 100%; }
 }

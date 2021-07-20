@@ -20,10 +20,10 @@
     font-size: 120%;
     text-transform: lowercase;
     margin-top: 0;
-}
 
-@media screen and (min-width: 37.5em) {
-    .homepage__subtitle { font-size: 2rem; }
+    @include at-min($bp-small) {
+        font-size: 2rem;
+    }
 }
 
 .homepage__links {
@@ -46,10 +46,10 @@
         color: inherit;
         display: inline-block;
         padding: 0.5rem;
-    }
 
-    @media screen and (min-width: 37.5em) {
-        a { font-size: 2.5rem; }
+        @include at-min($bp-small) {
+            font-size: 2.5rem;
+        }
     }
 }
 
