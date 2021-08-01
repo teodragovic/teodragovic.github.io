@@ -26,5 +26,5 @@ Chores I did while home alone on vacation:
 - cleaned bathroom
 - cleaned windows and glass doors
 - went to the bank
-- cleaned my PC (break WIFI card in the process)
+- cleaned my PC (broke WIFI card in the process)
 - got a new WIFI card
