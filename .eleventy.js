@@ -5,6 +5,13 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const footnote = require('markdown-it-footnote');
 const embedYouTube = require('eleventy-plugin-youtube-embed');
+const slugify = require('slugify');
+
+const slugifyOptions = {
+    replacement: '-',
+    remove: /[&,+()$~%.'":*?<>{}–—]/g,
+    lower: true
+};
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget('styles/');
@@ -25,6 +32,9 @@ module.exports = function(eleventyConfig) {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
     });
 
+    // https://github.com/11ty/eleventy/issues/278#issuecomment-451105828
+    eleventyConfig.addFilter('slug', (input) => slugify(input, slugifyOptions));
+
     eleventyConfig.addPassthroughCopy('img');
     eleventyConfig.addPassthroughCopy('CNAME');
 
@@ -38,6 +48,7 @@ module.exports = function(eleventyConfig) {
         permalinkClass: 'direct-link',
         // permalinkSymbol: '§',
         permalinkBefore: true,
+        slugify: (input) => slugify(input, slugifyOptions)
     })
     .use(footnote);
     eleventyConfig.setLibrary('md', markdownLibrary);
