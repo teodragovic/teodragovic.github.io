@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TIL: How to re-run bashrc script</title>
+        <title>TIL: Multitenancy</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,13 +38,20 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-02-10">
-                2021 02 10
+            <time class="post__date" datetime="2021-03-21">
+                2021 03 21
             </time>
-            <h1 class="post__title">TIL: How to re-run bashrc script</h1>
+            <h1 class="post__title">TIL: Multitenancy</h1>
             <div class="post__content">
-                <p>My <code>bashrc</code> contains <a href="https://sourceware.org/legacy-ml/cygwin/2001-06/msg00537.html">small function</a> that asks for my SSH password and keeps it while I’m logged so I don’t have to re-type it every time I make a GitHub command. Sometimes my terminal fails while or before I get to enter my password.</p>
-<p>Now, when that happens I can run <code>. ~/.bashrc; start_agent</code>. Calling just <code>. ~/.bashrc</code> would run the whole file but there is a conditional in there that I don’t understand fully but it prevents <code>start_agent</code> function from running so I’m calling it explicitly.</p>
+                <p><a href="https://en.wikipedia.org/wiki/Multitenancy">https://en.wikipedia.org/wiki/Multitenancy</a></p>
+<p>This is the thing where you build an app for organizations (or companies or teams or projects or institutions or whatever) and then users are assigned to the organization.</p>
+<p>From there, you have following questions:</p>
+<ul>
+<li>Can data be shared between organizations?</li>
+<li>Is data model the same for each organization?</li>
+<li>Can single user be a memeber of multiple organizations?</li>
+</ul>
+<p>All important things to consider when thinking about database design, modeling and access control.</p>
 
             </div>
         </div>
