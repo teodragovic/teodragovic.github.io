@@ -9,7 +9,7 @@ const slugify = require('slugify');
 
 const slugifyOptions = {
     replacement: '-',
-    remove: /[&,+()$~%.'":*?<>{}–—]/g,
+    remove: /[&,+()$~%.'":*?<>{}–—|]/g,
     lower: true
 };
 
