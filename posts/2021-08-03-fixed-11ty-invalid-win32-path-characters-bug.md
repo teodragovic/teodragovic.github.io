@@ -17,15 +17,15 @@ But the error was actually due to how Eleventy (and [`slug`](https://www.11ty.de
 
 ```yml
 ---
-permalink: "blog/{{ title | slug }}/"
+permalink: "blog/{% raw %}{{ title | slug }}{% endraw %}/"
 ---
 ```
 
 And [Windows are not having that](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions).
 
-The issue is [already addressed](https://www.11ty.dev/docs/filters/slugify/) and will be fixed in the upcoming version 1.0.0.
+The issue is [already addressed](https://www.11ty.dev/docs/filters/slugify/) and will be fixed in the upcoming `v1.0.0.`
 
-But for the moment, I needed a fix for my v0.X. Following [this thread](https://github.com/11ty/eleventy/issues/278) I fixed the issue by updating my `.eleventy.js` config:
+But for the moment, I needed a fix for my `v0.x.x` Following [this thread](https://github.com/11ty/eleventy/issues/278) I fixed the issue by updating my `.eleventy.js` config:
 
 
 ```js
