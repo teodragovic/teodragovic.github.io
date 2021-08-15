@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Redux vs local state</title>
+        <title>Weekly playlist 2.8 - 15.8</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,28 +38,29 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-06-24">
-                2021 06 24
+            <time class="post__date" datetime="2021-08-15">
+                2021 08 15
             </time>
-            <h1 class="post__title">Redux vs local state</h1>
+            <h1 class="post__title">Weekly playlist 2.8 - 15.8</h1>
             <div class="post__content">
-                <p>When I say local state I mean <code>useState</code> or <a href="https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/">reducer/context</a> pattern (even if it’s placed at app root).</p>
-<p>If there is a question of whether to use local state vs Redux, I always prefer using Redux. My reasons:</p>
-<ul>
-<li>during app lifetime, there is a higher probability your state will grow and need to connect with more components. Meaning if there is a chance state will need to be global - it will eventually happen. Setting it global upfront makes it easier to scale and avoids potentially expensive refactors.</li>
-<li>As a visual guy, I love Redux <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en">DevTools</a>. And LogRocket integration is nice</li>
-<li>Redux has a big ecosystem of supporting tools like <a href="https://github.com/reduxjs/reselect">selectors</a>, <a href="https://github.com/reduxjs/redux-thunk">thunks</a> and <a href="https://react-redux.js.org/">React connect</a> that abstract and optimize a lot of common patterns and are well documented and actively maintained by community</li>
-<li>Redux has <a href="https://redux.js.org/understanding/history-and-design/middleware">middleware</a></li>
-<li>In my experience, Redux allows scaling without increasing complexity as long as verbose code is accepted as the tradeoff</li>
-</ul>
-<p>Note that many things in Preact/React can be solved using <code>useState</code>. I’m not advocating to hold ALL of the state in Redux. But there are situations where you need <em>some kind</em> of state to solve a problem and are uncertain about keeping it simple or preemptively preparing for scale.</p>
-<p>When to use local state:</p>
-<ul>
-<li>when it’s contained to a single component</li>
-<li>when it’s contained to a few components inside clearly defined domain (ie. modal and its sub-components)</li>
-<li>when you need to hold simple values like numbers, strings or booleans with limited usage</li>
-<li>when it solves a problem without creating a new one or increasing complexity</li>
-</ul>
+                <p>Your Old Droog - Your Old Droog Mixtape<br>
+Your Old Droog - Your Old Droog EP<br>
+Your Old Droog - Ultraviolence EP<br>
+Your Old Droog - Kinison EP<br>
+Your Old Droog - The Nicest EP<br>
+Wiki &amp; Your Old Droog - What Happened To Fire<br>
+Your Old Droog - Looseyes<br>
+Your Old Droog - PACKS<br>
+Your Old Droog - It Wasn't Even Close<br>
+Your Old Droog - Jewelry<br>
+Your Old Droog - Transportation<br>
+Your Old Droog - Dump YOD: Krutoy Edition<br>
+Tha God Fahim &amp; Your Old Droog - Tha Wolf On Wall St<br>
+Your Old Droog &amp; Tha God Fahim - Tha YOD Fahim<br>
+Your Old Droog - TIME<br>
+RMR - Drug Dealing Is A Lost Art<br>
+Boldy James &amp; The Alchemist - Bo Jackson<br>
+Ka - Martyr's Reward</p>
 
             </div>
         </div>
