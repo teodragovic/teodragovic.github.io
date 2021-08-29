@@ -1,6 +1,6 @@
 ---
 title: Apply hover and focus styles only on desktop
-date: 2021-08-29
+date: 2021-08-27
 tags:
   - dev
   - sass
