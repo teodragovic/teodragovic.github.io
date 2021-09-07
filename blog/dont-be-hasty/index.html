@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weekly playlist 21.6 - 4.7</title>
+        <title>Don’t be hasty</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,50 +38,24 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-07-05">
-                2021 07 05
+            <time class="post__date" datetime="2021-07-10">
+                2021 07 10
             </time>
-            <h1 class="post__title">Weekly playlist 21.6 - 4.7</h1>
+            <h1 class="post__title">Don’t be hasty</h1>
             <div class="post__content">
-                <h1 id="216-276"><a class="direct-link" href="#216-276">¶</a> 21.6 - 27.6</h1>
-<ul>
-<li>Lord Finesse - Return Of The Funky Man</li>
-<li>Eric B. &amp; Rakim - Don't Sweat The Technique</li>
-<li>Ramirez - Tha Playa$ Manual</li>
-<li>Skyzoo - All the Brilliant Things</li>
-<li>Sonnyjim &amp; Buckwild - Coke Le Roc</li>
-<li>Rack-Lo - Lo Life: An American Classic Soundtrack</li>
-<li>School of the Gifted - School of the Gifted</li>
-<li>Your Old Droog - Time</li>
-<li>Smoke DZA - The Hustler's Catalog 2</li>
-<li>DirtyDiggs - Mountains. Do The Knowledge (A Tent And Trail Soundtrack)</li>
-<li>Lloyd Banks - The Course Of The Inevitable</li>
-<li>Peter Rosenberg - Real Late</li>
-<li>Raheem Devaughn &amp; Apollo Brown - Lovesick</li>
-<li>Planet Asia - Holy Water</li>
-<li>Apathy - Where the River Meets the Sea</li>
-<li>Ramirez - Son Of Serpentine</li>
-<li>Ramirez - Judgment Day: Revelations</li>
-<li>Jay-Z - Reasonable Doubt</li>
-<li>Evidence - Unlearning Vol. 1</li>
-<li>Dilated Peoples - The Platform</li>
-<li>Dilated Peoples - Expansion Team</li>
-<li>Dilated Peoples - Collage Radio EP</li>
-<li>Dilated Peoples - Heavy Surveillance</li>
-</ul>
-<h2 id="286-47"><a class="direct-link" href="#286-47">¶</a> 28.6 - 4.7</h2>
-<ul>
-<li>DJ Pimp - Sex, Dope &amp; Hip-Hop</li>
-<li>Tyler the Creator - Call Me If You Get Lost</li>
-<li>$uicideBoy$ - I Want To Die in New Orleans</li>
-<li>Dilated Peoples - Neighborhood Watch</li>
-<li>Dilated Peoples - 20/20</li>
-<li>Dilated Peoples - Release Party</li>
-<li>Dilated Peoples - Directors of Photography</li>
-<li>Evidenece - Storm Watch mixtape</li>
-<li>Evidence - Weatherman LP</li>
-<li>Evidence - Layover mixtape</li>
-</ul>
+                <blockquote>
+<p>Don’t be hasty — Treebeard</p>
+</blockquote>
+<p>Yesterday, I was traveling from Zagreb to Rijeka. This usually means I have only a couple of hours to work in the office before packing and hitting the road. That morning, I was greeted with a bunch of low-hanging bugs carded.</p>
+<p>I wanted to quickly knock most of them down before the weekend. So I worked directly on <code>dev</code> branch since I didn’t wanna bother making multiple <code>fix/*</code> branches and doing PRs. I also didn’t do any testing because running everything locally would slow me down.</p>
+<p>I just did the fixes and committed them into <code>dev</code>.</p>
+<p>But before leaving I either a) forgot to <code>git push</code> or b) I pushed and git complained about something I didn’t notice before closing my editor.</p>
+<p>This all wouldn’t be a big mistake had I not moved all cards into <code>ON DEV</code> column as if deploy was done. My coworker doing the QA was confused after taking the time to test all bugs I marked as fixed. And due to the timezone difference (I’m in Croatia, they are in LA), it took until Monday to realize my mistake.</p>
+<p><strong>Takeaways:</strong></p>
+<ol>
+<li>DO NOT work on <code>dev</code> directly. Always checkout and push upstream.</li>
+<li>DO NOT move cards before deploy is finished.</li>
+</ol>
 
             </div>
         </div>

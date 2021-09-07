@@ -43,18 +43,18 @@
             </time>
             <h1 class="post__title">How I optimize images and SVG</h1>
             <div class="post__content">
-                <h2 id="small-amounts-of-jpg-and-png" tabindex="-1"><a class="direct-link" href="#small-amounts-of-jpg-and-png">¶</a> Small amounts of JPG and PNG</h2>
+                <h2 id="small-amounts-of-jpg-and-png"><a class="direct-link" href="#small-amounts-of-jpg-and-png">¶</a> Small amounts of JPG and PNG</h2>
 <ol>
 <li>Use <a href="https://tinypng.com/">TinyPNG</a> to optimize <code>jpg</code> and <code>png</code> formats.</li>
 <li>If applicable, <a href="https://convertio.co/">convert to WEBP and AVIF</a>.</li>
 </ol>
-<h3 id="bigger-moderate-amounts-of-jpg-and-png" tabindex="-1"><a class="direct-link" href="#bigger-moderate-amounts-of-jpg-and-png">¶</a> Bigger (moderate) amounts of JPG and PNG</h3>
+<h3 id="bigger-moderate-amounts-of-jpg-and-png"><a class="direct-link" href="#bigger-moderate-amounts-of-jpg-and-png">¶</a> Bigger (moderate) amounts of JPG and PNG</h3>
 <p>Bake in <a href="https://github.com/imagemin/imagemin">imagemin</a> into whatever build process the project uses.</p>
-<h2 id="big-amounts-of-jpg-and-png" tabindex="-1"><a class="direct-link" href="#big-amounts-of-jpg-and-png">¶</a> Big amounts of JPG and PNG</h2>
+<h2 id="big-amounts-of-jpg-and-png"><a class="direct-link" href="#big-amounts-of-jpg-and-png">¶</a> Big amounts of JPG and PNG</h2>
 <p>Use dedicated service like <a href="https://imgix.com/">IMGIX</a> or <a href="https://cloudinary.com/products/media_optimizer">Cloudinary</a>. I would probably even skip <code>imagemin</code> phase and go straight for the shelf. Seriously, it’s always worth the money.</p>
-<h2 id="small-amounts-of-svg" tabindex="-1"><a class="direct-link" href="#small-amounts-of-svg">¶</a> Small amounts of SVG</h2>
+<h2 id="small-amounts-of-svg"><a class="direct-link" href="#small-amounts-of-svg">¶</a> Small amounts of SVG</h2>
 <p>Use <a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a>.</p>
-<h2 id="bigger-amounts-of-svg" tabindex="-1"><a class="direct-link" href="#bigger-amounts-of-svg">¶</a> Bigger amounts of SVG</h2>
+<h2 id="bigger-amounts-of-svg"><a class="direct-link" href="#bigger-amounts-of-svg">¶</a> Bigger amounts of SVG</h2>
 <p>Bake in <a href="https://github.com/svg/svgo">SVGO</a> into whatever build process the project uses. In the past, this included using webpack and Gulp plugins built on top of it. This approach should scale to very large amounts of SVG.</p>
 
             </div>
