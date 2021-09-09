@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>How I use Slack</title>
+        <title>CSS utility class for full bleed child inside padded parent</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,27 +38,31 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-01-05">
-                2021 01 05
+            <time class="post__date" datetime="2021-09-09">
+                2021 09 09
             </time>
-            <h1 class="post__title">How I use Slack</h1>
+            <h1 class="post__title">CSS utility class for full bleed child inside padded parent</h1>
             <div class="post__content">
-                <ol>
-<li>I only use Slack desktop app. I don’t have Slack on my phone since I find it too easy to keep checking in after work hours.</li>
-<li>Notifications are for DMs and mentions and only during my set working hours.</li>
-<li>Mute any channel I’m not actively following (as in, invested in the current conversation).</li>
-<li>Keep only saved items icon in the upper part of the sidebar. Use the Save feature to mark any bits of conversation and information I might need or use later on.</li>
-<li>DM myself for TODO items and personal notes.</li>
-<li>Show unread channels and DMs only.</li>
-<li>Star channels/DMs that I actively follow and participate in and channels with convos that I don’t immediately respond to but plan to.</li>
-<li>Use <kbd>Ctrl</kbd>+<kbd>k</kbd> to open any other channel.</li>
-<li>Disable text previews of linked websites, jumbomojis, one-click reactions and prompt to mark everything read.</li>
-<li>Use up arrow to edit last message (I find myself needing to do that more than select any of the previous messages).</li>
-<li>Hide text formatting bar.</li>
-<li>Allow Slack links to be opened via Slack app (set in browser).</li>
-<li>Use Google Calendar app to quickly grab meeting links.</li>
-<li>Keep spell-checking active.</li>
-</ol>
+                <p>Say you have a <code>Card</code> component with 20px padding and you need a child element to span from edge to edge, going over padding. Something like this:</p>
+<p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="result" data-slug-hash="dyRvMbM" data-preview="true" data-user="teodragovic" style="height: 320px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/teodragovic/pen/dyRvMbM">
+  </a> by Teo Dragovic (<a href="https://codepen.io/teodragovic">@teodragovic</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>To avoid modifying parent, we can apply a negative margin on the child element to make it span outside the padded area.</p>
+<pre><code>margin-left: -20px;
+margin-right: -20px;
+</code></pre>
+<p>That solves it but it makes for tight coupling since we need to know the exact padding value of the parent and match it.</p>
+<p>We can avoid this by using an extremly large margin value (like -9999rem) and combining it with equal padding value to make sure content stays in place.</p>
+<pre><code>margin: -9999rem;
+padding: 9999rem;
+</code></pre>
+<p>Cool thing is, the original 20px padding from the parent will still be respected! The only constraint is, we have to apply <code>overflow: hidden</code> on the parent to avoid child element stretching across the full screen.</p>
+<p>I found this solution useful enough to get it’s own little utility class:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.u-bleed</span> <span class="token punctuation">{</span><br>    <span class="token property">margin-left</span><span class="token punctuation">:</span> -9999rem<span class="token punctuation">;</span><br>    <span class="token property">margin-right</span><span class="token punctuation">:</span> -9999rem<span class="token punctuation">;</span><br>    <span class="token property">padding-left</span><span class="token punctuation">:</span> 9999rem<span class="token punctuation">;</span><br>    <span class="token property">padding-right</span><span class="token punctuation">:</span> 9999rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Note that I explicitly use <code>*-left</code> and <code>*-right</code> properties instead of <code>margin</code> and <code>padding</code> shorthands to allow vertical padding to be inherited or set independently.</p>
 
             </div>
         </div>
