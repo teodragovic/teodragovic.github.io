@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My top 5 Jay-Z albums</title>
+        <title>Using overflow: hidden on a &lt;body&gt; tag</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,22 +38,19 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-01-30">
-                2021 01 30
+            <time class="post__date" datetime="2021-09-11">
+                2021 09 11
             </time>
-            <h1 class="post__title">My top 5 Jay-Z albums</h1>
+            <h1 class="post__title">Using overflow: hidden on a &lt;body&gt; tag</h1>
             <div class="post__content">
-                <h2 id="5-watch-the-throne" tabindex="-1"><a class="direct-link" href="#5-watch-the-throne">¶</a> 5. Watch the Throne</h2>
-<p>When first dropped, felt underwhelming compared to the hype around it. In hindsight, it’s a solid album with some great tracks. Sounds more like a collection of singles than an album but still enjoyable. It would probably end up #5 on Kanye list too.</p>
-<h2 id="4-blueprint" tabindex="-1"><a class="direct-link" href="#4-blueprint">¶</a> 4. Blueprint</h2>
-<p>Great album with some standout tracks (U Don’t Know beat alone is worth putting it in the top 5) but not as cohesive as some people like to think (you can’t claim it a soulful album with tracks like Renegade, Holla Hovito and Jigga That Nigga).</p>
-<h2 id="3-american-gangster" tabindex="-1"><a class="direct-link" href="#3-american-gangster">¶</a> 3. American Gangster</h2>
-<p>Truly cinematic. Jay’s last great album. It would’ve beeen a classic if they dropped Hello Brooklyn from it.</p>
-<h2 id="2-reasonable-doubt" tabindex="-1"><a class="direct-link" href="#2-reasonable-doubt">¶</a> 2. Reasonable Doubt</h2>
-<p>Both classic and personal favorite. Jay was still flexing his pure rapping skills and smooth jazzy beats where always the best fit for his voice and story. Only weak part is Ain’t No Nigga (due to basic beat and Foxy Brown terrible verse).</p>
-<h2 id="1-black-album" tabindex="-1"><a class="direct-link" href="#1-black-album">¶</a> 1. Black Album</h2>
-<p>Jay at top of his rap game. No skips. Everything bangs. Add retirement story, Fade to Black documentary and all various remixes on top and you have a cultural milestone.</p>
-<p>On a given day I might switch between Reasonable Doubt and Black Album for #1 spot.</p>
+                <p>Today, I opened <a href="https://curly-quote.netlify.app/">curly quote</a> on my phone and noticed a horizontal scroll present. I have some content that’s hidden from the viewport but I also have <code>overflow-x: hidden</code> to prevent the scrollbar from appearing.</p>
+<h2 id="solution-1" tabindex="-1"><a class="direct-link" href="#solution-1">¶</a> Solution 1</h2>
+<p>But <a href="https://stackoverflow.com/a/24193831/2382115">per StackOverflow</a>, some mobile browsers ignore <code>overflow: hidden</code> when applied on <code>&lt;body&gt;</code> tag while <code>&lt;meta name=&quot;viewport&quot;&gt;</code> is present.</p>
+<p>The solution was to wrap the whole page in an additional element and apply <code>overflow-x: hidden</code> to it.</p>
+<p>And since my overflowing element was absolutely positioned relative to the viewport, I also had to add <code>position: relative</code> style to make it work.</p>
+<h2 id="solution-2" tabindex="-1"><a class="direct-link" href="#solution-2">¶</a> Solution 2</h2>
+<p>Some additional search provided <a href="https://gist.github.com/ufologist/ac1dfa6fa6192a5879e9d9dcdbd0bf54">this gist</a> with an alternative approach (which suggests mobile <code>viewport</code> theory is wrong and the underlying cause is something else).</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">html, <br>body</span> <span class="token punctuation">{</span><br>    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>    <span class="token property">overflow-x</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">body</span> <span class="token punctuation">{</span><br>    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 
             </div>
         </div>
