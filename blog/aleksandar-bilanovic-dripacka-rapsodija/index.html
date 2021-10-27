@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Using CSS min() and max() in Sass</title>
+        <title>Aleksandar Bilanović - Dripačka Rapsodija</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,28 +38,17 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-10-13">
-                2021 10 13
+            <time class="post__date" datetime="2021-10-16">
+                2021 10 16
             </time>
-            <h1 class="post__title">Using CSS min() and max() in Sass</h1>
+            <h1 class="post__title">Aleksandar Bilanović - Dripačka Rapsodija</h1>
             <div class="post__content">
-                <p>CSS has <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min()"><code>min()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max()"><code>max()</code></a> functions. They allow us to specify list of values and it would return either smallest or largest one.</p>
-<p>Before those functions were widely supported, Sass also had <a href="https://sass-lang.com/documentation/modules/math"><code>min</code> and <code>max</code></a> functions.</p>
-<p>Now the problem is, <a href="https://chipcullen.com/css-min-max-clamp-functions/#a-note-on-using-sass--scss">Sass will sometimes try to use its own functions instead of native ones</a>.</p>
-<p>There are two possible solutions:</p>
-<h2 id="capitalization" tabindex="-1"><a class="direct-link" href="#capitalization">¶</a> Capitalization</h2>
-<p>CSS is not case-sensitive <a href="https://github.com/sass/sass/issues/2849">but Sass is</a>. Renaming <code>min</code>/<code>max</code> to <code>Min</code>/<code>Max</code> (or <code>MIN</code>/<code>MAX</code>) would make functions ignored by Sass compiler but still recognized in the browser as valid CSS.</p>
-<pre><code>font-size: min(1.3vw, 17px); // will use Sass
-font-size: Min(1.3vw, 17px); // will use CSS
-</code></pre>
-<h2 id="unquote" tabindex="-1"><a class="direct-link" href="#unquote">¶</a> Unquote</h2>
-<p>Using <a href="https://wikimass.com/sass/unquote">Sass <code>unquote</code></a> function to wrap the property value will output the value without going through Sass compiler.</p>
-<pre><code>font-size: min(1.3vw, 17px); // will use Sass
-font-size: unquote('min(1.3vw, 17px)'); // will use CSS
-</code></pre>
-<h2 id="note-about-sass-variables" tabindex="-1"><a class="direct-link" href="#note-about-sass-variables">¶</a> Note about Sass variables</h2>
-<p>To use Sass variables inside native CSS functions, they need to be <a href="https://sass-lang.com/documentation/interpolation">interpolated</a>.</p>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$value</span></span><span class="token punctuation">:</span> 1.3vw<span class="token punctuation">;</span><br><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">Min</span><span class="token punctuation">(</span><span class="token variable">#{$value}</span><span class="token punctuation">,</span> 17px<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">unquote</span><span class="token punctuation">(</span><span class="token string">'min(#{$value}, 17px)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                <p>I don’t know how I would feel if I’d read this book without watching Bilanović at podcasts first. Knowing his life story, I kept wondering how much of the book is true and what parts are embellished.</p>
+<p>It’s a fun little book but not exactly great work of fiction. The writing style feels forced and clunky at the beginning and changes throughout the book (for the better) when Bilanović finds his voice. His trademark Belgarde slang is one of his strongest attributes so it’s great when he embraces it fully.</p>
+<p>The plot is essentially an author’s autobiography but in the very first sentence, he introduces himself under a different name suggesting fiction. Bilanović fails to take advantage of this since the story falls flat or is cut short/omitted in certain places while too derailed elsewhere.</p>
+<p>At times, the book is all over the place going from childhood memories, drug addiction, criminal activity, spiritual illumination and random sexual excursions all mixed together. Again, for a work of fiction, it lacks character growth and proper buildup toward powerful moments and feels more like blurry recollection.</p>
+<p>Not sure how proper travelogue looks but part with travel into the Amazon jungle reads most like it (with observations mostly on women, other people and food) and was the most interesting part. An earlier adventure that includes traveling with criminals and finding places to get drunk and take drugs is fun in its own way as well.</p>
+<p>I would say beginning and end are the weakest parts. Thankfully, his adventures in South America that fill most of the book are entertaining enough to compensate for it and make reading worthwhile.</p>
 
             </div>
         </div>

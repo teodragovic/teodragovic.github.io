@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Using CSS min() and max() in Sass</title>
+        <title>encodeURI vs encodeURIComponent</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,28 +38,18 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-10-13">
-                2021 10 13
+            <time class="post__date" datetime="2021-10-27">
+                2021 10 27
             </time>
-            <h1 class="post__title">Using CSS min() and max() in Sass</h1>
+            <h1 class="post__title">encodeURI vs encodeURIComponent</h1>
             <div class="post__content">
-                <p>CSS has <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min()"><code>min()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max()"><code>max()</code></a> functions. They allow us to specify list of values and it would return either smallest or largest one.</p>
-<p>Before those functions were widely supported, Sass also had <a href="https://sass-lang.com/documentation/modules/math"><code>min</code> and <code>max</code></a> functions.</p>
-<p>Now the problem is, <a href="https://chipcullen.com/css-min-max-clamp-functions/#a-note-on-using-sass--scss">Sass will sometimes try to use its own functions instead of native ones</a>.</p>
-<p>There are two possible solutions:</p>
-<h2 id="capitalization" tabindex="-1"><a class="direct-link" href="#capitalization">¶</a> Capitalization</h2>
-<p>CSS is not case-sensitive <a href="https://github.com/sass/sass/issues/2849">but Sass is</a>. Renaming <code>min</code>/<code>max</code> to <code>Min</code>/<code>Max</code> (or <code>MIN</code>/<code>MAX</code>) would make functions ignored by Sass compiler but still recognized in the browser as valid CSS.</p>
-<pre><code>font-size: min(1.3vw, 17px); // will use Sass
-font-size: Min(1.3vw, 17px); // will use CSS
-</code></pre>
-<h2 id="unquote" tabindex="-1"><a class="direct-link" href="#unquote">¶</a> Unquote</h2>
-<p>Using <a href="https://wikimass.com/sass/unquote">Sass <code>unquote</code></a> function to wrap the property value will output the value without going through Sass compiler.</p>
-<pre><code>font-size: min(1.3vw, 17px); // will use Sass
-font-size: unquote('min(1.3vw, 17px)'); // will use CSS
-</code></pre>
-<h2 id="note-about-sass-variables" tabindex="-1"><a class="direct-link" href="#note-about-sass-variables">¶</a> Note about Sass variables</h2>
-<p>To use Sass variables inside native CSS functions, they need to be <a href="https://sass-lang.com/documentation/interpolation">interpolated</a>.</p>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$value</span></span><span class="token punctuation">:</span> 1.3vw<span class="token punctuation">;</span><br><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">Min</span><span class="token punctuation">(</span><span class="token variable">#{$value}</span><span class="token punctuation">,</span> 17px<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">unquote</span><span class="token punctuation">(</span><span class="token string">'min(#{$value}, 17px)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                <p>TL;DR: use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI"><code>encodeURI</code></a> for encoding full URLs and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent"><code>encodeURIComponent</code></a> for parts of link (like query strings, <code>mailto:</code> and <code>sms:</code> body strings) or any kind of string NOT used as URL.</p>
+<p>Reference links:</p>
+<ul>
+<li><a href="https://thisthat.dev/encode-uri-vs-encode-uri-component/">https://thisthat.dev/encode-uri-vs-encode-uri-component/</a></li>
+<li><a href="https://www.30secondsofcode.org/articles/s/javascript-encodeuri-encodeuricomponent">https://www.30secondsofcode.org/articles/s/javascript-encodeuri-encodeuricomponent</a></li>
+<li><a href="https://dev.to/wanoo21/difference-between-encodeuri-and-encodeuricomponent-j3j">https://dev.to/wanoo21/difference-between-encodeuri-and-encodeuricomponent-j3j</a></li>
+</ul>
 
             </div>
         </div>
