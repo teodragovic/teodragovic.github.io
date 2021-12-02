@@ -1,5 +1,5 @@
 ---
-title: Perf: using SVG favicon
+title: "Perf: using SVG favicon"
 date: 2021-12-02
 tags:
   - dev
