@@ -80,6 +80,8 @@ Here I’m using [Tailwind](https://tailwindcss.com/docs/padding) class to apply
 
 2. We applied spacing visually but not in markup. This means when we resize the screen to smaller viewport word `at` and mail address would try to stay together in a single line and it would by default overflow before breaking into a new line.
 
+3. Words that render together in markup will be read together by assistive technologies.
+
 ### Using non-breaking space
 
 ```jsx
