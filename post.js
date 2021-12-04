@@ -15,7 +15,6 @@ title: ${ title }
 date: ${ date }
 tags:
   -
-layout: post
 ---`;
 
 fs.writeFile(`posts/${ date }-${ slugify(title) }.md`, meta, (err) => {

@@ -5,7 +5,6 @@ tags:
   - dev
   - html
   - link
-layout: post
 ---
 
 https://twitter.com/subzey/status/1417099064949235712
