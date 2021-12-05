@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weekly playlist 1.11 - 21.11</title>
+        <title>Three ways to keep drafts in 11ty</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,46 +38,33 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-11-22">
-                2021 11 22
+            <time class="post__date" datetime="2021-12-07">
+                2021 12 07
             </time>
-            <h1 class="post__title">Weekly playlist 1.11 - 21.11</h1>
+            <h1 class="post__title">Three ways to keep drafts in 11ty</h1>
             <div class="post__content">
-                <h2 id="111-711" tabindex="-1"><a class="direct-link" href="#111-711">¶</a> 1.11 - 7.11</h2>
-<p>Planet Asia x Evidence - Rule Of Thirds<br>
-JPEGMAFIA - LP!<br>
-Rome Streetz &amp; Futurewave - Razor’s Edge<br>
-38 Spesh - 6 Shots Overkill (2020)<br>
-38 Spesh - 1995<br>
-38 Spesh - Interstate 38<br>
-38 Spesh x Benny The Butcher - Cocaine Cowboys 2<br>
-38 Spesh x Benny The Butcher - Cocaine Cowboys<br>
-Rasheed Chappell &amp; 38 Spesh - Ways &amp; Means<br>
-Planet Asia x 38 Spesh - Trust The Chain<br>
-Chase Fetti &amp; 38 Spesh - Top Of The Red<br>
-Flee Lord &amp; 38 Spesh - Loyalty And Trust 2</p>
-<h2 id="811-1411" tabindex="-1"><a class="direct-link" href="#811-1411">¶</a> 8.11 - 14.11</h2>
-<p>Ransom x Rome Streetz - Coup De Grace<br>
-Ransom &amp; Big Ghost Ltd - Heavy Is The Head<br>
-Blu - The Color Blu(e)<br>
-Fresh Daily - The Quiet Life 2<br>
-Armand Hammer &amp; The Alchemist-Haram<br>
-Aesop Rock &amp; Blockhead - Garbology<br>
-Joell Ortiz - Autograph<br>
-Joell Ortiz - Monday</p>
-<h2 id="1511-2111" tabindex="-1"><a class="direct-link" href="#1511-2111">¶</a> 15.11 - 21.11</h2>
-<p>Nyce Da Future &amp; Havoc - Future Of The Streets<br>
-Maxo Kream - Weight of the World<br>
-Joell Ortiz &amp; Illmind - Human<br>
-Joell Ortiz &amp; Apollo Brown - Mona Lisa<br>
-DJ JS-1 - Training Dayz<br>
-Young Dolph - King Of Memphis<br>
-Boldy James &amp; The Alchemist - The Price Of Tea In China (Deluxe Edition)<br>
-KA - Descendants of Cain<br>
-Jim Jones - Capo (Deluxe)<br>
-Hus Kingpin - The Cognac Tape (Co​-​Starring Roc Marciano)<br>
-Prodigy - Hegelian Dialectic (The Book of Revelation)<br>
-Tibor &amp; dmla - Stiletto</p>
+                <p>This blog is made using <a href="https://github.com/11ty/eleventy-base-blog">Eleventy base blog</a>. It’s a pretty simple setup. I write my posts in markdown and use <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> for templating. One feature that was missing was the ability to keep unpublished blog posts as drafts. I found ~two~three ways to add that in.</p>
+<h2 id="filter-posts-using-metadata" tabindex="-1"><a class="direct-link" href="#filter-posts-using-metadata">¶</a> Filter posts using metadata</h2>
+<p>In my front matter data I added <code>draft: true</code> so it looks like this:</p>
+<pre class="language-yml"><code class="language-yml"><span class="token punctuation">---</span><br><span class="token key atrule">title</span><span class="token punctuation">:</span> Two ways to keep drafts in 11ty<br><span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2021-12-07</span><br><span class="token key atrule">draft</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br><span class="token key atrule">tags</span><span class="token punctuation">:</span><br>  <span class="token punctuation">-</span> dev<br>  <span class="token punctuation">-</span> js<br><span class="token punctuation">---</span></code></pre>
+<p>And I can use it in my <code>blog.njk</code> template that loops over all posts in a collection and lists them on <a href="/blog/"><code>/blog</code></a> page.</p>
+<pre class="language-html"><code class="language-html"><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>postlist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    {% for post in postslist | reverse %}<br>        {% if not post.data.draft %}<br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>postlist__item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>            {# Title, link etc. goes here #}<br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span><br>        {% endif %}<br>    {% endfor %}<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br></code></pre>
+<p>The <code>{% if not post.data.draft %}</code> conditional is used to filter out posts marked as drafts. Note that this doesn’t actually stop the post from being published and it will still be available via <a href="/blog/three-ways-to-keep-drafts-in-11ty/">direct link</a>.</p>
+<h2 id="filter-posts-using-date" tabindex="-1"><a class="direct-link" href="#filter-posts-using-date">¶</a> Filter posts using date</h2>
+<p>This approach is better if I have a finished post but wanna delay publication. But I can also set some crazy future date like the year 2089. while I’m working on an article and just change it back to the current date when ready.</p>
+<p>I can do that by adding a custom filter in my <code>.eleventy.js</code> to check if the post date is set in the future.</p>
+<pre class="language-js"><code class="language-js">eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">'isPublished'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">post</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> post<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">post</span> <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>post<span class="token punctuation">.</span>date<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>And now I can use it to filter out my posts like so:</p>
+<pre class="language-html"><code class="language-html"><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>postlist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    {% for post in postslist | reverse | isPublished %}<br>        {% if not post.data.draft %}<br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>postlist__item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>            {# Title, link etc. goes here #}<br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span><br>        {% endif %}<br>    {% endfor %}<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br></code></pre>
+<p>Here, I apply the filter directly on my post list collection (the <code>{% for post in postslist | reverse | isPublished %}</code> part). In fact, let’s convert the draft conditional into a filter as well to clean things up.</p>
+<p>First, add another filter to <code>.nunjucks.js</code>:</p>
+<pre class="language-js"><code class="language-js">eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">'notDraft'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">post</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> post<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">post</span> <span class="token operator">=></span> <span class="token operator">!</span>post<span class="token punctuation">.</span>data<span class="token punctuation">.</span>draft<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Second, update <code>blog.njk</code> template to look like this:</p>
+<pre class="language-html"><code class="language-html"><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>postlist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    {% for post in postslist | reverse | isPublished | notDraft %}<br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>postlist__item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>        {# Title, link etc. goes here #}<br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span><br>    {% endfor %}<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br></code></pre>
+<p>Now I have the ability to mark posts as drafts AND schedule publishing in the future! Note that neither of those stops my articles from getting processed and available from a direct link.</p>
+<h2 id="use-a-separate-directory" tabindex="-1"><a class="direct-link" href="#use-a-separate-directory">¶</a> Use a separate directory</h2>
+<p>Create a folder like <code>_drafts</code> in the project root, add it to <code>.eleventyignore</code> and just keep your drafts there until ready.</p>
+<p>This way nothing unfinished gets published and you don’t have to worry about direct links. It’s also the fastest since eleventy doesn’t have to go through all drafts and filter them out. What’s missing is the ability to easily preview the post locally.</p>
 
             </div>
         </div>
