@@ -32,6 +32,14 @@ module.exports = function(eleventyConfig) {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
     });
 
+    eleventyConfig.addFilter('isPublished', function(post) {
+        return post.filter(post => new Date(post.date) <= new Date());
+    });
+
+    eleventyConfig.addFilter('notDraft', function(post) {
+        return post.filter(post => !post.data.draft);
+    });
+
     // https://github.com/11ty/eleventy/issues/278#issuecomment-451105828
     eleventyConfig.addFilter('slug', (input) => slugify(input, slugifyOptions));
 
