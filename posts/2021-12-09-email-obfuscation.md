@@ -27,8 +27,8 @@ The very first iterations of [Hugo](https://withhugo.com/) website featured "abo
 First, the HTML/Nunjucks code:
 
 ```html
-<span class="visually-hidden">{{ email | replace( '@', ' at ' ) }}</span>
-<a class="mail js-mail" aria-hidden>{{ email | reverse }}</a>
+<span class="visually-hidden">{% raw %}{{ email | replace( '@', ' at ' ) }}{% endraw %}</span>
+<a class="mail js-mail" aria-hidden>{% raw %}{{ email | reverse }}{% endraw %}</a>
 ```
 
 The first line is intended for assistive technologies. It’s [visually hidden](https://www.a11yproject.com/posts/how-to-hide-content/) but gets read by screen readers. I use Nunjucks native [`replace`](https://mozilla.github.io/nunjucks/templating.html#replace) filter to both obfuscate and split the email into human-readable parts.
