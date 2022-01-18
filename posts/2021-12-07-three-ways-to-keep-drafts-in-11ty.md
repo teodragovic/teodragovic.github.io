@@ -95,8 +95,16 @@ Second, update `blog.njk` template to look like this:
 
 Now I have the ability to mark posts as drafts AND schedule publishing in the future! Note that neither of those stops my articles from getting processed and available from a direct link.
 
+## Removing permalink
+
+From [John’s article](https://jkc.codes/blog/creating-drafts-in-eleventy/) I lerned about [`permalink: false`](https://www.11ty.dev/docs/permalinks/#permalink-false) key. I can add it to my front matter to make sure no drafts get built and published! This can be combined with both approaches listed above but note that in case of removing permalink, scheduling posts wouldn’t work.
+
 ## Use a separate directory
 
 Create a folder like `_drafts` in the project root, add it to `.eleventyignore` and just keep your drafts there until ready.
 
 This way nothing unfinished gets published and you don’t have to worry about direct links. It’s also the fastest since eleventy doesn’t have to go through all drafts and filter them out. What’s missing is the ability to easily preview the post locally.
+
+## Note about local development
+
+Again, [John Nemp-Cruz](https://jkc.codes/blog/creating-drafts-in-eleventy/) has a good article on 11ty drafts and how to set up visibility depending on enviroment. It a bit much for my needs so I still rely on manually changing front matter keys.
