@@ -7,7 +7,7 @@ tags:
 layout: post
 ---
 
-Confusing and disorienting. Not sure know what to make of it. I didn’t exactly like it.
+Confusing and disorienting. Not sure what to make of it. I didn’t exactly like it.
 
 Not a fan of overloading text with imaginary words describing objects that don’t exist just for the sake of it.
 
