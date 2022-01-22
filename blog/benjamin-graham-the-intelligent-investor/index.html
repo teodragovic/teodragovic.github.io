@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sharing Git credentials between Windows and WSL</title>
+        <title>Benjamin Graham - The Intelligent Investor</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,32 +38,31 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-11-22">
-                2021 11 22
+            <time class="post__date" datetime="2021-09-12">
+                2021 09 12
             </time>
-            <h1 class="post__title">Sharing Git credentials between Windows and WSL</h1>
+            <h1 class="post__title">Benjamin Graham - The Intelligent Investor</h1>
             <div class="post__content">
-                <p>Update: after my latest Windows reinstallation, the original solution didn’t work. <a href="https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup">This approach</a> did the trick. Note that it doesn’t require changing anything in Windows and sets WSL git to use GMC instead of wincred.</p>
-<p>TL;DR: run as root inside WSL</p>
-<pre><code>git config --global credential.helper &quot;/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe&quot;
-</code></pre>
-<hr>
-<p><a href="https://github.com/microsoft/vscode-docs/blob/vnext/docs/remote/troubleshooting.md#sharing-git-credentials-between-windows-and-wsl">https://github.com/microsoft/vscode-docs/blob/vnext/docs/remote/troubleshooting.md#sharing-git-credentials-between-windows-and-wsl</a></p>
-<blockquote>
-<p>If you use HTTPS to clone your repositories and have a credential helper configured in Windows, you can share this with WSL so that passwords you enter are persisted on both sides. (Note that this does not apply to using SSH keys.)</p>
-<p>Just follow these steps:</p>
-<ol>
-<li>Configure the credential manager on Windows by running the following in a Windows command prompt or PowerShell:</li>
-</ol>
-<pre><code>git config --global credential.helper wincred
-</code></pre>
-<ol start="2">
-<li>Configure WSL to use the same credential helper, but running the following in a WSL terminal:</li>
-</ol>
-<pre><code>git config --global credential.helper &quot;/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe&quot;
-</code></pre>
-<p>Any password you enter when working with Git on the Windows side will now be available to WSL and vice versa.</p>
-</blockquote>
+                <p>Good book. I wouldn’t go so far as to call it the best book on investment ever (although I only read two), but the advice in there is probably the best. Large parts I only skimmed since they are either outdated or very US-specific.</p>
+<p>Even the commentary is at this point almost 20 years old. But core principles still apply. I wish I had read this sooner and skipped all the mistakes this book warns against. At least now I feel like I have the correct perspective and don’t feel pressure around picking stocks or getting on the latest investment bandwagon.</p>
+<p>My takeaways:</p>
+<ul>
+<li>portfolio should be split about 50/50 between bonds (or similar instruments) and stocks (or similar instruments)</li>
+<li>a good bond alternative is regular cash or savings</li>
+<li>REIT is a good bet against inflation</li>
+<li>don’t pick stocks yourself, instead invest into whole market ETF like Vanguard S&amp;P 500</li>
+<li>allocate 10% of the stock portfolio in non-US market ETF</li>
+<li>gold works like any other stock - it makes sense to buy at the right price. Gold price rises in time of crisis or inflation</li>
+<li>if picking individual stocks, diversify between at least 30</li>
+<li>only buy if the price of the stock is well below the value of the company</li>
+<li>the bigger the gap between those values, the better margin of safety</li>
+<li>NEVER buy without a margin of safety</li>
+<li>don’t invest money you will need in 5-10 years. Trading costs and tax will eat any gains or won’t be able to recoup from the loss</li>
+<li>invest for a minimum of 10-20 years</li>
+<li>don’t expect returns over 8%</li>
+<li>use dollar-cost averaging to monthly deposit equal amounts of money</li>
+<li>DO NOT try to time the market and do not respond to the market</li>
+</ul>
 
             </div>
         </div>
