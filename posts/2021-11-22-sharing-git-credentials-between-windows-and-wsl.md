@@ -9,6 +9,16 @@ tags:
 layout: post
 ---
 
+Update: after my latest Windows reinstallation, the original solution didn’t work. [This approach](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup) did the trick. Note that it doesn’t require changing anything in Windows and sets WSL git to use GMC instead of wincred.
+
+TL;DR: run as root inside WSL
+
+```
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+```
+
+---
+
 https://github.com/microsoft/vscode-docs/blob/vnext/docs/remote/troubleshooting.md#sharing-git-credentials-between-windows-and-wsl
 
 > If you use HTTPS to clone your repositories and have a credential helper configured in Windows, you can share this with WSL so that passwords you enter are persisted on both sides. (Note that this does not apply to using SSH keys.)
