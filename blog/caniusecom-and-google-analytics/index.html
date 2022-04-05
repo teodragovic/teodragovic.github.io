@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>YouTube alternative apps</title>
+        <title>caniuse.com and Google Analytics</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link
             rel="stylesheet"
@@ -38,15 +38,23 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-12-10">
-                2021 12 10
+            <time class="post__date" datetime="2022-04-04">
+                2022 04 04
             </time>
-            <h1 class="post__title">YouTube alternative apps</h1>
+            <h1 class="post__title">caniuse.com and Google Analytics</h1>
             <div class="post__content">
-                <p><a href="https://newpipe.net/">NewPipe</a><br>
-<a href="https://vancedapp.com/">YouTube Vanced</a></p>
-<p>Both apps are add-free, allow playing music in the background (and picture-in-picture mode). I like how easily I can control sound and screen brightness in NewPipe and I can use it to watch stuff attached from my Google account (and suggestions). I use it to put on cartoons for Sven. It’s also more buggy of the two. Vanced is pretty much a YouTube app on steroids and I use it as a default app for opening YT links.</p>
-<p>Update: Seems like <a href="https://twitter.com/YTVanced/status/1503052250268286980">Vanced is no more</a>. Too bad. From what I understand, they stopped actived development but current app still has few years of use left.</p>
+                <p>I love <a href="https://caniuse.com/">caniuse.com</a>. It’s a great developer resource for checking browser compatibility and known browser bugs. By default, caniuse shows web feature support using browsers’ global usage data. But data set can be adjusted using Google Analytics to fit your specific project and users better. At <a href="https://www.withhugo.com">Hugo</a>, we offer car insurance specifically for US-based drivers, so it makes no sense to optimize for the whole world.</p>
+<p>Per caniuse landing page:</p>
+<blockquote>
+<p>You can import usage data from your Google Analytics account and see exactly how well a feature is supported among your own site’s visitors. Look under the Settings panel to get started!</p>
+</blockquote>
+<p>Google Analytics importer can be accessed by going into <a href="https://caniuse.com/ciu/settings#usage">settings</a> and clicking “Open importer” or directly by visiting <a href="https://caniuse.com/ciu/import">caniuse.com/ciu/import</a>.</p>
+<p>Note that to import GA data, ublock or other ad-blockers need to be disabled.</p>
+<p>You can access any GA account and app associated with a connected Google profile and select a preset range (I  always opt for the last 30 days). After import, we get a nice little display of browsers included and usage statistics. For example, this is how <a href="https://www.withhugo.com">Hugo</a> usage for March 2022.:</p>
+<p><img src="/img/caniuse-hugo.png" alt="Hugo.com usage statistics break down per browser"></p>
+<p>Back in the Settings panel, I set GA data as default. I also like to set view mode usage relative and filter out browsers with less than 0.5% usage.</p>
+<p>Now, when researching features to use in Hugo code, I have a better sense of what browsers/devices our users use and what’s safe to use in production.</p>
+<p><img src="/img/caniuse-flexbox.png" alt="caniuse.com support for flexbox relative to hugo.com analytics data"></p>
 
             </div>
         </div>
