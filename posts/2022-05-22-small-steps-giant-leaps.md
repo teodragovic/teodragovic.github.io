@@ -1,5 +1,5 @@
 ---
-title: The Small steps of giant leaps
+title: The small steps of giant leaps
 date: 2022-05-22
 tags:
   - misc
