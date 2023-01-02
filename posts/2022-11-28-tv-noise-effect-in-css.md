@@ -1,6 +1,6 @@
 ---
 title: TV noise effect in CSS
-date: 2023-01-02
+date: 2023-11-28
 tags:
   - css
   - dev
