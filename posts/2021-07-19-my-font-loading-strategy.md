@@ -105,11 +105,12 @@ I find this works great for me most of the time. There can be an issue with load
 
 ## Cloud-hosted fonts
 
-Today, Google Fonts support `font-display` so that’s great. On top of it, I like to de-prioritize fonts front critical styles by asyncronosly loading CSS file with `@font-face` definitions:
+Today, Google Fonts support `font-display` so that’s great. On top of it, I like to de-prioritize fonts from critical styles by asyncronosly loading CSS file with `@font-face` definitions:
 
 ```html
 <head>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" as="style" />
     <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap"

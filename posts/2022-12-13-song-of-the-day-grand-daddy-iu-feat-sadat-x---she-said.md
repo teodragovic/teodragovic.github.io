@@ -1,5 +1,5 @@
 ---
-title: Song of the day: Grand Daddy I.U. feat. Sadat X - She Said
+title: "Song of the day: Grand Daddy I.U. feat. Sadat X - She Said"
 date: 2022-12-13
 tags:
   - link
