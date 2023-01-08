@@ -1,5 +1,5 @@
 ---
-title: preconnect and preload consider harmful
+title: preconnect and preload considered harmful
 date: 2023-01-04
 tags:
   - dev

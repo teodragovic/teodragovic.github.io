@@ -6,7 +6,7 @@ tags:
   - dev
 ---
 
-CSS custom properties can be used to set values on any other CSS property. Combining it with `content` property to set some content in pseudo-element works as you would expect it.
+CSS custom properties can be used to set values on any other CSS property. Combining it with `content` property to set some content in pseudo-element works as you would expect it. As long as content value is of type String that is (more on that follows).
 
 ```css
 // This works
@@ -56,3 +56,20 @@ document.body.style.setProperty('--copy', `'hello'`);
 ```
 
 Notice backticks around the string. This way, quotation marks make their way into an inline style declaration and everything works. Using `"'" + 'hello' + '"'` is another valid approach but I find template literals cleaner.
+
+# Note about numbers
+
+If the value custom property holds is of type String is will just work. But for numbers, we need to combine it with [CSS counter](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters) like so:
+
+```css
+:root {
+    --x: 123;
+}
+
+div:before {
+    counter-reset: variable var(--x);
+    content: counter(variable);
+}
+```
+
+Great trick from that same [StackOverflow](https://stackoverflow.com/a/40179718/2382115) topic.

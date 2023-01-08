@@ -1,14 +1,4 @@
----
-title: Pass variables from CSS to JS
-date: 2023-01-06
-tags:
-  - css
-  - js
-  - dev
-  - sass
----
-
-I know two way of achievening this:
+I know two ways of achievening this:
 
 ## Sass
 
@@ -30,7 +20,7 @@ $color-secondary:     red;
 import { colorPrimary } from '../sass/_variables.scss'
 ```
 
-Good advice from [SO](https://stackoverflow.com/a/56525112/2382115) and Bootstrap to avoid repetition is to levrage Sass map:
+Good advice from [SO](https://stackoverflow.com/a/56525112/2382115) and Bootstrap to avoid repetition is to leverage Sass map:
 
 ```scss
 $theme-colours: (
@@ -47,9 +37,9 @@ $theme-colours: (
 }
 ```
 
-Note that if your Sass variables use dash separators (ie. `some-color`) and are exported with same name you won't be able to do names exports. Meaning you will end with something like `colors['some-color']` in JS.
+Note that if your Sass variables use dash separators (ie. `some-color`) and are exported with the same name you won't be able to do names exports. Meaning you will end with something like `colors['some-color']` in JS.
 
-Update: Actually, Sass is not needed for this to work. It relies on standard called [Interoperable CSS](https://glenmaddern.com/articles/interoperable-css) so it will work with plain CSS (but still needs JS loader though).
+Update: Actually, Sass is not needed for this to work. It relies on a standard called [Interoperable CSS](https://glenmaddern.com/articles/interoperable-css) so it will work with plain CSS (but still needs JS loader though).
 
 ## CSS variables
 
