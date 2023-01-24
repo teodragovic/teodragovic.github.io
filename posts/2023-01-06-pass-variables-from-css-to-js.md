@@ -1,3 +1,13 @@
+---
+title: Pass variables from CSS to JS
+date: 2023-01-06
+tags:
+  - css
+  - js
+  - dev
+  - sass
+---
+
 I know two ways of achievening this:
 
 ## Sass
