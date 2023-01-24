@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>preconnect and preload consider harmful</title>
+        <title>Using JSON.stringify to pretty print objects in console</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" as="style" />
         <link
@@ -39,14 +39,15 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2023-01-04">
-                2023 01 04
+            <time class="post__date" datetime="2023-01-24">
+                2023 01 24
             </time>
-            <h1 class="post__title">preconnect and preload consider harmful</h1>
+            <h1 class="post__title">Using JSON.stringify to pretty print objects in console</h1>
             <div class="post__content">
-                <p>Not really but <a href="https://mobile.twitter.com/csswizardry/status/1580506558165024769">this</a>.</p>
-<p>For a long time I had issues with the performance penalty <a href="https://withhugo.com">Hugo</a> gets while we load Segment and all analytics connected through it. Yet, while I was deferring loading of analytics away from critical path, it never occurred to me to remove <code>preconnect</code> hints as well.</p>
-<p>I still <code>preload</code> and <a href="/blog/my-font-loading-strategy/">lazy load my fonts</a> though.</p>
+                <p>When using <code>console.log</code> to see the output in terminal sometimes I get <code>[object Object]</code> instead of an actual object. Other times, I get full value but inlined and looking like a single long string which is hard to scan.</p>
+<p>To get around both of these issues, use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"><code>JSON.stringify</code></a>. By default, it will ensure the value is always fully printed. Setting the third value will make sure it’s printed with whitespace and readable.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token punctuation">{</span><br>    a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>    b<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>    c<span class="token operator">:</span> <span class="token punctuation">{</span><br>        d<span class="token operator">:</span> <span class="token number">3</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// might print [object Object]</span><br><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// will always print "[object Object]"</span><br><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// will print "{'a':1,'b':2,'c':{'d':3}}"</span><br><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">/* it will print<br>"{<br>  'a': 1,<br>  'b': 2,<br>  'c': {<br>    'd': 3<br>  }<br>}"<br>*/</span></code></pre>
+<p>The third argument of <code>stringify</code> method is space value. It can be a number or a string. Per MDN: &quot;If this is a number, it indicates the number of space characters to be used as indentation, clamped to 10&quot;. String value will be inserted before every nested object or array. For string values, the common is to use one or more spaces (<code>&quot; &quot;</code>) or a tab character (<code>&quot;\t&quot;</code>).</p>
 
             </div>
         </div>

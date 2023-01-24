@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Using CSS variables (custom properties) as content property value</title>
+        <title>Song of the day: Mark 4ord feat. Mic Bles - The Blast Off</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" as="style" />
         <link
@@ -39,28 +39,15 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-12-01">
-                2021 12 01
+            <time class="post__date" datetime="2023-01-24">
+                2023 01 24
             </time>
-            <h1 class="post__title">Using CSS variables (custom properties) as content property value</h1>
+            <h1 class="post__title">Song of the day: Mark 4ord feat. Mic Bles - The Blast Off</h1>
             <div class="post__content">
-                <p>CSS custom properties can be used to set values on any other CSS property. Combining it with <code>content</code> property to set some content in pseudo-element works as you would expect it. As long as content value is of type String that is (more on that follows).</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">// This works<br>:root</span> <span class="token punctuation">{</span><br>   <span class="token property">--copy</span><span class="token punctuation">:</span> <span class="token string">'hello world'</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">body::before</span> <span class="token punctuation">{</span><br>   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--copy<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>But what if you want to set property value using JavaScript?</p>
-<pre class="language-js"><code class="language-js">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--copy'</span><span class="token punctuation">,</span> <span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<pre class="language-css"><code class="language-css"><span class="token selector">// This does not work :(<br>body::before</span> <span class="token punctuation">{</span><br>   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--copy<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>I was puzzled until landing on <a href="https://stackoverflow.com/q/40164169/2382115">this SO question</a> and seeing <a href="https://stackoverflow.com/a/40164254/2382115">this answer</a>.</p>
-<p>Turns out, if you use <code>setProperty</code> to set CSS custom property, result will look something like this:</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">--copy</span><span class="token punctuation">:</span>hello<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span></code></pre>
-<p>Without quotation marks, the parser is unable to determine that value is a string so it won’t render. And simply passing an actual string to <code>setProperty</code> is not enough. What’s worse, using a second value in <code>var</code> as fallback also won’t work since <code>--copy</code> is defined (just with an invalid value).</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">// This still does not work :(<br>body::before</span> <span class="token punctuation">{</span><br>   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--copy<span class="token punctuation">,</span> <span class="token string">'fallback'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>Instead, you have to do it like this:</p>
-<pre class="language-js"><code class="language-js">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--copy'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">'hello'</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>Notice backticks around the string. This way, quotation marks make their way into an inline style declaration and everything works. Using <code>&quot;'&quot; + 'hello' + '&quot;'</code> is another valid approach but I find template literals cleaner.</p>
-<h1 id="note-about-numbers" tabindex="-1"><a class="direct-link" href="#note-about-numbers">¶</a> Note about numbers</h1>
-<p>If the value custom property holds is of type String is will just work. But for numbers, we need to combine it with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters">CSS counter</a> like so:</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>    <span class="token property">--x</span><span class="token punctuation">:</span> 123<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">div:before</span> <span class="token punctuation">{</span><br>    <span class="token property">counter-reset</span><span class="token punctuation">:</span> variable <span class="token function">var</span><span class="token punctuation">(</span>--x<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>variable<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>Great trick from that same <a href="https://stackoverflow.com/a/40179718/2382115">StackOverflow</a> topic.</p>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/paulirish/lite-youtube-embed@master/src/lite-yt-embed.min.css">
+<script defer="defer" src="https://cdn.jsdelivr.net/gh/paulirish/lite-youtube-embed@master/src/lite-yt-embed.min.js"></script>
+<div id="aUXnRVmB6oc" class="eleventy-plugin-youtube-embed"><lite-youtube videoid="aUXnRVmB6oc" style="background-image: url('https://i.ytimg.com/vi/aUXnRVmB6oc/hqdefault.jpg');"><div class="lty-playbtn"></div></lite-youtube></div>
+<p>Again with some drumless goodness.</p>
 
             </div>
         </div>

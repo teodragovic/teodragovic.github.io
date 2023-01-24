@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Using CSS variables (custom properties) as content property value</title>
+        <title>Setup free business email address</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" as="style" />
         <link
@@ -39,28 +39,33 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2021-12-01">
-                2021 12 01
+            <time class="post__date" datetime="2023-01-07">
+                2023 01 07
             </time>
-            <h1 class="post__title">Using CSS variables (custom properties) as content property value</h1>
+            <h1 class="post__title">Setup free business email address</h1>
             <div class="post__content">
-                <p>CSS custom properties can be used to set values on any other CSS property. Combining it with <code>content</code> property to set some content in pseudo-element works as you would expect it. As long as content value is of type String that is (more on that follows).</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">// This works<br>:root</span> <span class="token punctuation">{</span><br>   <span class="token property">--copy</span><span class="token punctuation">:</span> <span class="token string">'hello world'</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">body::before</span> <span class="token punctuation">{</span><br>   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--copy<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>But what if you want to set property value using JavaScript?</p>
-<pre class="language-js"><code class="language-js">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--copy'</span><span class="token punctuation">,</span> <span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<pre class="language-css"><code class="language-css"><span class="token selector">// This does not work :(<br>body::before</span> <span class="token punctuation">{</span><br>   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--copy<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>I was puzzled until landing on <a href="https://stackoverflow.com/q/40164169/2382115">this SO question</a> and seeing <a href="https://stackoverflow.com/a/40164254/2382115">this answer</a>.</p>
-<p>Turns out, if you use <code>setProperty</code> to set CSS custom property, result will look something like this:</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">--copy</span><span class="token punctuation">:</span>hello<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span></code></pre>
-<p>Without quotation marks, the parser is unable to determine that value is a string so it won’t render. And simply passing an actual string to <code>setProperty</code> is not enough. What’s worse, using a second value in <code>var</code> as fallback also won’t work since <code>--copy</code> is defined (just with an invalid value).</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">// This still does not work :(<br>body::before</span> <span class="token punctuation">{</span><br>   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--copy<span class="token punctuation">,</span> <span class="token string">'fallback'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>Instead, you have to do it like this:</p>
-<pre class="language-js"><code class="language-js">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--copy'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">'hello'</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>Notice backticks around the string. This way, quotation marks make their way into an inline style declaration and everything works. Using <code>&quot;'&quot; + 'hello' + '&quot;'</code> is another valid approach but I find template literals cleaner.</p>
-<h1 id="note-about-numbers" tabindex="-1"><a class="direct-link" href="#note-about-numbers">¶</a> Note about numbers</h1>
-<p>If the value custom property holds is of type String is will just work. But for numbers, we need to combine it with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters">CSS counter</a> like so:</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>    <span class="token property">--x</span><span class="token punctuation">:</span> 123<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">div:before</span> <span class="token punctuation">{</span><br>    <span class="token property">counter-reset</span><span class="token punctuation">:</span> variable <span class="token function">var</span><span class="token punctuation">(</span>--x<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>variable<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>Great trick from that same <a href="https://stackoverflow.com/a/40179718/2382115">StackOverflow</a> topic.</p>
+                <p>The title is a bit clickbait-y. This will be just a half-functioning email. Meaning you will have an address that can be shared with others and used to receive incoming emails but for messaging and/or responding you will have to rely on whatever free personal account you have.</p>
+<p>Also, this is a guide for Croatian-registered business owners. Other countries may have different rules.</p>
+<h2 id="step-1-get-your-hr-domain" tabindex="-1"><a class="direct-link" href="#step-1-get-your-hr-domain">¶</a> Step 1: Get your .hr domain</h2>
+<p>Every legal entity in Croatia can claim a free domain with .hr TLD. That can be done <a href="https://domene.hr/portal/register">here</a>. The name of my company is LONA d.o.o so I claimed <code>lona.hr</code> domain which was thankfully free. It’s not uncommon for same or similar-named businesses to exist. And only allowed domain names are either full business entity name, short name or acronym derived from the full name. If all of those are taken then you will have to cash out for some other vanity name.</p>
+<p>Once registered, domain settings can be accessed <a href="https://domene.hr/portal/mydomain">here</a>.</p>
+<h2 id="step-2-cloudflare-account" tabindex="-1"><a class="direct-link" href="#step-2-cloudflare-account">¶</a> Step 2: Cloudflare account</h2>
+<p>The next step is to register to <a href="https://cloudflare.com/">Cloudflare</a>. I use them forever as my CDN provider so I already had an account. But I needed to add a new website I would run through them. Ignore the fact that no actual website exists yet.</p>
+<p>Click Add site button in the main header of Cloudflare dashboard and enter a domain name (in my case <code>lona.hr</code>).</p>
+<p><a href="/img/cloudflare-1.png"><img src="/img/cloudflare-1.png" alt=""></a></p>
+<h2 id="step-3-copy-dns-records" tabindex="-1"><a class="direct-link" href="#step-3-copy-dns-records">¶</a> Step 3: Copy DNS records</h2>
+<p>Clicking on a site in Cloudflare dashboard should open a view with some charts. Somewhere on it should be a link to DNS settings or you can click on DNS section in the main menu. There you should see listed Cloudflare nameservers. They usually have names like <code>something.ns.cloudflare.com</code>.</p>
+<p>Names of those servers should be copied back into domain registrar from Step 1. Adding DNS records is pretty much the only thing that can be done there so shouldn’t be hard to find.</p>
+<h2 id="step-4-copy-mx-records" tabindex="-1"><a class="direct-link" href="#step-4-copy-mx-records">¶</a> Step 4: Copy MX records</h2>
+<p>Go to Email &gt; Email Routing &gt; Settings. You will find DNS records for email routing here. These are record types MX and TXT. Those records should be copied into DNS &gt; Records &gt; DNS management inside Cloudflare. Use Add record button, set the correct type, put the domain name as name and copy the value from Email settings.</p>
+<p><a href="/img/cloudflare-2.png"><img src="/img/cloudflare-2.png" alt=""></a></p>
+<h2 id="step-5-set-up-email-forwarding" tabindex="-1"><a class="direct-link" href="#step-5-set-up-email-forwarding">¶</a> Step 5: Set up email forwarding</h2>
+<p>Once records are added, you can go back to Email &gt; Email Routing &gt; Routes tab and set up email forwarding. First, add and verify one or more destination addresses. This is an address/email service that will receive all emails directed to your business address. You can have multiple destinations for multiple business emails.</p>
+<p>The last step is to match source address to a destination. I direct multiple <a href="http://lona.hr">lona.hr</a> emails to my personal Gmail and filter them inside my inbox.</p>
+<p><a href="(/img/cloudflare-3.png)"><img src="/img/cloudflare-3.png" alt=""></a></p>
+<p>Cloudflare also provides a catch-all option. This means you don’t even have to set any specific email and everything directed at <code>my-domain.com</code> will land in your inbox. But I think that would also increase the amount of spam or phishing attempts.</p>
+<h2 id="improvmx" tabindex="-1"><a class="direct-link" href="#improvmx">¶</a> ImprovMX</h2>
+<p>A quick note: there is a service called <a href="https://improvmx.com/">ImprovMX</a>. Their core business is email forwarding and can be used instead of Cloudflare in steps 4 and 5. There are several similar services but I used ImprovMX for one other site I manage and they seem to be faster but that’s my subjective and anecdotal impression. For my business needs, where I don’t get a lot of emails, I opted for the convenience of having everything on the same service.</p>
 
             </div>
         </div>
