@@ -1,5 +1,5 @@
 ---
-title: Song of the day: Mark 4ord feat. Mic Bles - The Blast Off
+title: "Song of the day: Mark 4ord feat. Mic Bles - The Blast Off"
 date: 2023-01-24
 tags:
   - link
