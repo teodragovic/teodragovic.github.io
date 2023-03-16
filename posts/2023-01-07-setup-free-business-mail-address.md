@@ -12,13 +12,13 @@ Also, this is a guide for Croatian-registered business owners. Other countries m
 
 ## Step 1: Get your .hr domain
 
-Every legal entity in Croatia can claim a free domain with .hr TLD. That can be done [here](https://domene.hr/portal/register). The name of my company is LONA d.o.o so I claimed `lona.hr` domain which was thankfully free. It’s not uncommon for same or similar-named businesses to exist. And only allowed domain names are either full business entity name, short name or acronym derived from the full name. If all of those are taken then you will have to cash out for some other vanity name.
+Every legal entity in Croatia can claim a free domain with .hr TLD. That can be done on [domene.hr website](https://domene.hr/portal/register). The name of my company is LONA d.o.o so I claimed `lona.hr` domain which was thankfully free. It’s not uncommon for same or similar-named businesses to exist. And only allowed domain names are either full business entity name, short name or acronym derived from the full name. If all of those are taken then you will have to cash out for some other vanity name.
 
 Once registered, domain settings can be accessed [here](https://domene.hr/portal/mydomain).
 
 ## Step 2: Cloudflare account
 
-The next step is to register to [Cloudflare](https://cloudflare.com/). I use them forever as my CDN provider so I already had an account. But I needed to add a new website I would run through them. Ignore the fact that no actual website exists yet.
+The next step is to make a free [Cloudflare](https://cloudflare.com/) account. I use them forever as my CDN provider so I already had an account. I still needed to add a new website I would run through them. Ignore the fact that no actual website exists yet.
 
 Click Add site button in the main header of Cloudflare dashboard and enter a domain name (in my case `lona.hr`).
 
@@ -26,13 +26,13 @@ Click Add site button in the main header of Cloudflare dashboard and enter a dom
 
 ## Step 3: Copy DNS records
 
-Clicking on a site in Cloudflare dashboard should open a view with some charts. Somewhere on it should be a link to DNS settings or you can click on DNS section in the main menu. There you should see listed Cloudflare nameservers. They usually have names like `something.ns.cloudflare.com`.
+Clicking on a site in Cloudflare dashboard should open a view with some charts. Somewhere on it should be a link to DNS settings or you can click on DNS section in the main menu. On next page, you should see listed Cloudflare nameservers. They usually have names like `something.ns.cloudflare.com`.
 
-Names of those servers should be copied back into domain registrar from Step 1. Adding DNS records is pretty much the only thing that can be done there so shouldn’t be hard to find.
+Names of those servers should be copied back into domain registrar from Step 1. Adding DNS records is pretty much the only thing that can be done so input fields shouldn’t be hard to find.
 
 ## Step 4: Copy MX records
 
-Go to Email > Email Routing > Settings. You will find DNS records for email routing here. These are record types MX and TXT. Those records should be copied into DNS > Records > DNS management inside Cloudflare. Use Add record button, set the correct type, put the domain name as name and copy the value from Email settings.
+Go to Email > Email Routing > Settings. You will find DNS records for email routing here. Those are entried with MX and TXT record types. Those records should be copied into DNS > Records > DNS management inside Cloudflare. Use Add record button, set the correct type, put the domain name as name and copy the value from Email settings.
 
 [![](/img/cloudflare-2.png)](/img/cloudflare-2.png)
 
@@ -42,7 +42,7 @@ Once records are added, you can go back to Email > Email Routing > Routes tab an
 
 The last step is to match source address to a destination. I direct multiple lona.hr emails to my personal Gmail and filter them inside my inbox.
 
-[![](/img/cloudflare-3.png)]((/img/cloudflare-3.png))
+[![](/img/cloudflare-3.png)](/img/cloudflare-3.png)
 
 Cloudflare also provides a catch-all option. This means you don’t even have to set any specific email and everything directed at `my-domain.com` will land in your inbox. But I think that would also increase the amount of spam or phishing attempts.
 
