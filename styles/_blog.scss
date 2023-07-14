@@ -1,5 +1,3 @@
-
-
 .postlist {
     width: 100%;
     max-width: 50ch;
@@ -32,4 +30,81 @@
 .postlist__subtitle {
     margin-top: 0;
     text-decoration: none;
+}
+
+// CSS category filtering
+// https://webdesign.tutsplus.com/how-to-build-a-filtering-component-in-pure-css--cms-33111t
+
+input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    label {
+        transition: all 0.3s;
+        cursor: pointer;
+        padding: 5px 10px;
+        border: 1px solid #333;
+        // border-radius: 10px;
+        font-size: 80%;
+        font-family: sans-serif;
+    }
+}
+
+[value="all"]:checked ~ .filters [for="all"],
+[value="tech"]:checked ~ .filters [for="tech"],
+[value="casual"]:checked ~ .filters [for="casual"],
+[value="link"]:checked ~ .filters [for="links"] {
+    background-color: #333;
+    color: white;
+}
+
+[value="all"]:checked ~ .postlist [data-category] {
+    display: block;
+}
+
+// todo:
+// misc
+// link
+
+[value="tech"]:checked
+    ~ .postlist
+    .postlist__item:not([data-category*="tech"]):not(
+        [data-category*="workflow"]
+    ):not([data-category*="js"]):not([data-category*="dev"]):not(
+        [data-category*="sass"]
+    ):not([data-category*="css"]):not([data-category*="html"]):not(
+        [data-category*="windows"]
+    ):not([data-category*="backend"]):not([data-category*="git"]) {
+    display: none;
+}
+
+[value="casual"]:checked
+    ~ .postlist
+    .postlist__item:not([data-category*="food"]):not(
+        [data-category*="family"]
+    ):not([data-category*="sven"]):not([data-category*="health"]):not(
+        [data-category*="money"]
+    ):not([data-category*="rap"]):not([data-category*="games"]):not(
+        [data-category*="books"]
+    ):not([data-category*="tv"]):not([data-category*="comic"]):not(
+        [data-category*="home"]
+    ):not([data-category*="diary"]) {
+    display: none;
+}
+
+[value="link"]:checked
+    ~ .postlist
+    .postlist__item:not([data-category*="link"]) {
+    display: none;
 }

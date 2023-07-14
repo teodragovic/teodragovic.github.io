@@ -2,17 +2,36 @@
 layout: base
 ---
 
+<input type="radio" id="all" name="categories" value="all" checked>
+<input type="radio" id="tech" name="categories" value="tech">
+<input type="radio" id="casual" name="categories" value="casual">
+<input type="radio" id="links" name="categories" value="link">
+
+<ul class="filters">
+  <li>
+    <label for="all">all stuff</label>
+  </li>
+  <li>
+    <label for="tech">tech stuff</label>
+  </li>
+  <li>
+    <label for="casual">other stuff</label>
+  </li>
+  {# <li>
+    <label for="links">links</label>
+  </li> #}
+</ul>
+
 {% set postslist = collections.posts %}
 
 <div class="postlist">
     {% for post in postslist | reverse | isPublished | notDraft %}
-        <article class="postlist__item">
+        <article class="postlist__item" data-category="{{ post.data.tags }}">
             <time class="postlist__date" datetime="{{ post.date | htmlDateString }}">
                 {{ post.date | readableDate }}
             </time>
             <a href="{{ post.url | url }}" class="postlist__link">
                 <h2 class="postlist__title">
-                        {# dsfs #}
                     {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
                 </h2>
                 {% if post.data.description %}
