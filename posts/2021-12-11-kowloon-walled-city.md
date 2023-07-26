@@ -2,8 +2,9 @@
 title: Kowloon Walled City
 date: 2021-12-11
 tags:
-  - misc
-  - link
+    - misc
+    - link
+    - random
 ---
 
 TIL. Fascinating story.
