@@ -1,5 +1,5 @@
 ---
-title: Song of the day: Nas - One Mic
+title: "Song of the day: Nas - One Mic"
 date: 2023-08-19
 tags:
   - link
