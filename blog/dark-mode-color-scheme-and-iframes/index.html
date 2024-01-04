@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Behind the scenes of LOTR movies</title>
+        <title>Dark mode, color-scheme and iframes</title>
         <meta name="view-transition" content="same-origin" />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" as="style" />
@@ -40,14 +40,22 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2022-02-10">
-                2022 02 10
+            <time class="post__date" datetime="2023-11-24">
+                2023 11 24
             </time>
-            <h1 class="post__title">Behind the scenes of LOTR movies</h1>
+            <h1 class="post__title">Dark mode, color-scheme and iframes</h1>
             <div class="post__content">
-                <p>After seeing <a href="https://www.youtube.com/watch?v=94yh1GIwiko">this video</a>, I checked Lord of the Rings DVD/BluRay appendices and bonus content. Funny how I watched the original trilogy countless times (director’s cut clearly) but never explored these before. Full playlist is here:</p>
-<p><a href="https://www.youtube.com/playlist?list=PLRzqXH8K0HzHLIkb6g9PcXtaKBpFpomPB">https://www.youtube.com/playlist?list=PLRzqXH8K0HzHLIkb6g9PcXtaKBpFpomPB</a></p>
-<p>My favorite is a documentary on <a href="https://www.youtube.com/watch?v=5XjoyptwUX4">Weta Workshop</a>. The amount of craftmanship that went into making these movies is remarkable. LOTR was already my favorite trilogy of all time but now I hold it in even higher regard.</p>
+                <p>I’m in the process of adding dark mode support to <a href="https://app.withhugo.com">Hugo Web App</a>. One issue came up: when in dark mode, Google Sing-In button and TrustPilot widget were rendering with white background. These were both 3rd party dependencies loaded via <code>iframe</code>.</p>
+<p>TrustPilot even had theme property which I set to &quot;dark&quot; but that only caused text to go white so we ended up with white text on white background. Weird and super annoying.</p>
+<p>After searching around, I found the fix to be setting <code>color-scheme: light</code> on a container element used to atttach the <code>iframe</code>.</p>
+<p>Best explanation I found was in <a href="https://fvsch.com/transparent-iframes">this article from Florens Verschelde</a>.</p>
+<p>TL;DR: Issue was with me setting <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme"><code>color-scheme</code></a> property to value <code>light dark</code>. I wanted native HTML controls like <code>&lt;select&gt;</code> dropdown render in mode matching user system settings. Turns out that <a href="https://github.com/w3c/csswg-drafts/issues/4772">per spec</a>:</p>
+<blockquote>
+<p>If the color scheme of an iframe differs from embedding document, iframe gets an opaque canvas background appropriate to its color scheme.</p>
+</blockquote>
+<p>Since our Google and TrustPilot iframes don't have matching <code>color-scheme</code> as parent page (ie. Hugo), canvas gets opaque/non-transparent/white background.</p>
+<p>Setting <code>color-scheme: light</code> sounds counter-intuitive but that actually means we wanna override parent page <code>color-scheme</code> for the scope of the embedded <code>iframe</code>. I could have put that rule higher in DOM tree as well and it would be fine as long as it didn’t catch any native HTML elements.</p>
+<p>Now, since <code>iframe</code> has matching (default) <code>color-scheme</code> value, canvas will correctly render transparent.</p>
 
             </div>
         </div>
