@@ -1,42 +1,42 @@
 {
-  "name": "teodragovic",
-  "version": "2.0.0",
-  "scripts": {
-    "watch:sass": "sass --no-source-map --watch styles:_includes/css",
-    "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass --no-source-map --style=compressed styles:_includes/css",
-    "build:eleventy": "eleventy",
-    "clean": "del-cli _site _includes/css",
-    "optimize:sass": "postcss _includes/css/*.css -u autoprefixer cssnano -r",
-    "start": "npm-run-all clean build:sass --parallel watch:*",
-    "build": "npm-run-all clean build:sass optimize:sass build:eleventy",
-    "github": "gh-pages -b master -d _site",
-    "deploy": "npm run build && npm run github",
-    "eslint": "eslint --cache --ext .js",
-    "post": "node post.js"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
-    "autoprefixer": "^10.3.1",
-    "cssnano": "^4.1.11",
-    "del-cli": "^4.0.1",
-    "eleventy-plugin-youtube-embed": "^1.6.4",
-    "eslint": "^7.32.0",
-    "gh-pages": "^3.2.3",
-    "luxon": "^2.0.1",
-    "markdown-it": "^12.1.0",
-    "markdown-it-anchor": "^8.1.2",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1",
-    "sass": "^1.37.0",
-    "slugify": "^1.6.0"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ],
-  "dependencies": {
-    "markdown-it-footnote": "^3.0.3"
-  }
+    "name": "teodragovic",
+    "version": "2.0.0",
+    "scripts": {
+        "watch:sass": "sass --no-source-map --watch styles:_includes/css",
+        "watch:eleventy": "eleventy --serve",
+        "build:sass": "sass --no-source-map --style=compressed styles:_includes/css",
+        "build:eleventy": "eleventy",
+        "clean": "del-cli _site _includes/css",
+        "optimize:sass": "postcss _includes/css/*.css -u autoprefixer cssnano -r",
+        "start": "npm-run-all clean build:sass --parallel watch:*",
+        "build": "npm-run-all clean build:sass optimize:sass build:eleventy",
+        "github": "gh-pages -b master -d _site",
+        "deploy": "npm run build && npm run github",
+        "eslint": "eslint --cache --ext .js",
+        "post": "node post.js"
+    },
+    "devDependencies": {
+        "@11ty/eleventy": "^0.12.1",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+        "autoprefixer": "^10.3.1",
+        "cssnano": "4.1.11",
+        "del-cli": "^4.0.1",
+        "eleventy-plugin-youtube-embed": "^1.6.4",
+        "eslint": "^7.32.0",
+        "gh-pages": "^3.2.3",
+        "luxon": "^2.0.1",
+        "markdown-it": "^12.1.0",
+        "markdown-it-anchor": "^8.1.2",
+        "npm-run-all": "^4.1.5",
+        "postcss": "8.3.6",
+        "postcss-cli": "8.3.1",
+        "sass": "^1.37.0",
+        "slugify": "^1.6.0"
+    },
+    "browserslist": [
+        "last 2 versions"
+    ],
+    "dependencies": {
+        "markdown-it-footnote": "^3.0.3"
+    }
 }
