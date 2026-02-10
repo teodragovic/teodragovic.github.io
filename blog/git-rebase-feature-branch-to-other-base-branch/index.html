@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Song of the day: Nas - First Time</title>
+        <title>Git: Rebase feature branch to other base branch</title>
         <meta name="view-transition" content="same-origin" />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" as="style" />
@@ -40,16 +40,18 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2022-11-11">
-                2022 11 11
+            <time class="post__date" datetime="2026-02-06">
+                2026 02 06
             </time>
-            <h1 class="post__title">Song of the day: Nas - First Time</h1>
+            <h1 class="post__title">Git: Rebase feature branch to other base branch</h1>
             <div class="post__content">
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/paulirish/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css">
-<script defer="defer" src="https://cdn.jsdelivr.net/gh/paulirish/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js"></script>
-<div id="lpGDT-PIJV8" class="eleventy-plugin-youtube-embed"><lite-youtube videoid="lpGDT-PIJV8" style="background-image: url('https://i.ytimg.com/vi/lpGDT-PIJV8/hqdefault.jpg');"><div class="lty-playbtn"></div></lite-youtube></div>
-<p>Out of all Nas and Hit-Boy albums, I like Magic best. But this is my favorite song from the duo. The beat just grabbed me and made me wanna write some shit. And it’s so perfectly nostalgic without being corny or sad. It’s a celebration of that little moment every music fan experienced at some point.</p>
-<p>Also, KD3 is (so far) the best in King’s Disease series. Super solid all the way through.</p>
+                <p>TIL</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> rebase <span class="token parameter variable">--onto</span> <span class="token operator">&lt;</span>NEW_BASE<span class="token operator">></span> <span class="token operator">&lt;</span>OLD_BASE<span class="token operator">></span> <span class="token operator">&lt;</span>YOUR_BRANCH<span class="token operator">></span></code></pre>
+<p>I knew about <code>git rebase</code> but not about <code>--onto</code> flag. <code>git rebase --onto</code> can help you to move commits from your <code>fix/</code> branch as if they are made against different base. Say you need to make a urgent fix for bug that's already in production. You make the fix but you accidentely checkout out from <code>development</code> branch that contains some work not yet ready for production. You would do:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> rebase <span class="token parameter variable">--onto</span> main dev fix/typo</code></pre>
+<p>Here we have our <code>main</code> branch deploys to production, <code>dev</code> is our development branch and <code>fix/typo</code> is our urgent hotfix.</p>
+<h2 id="note-about-github" tabindex="-1"><a class="direct-link" href="#note-about-github">¶</a> Note about GitHub</h2>
+<p>If you already made a pull request in GitHub you can still use <code>git rebase --onto</code> and update existing PR without closing it and making another. One extra step to take is to <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-base-branch-of-a-pull-request">update base branch on PR page itself using &quot;edit&quot; button next to PR title</a>.</p>
 
             </div>
         </div>

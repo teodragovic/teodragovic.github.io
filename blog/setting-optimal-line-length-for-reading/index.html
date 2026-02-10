@@ -49,7 +49,10 @@
 <p>For text-heavy websites (ie. blogs), that can be achieved in CSS by using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>ch</code> unit</a> for length.</p>
 <p>Per MDN, <code>ch</code> &quot;represents the width, or more precisely the advance measure, of the glyph '0' (zero, the Unicode character U+0030) in the element’s font.&quot;</p>
 <p>And code looks something like this:</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">.text-container</span> <span class="token punctuation">{</span><br>    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>    <span class="token property">max-width</span><span class="token punctuation">:</span> 63ch<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.text-container</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">max-width</span><span class="token punctuation">:</span> 63ch<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Here, <code>width: 100%</code> is used to make sure the text block stays responsive and readable on smaller screens without horizontal scroll. On larger screens, <code>max-width</code> makes sure text never goes longer than optimal width. The actual value will vary and depend on the typeface used.</p>
 <p>There is no exact science to this, use your eyes and best judgment. If uncertain choose a lower value. Expect to end up with a magic number that has no correlation to anything else in your codebase.</p>
 

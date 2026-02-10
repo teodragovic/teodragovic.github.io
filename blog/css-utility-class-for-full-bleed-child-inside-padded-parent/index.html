@@ -63,7 +63,12 @@ padding: 9999rem;
 </code></pre>
 <p>Cool thing is, the original 20px padding from the parent will still be respected! The only constraint is, we have to apply <code>overflow: hidden</code> on the parent to avoid child element stretching across the full screen.</p>
 <p>I found this solution useful enough to get it’s own little utility class:</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">.u-bleed</span> <span class="token punctuation">{</span><br>    <span class="token property">margin-left</span><span class="token punctuation">:</span> -9999rem<span class="token punctuation">;</span><br>    <span class="token property">margin-right</span><span class="token punctuation">:</span> -9999rem<span class="token punctuation">;</span><br>    <span class="token property">padding-left</span><span class="token punctuation">:</span> 9999rem<span class="token punctuation">;</span><br>    <span class="token property">padding-right</span><span class="token punctuation">:</span> 9999rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.u-bleed</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> -9999rem<span class="token punctuation">;</span>
+    <span class="token property">margin-right</span><span class="token punctuation">:</span> -9999rem<span class="token punctuation">;</span>
+    <span class="token property">padding-left</span><span class="token punctuation">:</span> 9999rem<span class="token punctuation">;</span>
+    <span class="token property">padding-right</span><span class="token punctuation">:</span> 9999rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Note that I explicitly use <code>*-left</code> and <code>*-right</code> properties instead of <code>margin</code> and <code>padding</code> shorthands to allow vertical padding to be inherited or set independently.</p>
 
             </div>

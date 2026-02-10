@@ -61,7 +61,9 @@ font-size: unquote('min(1.3vw, 17px)'); // will use CSS
 </code></pre>
 <h2 id="note-about-sass-variables" tabindex="-1"><a class="direct-link" href="#note-about-sass-variables">¶</a> Note about Sass variables</h2>
 <p>To use Sass variables inside native CSS functions, they need to be <a href="https://sass-lang.com/documentation/interpolation">interpolated</a>.</p>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$value</span></span><span class="token punctuation">:</span> 1.3vw<span class="token punctuation">;</span><br><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">Min</span><span class="token punctuation">(</span><span class="token variable">#{$value}</span><span class="token punctuation">,</span> 17px<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">unquote</span><span class="token punctuation">(</span><span class="token string">'min(#{$value}, 17px)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$value</span></span><span class="token punctuation">:</span> 1.3vw<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">Min</span><span class="token punctuation">(</span><span class="token variable">#{$value}</span><span class="token punctuation">,</span> 17px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">unquote</span><span class="token punctuation">(</span><span class="token string">'min(#{$value}, 17px)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
             </div>
         </div>

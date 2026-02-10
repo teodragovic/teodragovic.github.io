@@ -45,7 +45,8 @@
             </time>
             <h1 class="post__title">Creating empty branch in GitHub repo</h1>
             <div class="post__content">
-                <pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">commit_id</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> commit-tree -m <span class="token string">'Distribution branch'</span> 4b825dc642cb6eb9a060e54bf8d69288fbee4904<span class="token variable">)</span></span><br><span class="token function">git</span> push origin <span class="token variable">${commit_id}</span>:refs/heads/dist</code></pre>
+                <pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">commit_id</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> commit-tree <span class="token parameter variable">-m</span> <span class="token string">'Distribution branch'</span> 4b825dc642cb6eb9a060e54bf8d69288fbee4904<span class="token variable">)</span></span>
+<span class="token function">git</span> push origin <span class="token variable">${commit_id}</span>:refs/heads/dist</code></pre>
 <p>Link: <a href="https://www.edwardthomson.com/blog/pushing_an_empty_branch.html">https://www.edwardthomson.com/blog/pushing_an_empty_branch.html</a></p>
 <p>Creates empty branch on GitHub without the need for running <code>--orphan</code> and deleting all files locally.</p>
 

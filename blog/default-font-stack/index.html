@@ -46,7 +46,21 @@
             <h1 class="post__title">Default font stack</h1>
             <div class="post__content">
                 <p>Here’s the default font list used at <a href="https://withhugo.com">Hugo</a> until recently:</p>
-<pre class="language-scss"><code class="language-scss"><span class="token selector">body </span><span class="token punctuation">{</span><br>    <span class="token property">font-family</span><span class="token punctuation">:</span><br>        <span class="token variable">$font-name</span><span class="token punctuation">,</span><br>        -apple-system<span class="token punctuation">,</span><br>        BlinkMacSystemFont<span class="token punctuation">,</span><br>        <span class="token string">"Segoe UI"</span><span class="token punctuation">,</span><br>        <span class="token string">"Roboto"</span><span class="token punctuation">,</span><br>        <span class="token string">"Oxygen"</span><span class="token punctuation">,</span><br>        <span class="token string">"Ubuntu"</span><span class="token punctuation">,</span><br>        <span class="token string">"Cantarell"</span><span class="token punctuation">,</span><br>        <span class="token string">"Fira Sans"</span><span class="token punctuation">,</span><br>        <span class="token string">"Droid Sans"</span><span class="token punctuation">,</span><br>        <span class="token string">"Helvetica Neue"</span><span class="token punctuation">,</span><br>        sans-serif<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">body </span><span class="token punctuation">{</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span>
+        <span class="token variable">$font-name</span><span class="token punctuation">,</span>
+        -apple-system<span class="token punctuation">,</span>
+        BlinkMacSystemFont<span class="token punctuation">,</span>
+        <span class="token string">"Segoe UI"</span><span class="token punctuation">,</span>
+        <span class="token string">"Roboto"</span><span class="token punctuation">,</span>
+        <span class="token string">"Oxygen"</span><span class="token punctuation">,</span>
+        <span class="token string">"Ubuntu"</span><span class="token punctuation">,</span>
+        <span class="token string">"Cantarell"</span><span class="token punctuation">,</span>
+        <span class="token string">"Fira Sans"</span><span class="token punctuation">,</span>
+        <span class="token string">"Droid Sans"</span><span class="token punctuation">,</span>
+        <span class="token string">"Helvetica Neue"</span><span class="token punctuation">,</span>
+        sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>In the snippet above, <code>$font-name</code> is Sass variable representing our brand typeface. Everything that follows is part of the fallback stack designed to use the best system UI font available. This approach was popularized by <a href="https://medium.com/skyscanner-design/a-native-font-stack-d9d0db72d6e6">Medium</a> and <a href="https://css-tricks.com/shipping-system-fonts-github-com/">Github</a>.</p>
 <p>Article on <a href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/">Smashing Magazine</a> helped me define the final list I settled on.</p>
 <p>Then I came across a bit of information that led me to check browser support on <a href="https://caniuse.com/?search=system-ui"><code>system-ui</code></a>. Quoting <a href="https://css-tricks.com/one-file-many-options-using-variable-fonts-web/">Chris</a>:</p>
@@ -54,7 +68,13 @@
 <p>The <code>system-ui</code> value is the new standard to access system fonts, while <code>-apple-system</code> is non-standardized syntax that works on Firefox.</p>
 </blockquote>
 <p>Support for <code>system-ui</code> is finally good enough to replace our big system stack. Today, our default stack looks like this:</p>
-<pre class="language-scss"><code class="language-scss"><span class="token selector">body </span><span class="token punctuation">{</span><br>    <span class="token property">font-family</span><span class="token punctuation">:</span><br>        <span class="token variable">$font-name</span><span class="token punctuation">,</span><br>        system-ui<span class="token punctuation">,</span><br>        -apple-system<span class="token punctuation">,</span><br>        sans-serif<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">body </span><span class="token punctuation">{</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span>
+        <span class="token variable">$font-name</span><span class="token punctuation">,</span>
+        system-ui<span class="token punctuation">,</span>
+        -apple-system<span class="token punctuation">,</span>
+        sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Note: this change was possible since Hugo is made only for users in the USA. If you target a wider audience, you would be better <a href="https://medium.com/towards-more-beautiful-web-typography/survey-system-font-stack-5f73a3b39776">waiting it out a bit longer</a>.</p>
 
             </div>

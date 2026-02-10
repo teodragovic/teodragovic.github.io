@@ -48,7 +48,13 @@
                 <p><a href="https://2ality.com/2017/04/conditional-literal-entries.html">https://2ality.com/2017/04/conditional-literal-entries.html</a></p>
 <p>I keep re-visiting this article often for the right syntax.</p>
 <p>TL;DR:</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> cond <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><br>    <span class="token operator">...</span><span class="token punctuation">(</span>cond <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span><br>    <span class="token string">'b'</span><span class="token punctuation">,</span><br><span class="token punctuation">]</span><span class="token punctuation">;</span><br><br><span class="token comment">// ['b']</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> cond <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token operator">...</span><span class="token punctuation">(</span>cond <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'b'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ['b']</span></code></pre>
 
             </div>
         </div>

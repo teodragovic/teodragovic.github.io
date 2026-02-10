@@ -58,7 +58,49 @@
 <p>Here, I made a simple SVG rectangle with rounded borders and saved encoded SVG in Sass variable so I can use it as a background image. For encoding, I used Sass function from <a href="https://codepen.io/jakob-e/pen/doMoML">this super useful pen by Jakob</a>. I’ve been using that pen for years, every time I needed to encode SVG into CSS.</p>
 <p>From there, I defined <code>background-image</code>, <code>background-size</code> and <code>background-position</code> for each of four gray shapes that replace pending content on the screen. Note that the first set of values in background properties define the vertical line used for animation. That’s the only value that changes inside <code>@keyframes</code> block.</p>
 <p>Here is the full code for my skeleton screen (minus SVG encode functions):</p>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$rectangle</span></span><span class="token punctuation">:</span> <span class="token url">svg-url</span><span class="token punctuation">(</span><span class="token string">'&lt;svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">&lt;rect width="420" height="60" rx="6" fill="#ECECED" />&lt;/svg>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token selector">.c-skeleton </span><span class="token punctuation">{</span><br>    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>    <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span><br>    <span class="token property">background-image</span><span class="token punctuation">:</span><br>        <span class="token function">linear-gradient</span><span class="token punctuation">(</span><br>            90deg<span class="token punctuation">,</span><br>            transparent 20%<span class="token punctuation">,</span><br>            <span class="token function">rgba</span><span class="token punctuation">(</span>#FFF<span class="token punctuation">,</span> 0.6<span class="token punctuation">)</span><span class="token punctuation">,</span><br>            transparent 80%<br>        <span class="token punctuation">)</span><span class="token punctuation">,</span><br>        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>#ECECED 25px<span class="token punctuation">,</span> transparent 0<span class="token punctuation">)</span><span class="token punctuation">,</span><br>        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>#ECECED 10px<span class="token punctuation">,</span> transparent 0<span class="token punctuation">)</span><span class="token punctuation">,</span><br>        <span class="token variable">$rectangle</span><span class="token punctuation">,</span><br>        <span class="token variable">$rectangle</span><span class="token punctuation">;</span><br>    <span class="token property">background-size</span><span class="token punctuation">:</span><br>        40% 100%<span class="token punctuation">,</span><br>        100% 25px<span class="token punctuation">,</span><br>        50% 10px<span class="token punctuation">,</span><br>        100% 60px<span class="token punctuation">,</span><br>        100% 60px<span class="token punctuation">;</span><br>    <span class="token property">background-position</span><span class="token punctuation">:</span><br>        -150% 0<span class="token punctuation">,</span><br>        0 0<span class="token punctuation">,</span><br>        0 35px<span class="token punctuation">,</span><br>        0 75px<span class="token punctuation">,</span><br>        0 150px<span class="token punctuation">;</span><br>    <span class="token property">animation</span><span class="token punctuation">:</span><br>        loading 1.8s ease-out infinite<span class="token punctuation">,</span><br>        <span class="token module-modifier keyword">show</span> 0.3s ease-out forwards<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token atrule"><span class="token rule">@keyframes</span> loading</span> <span class="token punctuation">{</span><br>    <span class="token selector">to </span><span class="token punctuation">{</span><br>        <span class="token property">background-position</span><span class="token punctuation">:</span><br>            150% 0<span class="token punctuation">,</span><br>            0 0<span class="token punctuation">,</span><br>            0 35px<span class="token punctuation">,</span><br>            0 75px<span class="token punctuation">,</span><br>            0 150px<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$rectangle</span></span><span class="token punctuation">:</span> <span class="token url">svg-url</span><span class="token punctuation">(</span><span class="token string">'&lt;svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">&lt;rect width="420" height="60" rx="6" fill="#ECECED" />&lt;/svg>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token selector">.c-skeleton </span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span>
+        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>
+            90deg<span class="token punctuation">,</span>
+            transparent 20%<span class="token punctuation">,</span>
+            <span class="token function">rgba</span><span class="token punctuation">(</span>#FFF<span class="token punctuation">,</span> 0.6<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            transparent 80%
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>#ECECED 25px<span class="token punctuation">,</span> transparent 0<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>#ECECED 10px<span class="token punctuation">,</span> transparent 0<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token variable">$rectangle</span><span class="token punctuation">,</span>
+        <span class="token variable">$rectangle</span><span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span>
+        40% 100%<span class="token punctuation">,</span>
+        100% 25px<span class="token punctuation">,</span>
+        50% 10px<span class="token punctuation">,</span>
+        100% 60px<span class="token punctuation">,</span>
+        100% 60px<span class="token punctuation">;</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span>
+        -150% 0<span class="token punctuation">,</span>
+        0 0<span class="token punctuation">,</span>
+        0 35px<span class="token punctuation">,</span>
+        0 75px<span class="token punctuation">,</span>
+        0 150px<span class="token punctuation">;</span>
+    <span class="token property">animation</span><span class="token punctuation">:</span>
+        loading 1.8s ease-out infinite<span class="token punctuation">,</span>
+        <span class="token module-modifier keyword">show</span> 0.3s ease-out forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@keyframes</span> loading</span> <span class="token punctuation">{</span>
+    <span class="token selector">to </span><span class="token punctuation">{</span>
+        <span class="token property">background-position</span><span class="token punctuation">:</span>
+            150% 0<span class="token punctuation">,</span>
+            0 0<span class="token punctuation">,</span>
+            0 35px<span class="token punctuation">,</span>
+            0 75px<span class="token punctuation">,</span>
+            0 150px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
         </div>

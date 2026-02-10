@@ -46,7 +46,10 @@
             <h1 class="post__title">Add scroll margin on pages with fixed header</h1>
             <div class="post__content">
                 <p>Something I learned from <a href="https://andy-bell.co.uk/a-more-modern-css-reset/">Andy Bell’s CSS reset</a></p>
-<pre class="language-css"><code class="language-css"><span class="token comment">/* Anything that has been anchored to should have extra scroll margin */</span><br><span class="token selector">:target</span> <span class="token punctuation">{</span><br>    <span class="token property">scroll-margin-block</span><span class="token punctuation">:</span> 5ex<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token comment">/* Anything that has been anchored to should have extra scroll margin */</span>
+<span class="token selector">:target</span> <span class="token punctuation">{</span>
+    <span class="token property">scroll-margin-block</span><span class="token punctuation">:</span> 5ex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>It’s a great way to account for fixed headers when using anchor links. Came in handy on <a href="https://www.withhugo.com/legal">Hugo’s legal page</a> which features TOC for privacy policy and a fixed header.</p>
 
             </div>

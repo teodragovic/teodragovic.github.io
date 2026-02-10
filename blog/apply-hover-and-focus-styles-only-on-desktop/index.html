@@ -46,7 +46,14 @@
             <h1 class="post__title">Apply hover and focus styles only on desktop</h1>
             <div class="post__content">
                 <p>...or <a href="https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c">how to avoid hover and focus styles on touchscreens</a>.</p>
-<pre class="language-scss"><code class="language-scss"><span class="token keyword">@mixin</span> <span class="token function">desktop-hover-focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">hover</span><span class="token punctuation">:</span> hover<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token punctuation">(</span><span class="token property">pointer</span><span class="token punctuation">:</span> fine<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>        <span class="token selector"><span class="token parent important">&amp;</span>:hover,<br>        <span class="token parent important">&amp;</span>:focus </span><span class="token punctuation">{</span><br>            <span class="token keyword">@content</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@mixin</span> <span class="token function">desktop-hover-focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">hover</span><span class="token punctuation">:</span> hover<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token punctuation">(</span><span class="token property">pointer</span><span class="token punctuation">:</span> fine<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+        <span class="token selector"><span class="token parent important">&amp;</span>:hover,
+        <span class="token parent important">&amp;</span>:focus </span><span class="token punctuation">{</span>
+            <span class="token keyword">@content</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
         </div>

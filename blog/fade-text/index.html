@@ -54,7 +54,18 @@
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 <p>I’m using pseudo-element to apply a color-to-transparent gradient on the bottom of the page to get a nice little fading text effect.</p>
 <p>The trick is still solid. In fact, I decided to add it to this blog!</p>
-<pre class="language-scss"><code class="language-scss"><span class="token selector">.post:after </span><span class="token punctuation">{</span><br>    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span><br>    <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span><br>    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>    <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span><br>    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><br>    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><br>    <span class="token comment">// Allow text behind fade to be selectable</span><br>    <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token comment">// Make sure actual color matches page background</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>transparent<span class="token punctuation">,</span> white<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">.post:after </span><span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token comment">// Allow text behind fade to be selectable</span>
+    <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token comment">// Make sure actual color matches page background</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>transparent<span class="token punctuation">,</span> white<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
         </div>
