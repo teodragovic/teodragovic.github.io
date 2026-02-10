@@ -1,4 +1,3 @@
-
 const { DateTime } = require('luxon');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
@@ -13,7 +12,7 @@ const slugifyOptions = {
     lower: true
 };
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
     eleventyConfig.addWatchTarget('styles/');
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
     eleventyConfig.addPlugin(embedYouTube, { lite: true });
@@ -23,7 +22,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
     eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
-    eleventyConfig.addFilter('readableDate', dateObj => {
+    eleventyConfig.addFilter('readableDate', (dateObj) => {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy LL dd');
     });
 
@@ -32,12 +31,12 @@ module.exports = function(eleventyConfig) {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
     });
 
-    eleventyConfig.addFilter('isPublished', function(post) {
-        return post.filter(post => new Date(post.date) <= new Date());
+    eleventyConfig.addFilter('isPublished', function (post) {
+        return post.filter((post) => new Date(post.date) <= new Date());
     });
 
-    eleventyConfig.addFilter('notDraft', function(post) {
-        return post.filter(post => !post.data.draft);
+    eleventyConfig.addFilter('notDraft', function (post) {
+        return post.filter((post) => !post.data.draft);
     });
 
     // https://github.com/11ty/eleventy/issues/278#issuecomment-451105828
@@ -51,14 +50,15 @@ module.exports = function(eleventyConfig) {
         html: true,
         breaks: true,
         linkify: true
-    }).use(markdownItAnchor, {
-        permalink: true,
-        permalinkClass: 'direct-link',
-        // permalinkSymbol: '§',
-        permalinkBefore: true,
-        slugify: (input) => slugify(input, slugifyOptions)
     })
-    .use(footnote);
+        .use(markdownItAnchor, {
+            permalink: true,
+            permalinkClass: 'direct-link',
+            // permalinkSymbol: '§',
+            permalinkBefore: true,
+            slugify: (input) => slugify(input, slugifyOptions)
+        })
+        .use(footnote);
     eleventyConfig.setLibrary('md', markdownLibrary);
 
     // Browsersync Overrides
@@ -69,12 +69,7 @@ module.exports = function(eleventyConfig) {
     });
 
     return {
-        templateFormats: [
-            'md',
-            'njk',
-            'html',
-            'liquid'
-        ],
+        templateFormats: ['md', 'njk', 'html', 'liquid'],
 
         markdownTemplateEngine: 'liquid',
         htmlTemplateEngine: 'njk',
