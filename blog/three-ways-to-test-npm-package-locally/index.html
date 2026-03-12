@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Git: Rebase feature branch to other base branch</title>
+        <title>Three ways to test npm package locally</title>
         <meta name="view-transition" content="same-origin" />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" as="style" />
@@ -40,18 +40,45 @@
         </header>
 
         <div class="post">
-            <time class="post__date" datetime="2026-02-06">
-                2026 02 06
+            <time class="post__date" datetime="2026-03-02">
+                2026 03 02
             </time>
-            <h1 class="post__title">Git: Rebase feature branch to other base branch</h1>
+            <h1 class="post__title">Three ways to test npm package locally</h1>
             <div class="post__content">
-                <p>TIL</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> rebase <span class="token parameter variable">--onto</span> <span class="token operator">&lt;</span>NEW_BASE<span class="token operator">></span> <span class="token operator">&lt;</span>OLD_BASE<span class="token operator">></span> <span class="token operator">&lt;</span>YOUR_BRANCH<span class="token operator">></span></code></pre>
-<p>I knew about <code>git rebase</code> but not about <code>--onto</code> flag. <code>git rebase --onto</code> can help you to move commits from your <code>fix/</code> branch as if they are made against different base. Say you need to make a urgent fix for bug that’s already in production. You make the fix but you accidentely checkout out from <code>development</code> branch that contains some work not yet ready for production. You would do:</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> rebase <span class="token parameter variable">--onto</span> main dev fix/typo</code></pre>
-<p>Here we have our <code>main</code> branch deploys to production, <code>dev</code> is our development branch and <code>fix/typo</code> is our urgent hotfix.</p>
-<h2 id="note-about-github" tabindex="-1"><a class="direct-link" href="#note-about-github">¶</a> Note about GitHub</h2>
-<p>If you already made a pull request in GitHub you can still use <code>git rebase --onto</code> and update existing PR without closing it and making another. One extra step to take is to <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-base-branch-of-a-pull-request">update base branch on PR page itself using &quot;edit&quot; button next to PR title</a>.</p>
+                <p>Recently I worked on a small library of JSX icons to be used in other projects. Before publishing on npm, I wanted to check if everything works locally. I found three ways to do this:</p>
+<h2 id="file//" tabindex="-1"><a class="direct-link" href="#file//">¶</a> file://</h2>
+<p>I have a folder with projects that looks something like this:</p>
+<pre><code>- icons
+- app
+- backend
+</code></pre>
+<p><code>icons</code> is the new library I’m working on, and <code>app</code> is one of the projects that is supposed to consume it.</p>
+<p>In <code>app</code>’s package.json I was able to do <code>&quot;@acme/icons&quot;: &quot;file:../icons&quot;</code>, pointing to a package on my disk. I find it easiest to have both projects co-located in the same folder as above.</p>
+<p>Note that I use the <code>@acme</code> scope here since my library is to be published under my organization’s scope. So <code>@acme/icons</code> is the name under package.json’s <code>name</code> field in the <code>icons</code> project — it’s what is referenced when doing imports, and it’s what should be used when installing in other projects. The name of the folder can be anything, as long as it points to the package with the correct <code>name</code> field.</p>
+<p>Running <code>npm install</code> inside <code>app</code> will install <code>icons</code> just as it would a published package. The biggest drawback of this approach is that I need to run <code>npm install</code> every time I change something in the <code>icons</code> project locally, as changes aren’t picked up automatically.</p>
+<h2 id="npm-link" tabindex="-1"><a class="direct-link" href="#npm-link">¶</a> npm link</h2>
+<p><a href="https://docs.npmjs.com/cli/v9/commands/npm-link/">Reference</a></p>
+<p><code>npm link</code> is the recommended and fastest way for local development. Using the same folder structure as above, it would go something like this:</p>
+<ol>
+<li>Do <code>cd icons</code></li>
+<li>Run <code>npm link</code></li>
+<li>Do <code>cd ../app</code></li>
+<li>Run <code>npm link @acme/icons</code> (note I’m using the package name and not the folder name)</li>
+</ol>
+<p>Now I can do work on <code>icons</code> and all changes will be picked up automatically in <code>app</code> without needing to run <code>npm install</code>.</p>
+<p>Once finished, make sure to run <code>npm unlink @acme/icons</code> in <code>app</code> to remove the linked package, and <code>npm unlink</code> in <code>icons</code> to remove the symlink.</p>
+<h2 id="npm-pack" tabindex="-1"><a class="direct-link" href="#npm-pack">¶</a> npm pack</h2>
+<p>This is the third option I didn’t actually use. It seemed like an even more friction-heavy variant of <code>file://</code>. It can be used for a final test since it most closely mimics a full production-like experience. The other two approaches are quicker but use the package source code and not the built version (which might not make a difference if you build locally).</p>
+<p>In <code>icons</code>:</p>
+<ul>
+<li>Do <code>npm pack</code></li>
+<li>You will get an <code>acme-icons-&lt;version&gt;.tgz</code> file</li>
+</ul>
+<p>In <code>app</code>:</p>
+<ul>
+<li>Do <code>npm install &lt;path&gt;/acme-icons-&lt;version&gt;.tgz</code></li>
+</ul>
+<p>To pick up any changes if the tarball is updated but the version is the same, you need to reinstall the package using <code>npm install &lt;path&gt;/acme-icons-&lt;version&gt;.tgz --save</code>, or delete <code>package-lock.json</code> and <code>node_modules</code>. Using <code>npm install</code> alone won’t work since the sha of the package doesn’t change unless you bump the version.</p>
 
             </div>
         </div>
