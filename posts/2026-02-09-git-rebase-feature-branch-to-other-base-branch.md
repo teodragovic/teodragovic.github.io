@@ -12,7 +12,7 @@ TIL
 git rebase --onto <NEW_BASE> <OLD_BASE> <YOUR_BRANCH>
 ```
 
-I knew about `git rebase` but not about `--onto` flag. `git rebase --onto` can help you to move commits from your `fix/` branch as if they are made against different base. Say you need to make a urgent fix for bug that's already in production. You make the fix but you accidentely checkout out from `development` branch that contains some work not yet ready for production. You would do:
+I knew about `git rebase` but not about `--onto` flag. `git rebase --onto` can help you to move commits from your `fix/` branch as if they are made against different base. Say you need to make a urgent fix for bug that’s already in production. You make the fix but you accidentely checkout out from `development` branch that contains some work not yet ready for production. You would do:
 
 ```bash
 git rebase --onto main dev fix/typo
